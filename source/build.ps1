@@ -68,18 +68,24 @@ function Invoke-Checked {
 $srcF95 = @(
     'getver.f95',
     'ancill.f95',
-    'AIR_SI.f95'
+    'AIR_SI.f95',
+    'PRINT.f95',
+    'JSONPIT.f95'
+)
+
+$srcLegacyF95 = @(
+    'INPUT.f95'
 )
 
 $srcFor = @(
-    'ACEST2.FOR', 'DTHTS2.FOR', 'FLYWHL.FOR', 'INPUT.FOR', 'LSINS.FOR', 'OMEGA5.FOR', 'PINPNT.FOR', 'RELHUM.FOR', 'SIMQ2.FOR', 'TRINS.FOR',
-    'AIR.FOR', 'EERROR.FOR', 'FORCE1.FOR', 'INTEXT.FOR', 'MAXMIN.FOR', 'OMGJ1.FOR', 'PRINT.FOR', 'RESIST.FOR', 'SUMARY.FOR', 'TRSLOP.FOR',
+    'ACEST2.FOR', 'DTHTS2.FOR', 'FLYWHL.FOR', 'LSINS.FOR', 'OMEGA5.FOR', 'PINPNT.FOR', 'RELHUM.FOR', 'SIMQ2.FOR', 'TRINS.FOR',
+    'AIR.FOR', 'EERROR.FOR', 'FORCE1.FOR', 'INTEXT.FOR', 'MAXMIN.FOR', 'OMGJ1.FOR', 'RESIST.FOR', 'SUMARY.FOR', 'TRSLOP.FOR',
     'ALCHAR.FOR', 'EQUAT.FOR', 'FORCEL.FOR', 'JINS.FOR', 'MMAX.FOR', 'OMGJ2.FOR', 'RKTHRM.FOR', 'THDERV.FOR', 'VSINS.FOR', 'WETBLB.FOR',
     'AMPERE.FOR', 'CHECKI.FOR', 'EXTINT.FOR', 'GARAGE.FOR', 'JULIE.FOR', 'MMIN.FOR', 'OMGJ3.FOR', 'PSI.FOR', 'RSTREAD.FOR', 'THNODE.FOR',
     'BEI.FOR', 'CHECKR.FOR', 'FCTORL.FOR', 'GRID.FOR', 'KEI.FOR', 'OMEGA1.FOR', 'OMGJ4.FOR', 'QDERIV.FOR', 'RSTWRITE.FOR', 'TORQUE.FOR',
     'BER.FOR', 'CREAT2.FOR', 'HEAT.FOR', 'KER.FOR', 'OMEGA2.FOR', 'OMGJ5.FOR', 'QSQLP.FOR', 'SIMERR.FOR', 'TRAIN.FOR', 'WLLTM2.FOR',
     'BESSEL.FOR', 'CREAT3.FOR', 'FINS.FOR', 'HEATUP.FOR', 'LATENT.FOR', 'OMEGA3.FOR', 'OMGJ6.FOR', 'QUARRK.FOR', 'SIMLAT.FOR', 'TRANST.FOR',
-    'DSES.FOR', 'FLOWAY.FOR', 'HOOKUP.FOR', 'LOCATE.FOR', 'OMEGA4.FOR', 'RATES.FOR', 'SIMQ1.FOR', 'TRIDG3.FOR', 'FILESUBS.FOR', 'JSONPIT.FOR'
+    'DSES.FOR', 'FLOWAY.FOR', 'HOOKUP.FOR', 'LOCATE.FOR', 'OMEGA4.FOR', 'RATES.FOR', 'SIMQ1.FOR', 'TRIDG3.FOR', 'FILESUBS.FOR'
 )
 
 function Build-Target {
@@ -91,7 +97,7 @@ function Build-Target {
 
     New-Item -Path $outDir -ItemType Directory -Force | Out-Null
 
-    $flagsF95 = @('-falign-commons', '-Wno-align-commons', '-pedantic')
+    $flagsF95 = @('-falign-commons', '-Wno-align-commons', '-pedantic', '-ffree-line-length-none')
     $flagsFor = @('-falign-commons', '-Wno-align-commons', '-std=legacy')
 
     if ($Target -eq 'Debug') {
@@ -104,6 +110,12 @@ function Build-Target {
     foreach ($src in $srcF95) {
         $obj = Join-Path $outDir ([IO.Path]::GetFileNameWithoutExtension($src) + '.o')
         Invoke-Checked -Exe $Compiler -CommandArgs ($flagsF95 + @('-c', $src, '-o', $obj))
+        $objects += $obj
+    }
+
+    foreach ($src in $srcLegacyF95) {
+        $obj = Join-Path $outDir ([IO.Path]::GetFileNameWithoutExtension($src) + '.o')
+        Invoke-Checked -Exe $Compiler -CommandArgs ($flagsFor + @('-ffixed-form', '-c', $src, '-o', $obj))
         $objects += $obj
     }
 

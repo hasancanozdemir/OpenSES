@@ -12,35 +12,38 @@ EXE = OpenSES
 # we can use slightly different compile flags for them.  We set things up so
 # that the .f95 files are compiled first (as they are more likely to have
 # been edited and thus raise compile errors).
-SRCS1 =     getver.f95  ancill.f95  AIR_SI.f95
+SRCS1 =     getver.f95  ancill.f95  AIR_SI.f95  PRINT.f95  JSONPIT.f95
 
-SRCS2 =     ACEST2.FOR  DTHTS2.FOR  FLYWHL.FOR   INPUT.FOR  LSINS.FOR  OMEGA5.FOR PINPNT.FOR   RELHUM.FOR   SIMQ2.FOR    TRINS.FOR   \
-            AIR.FOR     EERROR.FOR  FORCE1.FOR   INTEXT.FOR MAXMIN.FOR OMGJ1.FOR  PRINT.FOR    RESIST.FOR   SUMARY.FOR   TRSLOP.FOR  \
+LEGACYF95 = INPUT.f95
+
+SRCS2 =     ACEST2.FOR  DTHTS2.FOR  FLYWHL.FOR   LSINS.FOR  OMEGA5.FOR PINPNT.FOR   RELHUM.FOR   SIMQ2.FOR    TRINS.FOR   \
+			AIR.FOR     EERROR.FOR  FORCE1.FOR   INTEXT.FOR MAXMIN.FOR OMGJ1.FOR  RESIST.FOR   SUMARY.FOR   TRSLOP.FOR  \
             ALCHAR.FOR  EQUAT.FOR   FORCEL.FOR   JINS.FOR   MMAX.FOR   OMGJ2.FOR  RKTHRM.FOR   THDERV.FOR   VSINS.FOR    WETBLB.FOR  \
             AMPERE.FOR  CHECKI.FOR  EXTINT.FOR   GARAGE.FOR JULIE.FOR  MMIN.FOR   OMGJ3.FOR    PSI.FOR      RSTREAD.FOR  THNODE.FOR  \
             BEI.FOR     CHECKR.FOR  FCTORL.FOR   GRID.FOR   KEI.FOR    OMEGA1.FOR OMGJ4.FOR    QDERIV.FOR   RSTWRITE.FOR TORQUE.FOR  \
             BER.FOR     CREAT2.FOR  HEAT.FOR     KER.FOR    OMEGA2.FOR OMGJ5.FOR  QSQLP.FOR    SIMERR.FOR   TRAIN.FOR    WLLTM2.FOR  \
             BESSEL.FOR  CREAT3.FOR  FINS.FOR     HEATUP.FOR LATENT.FOR OMEGA3.FOR OMGJ6.FOR    QUARRK.FOR   SIMLAT.FOR   TRANST.FOR  \
-            DSES.FOR    FLOWAY.FOR  HOOKUP.FOR   LOCATE.FOR OMEGA4.FOR RATES.FOR  SIMQ1.FOR    TRIDG3.FOR   FILESUBS.FOR  JSONPIT.FOR
+			DSES.FOR    FLOWAY.FOR  HOOKUP.FOR   LOCATE.FOR OMEGA4.FOR RATES.FOR  SIMQ1.FOR    TRIDG3.FOR   FILESUBS.FOR
 
 
 
 OBJS1 =  $(SRCS1:.f95=.o)
+OBJS3 =  $(LEGACYF95:.f95=.o)
 OBJS2 =  $(SRCS2:.FOR=.o)
 
-SRCS =  $(SRCS1)  $(SRCS2)
-OBJS =  $(OBJS1)  $(OBJS2)
+SRCS =  $(SRCS1)  $(LEGACYF95)  $(SRCS2)
+OBJS =  $(OBJS1)  $(OBJS3)  $(OBJS2)
 
 DBGDIR = debug
 DBGEXE = $(DBGDIR)/$(EXE)
 DBGOBJS = $(addprefix $(DBGDIR)/, $(OBJS))
-DBGFFLAGS1 = -falign-commons -Wno-align-commons -pedantic -ggdb # for .f95 files
+DBGFFLAGS1 = -falign-commons -Wno-align-commons -pedantic -ffree-line-length-none -ggdb # for .f95 files
 DBGFFLAGS2 = -falign-commons -Wno-align-commons -std=legacy -ggdb
 
 RELDIR = release
 RELEXE = $(RELDIR)/$(EXE)
 RELOBJS = $(addprefix $(RELDIR)/, $(OBJS))
-RELFFLAGS1 = -falign-commons -Wno-align-commons -pedantic # for .f95 files
+RELFFLAGS1 = -falign-commons -Wno-align-commons -pedantic -ffree-line-length-none # for .f95 files
 RELFFLAGS2 = -falign-commons -Wno-align-commons -std=legacy
 
 #*** General Purpose Rules ***
@@ -93,6 +96,9 @@ $(DBGDIR)/%.o: %.f95
 $(DBGDIR)/%.o: %.FOR
 	$(FCOMP) $(DBGFFLAGS2) -c $< -o $@
 
+$(DBGDIR)/INPUT.o: INPUT.f95
+	$(FCOMP) $(DBGFFLAGS2) -ffixed-form -c $< -o $@
+
 release: $(RELEXE)
 
 $(RELEXE): $(RELOBJS)
@@ -104,5 +110,10 @@ $(RELDIR)/%.o: %.f95
 
 $(RELDIR)/%.o: %.FOR
 	$(FCOMP) $(RELFFLAGS2) -c $< -o $@
+
+$(RELDIR)/INPUT.o: INPUT.f95
+	$(FCOMP) $(RELFFLAGS2) -ffixed-form -c $< -o $@
+
+ 
 
 

@@ -31,7 +31,7 @@ CONTRACT, STRICT LIABILITY,  OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING
 SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 ██████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████
 
-Simulation started at:  28 JUL 2026 12:20:09
+Simulation started at:  28 JUL 2026 14:08:20
 
 
 SAMPLE SES INPUT FILE FOR EMERGENCY SIMULATION (FIRE MODEL)                     
@@ -546,7 +546,7 @@ TIME      0.00 SECONDS                           0 TRAIN(S) ARE OPERATIONAL
 
    SYSTEM            AIR     AIR
 PARTITIONING        FLOW     VEL.
-                    (CFM)    (FPM)
+                    (M^3/S)    (M/SEC)
 
     1 -  1            0.0      0.0
     2 -  2            0.0      0.0
@@ -570,13 +570,13 @@ TIME     10.00 SECONDS                           0 TRAIN(S) ARE OPERATIONAL
 
    SYSTEM            AIR     AIR
 PARTITIONING        FLOW     VEL.
-                    (CFM)    (FPM)
+                    (M^3/S)    (M/SEC)
 
-    1 -  1         3980.7    227.1
-    2 -  2        -3980.7   -227.1
-    2 -  3        -3980.7   -227.1
-    2 -  4        -3980.7   -227.1
-    5 -  5         7961.3    285.6
+    1 -  1           66.3      3.8
+    2 -  2          -66.3     -3.8
+    2 -  3          -66.3     -3.8
+    2 -  4          -66.3     -3.8
+    5 -  5          132.7      4.8
 
 
 
@@ -585,13 +585,13 @@ TIME     20.00 SECONDS                           0 TRAIN(S) ARE OPERATIONAL
 
    SYSTEM            AIR     AIR
 PARTITIONING        FLOW     VEL.
-                    (CFM)    (FPM)
+                    (M^3/S)    (M/SEC)
 
-    1 -  1         4366.0    249.0
-    2 -  2        -4366.0   -249.0
-    2 -  3        -4366.0   -249.0
-    2 -  4        -4366.0   -249.0
-    5 -  5         8732.1    313.3
+    1 -  1           72.8      4.2
+    2 -  2          -72.8     -4.2
+    2 -  3          -72.8     -4.2
+    2 -  4          -72.8     -4.2
+    5 -  5          145.5      5.2
 
 
 
@@ -600,13 +600,13 @@ TIME     30.00 SECONDS                           0 TRAIN(S) ARE OPERATIONAL
 
    SYSTEM            AIR     AIR
 PARTITIONING        FLOW     VEL.
-                    (CFM)    (FPM)
+                    (M^3/S)    (M/SEC)
 
-    1 -  1         4366.5    249.1
-    2 -  2        -4366.5   -249.1
-    2 -  3        -4366.5   -249.1
-    2 -  4        -4366.5   -249.1
-    5 -  5         8733.0    313.3
+    1 -  1           72.8      4.2
+    2 -  2          -72.8     -4.2
+    2 -  3          -72.8     -4.2
+    2 -  4          -72.8     -4.2
+    5 -  5          145.5      5.2
 
 
 
@@ -615,13 +615,13 @@ TIME     40.00 SECONDS                           0 TRAIN(S) ARE OPERATIONAL
 
    SYSTEM            AIR     AIR
 PARTITIONING        FLOW     VEL.
-                    (CFM)    (FPM)
+                    (M^3/S)    (M/SEC)
 
-    1 -  1         4366.5    249.1
-    2 -  2        -4366.5   -249.1
-    2 -  3        -4366.5   -249.1
-    2 -  4        -4366.5   -249.1
-    5 -  5         8733.0    313.3
+    1 -  1           72.8      4.2
+    2 -  2          -72.8     -4.2
+    2 -  3          -72.8     -4.2
+    2 -  4          -72.8     -4.2
+    5 -  5          145.5      5.2
 
 
 
@@ -630,13 +630,13 @@ TIME     50.00 SECONDS                           0 TRAIN(S) ARE OPERATIONAL
 
    SYSTEM            AIR     AIR
 PARTITIONING        FLOW     VEL.
-                    (CFM)    (FPM)
+                    (M^3/S)    (M/SEC)
 
-    1 -  1         4366.5    249.1
-    2 -  2        -4366.5   -249.1
-    2 -  3        -4366.5   -249.1
-    2 -  4        -4366.5   -249.1
-    5 -  5         8733.0    313.3
+    1 -  1           72.8      4.2
+    2 -  2          -72.8     -4.2
+    2 -  3          -72.8     -4.2
+    2 -  4          -72.8     -4.2
+    5 -  5          145.5      5.2
 
 
 
@@ -645,13 +645,13 @@ TIME     60.00 SECONDS                           0 TRAIN(S) ARE OPERATIONAL
 
    SYSTEM            AIR     AIR
 PARTITIONING        FLOW     VEL.
-                    (CFM)    (FPM)
+                    (M^3/S)    (M/SEC)
 
-    1 -  1         4366.5    249.1
-    2 -  2        -4366.5   -249.1
-    2 -  3        -4366.5   -249.1
-    2 -  4        -4366.5   -249.1
-    5 -  5         8733.0    313.3
+    1 -  1           72.8      4.2
+    2 -  2          -72.8     -4.2
+    2 -  3          -72.8     -4.2
+    2 -  4          -72.8     -4.2
+    5 -  5          145.5      5.2
 
 
 
@@ -660,13 +660,13 @@ TIME     70.00 SECONDS                           0 TRAIN(S) ARE OPERATIONAL
 
    SYSTEM            AIR     AIR
 PARTITIONING        FLOW     VEL.
-                    (CFM)    (FPM)
+                    (M^3/S)    (M/SEC)
 
-    1 -  1         4366.5    249.1
-    2 -  2        -4366.5   -249.1
-    2 -  3        -4366.5   -249.1
-    2 -  4        -4366.5   -249.1
-    5 -  5         8733.0    313.3
+    1 -  1           72.8      4.2
+    2 -  2          -72.8     -4.2
+    2 -  3          -72.8     -4.2
+    2 -  4          -72.8     -4.2
+    5 -  5          145.5      5.2
 
 
 
@@ -675,13 +675,13 @@ TIME     80.00 SECONDS                           0 TRAIN(S) ARE OPERATIONAL
 
    SYSTEM            AIR     AIR
 PARTITIONING        FLOW     VEL.
-                    (CFM)    (FPM)
+                    (M^3/S)    (M/SEC)
 
-    1 -  1         4366.5    249.1
-    2 -  2        -4366.5   -249.1
-    2 -  3        -4366.5   -249.1
-    2 -  4        -4366.5   -249.1
-    5 -  5         8733.0    313.3
+    1 -  1           72.8      4.2
+    2 -  2          -72.8     -4.2
+    2 -  3          -72.8     -4.2
+    2 -  4          -72.8     -4.2
+    5 -  5          145.5      5.2
 
 
 
@@ -690,13 +690,13 @@ TIME     90.00 SECONDS                           0 TRAIN(S) ARE OPERATIONAL
 
    SYSTEM            AIR     AIR
 PARTITIONING        FLOW     VEL.
-                    (CFM)    (FPM)
+                    (M^3/S)    (M/SEC)
 
-    1 -  1         4366.5    249.1
-    2 -  2        -4366.5   -249.1
-    2 -  3        -4366.5   -249.1
-    2 -  4        -4366.5   -249.1
-    5 -  5         8733.0    313.3
+    1 -  1           72.8      4.2
+    2 -  2          -72.8     -4.2
+    2 -  3          -72.8     -4.2
+    2 -  4          -72.8     -4.2
+    5 -  5          145.5      5.2
 
 
 
@@ -705,13 +705,13 @@ TIME    100.00 SECONDS                           0 TRAIN(S) ARE OPERATIONAL
 
    SYSTEM            AIR     AIR
 PARTITIONING        FLOW     VEL.
-                    (CFM)    (FPM)
+                    (M^3/S)    (M/SEC)
 
-    1 -  1         4366.5    249.1
-    2 -  2        -4366.5   -249.1
-    2 -  3        -4366.5   -249.1
-    2 -  4        -4366.5   -249.1
-    5 -  5         8733.0    313.3
+    1 -  1           72.8      4.2
+    2 -  2          -72.8     -4.2
+    2 -  3          -72.8     -4.2
+    2 -  4          -72.8     -4.2
+    5 -  5          145.5      5.2
 
 INTEGRATION STEP SIZE
      AERODYNAMIC    RATIO = 1     INTEGRATION INCREMENT ( TWO CYCLES ) = 0.40 SEC
@@ -723,13 +723,13 @@ TIME    120.00 SECONDS                           0 TRAIN(S) ARE OPERATIONAL
 
    SYSTEM            AIR     AIR
 PARTITIONING        FLOW     VEL.
-                    (CFM)    (FPM)
+                    (M^3/S)    (M/SEC)
 
-    1 -  1         4366.5    249.1
-    2 -  2        -4366.5   -249.1
-    2 -  3        -4366.5   -249.1
-    2 -  4        -4366.5   -249.1
-    5 -  5         8733.0    313.3
+    1 -  1           72.8      4.2
+    2 -  2          -72.8     -4.2
+    2 -  3          -72.8     -4.2
+    2 -  4          -72.8     -4.2
+    5 -  5          145.5      5.2
 
 
 
@@ -738,13 +738,13 @@ TIME    140.00 SECONDS                           0 TRAIN(S) ARE OPERATIONAL
 
    SYSTEM            AIR     AIR
 PARTITIONING        FLOW     VEL.
-                    (CFM)    (FPM)
+                    (M^3/S)    (M/SEC)
 
-    1 -  1         4366.5    249.1
-    2 -  2        -4366.5   -249.1
-    2 -  3        -4366.5   -249.1
-    2 -  4        -4366.5   -249.1
-    5 -  5         8733.0    313.3
+    1 -  1           72.8      4.2
+    2 -  2          -72.8     -4.2
+    2 -  3          -72.8     -4.2
+    2 -  4          -72.8     -4.2
+    5 -  5          145.5      5.2
 
 
 
@@ -753,13 +753,13 @@ TIME    160.00 SECONDS                           0 TRAIN(S) ARE OPERATIONAL
 
    SYSTEM            AIR     AIR
 PARTITIONING        FLOW     VEL.
-                    (CFM)    (FPM)
+                    (M^3/S)    (M/SEC)
 
-    1 -  1         4366.5    249.1
-    2 -  2        -4366.5   -249.1
-    2 -  3        -4366.5   -249.1
-    2 -  4        -4366.5   -249.1
-    5 -  5         8733.0    313.3
+    1 -  1           72.8      4.2
+    2 -  2          -72.8     -4.2
+    2 -  3          -72.8     -4.2
+    2 -  4          -72.8     -4.2
+    5 -  5          145.5      5.2
 
 
 
@@ -768,13 +768,13 @@ TIME    180.00 SECONDS                           0 TRAIN(S) ARE OPERATIONAL
 
    SYSTEM            AIR     AIR
 PARTITIONING        FLOW     VEL.
-                    (CFM)    (FPM)
+                    (M^3/S)    (M/SEC)
 
-    1 -  1         4366.5    249.1
-    2 -  2        -4366.5   -249.1
-    2 -  3        -4366.5   -249.1
-    2 -  4        -4366.5   -249.1
-    5 -  5         8733.0    313.3
+    1 -  1           72.8      4.2
+    2 -  2          -72.8     -4.2
+    2 -  3          -72.8     -4.2
+    2 -  4          -72.8     -4.2
+    5 -  5          145.5      5.2
 
 
 
@@ -783,13 +783,13 @@ TIME    200.00 SECONDS                           0 TRAIN(S) ARE OPERATIONAL
 
    SYSTEM            AIR     AIR
 PARTITIONING        FLOW     VEL.
-                    (CFM)    (FPM)
+                    (M^3/S)    (M/SEC)
 
-    1 -  1         4366.5    249.1
-    2 -  2        -4366.5   -249.1
-    2 -  3        -4366.5   -249.1
-    2 -  4        -4366.5   -249.1
-    5 -  5         8733.0    313.3
+    1 -  1           72.8      4.2
+    2 -  2          -72.8     -4.2
+    2 -  3          -72.8     -4.2
+    2 -  4          -72.8     -4.2
+    5 -  5          145.5      5.2
 
 
 
@@ -798,13 +798,13 @@ TIME    220.00 SECONDS                           0 TRAIN(S) ARE OPERATIONAL
 
    SYSTEM            AIR     AIR
 PARTITIONING        FLOW     VEL.
-                    (CFM)    (FPM)
+                    (M^3/S)    (M/SEC)
 
-    1 -  1         4366.5    249.1
-    2 -  2        -4366.5   -249.1
-    2 -  3        -4366.5   -249.1
-    2 -  4        -4366.5   -249.1
-    5 -  5         8733.0    313.3
+    1 -  1           72.8      4.2
+    2 -  2          -72.8     -4.2
+    2 -  3          -72.8     -4.2
+    2 -  4          -72.8     -4.2
+    5 -  5          145.5      5.2
 
 
 
@@ -813,13 +813,13 @@ TIME    240.00 SECONDS                           0 TRAIN(S) ARE OPERATIONAL
 
    SYSTEM            AIR     AIR
 PARTITIONING        FLOW     VEL.
-                    (CFM)    (FPM)
+                    (M^3/S)    (M/SEC)
 
-    1 -  1         4366.5    249.1
-    2 -  2        -4366.5   -249.1
-    2 -  3        -4366.5   -249.1
-    2 -  4        -4366.5   -249.1
-    5 -  5         8733.0    313.3
+    1 -  1           72.8      4.2
+    2 -  2          -72.8     -4.2
+    2 -  3          -72.8     -4.2
+    2 -  4          -72.8     -4.2
+    5 -  5          145.5      5.2
 
 
 
@@ -828,13 +828,13 @@ TIME    260.00 SECONDS                           0 TRAIN(S) ARE OPERATIONAL
 
    SYSTEM            AIR     AIR
 PARTITIONING        FLOW     VEL.
-                    (CFM)    (FPM)
+                    (M^3/S)    (M/SEC)
 
-    1 -  1         4366.5    249.1
-    2 -  2        -4366.5   -249.1
-    2 -  3        -4366.5   -249.1
-    2 -  4        -4366.5   -249.1
-    5 -  5         8733.0    313.3
+    1 -  1           72.8      4.2
+    2 -  2          -72.8     -4.2
+    2 -  3          -72.8     -4.2
+    2 -  4          -72.8     -4.2
+    5 -  5          145.5      5.2
 
 
 
@@ -843,13 +843,13 @@ TIME    280.00 SECONDS                           0 TRAIN(S) ARE OPERATIONAL
 
    SYSTEM            AIR     AIR
 PARTITIONING        FLOW     VEL.
-                    (CFM)    (FPM)
+                    (M^3/S)    (M/SEC)
 
-    1 -  1         4366.5    249.1
-    2 -  2        -4366.5   -249.1
-    2 -  3        -4366.5   -249.1
-    2 -  4        -4366.5   -249.1
-    5 -  5         8733.0    313.3
+    1 -  1           72.8      4.2
+    2 -  2          -72.8     -4.2
+    2 -  3          -72.8     -4.2
+    2 -  4          -72.8     -4.2
+    5 -  5          145.5      5.2
 
 
 
@@ -858,13 +858,13 @@ TIME    300.00 SECONDS                           0 TRAIN(S) ARE OPERATIONAL
 
    SYSTEM            AIR     AIR
 PARTITIONING        FLOW     VEL.
-                    (CFM)    (FPM)
+                    (M^3/S)    (M/SEC)
 
-    1 -  1         4366.5    249.1
-    2 -  2        -4366.5   -249.1
-    2 -  3        -4366.5   -249.1
-    2 -  4        -4366.5   -249.1
-    5 -  5         8733.0    313.3
+    1 -  1           72.8      4.2
+    2 -  2          -72.8     -4.2
+    2 -  3          -72.8     -4.2
+    2 -  4          -72.8     -4.2
+    5 -  5          145.5      5.2
 
 INTEGRATION STEP SIZE
      AERODYNAMIC    RATIO = 1     INTEGRATION INCREMENT ( TWO CYCLES ) = 0.40 SEC
@@ -876,13 +876,13 @@ TIME    350.00 SECONDS                           0 TRAIN(S) ARE OPERATIONAL
 
    SYSTEM            AIR     AIR
 PARTITIONING        FLOW     VEL.
-                    (CFM)    (FPM)
+                    (M^3/S)    (M/SEC)
 
-    1 -  1         4366.5    249.1
-    2 -  2        -4366.5   -249.1
-    2 -  3        -4366.5   -249.1
-    2 -  4        -4366.5   -249.1
-    5 -  5         8733.0    313.3
+    1 -  1           72.8      4.2
+    2 -  2          -72.8     -4.2
+    2 -  3          -72.8     -4.2
+    2 -  4          -72.8     -4.2
+    5 -  5          145.5      5.2
 
 
 
@@ -891,13 +891,13 @@ TIME    400.00 SECONDS                           0 TRAIN(S) ARE OPERATIONAL
 
    SYSTEM            AIR     AIR
 PARTITIONING        FLOW     VEL.
-                    (CFM)    (FPM)
+                    (M^3/S)    (M/SEC)
 
-    1 -  1         4366.5    249.1
-    2 -  2        -4366.5   -249.1
-    2 -  3        -4366.5   -249.1
-    2 -  4        -4366.5   -249.1
-    5 -  5         8733.0    313.3
+    1 -  1           72.8      4.2
+    2 -  2          -72.8     -4.2
+    2 -  3          -72.8     -4.2
+    2 -  4          -72.8     -4.2
+    5 -  5          145.5      5.2
 
 
 
@@ -906,13 +906,13 @@ TIME    450.00 SECONDS                           0 TRAIN(S) ARE OPERATIONAL
 
    SYSTEM            AIR     AIR
 PARTITIONING        FLOW     VEL.
-                    (CFM)    (FPM)
+                    (M^3/S)    (M/SEC)
 
-    1 -  1         4366.5    249.1
-    2 -  2        -4366.5   -249.1
-    2 -  3        -4366.5   -249.1
-    2 -  4        -4366.5   -249.1
-    5 -  5         8733.0    313.3
+    1 -  1           72.8      4.2
+    2 -  2          -72.8     -4.2
+    2 -  3          -72.8     -4.2
+    2 -  4          -72.8     -4.2
+    5 -  5          145.5      5.2
 
 
 
@@ -921,13 +921,13 @@ TIME    500.00 SECONDS                           0 TRAIN(S) ARE OPERATIONAL
 
    SYSTEM            AIR     AIR
 PARTITIONING        FLOW     VEL.
-                    (CFM)    (FPM)
+                    (M^3/S)    (M/SEC)
 
-    1 -  1         4366.5    249.1
-    2 -  2        -4366.5   -249.1
-    2 -  3        -4366.5   -249.1
-    2 -  4        -4366.5   -249.1
-    5 -  5         8733.0    313.3
+    1 -  1           72.8      4.2
+    2 -  2          -72.8     -4.2
+    2 -  3          -72.8     -4.2
+    2 -  4          -72.8     -4.2
+    5 -  5          145.5      5.2
 
 
 

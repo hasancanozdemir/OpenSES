@@ -30,6 +30,14 @@ C
      5  2X,'(FT)',T29,'(BTU/SEC)',T43,'(BTU/SEC)',T60,'(DEG F)',        
      6  T72,'(LB/LB)',T84,'(CFM)',T96,'(FPM)',T104,' 1 2 3 4 5 6 7 8 9 0
      7 1 2 3 4'/)                                                              
+  711 FORMAT( T14,'SYSTEM',T29,'SENSIBLE',T44,'LATENT',T62,'AIR',T72,
+     1'HUMIDITY',T85,'AIR',T97,'AIR',T105,'TRAIN POSITION-ROUTE NUMBER',
+     2/,' LENGTH',T11,'PARTITIONING',T29,'HEAT LOAD',T43,'HEAT LOAD',
+     3  T58,'TEMPERATURE',T73,'RATIO',T85,'FLOW',T94,'VELOCITY',        
+     4  T104,' 0 0 0 0 0 0 0 0 0 1 1 1 1 1' /                                                 
+     5  2X,'(FT)',T29,'(BTU/SEC)',T43,'(BTU/SEC)',T60,'(DEG F)',        
+     6  T72,'(LB/LB)',T84,'(M^3/S)',T96,'(M/SEC)',T104,' 1 2 3 4 5 6 7 8 9 0
+     7 1 2 3 4'/)                                                              
   712 FORMAT( I12,2(' -',I3),F14.1,F14.1,F16.2,F12.5,F12.1,F10.1,       
      1  3X,14(A2) )                                                
   713 FORMAT((I12,2(' -',I3),F14.1,F14.1,F16.2,F12.5,25X,14(A2) )) 
@@ -43,6 +51,14 @@ C
      5  2X,'(FT)',T29,'(BTU/SEC)',T43,'(BTU/SEC)',T60,'(DEG F)',        
      6  T71,'(DEG F)',T84,'(CFM)',T96,'(FPM)',T104,' 1 2 3 4 5 6 7 8 9 0    
      7 1 2 3 4 ',/)                                                             
+  721 FORMAT( T14,'SYSTEM',T29,'SENSIBLE',T44,'LATENT',T62,'AIR',T71,
+     1'WET-BULB',T85,'AIR',T97,'AIR',T105,'TRAIN POSITION-ROUTE NUMBER',          
+     2 /,' LENGTH',T11,'PARTITIONING',T29,'HEAT LOAD',T43,'HEAT LOAD',
+     3  T58,'TEMPERATURE',T70,'TEMPERATURE',T85,'FLOW',T94,'VELOCITY',  
+     4  T104,' 0 0 0 0 0 0 0 0 0 1 1 1 1 1' /                                                 
+     5  2X,'(FT)',T29,'(BTU/SEC)',T43,'(BTU/SEC)',T60,'(DEG F)',        
+     6  T71,'(DEG F)',T84,'(M^3/S)',T96,'(M/SEC)',T104,' 1 2 3 4 5 6 7 8 9 0    
+     7 1 2 3 4 ',/)                                                              
   722 FORMAT( I12,2(' -',I3),F14.1,F14.1,F16.2,F11.2,F13.1,F10.1,       
      1  3X,14(A2) )                                                
   723 FORMAT((I12,2(' -',I3),F14.1,F14.1,F16.2,F11.2,26X,14(A2) )) 
@@ -56,6 +72,14 @@ C
      5  2X,'(FT)',T29,'(BTU/SEC)',T43,'(BTU/SEC)',T60,'(DEG F)',        
      6  T71,'(PERCENT)',T84,'(CFM)',T96,'(FPM)',T104,' 1 2 3 4 5 6 7 8 9 
      7 0 1 2 3 4',/)                                                            
+  731 FORMAT( T14,'SYSTEM',T29,'SENSIBLE',T44,'LATENT',T62,'AIR',T71,
+     1'RELATIVE',T85,'AIR',T97,'AIR',T105,'TRAIN POSITION-ROUTE NUMBER',          
+     2 /,' LENGTH',T11,'PARTITIONING',T29,'HEAT LOAD',T43,'HEAT LOAD',
+     3  T58,'TEMPERATURE',T71,'HUMIDITY',T85,'FLOW',T94,'VELOCITY',     
+     4  T104,' 0 0 0 0 0 0 0 0 0 1 1 1 1 1' /                                                 
+     5  2X,'(FT)',T29,'(BTU/SEC)',T43,'(BTU/SEC)',T60,'(DEG F)',        
+     6  T71,'(PERCENT)',T84,'(M^3/S)',T96,'(M/SEC)',T104,' 1 2 3 4 5 6 7 8 9 
+     7 0 1 2 3 4',/)                                                             
   732 FORMAT( I12,2(' -',I3),F14.1,F14.1,F16.2,F11.1,F13.1,F10.1,       
      1  3X,14(A2) )                                                
   733 FORMAT((I12,2(' -',I3),F14.1,F14.1,F16.2,F11.1,26X,14(A2) )) 
@@ -75,6 +99,13 @@ C
   771 FORMAT( / ,T4,'SYSTEM',T22,'AIR',5X,'AIR' /                       
      1  ,'PARTITIONING',T21,'FLOW',5X,'VEL.' /                       
      2  ,T21,'(CFM)',4X,'(FPM)' / )                                  
+  772 FORMAT( / ,T4,'SYSTEM',T22,'AIR',5X,'AIR',                        
+     1  T38,'TEMPERATURE (DEG F)' /                                       
+     2  ,'PARTITIONING',T21,'FLOW',5X,'VEL.',4X,19('-') /            
+     3  ,T21,'(M^3/S)',4X,'(M/SEC)',3X,'HUMIDITY    (LB/LB)' / )       
+  773 FORMAT( / ,T4,'SYSTEM',T22,'AIR',5X,'AIR' /                        
+     1  ,'PARTITIONING',T21,'FLOW',5X,'VEL.' /                        
+     2  ,T21,'(M^3/S)',4X,'(M/SEC)' / )                                 
   775 FORMAT( I5, ' -', I3, F15.1, F9.1, 8F10.1 )                   
   777 FORMAT( T35, 8F10.1 )                                            
   778 FORMAT( T35, 8F10.4 )                                            
@@ -233,13 +264,25 @@ C
 C**** WRITE SUBSEGMENT HEADINGS                                         
    60 GO TO ( 100, 110, 120 ), HUMOPT                                   
 C---- HUMIDITY RATIO                                                    
-  100 WRITE(OUT,710)                                                    
+  100 IF (INPUT_UNITS .EQ. UNIT_SI) THEN
+        WRITE(OUT,711)
+      ELSE
+        WRITE(OUT,710)
+      ENDIF
       GO TO 130                                                         
 C---- WET-BULB TEMPERATURE                                              
-  110 WRITE(OUT,720)                                                    
+  110 IF (INPUT_UNITS .EQ. UNIT_SI) THEN
+        WRITE(OUT,721)
+      ELSE
+        WRITE(OUT,720)
+      ENDIF
       GO TO 130                                                         
 C---- RELATIVE HUMIDITY                                                 
-  120 WRITE(OUT,730)                                                    
+  120 IF (INPUT_UNITS .EQ. UNIT_SI) THEN
+        WRITE(OUT,731)
+      ELSE
+        WRITE(OUT,730)
+      ENDIF
 C----                                                                   
 C---- LOOP OVER SECTION EXTERNAL I.D. NUMBERS                           
   130 DO  250  ISCTX = 1,LMSCTX                                         
@@ -263,7 +306,11 @@ C
       GO TO 150                                                         
   146 WRITE(OUT,752)  LLS(ILS), ISCTX, NUMLS(ILS), NAMLS(ILS) 
 C                                                                       
-  150 Q = QSAVES(ISCT) * 60.0                                           
+  150 IF (INPUT_UNITS .EQ. UNIT_SI) THEN
+        Q = QSAVES(ISCT)
+      ELSE
+        Q = QSAVES(ISCT) * 60.0
+      ENDIF
       V = Q / ALS(ILS)                                                  
       ILSSL = TABL3(ILS)                                                
       ILSSH = TABL4(ILS)                                                
@@ -316,7 +363,11 @@ C
   173 WRITE(OUT,754)  LVS(IVS),ISCTX,NUMVS(IVS),NAMVS(IVS)    
       GO TO 175                                                         
   174 WRITE(OUT,755)  LVS(IVS),ISCTX,NUMVS(IVS),NAMVS(IVS)    
-  175 Q = QSAVES(ISCT) * 60.0                                           
+  175 IF (INPUT_UNITS .EQ. UNIT_SI) THEN
+        Q = QSAVES(ISCT)
+      ELSE
+        Q = QSAVES(ISCT) * 60.0
+      ENDIF
       V = Q / AVS(IVS)                                                  
       IVSSL = TABL5(IVS)                                                
       IVSSH = TABL6(IVS)                                                
@@ -461,9 +512,17 @@ C
 C     ABBREVIATED PRINT ROUTINE     ************************************
 C                                                                       
   400 IF( JRATTH ) 402,402,401                                          
-  401 WRITE(OUT,770)                                                    
+  401 IF (INPUT_UNITS .EQ. UNIT_SI) THEN
+        WRITE(OUT,772)
+      ELSE
+        WRITE(OUT,770)
+      ENDIF
       GO TO 403                                                         
-  402 WRITE(OUT,771)                                                    
+  402 IF (INPUT_UNITS .EQ. UNIT_SI) THEN
+        WRITE(OUT,773)
+      ELSE
+        WRITE(OUT,771)
+      ENDIF
 C                                                                       
 C---- LOOP OVER SECTION EXTERNAL I.D. NUMBERS                           
   403 DO  490  ISCTX = 1, LMSCTX                                        
@@ -476,7 +535,11 @@ C---- CHECK IF SECTION I.D. NUMBER HAS BEEN USED
 C                                                                       
 C---- PRINT LINE SECTION DATA - LOOP OVER LINE SEGMENTS                 
 C                                                                       
-  410 Q = QSAVES(ISCT) * 60.0                                           
+  410 IF (INPUT_UNITS .EQ. UNIT_SI) THEN
+        Q = QSAVES(ISCT)
+      ELSE
+        Q = QSAVES(ISCT) * 60.0
+      ENDIF                                           
       DO  425  ILS = ISEGL, ISEGH                                       
       V = Q / ALS(ILS)                                                  
       IF( JRATTH ) 412,412,414                                          
@@ -502,7 +565,11 @@ C
 C---- PRINT VENTILATION SHAFT DATA                                      
 C                                                                       
   430 IVS = IABS(ISEGL)                                                 
-      Q = QSAVES(ISCT) * 60.0                                           
+      IF (INPUT_UNITS .EQ. UNIT_SI) THEN
+        Q = QSAVES(ISCT)
+      ELSE
+        Q = QSAVES(ISCT) * 60.0
+      ENDIF                                           
       V = Q / AVS(IVS)                                                  
       IF( JRATTH ) 432,432,434                                          
   432 WRITE(OUT,775)  ISCTX,NUMVS(IVS),Q,V                              

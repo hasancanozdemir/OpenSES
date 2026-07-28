@@ -219,7 +219,11 @@ C     GET SECTION-TO-SEGMENT MAP FOR SECTION DATA OUTPUT
       ISEGH = TABL10(ISCT)
 C     DUMY1 IS THE TOTAL PRESSURE CHANGE IN THE SECTION
       DUMY1=ALTER*(OMEGS(ISCT)-BS(ISCT)*DQDTS(ISCT))
-      Q = QSAVES(ISCT) * 60
+        IF (INPUT_UNITS .EQ. UNIT_SI) THEN
+              Q = QSAVES(ISCT)
+        ELSE
+              Q = QSAVES(ISCT) * 60
+        ENDIF
 C     WRITE SECTION DATA FOR EACH SEGMENT IN THIS SECTION
       IF (ISEGL .LT. 0) THEN
 C       VENTILATION SECTION: ONE SEGMENT PER SECTION
@@ -275,7 +279,11 @@ C
 260   ISCT = TABL14(ISCTX)
       ISEGL = TABL9(ISCT)                                               
       ISEGH = TABL10(ISCT)                                              
-      Q = QSAVES(ISCT) * 60
+        IF (INPUT_UNITS .EQ. UNIT_SI) THEN
+              Q = QSAVES(ISCT)
+        ELSE
+              Q = QSAVES(ISCT) * 60
+        ENDIF
 C     BRANCH ON VENT OR LINE SEGMENT
       IF( ISEGL ) 280,300,270
 C     LINE SECTION

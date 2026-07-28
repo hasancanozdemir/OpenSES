@@ -170,7 +170,7 @@ C
 	    EXITCODE=16
 	    GOTO 517                               
 	  CASE (2)
-	    EXITCODE=100
+          EXITCODE=0
           GOTO 515
 	END SELECT
 C                                                                       
@@ -192,7 +192,7 @@ C     ECZ ESTIMATE, PRINT OUT A LAST JSONPIT.
       IF ((NTIME - MAXTIM .GE. 0) .OR. (IPRGRP - NPGRP .GE. 0)) THEN
         NEW = 2
         CALL JSONPIT
-        EXITCODE=100
+                        EXITCODE=0
       ENDIF
 
 C                                                                       
@@ -204,7 +204,7 @@ C
 C---- WRITE INITIALIZATION DATA IN RESTART FILE
 C                                                                       
   515 IF (RSTWOPT .EQ. 0)  GO TO 517
-      EXITCODE=100                                     
+      EXITCODE=0                                      
       WRITE (SCREEN,14)
       WRITE (OUT,1) CHAR(12)
       CALL RSTWRITE                                                    

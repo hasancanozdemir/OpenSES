@@ -6,6 +6,54 @@ The files in this source code directory are based on the OpenSES
   git clone -b Develop https://github.com/Open-SES/OpenSES
 ```
 
+Build notes
+-----------
+This project now supports two build paths:
+- make-based build (existing canonical path)
+- build script path (PowerShell, useful on Windows where make is absent)
+
+From this directory, make-based builds are:
+```
+make release
+make debug
+make all
+```
+
+Script-based builds are:
+
+Use from this directory:
+```
+powershell -ExecutionPolicy Bypass -File .\build.ps1
+```
+
+Useful options:
+```
+powershell -ExecutionPolicy Bypass -File .\build.ps1 -Configuration Release
+powershell -ExecutionPolicy Bypass -File .\build.ps1 -Configuration Debug
+powershell -ExecutionPolicy Bypass -File .\build.ps1 -Configuration All
+powershell -ExecutionPolicy Bypass -File .\build.ps1 -Clean
+powershell -ExecutionPolicy Bypass -File .\build.ps1 -BuildEngine Make
+powershell -ExecutionPolicy Bypass -File .\build.ps1 -BuildEngine Direct
+```
+
+There is also a convenience wrapper:
+```
+.\build.cmd
+```
+
+Requirements:
+- For make-based builds: make (or mingw32-make) and gfortran must be available.
+- For direct script builds: gfortran must be available.
+- If static linking fails on your local toolchain, pass -NoStatic.
+
+If gfortran is installed but not on PATH, build.ps1 also checks common
+Windows install locations (including MSYS2 ucrt64/mingw64) before
+failing.
+
+By default, build.ps1 uses BuildEngine Auto:
+- uses make if available
+- otherwise uses direct gfortran compilation
+
 The following changes were made to the source code files.
 
 DSHARE

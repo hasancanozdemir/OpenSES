@@ -1,8 +1,8 @@
     [
          {
          "info" :       {
-                        "input_file" : "C:/Users/msn/OneDrive/Never Gray/Software Development/OpenSES/samples/inferno_SI_P2.inp",
-                        "timestamp" :          "28 JUL 2026 10:47:46",
+                        "input_file" : "inferno_SI_P2.inp",
+                        "timestamp" :          "28 JUL 2026 12:20:09",
                         "units" :                                "SI",
                         "ambient_dry_bulb_temperature" :        29.44,
                         "ambient_wet_bulb_temperature" :        23.33,
@@ -18,18 +18,35 @@
                         [
                         {
                         "Section" :                                    1,
+                        "Segment" :                                 1,
                         "Airflow" :                               0.0,
                         "Buoyancy" :                          0.00000,
                         "Pressure_Change" :                   0.00000
                         },
                         {
                         "Section" :                                    2,
+                        "Segment" :                                 2,
+                        "Airflow" :                               0.0,
+                        "Buoyancy" :                          0.00000,
+                        "Pressure_Change" :                   0.00000
+                        },
+                        {
+                        "Section" :                                    2,
+                        "Segment" :                                 3,
+                        "Airflow" :                               0.0,
+                        "Buoyancy" :                          0.00000,
+                        "Pressure_Change" :                   0.00000
+                        },
+                        {
+                        "Section" :                                    2,
+                        "Segment" :                                 4,
                         "Airflow" :                               0.0,
                         "Buoyancy" :                          0.00000,
                         "Pressure_Change" :                   0.00000
                         },
                         {
                         "Section" :                                    5,
+                        "Segment" :                                 5,
                         "Airflow" :                               0.0,
                         "Buoyancy" :                          0.00000,
                         "Pressure_Change" :                   0.00000
@@ -38,35 +55,35 @@
          "Segment_Data" : 
                         [
                         {
-                        "Segment_ID" :                       "1 -  1",
+                        "Segment" :                                 1,
                         "Line" :                                 true,
                         "Air_Velocity" :                          0.0,
                         "Reynolds_Number" :               0.00000E+00,
                         "Number_Of_Trains" :                        0
                         },
                         {
-                        "Segment_ID" :                       "2 -  2",
+                        "Segment" :                                 2,
                         "Line" :                                 true,
                         "Air_Velocity" :                          0.0,
                         "Reynolds_Number" :               0.00000E+00,
                         "Number_Of_Trains" :                        0
                         },
                         {
-                        "Segment_ID" :                       "2 -  3",
+                        "Segment" :                                 3,
                         "Line" :                                 true,
                         "Air_Velocity" :                          0.0,
                         "Reynolds_Number" :               0.00000E+00,
                         "Number_Of_Trains" :                        0
                         },
                         {
-                        "Segment_ID" :                       "2 -  4",
+                        "Segment" :                                 4,
                         "Line" :                                 true,
                         "Air_Velocity" :                          0.0,
                         "Reynolds_Number" :               0.00000E+00,
                         "Number_Of_Trains" :                        0
                         },
                         {
-                        "Segment_ID" :                       "5 -  5",
+                        "Segment" :                                 5,
                         "Line" :                                false,
                         "Air_Velocity" :                          0.0,
                         "Reynolds_Number" :               0.00000E+00
@@ -81,18 +98,35 @@
                         [
                         {
                         "Section" :                                    1,
+                        "Segment" :                                 1,
                         "Airflow" :                            3980.7,
                         "Buoyancy" :                          0.00000,
                         "Pressure_Change" :                 -34.38685
                         },
                         {
                         "Section" :                                    2,
+                        "Segment" :                                 2,
+                        "Airflow" :                           -3980.7,
+                        "Buoyancy" :                          0.00000,
+                        "Pressure_Change" :                  34.38686
+                        },
+                        {
+                        "Section" :                                    2,
+                        "Segment" :                                 3,
+                        "Airflow" :                           -3980.7,
+                        "Buoyancy" :                          0.00000,
+                        "Pressure_Change" :                  34.38686
+                        },
+                        {
+                        "Section" :                                    2,
+                        "Segment" :                                 4,
                         "Airflow" :                           -3980.7,
                         "Buoyancy" :                          0.00000,
                         "Pressure_Change" :                  34.38686
                         },
                         {
                         "Section" :                                    5,
+                        "Segment" :                                 5,
                         "Airflow" :                            7961.3,
                         "Buoyancy" :                          0.00000,
                         "Pressure_Change" :                  37.14400
@@ -101,35 +135,35 @@
          "Segment_Data" : 
                         [
                         {
-                        "Segment_ID" :                       "1 -  1",
+                        "Segment" :                                 1,
                         "Line" :                                 true,
                         "Air_Velocity" :                        227.1,
                         "Reynolds_Number" :               0.10890E+07,
                         "Number_Of_Trains" :                        0
                         },
                         {
-                        "Segment_ID" :                       "2 -  2",
+                        "Segment" :                                 2,
                         "Line" :                                 true,
                         "Air_Velocity" :                       -227.1,
                         "Reynolds_Number" :               0.10890E+07,
                         "Number_Of_Trains" :                        0
                         },
                         {
-                        "Segment_ID" :                       "2 -  3",
+                        "Segment" :                                 3,
                         "Line" :                                 true,
                         "Air_Velocity" :                       -227.1,
                         "Reynolds_Number" :               0.10890E+07,
                         "Number_Of_Trains" :                        0
                         },
                         {
-                        "Segment_ID" :                       "2 -  4",
+                        "Segment" :                                 4,
                         "Line" :                                 true,
                         "Air_Velocity" :                       -227.1,
                         "Reynolds_Number" :               0.10890E+07,
                         "Number_Of_Trains" :                        0
                         },
                         {
-                        "Segment_ID" :                       "5 -  5",
+                        "Segment" :                                 5,
                         "Line" :                                false,
                         "Air_Velocity" :                        285.6,
                         "Reynolds_Number" :               0.14513E+07
@@ -144,18 +178,35 @@
                         [
                         {
                         "Section" :                                    1,
+                        "Segment" :                                 1,
                         "Airflow" :                            4366.0,
                         "Buoyancy" :                          0.00000,
                         "Pressure_Change" :                  -4.02234
                         },
                         {
                         "Section" :                                    2,
+                        "Segment" :                                 2,
+                        "Airflow" :                           -4366.0,
+                        "Buoyancy" :                          0.00000,
+                        "Pressure_Change" :                   4.02234
+                        },
+                        {
+                        "Section" :                                    2,
+                        "Segment" :                                 3,
+                        "Airflow" :                           -4366.0,
+                        "Buoyancy" :                          0.00000,
+                        "Pressure_Change" :                   4.02234
+                        },
+                        {
+                        "Section" :                                    2,
+                        "Segment" :                                 4,
                         "Airflow" :                           -4366.0,
                         "Buoyancy" :                          0.00000,
                         "Pressure_Change" :                   4.02234
                         },
                         {
                         "Section" :                                    5,
+                        "Segment" :                                 5,
                         "Airflow" :                            8732.1,
                         "Buoyancy" :                          0.00000,
                         "Pressure_Change" :                   7.33916
@@ -164,35 +215,35 @@
          "Segment_Data" : 
                         [
                         {
-                        "Segment_ID" :                       "1 -  1",
+                        "Segment" :                                 1,
                         "Line" :                                 true,
                         "Air_Velocity" :                        249.0,
                         "Reynolds_Number" :               0.11944E+07,
                         "Number_Of_Trains" :                        0
                         },
                         {
-                        "Segment_ID" :                       "2 -  2",
+                        "Segment" :                                 2,
                         "Line" :                                 true,
                         "Air_Velocity" :                       -249.0,
                         "Reynolds_Number" :               0.11944E+07,
                         "Number_Of_Trains" :                        0
                         },
                         {
-                        "Segment_ID" :                       "2 -  3",
+                        "Segment" :                                 3,
                         "Line" :                                 true,
                         "Air_Velocity" :                       -249.0,
                         "Reynolds_Number" :               0.11944E+07,
                         "Number_Of_Trains" :                        0
                         },
                         {
-                        "Segment_ID" :                       "2 -  4",
+                        "Segment" :                                 4,
                         "Line" :                                 true,
                         "Air_Velocity" :                       -249.0,
                         "Reynolds_Number" :               0.11944E+07,
                         "Number_Of_Trains" :                        0
                         },
                         {
-                        "Segment_ID" :                       "5 -  5",
+                        "Segment" :                                 5,
                         "Line" :                                false,
                         "Air_Velocity" :                        313.3,
                         "Reynolds_Number" :               0.15918E+07
@@ -207,18 +258,35 @@
                         [
                         {
                         "Section" :                                    1,
+                        "Segment" :                                 1,
                         "Airflow" :                            4366.5,
                         "Buoyancy" :                          0.00000,
                         "Pressure_Change" :                  -3.97807
                         },
                         {
                         "Section" :                                    2,
+                        "Segment" :                                 2,
+                        "Airflow" :                           -4366.5,
+                        "Buoyancy" :                          0.00000,
+                        "Pressure_Change" :                   3.97807
+                        },
+                        {
+                        "Section" :                                    2,
+                        "Segment" :                                 3,
+                        "Airflow" :                           -4366.5,
+                        "Buoyancy" :                          0.00000,
+                        "Pressure_Change" :                   3.97807
+                        },
+                        {
+                        "Section" :                                    2,
+                        "Segment" :                                 4,
                         "Airflow" :                           -4366.5,
                         "Buoyancy" :                          0.00000,
                         "Pressure_Change" :                   3.97807
                         },
                         {
                         "Section" :                                    5,
+                        "Segment" :                                 5,
                         "Airflow" :                            8733.0,
                         "Buoyancy" :                          0.00000,
                         "Pressure_Change" :                   7.29554
@@ -227,35 +295,35 @@
          "Segment_Data" : 
                         [
                         {
-                        "Segment_ID" :                       "1 -  1",
+                        "Segment" :                                 1,
                         "Line" :                                 true,
                         "Air_Velocity" :                        249.1,
                         "Reynolds_Number" :               0.11945E+07,
                         "Number_Of_Trains" :                        0
                         },
                         {
-                        "Segment_ID" :                       "2 -  2",
+                        "Segment" :                                 2,
                         "Line" :                                 true,
                         "Air_Velocity" :                       -249.1,
                         "Reynolds_Number" :               0.11945E+07,
                         "Number_Of_Trains" :                        0
                         },
                         {
-                        "Segment_ID" :                       "2 -  3",
+                        "Segment" :                                 3,
                         "Line" :                                 true,
                         "Air_Velocity" :                       -249.1,
                         "Reynolds_Number" :               0.11945E+07,
                         "Number_Of_Trains" :                        0
                         },
                         {
-                        "Segment_ID" :                       "2 -  4",
+                        "Segment" :                                 4,
                         "Line" :                                 true,
                         "Air_Velocity" :                       -249.1,
                         "Reynolds_Number" :               0.11945E+07,
                         "Number_Of_Trains" :                        0
                         },
                         {
-                        "Segment_ID" :                       "5 -  5",
+                        "Segment" :                                 5,
                         "Line" :                                false,
                         "Air_Velocity" :                        313.3,
                         "Reynolds_Number" :               0.15920E+07
@@ -270,18 +338,35 @@
                         [
                         {
                         "Section" :                                    1,
+                        "Segment" :                                 1,
                         "Airflow" :                            4366.5,
                         "Buoyancy" :                          0.00000,
                         "Pressure_Change" :                  -3.97807
                         },
                         {
                         "Section" :                                    2,
+                        "Segment" :                                 2,
+                        "Airflow" :                           -4366.5,
+                        "Buoyancy" :                          0.00000,
+                        "Pressure_Change" :                   3.97807
+                        },
+                        {
+                        "Section" :                                    2,
+                        "Segment" :                                 3,
+                        "Airflow" :                           -4366.5,
+                        "Buoyancy" :                          0.00000,
+                        "Pressure_Change" :                   3.97807
+                        },
+                        {
+                        "Section" :                                    2,
+                        "Segment" :                                 4,
                         "Airflow" :                           -4366.5,
                         "Buoyancy" :                          0.00000,
                         "Pressure_Change" :                   3.97807
                         },
                         {
                         "Section" :                                    5,
+                        "Segment" :                                 5,
                         "Airflow" :                            8733.0,
                         "Buoyancy" :                          0.00000,
                         "Pressure_Change" :                   7.29554
@@ -290,35 +375,35 @@
          "Segment_Data" : 
                         [
                         {
-                        "Segment_ID" :                       "1 -  1",
+                        "Segment" :                                 1,
                         "Line" :                                 true,
                         "Air_Velocity" :                        249.1,
                         "Reynolds_Number" :               0.11945E+07,
                         "Number_Of_Trains" :                        0
                         },
                         {
-                        "Segment_ID" :                       "2 -  2",
+                        "Segment" :                                 2,
                         "Line" :                                 true,
                         "Air_Velocity" :                       -249.1,
                         "Reynolds_Number" :               0.11945E+07,
                         "Number_Of_Trains" :                        0
                         },
                         {
-                        "Segment_ID" :                       "2 -  3",
+                        "Segment" :                                 3,
                         "Line" :                                 true,
                         "Air_Velocity" :                       -249.1,
                         "Reynolds_Number" :               0.11945E+07,
                         "Number_Of_Trains" :                        0
                         },
                         {
-                        "Segment_ID" :                       "2 -  4",
+                        "Segment" :                                 4,
                         "Line" :                                 true,
                         "Air_Velocity" :                       -249.1,
                         "Reynolds_Number" :               0.11945E+07,
                         "Number_Of_Trains" :                        0
                         },
                         {
-                        "Segment_ID" :                       "5 -  5",
+                        "Segment" :                                 5,
                         "Line" :                                false,
                         "Air_Velocity" :                        313.3,
                         "Reynolds_Number" :               0.15920E+07
@@ -333,18 +418,35 @@
                         [
                         {
                         "Section" :                                    1,
+                        "Segment" :                                 1,
                         "Airflow" :                            4366.5,
                         "Buoyancy" :                          0.00000,
                         "Pressure_Change" :                  -3.97807
                         },
                         {
                         "Section" :                                    2,
+                        "Segment" :                                 2,
+                        "Airflow" :                           -4366.5,
+                        "Buoyancy" :                          0.00000,
+                        "Pressure_Change" :                   3.97806
+                        },
+                        {
+                        "Section" :                                    2,
+                        "Segment" :                                 3,
+                        "Airflow" :                           -4366.5,
+                        "Buoyancy" :                          0.00000,
+                        "Pressure_Change" :                   3.97806
+                        },
+                        {
+                        "Section" :                                    2,
+                        "Segment" :                                 4,
                         "Airflow" :                           -4366.5,
                         "Buoyancy" :                          0.00000,
                         "Pressure_Change" :                   3.97806
                         },
                         {
                         "Section" :                                    5,
+                        "Segment" :                                 5,
                         "Airflow" :                            8733.0,
                         "Buoyancy" :                          0.00000,
                         "Pressure_Change" :                   7.29554
@@ -353,35 +455,35 @@
          "Segment_Data" : 
                         [
                         {
-                        "Segment_ID" :                       "1 -  1",
+                        "Segment" :                                 1,
                         "Line" :                                 true,
                         "Air_Velocity" :                        249.1,
                         "Reynolds_Number" :               0.11945E+07,
                         "Number_Of_Trains" :                        0
                         },
                         {
-                        "Segment_ID" :                       "2 -  2",
+                        "Segment" :                                 2,
                         "Line" :                                 true,
                         "Air_Velocity" :                       -249.1,
                         "Reynolds_Number" :               0.11945E+07,
                         "Number_Of_Trains" :                        0
                         },
                         {
-                        "Segment_ID" :                       "2 -  3",
+                        "Segment" :                                 3,
                         "Line" :                                 true,
                         "Air_Velocity" :                       -249.1,
                         "Reynolds_Number" :               0.11945E+07,
                         "Number_Of_Trains" :                        0
                         },
                         {
-                        "Segment_ID" :                       "2 -  4",
+                        "Segment" :                                 4,
                         "Line" :                                 true,
                         "Air_Velocity" :                       -249.1,
                         "Reynolds_Number" :               0.11945E+07,
                         "Number_Of_Trains" :                        0
                         },
                         {
-                        "Segment_ID" :                       "5 -  5",
+                        "Segment" :                                 5,
                         "Line" :                                false,
                         "Air_Velocity" :                        313.3,
                         "Reynolds_Number" :               0.15920E+07
@@ -396,18 +498,35 @@
                         [
                         {
                         "Section" :                                    1,
+                        "Segment" :                                 1,
                         "Airflow" :                            4366.5,
                         "Buoyancy" :                          0.00000,
                         "Pressure_Change" :                  -3.97807
                         },
                         {
                         "Section" :                                    2,
+                        "Segment" :                                 2,
+                        "Airflow" :                           -4366.5,
+                        "Buoyancy" :                          0.00000,
+                        "Pressure_Change" :                   3.97806
+                        },
+                        {
+                        "Section" :                                    2,
+                        "Segment" :                                 3,
+                        "Airflow" :                           -4366.5,
+                        "Buoyancy" :                          0.00000,
+                        "Pressure_Change" :                   3.97806
+                        },
+                        {
+                        "Section" :                                    2,
+                        "Segment" :                                 4,
                         "Airflow" :                           -4366.5,
                         "Buoyancy" :                          0.00000,
                         "Pressure_Change" :                   3.97806
                         },
                         {
                         "Section" :                                    5,
+                        "Segment" :                                 5,
                         "Airflow" :                            8733.0,
                         "Buoyancy" :                          0.00000,
                         "Pressure_Change" :                   7.29554
@@ -416,35 +535,35 @@
          "Segment_Data" : 
                         [
                         {
-                        "Segment_ID" :                       "1 -  1",
+                        "Segment" :                                 1,
                         "Line" :                                 true,
                         "Air_Velocity" :                        249.1,
                         "Reynolds_Number" :               0.11945E+07,
                         "Number_Of_Trains" :                        0
                         },
                         {
-                        "Segment_ID" :                       "2 -  2",
+                        "Segment" :                                 2,
                         "Line" :                                 true,
                         "Air_Velocity" :                       -249.1,
                         "Reynolds_Number" :               0.11945E+07,
                         "Number_Of_Trains" :                        0
                         },
                         {
-                        "Segment_ID" :                       "2 -  3",
+                        "Segment" :                                 3,
                         "Line" :                                 true,
                         "Air_Velocity" :                       -249.1,
                         "Reynolds_Number" :               0.11945E+07,
                         "Number_Of_Trains" :                        0
                         },
                         {
-                        "Segment_ID" :                       "2 -  4",
+                        "Segment" :                                 4,
                         "Line" :                                 true,
                         "Air_Velocity" :                       -249.1,
                         "Reynolds_Number" :               0.11945E+07,
                         "Number_Of_Trains" :                        0
                         },
                         {
-                        "Segment_ID" :                       "5 -  5",
+                        "Segment" :                                 5,
                         "Line" :                                false,
                         "Air_Velocity" :                        313.3,
                         "Reynolds_Number" :               0.15920E+07
@@ -459,18 +578,35 @@
                         [
                         {
                         "Section" :                                    1,
+                        "Segment" :                                 1,
                         "Airflow" :                            4366.5,
                         "Buoyancy" :                          0.00000,
                         "Pressure_Change" :                  -3.97807
                         },
                         {
                         "Section" :                                    2,
+                        "Segment" :                                 2,
+                        "Airflow" :                           -4366.5,
+                        "Buoyancy" :                          0.00000,
+                        "Pressure_Change" :                   3.97806
+                        },
+                        {
+                        "Section" :                                    2,
+                        "Segment" :                                 3,
+                        "Airflow" :                           -4366.5,
+                        "Buoyancy" :                          0.00000,
+                        "Pressure_Change" :                   3.97806
+                        },
+                        {
+                        "Section" :                                    2,
+                        "Segment" :                                 4,
                         "Airflow" :                           -4366.5,
                         "Buoyancy" :                          0.00000,
                         "Pressure_Change" :                   3.97806
                         },
                         {
                         "Section" :                                    5,
+                        "Segment" :                                 5,
                         "Airflow" :                            8733.0,
                         "Buoyancy" :                          0.00000,
                         "Pressure_Change" :                   7.29554
@@ -479,35 +615,35 @@
          "Segment_Data" : 
                         [
                         {
-                        "Segment_ID" :                       "1 -  1",
+                        "Segment" :                                 1,
                         "Line" :                                 true,
                         "Air_Velocity" :                        249.1,
                         "Reynolds_Number" :               0.11945E+07,
                         "Number_Of_Trains" :                        0
                         },
                         {
-                        "Segment_ID" :                       "2 -  2",
+                        "Segment" :                                 2,
                         "Line" :                                 true,
                         "Air_Velocity" :                       -249.1,
                         "Reynolds_Number" :               0.11945E+07,
                         "Number_Of_Trains" :                        0
                         },
                         {
-                        "Segment_ID" :                       "2 -  3",
+                        "Segment" :                                 3,
                         "Line" :                                 true,
                         "Air_Velocity" :                       -249.1,
                         "Reynolds_Number" :               0.11945E+07,
                         "Number_Of_Trains" :                        0
                         },
                         {
-                        "Segment_ID" :                       "2 -  4",
+                        "Segment" :                                 4,
                         "Line" :                                 true,
                         "Air_Velocity" :                       -249.1,
                         "Reynolds_Number" :               0.11945E+07,
                         "Number_Of_Trains" :                        0
                         },
                         {
-                        "Segment_ID" :                       "5 -  5",
+                        "Segment" :                                 5,
                         "Line" :                                false,
                         "Air_Velocity" :                        313.3,
                         "Reynolds_Number" :               0.15920E+07
@@ -522,18 +658,35 @@
                         [
                         {
                         "Section" :                                    1,
+                        "Segment" :                                 1,
                         "Airflow" :                            4366.5,
                         "Buoyancy" :                          0.00000,
                         "Pressure_Change" :                  -3.97807
                         },
                         {
                         "Section" :                                    2,
+                        "Segment" :                                 2,
+                        "Airflow" :                           -4366.5,
+                        "Buoyancy" :                          0.00000,
+                        "Pressure_Change" :                   3.97806
+                        },
+                        {
+                        "Section" :                                    2,
+                        "Segment" :                                 3,
+                        "Airflow" :                           -4366.5,
+                        "Buoyancy" :                          0.00000,
+                        "Pressure_Change" :                   3.97806
+                        },
+                        {
+                        "Section" :                                    2,
+                        "Segment" :                                 4,
                         "Airflow" :                           -4366.5,
                         "Buoyancy" :                          0.00000,
                         "Pressure_Change" :                   3.97806
                         },
                         {
                         "Section" :                                    5,
+                        "Segment" :                                 5,
                         "Airflow" :                            8733.0,
                         "Buoyancy" :                          0.00000,
                         "Pressure_Change" :                   7.29554
@@ -542,35 +695,35 @@
          "Segment_Data" : 
                         [
                         {
-                        "Segment_ID" :                       "1 -  1",
+                        "Segment" :                                 1,
                         "Line" :                                 true,
                         "Air_Velocity" :                        249.1,
                         "Reynolds_Number" :               0.11945E+07,
                         "Number_Of_Trains" :                        0
                         },
                         {
-                        "Segment_ID" :                       "2 -  2",
+                        "Segment" :                                 2,
                         "Line" :                                 true,
                         "Air_Velocity" :                       -249.1,
                         "Reynolds_Number" :               0.11945E+07,
                         "Number_Of_Trains" :                        0
                         },
                         {
-                        "Segment_ID" :                       "2 -  3",
+                        "Segment" :                                 3,
                         "Line" :                                 true,
                         "Air_Velocity" :                       -249.1,
                         "Reynolds_Number" :               0.11945E+07,
                         "Number_Of_Trains" :                        0
                         },
                         {
-                        "Segment_ID" :                       "2 -  4",
+                        "Segment" :                                 4,
                         "Line" :                                 true,
                         "Air_Velocity" :                       -249.1,
                         "Reynolds_Number" :               0.11945E+07,
                         "Number_Of_Trains" :                        0
                         },
                         {
-                        "Segment_ID" :                       "5 -  5",
+                        "Segment" :                                 5,
                         "Line" :                                false,
                         "Air_Velocity" :                        313.3,
                         "Reynolds_Number" :               0.15920E+07
@@ -585,18 +738,35 @@
                         [
                         {
                         "Section" :                                    1,
+                        "Segment" :                                 1,
                         "Airflow" :                            4366.5,
                         "Buoyancy" :                          0.00000,
                         "Pressure_Change" :                  -3.97807
                         },
                         {
                         "Section" :                                    2,
+                        "Segment" :                                 2,
+                        "Airflow" :                           -4366.5,
+                        "Buoyancy" :                          0.00000,
+                        "Pressure_Change" :                   3.97806
+                        },
+                        {
+                        "Section" :                                    2,
+                        "Segment" :                                 3,
+                        "Airflow" :                           -4366.5,
+                        "Buoyancy" :                          0.00000,
+                        "Pressure_Change" :                   3.97806
+                        },
+                        {
+                        "Section" :                                    2,
+                        "Segment" :                                 4,
                         "Airflow" :                           -4366.5,
                         "Buoyancy" :                          0.00000,
                         "Pressure_Change" :                   3.97806
                         },
                         {
                         "Section" :                                    5,
+                        "Segment" :                                 5,
                         "Airflow" :                            8733.0,
                         "Buoyancy" :                          0.00000,
                         "Pressure_Change" :                   7.29554
@@ -605,35 +775,35 @@
          "Segment_Data" : 
                         [
                         {
-                        "Segment_ID" :                       "1 -  1",
+                        "Segment" :                                 1,
                         "Line" :                                 true,
                         "Air_Velocity" :                        249.1,
                         "Reynolds_Number" :               0.11945E+07,
                         "Number_Of_Trains" :                        0
                         },
                         {
-                        "Segment_ID" :                       "2 -  2",
+                        "Segment" :                                 2,
                         "Line" :                                 true,
                         "Air_Velocity" :                       -249.1,
                         "Reynolds_Number" :               0.11945E+07,
                         "Number_Of_Trains" :                        0
                         },
                         {
-                        "Segment_ID" :                       "2 -  3",
+                        "Segment" :                                 3,
                         "Line" :                                 true,
                         "Air_Velocity" :                       -249.1,
                         "Reynolds_Number" :               0.11945E+07,
                         "Number_Of_Trains" :                        0
                         },
                         {
-                        "Segment_ID" :                       "2 -  4",
+                        "Segment" :                                 4,
                         "Line" :                                 true,
                         "Air_Velocity" :                       -249.1,
                         "Reynolds_Number" :               0.11945E+07,
                         "Number_Of_Trains" :                        0
                         },
                         {
-                        "Segment_ID" :                       "5 -  5",
+                        "Segment" :                                 5,
                         "Line" :                                false,
                         "Air_Velocity" :                        313.3,
                         "Reynolds_Number" :               0.15920E+07
@@ -648,18 +818,35 @@
                         [
                         {
                         "Section" :                                    1,
+                        "Segment" :                                 1,
                         "Airflow" :                            4366.5,
                         "Buoyancy" :                          0.00000,
                         "Pressure_Change" :                  -3.97807
                         },
                         {
                         "Section" :                                    2,
+                        "Segment" :                                 2,
+                        "Airflow" :                           -4366.5,
+                        "Buoyancy" :                          0.00000,
+                        "Pressure_Change" :                   3.97806
+                        },
+                        {
+                        "Section" :                                    2,
+                        "Segment" :                                 3,
+                        "Airflow" :                           -4366.5,
+                        "Buoyancy" :                          0.00000,
+                        "Pressure_Change" :                   3.97806
+                        },
+                        {
+                        "Section" :                                    2,
+                        "Segment" :                                 4,
                         "Airflow" :                           -4366.5,
                         "Buoyancy" :                          0.00000,
                         "Pressure_Change" :                   3.97806
                         },
                         {
                         "Section" :                                    5,
+                        "Segment" :                                 5,
                         "Airflow" :                            8733.0,
                         "Buoyancy" :                          0.00000,
                         "Pressure_Change" :                   7.29554
@@ -668,35 +855,35 @@
          "Segment_Data" : 
                         [
                         {
-                        "Segment_ID" :                       "1 -  1",
+                        "Segment" :                                 1,
                         "Line" :                                 true,
                         "Air_Velocity" :                        249.1,
                         "Reynolds_Number" :               0.11945E+07,
                         "Number_Of_Trains" :                        0
                         },
                         {
-                        "Segment_ID" :                       "2 -  2",
+                        "Segment" :                                 2,
                         "Line" :                                 true,
                         "Air_Velocity" :                       -249.1,
                         "Reynolds_Number" :               0.11945E+07,
                         "Number_Of_Trains" :                        0
                         },
                         {
-                        "Segment_ID" :                       "2 -  3",
+                        "Segment" :                                 3,
                         "Line" :                                 true,
                         "Air_Velocity" :                       -249.1,
                         "Reynolds_Number" :               0.11945E+07,
                         "Number_Of_Trains" :                        0
                         },
                         {
-                        "Segment_ID" :                       "2 -  4",
+                        "Segment" :                                 4,
                         "Line" :                                 true,
                         "Air_Velocity" :                       -249.1,
                         "Reynolds_Number" :               0.11945E+07,
                         "Number_Of_Trains" :                        0
                         },
                         {
-                        "Segment_ID" :                       "5 -  5",
+                        "Segment" :                                 5,
                         "Line" :                                false,
                         "Air_Velocity" :                        313.3,
                         "Reynolds_Number" :               0.15920E+07
@@ -711,18 +898,35 @@
                         [
                         {
                         "Section" :                                    1,
+                        "Segment" :                                 1,
                         "Airflow" :                            4366.5,
                         "Buoyancy" :                          0.00000,
                         "Pressure_Change" :                  -3.97807
                         },
                         {
                         "Section" :                                    2,
+                        "Segment" :                                 2,
+                        "Airflow" :                           -4366.5,
+                        "Buoyancy" :                          0.00000,
+                        "Pressure_Change" :                   3.97806
+                        },
+                        {
+                        "Section" :                                    2,
+                        "Segment" :                                 3,
+                        "Airflow" :                           -4366.5,
+                        "Buoyancy" :                          0.00000,
+                        "Pressure_Change" :                   3.97806
+                        },
+                        {
+                        "Section" :                                    2,
+                        "Segment" :                                 4,
                         "Airflow" :                           -4366.5,
                         "Buoyancy" :                          0.00000,
                         "Pressure_Change" :                   3.97806
                         },
                         {
                         "Section" :                                    5,
+                        "Segment" :                                 5,
                         "Airflow" :                            8733.0,
                         "Buoyancy" :                          0.00000,
                         "Pressure_Change" :                   7.29554
@@ -731,35 +935,35 @@
          "Segment_Data" : 
                         [
                         {
-                        "Segment_ID" :                       "1 -  1",
+                        "Segment" :                                 1,
                         "Line" :                                 true,
                         "Air_Velocity" :                        249.1,
                         "Reynolds_Number" :               0.11945E+07,
                         "Number_Of_Trains" :                        0
                         },
                         {
-                        "Segment_ID" :                       "2 -  2",
+                        "Segment" :                                 2,
                         "Line" :                                 true,
                         "Air_Velocity" :                       -249.1,
                         "Reynolds_Number" :               0.11945E+07,
                         "Number_Of_Trains" :                        0
                         },
                         {
-                        "Segment_ID" :                       "2 -  3",
+                        "Segment" :                                 3,
                         "Line" :                                 true,
                         "Air_Velocity" :                       -249.1,
                         "Reynolds_Number" :               0.11945E+07,
                         "Number_Of_Trains" :                        0
                         },
                         {
-                        "Segment_ID" :                       "2 -  4",
+                        "Segment" :                                 4,
                         "Line" :                                 true,
                         "Air_Velocity" :                       -249.1,
                         "Reynolds_Number" :               0.11945E+07,
                         "Number_Of_Trains" :                        0
                         },
                         {
-                        "Segment_ID" :                       "5 -  5",
+                        "Segment" :                                 5,
                         "Line" :                                false,
                         "Air_Velocity" :                        313.3,
                         "Reynolds_Number" :               0.15920E+07
@@ -774,18 +978,35 @@
                         [
                         {
                         "Section" :                                    1,
+                        "Segment" :                                 1,
                         "Airflow" :                            4366.5,
                         "Buoyancy" :                          0.00000,
                         "Pressure_Change" :                  -3.97807
                         },
                         {
                         "Section" :                                    2,
+                        "Segment" :                                 2,
+                        "Airflow" :                           -4366.5,
+                        "Buoyancy" :                          0.00000,
+                        "Pressure_Change" :                   3.97806
+                        },
+                        {
+                        "Section" :                                    2,
+                        "Segment" :                                 3,
+                        "Airflow" :                           -4366.5,
+                        "Buoyancy" :                          0.00000,
+                        "Pressure_Change" :                   3.97806
+                        },
+                        {
+                        "Section" :                                    2,
+                        "Segment" :                                 4,
                         "Airflow" :                           -4366.5,
                         "Buoyancy" :                          0.00000,
                         "Pressure_Change" :                   3.97806
                         },
                         {
                         "Section" :                                    5,
+                        "Segment" :                                 5,
                         "Airflow" :                            8733.0,
                         "Buoyancy" :                          0.00000,
                         "Pressure_Change" :                   7.29554
@@ -794,35 +1015,35 @@
          "Segment_Data" : 
                         [
                         {
-                        "Segment_ID" :                       "1 -  1",
+                        "Segment" :                                 1,
                         "Line" :                                 true,
                         "Air_Velocity" :                        249.1,
                         "Reynolds_Number" :               0.11945E+07,
                         "Number_Of_Trains" :                        0
                         },
                         {
-                        "Segment_ID" :                       "2 -  2",
+                        "Segment" :                                 2,
                         "Line" :                                 true,
                         "Air_Velocity" :                       -249.1,
                         "Reynolds_Number" :               0.11945E+07,
                         "Number_Of_Trains" :                        0
                         },
                         {
-                        "Segment_ID" :                       "2 -  3",
+                        "Segment" :                                 3,
                         "Line" :                                 true,
                         "Air_Velocity" :                       -249.1,
                         "Reynolds_Number" :               0.11945E+07,
                         "Number_Of_Trains" :                        0
                         },
                         {
-                        "Segment_ID" :                       "2 -  4",
+                        "Segment" :                                 4,
                         "Line" :                                 true,
                         "Air_Velocity" :                       -249.1,
                         "Reynolds_Number" :               0.11945E+07,
                         "Number_Of_Trains" :                        0
                         },
                         {
-                        "Segment_ID" :                       "5 -  5",
+                        "Segment" :                                 5,
                         "Line" :                                false,
                         "Air_Velocity" :                        313.3,
                         "Reynolds_Number" :               0.15920E+07
@@ -837,18 +1058,35 @@
                         [
                         {
                         "Section" :                                    1,
+                        "Segment" :                                 1,
                         "Airflow" :                            4366.5,
                         "Buoyancy" :                          0.00000,
                         "Pressure_Change" :                  -3.97807
                         },
                         {
                         "Section" :                                    2,
+                        "Segment" :                                 2,
+                        "Airflow" :                           -4366.5,
+                        "Buoyancy" :                          0.00000,
+                        "Pressure_Change" :                   3.97806
+                        },
+                        {
+                        "Section" :                                    2,
+                        "Segment" :                                 3,
+                        "Airflow" :                           -4366.5,
+                        "Buoyancy" :                          0.00000,
+                        "Pressure_Change" :                   3.97806
+                        },
+                        {
+                        "Section" :                                    2,
+                        "Segment" :                                 4,
                         "Airflow" :                           -4366.5,
                         "Buoyancy" :                          0.00000,
                         "Pressure_Change" :                   3.97806
                         },
                         {
                         "Section" :                                    5,
+                        "Segment" :                                 5,
                         "Airflow" :                            8733.0,
                         "Buoyancy" :                          0.00000,
                         "Pressure_Change" :                   7.29554
@@ -857,35 +1095,35 @@
          "Segment_Data" : 
                         [
                         {
-                        "Segment_ID" :                       "1 -  1",
+                        "Segment" :                                 1,
                         "Line" :                                 true,
                         "Air_Velocity" :                        249.1,
                         "Reynolds_Number" :               0.11945E+07,
                         "Number_Of_Trains" :                        0
                         },
                         {
-                        "Segment_ID" :                       "2 -  2",
+                        "Segment" :                                 2,
                         "Line" :                                 true,
                         "Air_Velocity" :                       -249.1,
                         "Reynolds_Number" :               0.11945E+07,
                         "Number_Of_Trains" :                        0
                         },
                         {
-                        "Segment_ID" :                       "2 -  3",
+                        "Segment" :                                 3,
                         "Line" :                                 true,
                         "Air_Velocity" :                       -249.1,
                         "Reynolds_Number" :               0.11945E+07,
                         "Number_Of_Trains" :                        0
                         },
                         {
-                        "Segment_ID" :                       "2 -  4",
+                        "Segment" :                                 4,
                         "Line" :                                 true,
                         "Air_Velocity" :                       -249.1,
                         "Reynolds_Number" :               0.11945E+07,
                         "Number_Of_Trains" :                        0
                         },
                         {
-                        "Segment_ID" :                       "5 -  5",
+                        "Segment" :                                 5,
                         "Line" :                                false,
                         "Air_Velocity" :                        313.3,
                         "Reynolds_Number" :               0.15920E+07
@@ -900,18 +1138,35 @@
                         [
                         {
                         "Section" :                                    1,
+                        "Segment" :                                 1,
                         "Airflow" :                            4366.5,
                         "Buoyancy" :                          0.00000,
                         "Pressure_Change" :                  -3.97807
                         },
                         {
                         "Section" :                                    2,
+                        "Segment" :                                 2,
+                        "Airflow" :                           -4366.5,
+                        "Buoyancy" :                          0.00000,
+                        "Pressure_Change" :                   3.97806
+                        },
+                        {
+                        "Section" :                                    2,
+                        "Segment" :                                 3,
+                        "Airflow" :                           -4366.5,
+                        "Buoyancy" :                          0.00000,
+                        "Pressure_Change" :                   3.97806
+                        },
+                        {
+                        "Section" :                                    2,
+                        "Segment" :                                 4,
                         "Airflow" :                           -4366.5,
                         "Buoyancy" :                          0.00000,
                         "Pressure_Change" :                   3.97806
                         },
                         {
                         "Section" :                                    5,
+                        "Segment" :                                 5,
                         "Airflow" :                            8733.0,
                         "Buoyancy" :                          0.00000,
                         "Pressure_Change" :                   7.29554
@@ -920,35 +1175,35 @@
          "Segment_Data" : 
                         [
                         {
-                        "Segment_ID" :                       "1 -  1",
+                        "Segment" :                                 1,
                         "Line" :                                 true,
                         "Air_Velocity" :                        249.1,
                         "Reynolds_Number" :               0.11945E+07,
                         "Number_Of_Trains" :                        0
                         },
                         {
-                        "Segment_ID" :                       "2 -  2",
+                        "Segment" :                                 2,
                         "Line" :                                 true,
                         "Air_Velocity" :                       -249.1,
                         "Reynolds_Number" :               0.11945E+07,
                         "Number_Of_Trains" :                        0
                         },
                         {
-                        "Segment_ID" :                       "2 -  3",
+                        "Segment" :                                 3,
                         "Line" :                                 true,
                         "Air_Velocity" :                       -249.1,
                         "Reynolds_Number" :               0.11945E+07,
                         "Number_Of_Trains" :                        0
                         },
                         {
-                        "Segment_ID" :                       "2 -  4",
+                        "Segment" :                                 4,
                         "Line" :                                 true,
                         "Air_Velocity" :                       -249.1,
                         "Reynolds_Number" :               0.11945E+07,
                         "Number_Of_Trains" :                        0
                         },
                         {
-                        "Segment_ID" :                       "5 -  5",
+                        "Segment" :                                 5,
                         "Line" :                                false,
                         "Air_Velocity" :                        313.3,
                         "Reynolds_Number" :               0.15920E+07
@@ -963,18 +1218,35 @@
                         [
                         {
                         "Section" :                                    1,
+                        "Segment" :                                 1,
                         "Airflow" :                            4366.5,
                         "Buoyancy" :                          0.00000,
                         "Pressure_Change" :                  -3.97807
                         },
                         {
                         "Section" :                                    2,
+                        "Segment" :                                 2,
+                        "Airflow" :                           -4366.5,
+                        "Buoyancy" :                          0.00000,
+                        "Pressure_Change" :                   3.97806
+                        },
+                        {
+                        "Section" :                                    2,
+                        "Segment" :                                 3,
+                        "Airflow" :                           -4366.5,
+                        "Buoyancy" :                          0.00000,
+                        "Pressure_Change" :                   3.97806
+                        },
+                        {
+                        "Section" :                                    2,
+                        "Segment" :                                 4,
                         "Airflow" :                           -4366.5,
                         "Buoyancy" :                          0.00000,
                         "Pressure_Change" :                   3.97806
                         },
                         {
                         "Section" :                                    5,
+                        "Segment" :                                 5,
                         "Airflow" :                            8733.0,
                         "Buoyancy" :                          0.00000,
                         "Pressure_Change" :                   7.29554
@@ -983,35 +1255,35 @@
          "Segment_Data" : 
                         [
                         {
-                        "Segment_ID" :                       "1 -  1",
+                        "Segment" :                                 1,
                         "Line" :                                 true,
                         "Air_Velocity" :                        249.1,
                         "Reynolds_Number" :               0.11945E+07,
                         "Number_Of_Trains" :                        0
                         },
                         {
-                        "Segment_ID" :                       "2 -  2",
+                        "Segment" :                                 2,
                         "Line" :                                 true,
                         "Air_Velocity" :                       -249.1,
                         "Reynolds_Number" :               0.11945E+07,
                         "Number_Of_Trains" :                        0
                         },
                         {
-                        "Segment_ID" :                       "2 -  3",
+                        "Segment" :                                 3,
                         "Line" :                                 true,
                         "Air_Velocity" :                       -249.1,
                         "Reynolds_Number" :               0.11945E+07,
                         "Number_Of_Trains" :                        0
                         },
                         {
-                        "Segment_ID" :                       "2 -  4",
+                        "Segment" :                                 4,
                         "Line" :                                 true,
                         "Air_Velocity" :                       -249.1,
                         "Reynolds_Number" :               0.11945E+07,
                         "Number_Of_Trains" :                        0
                         },
                         {
-                        "Segment_ID" :                       "5 -  5",
+                        "Segment" :                                 5,
                         "Line" :                                false,
                         "Air_Velocity" :                        313.3,
                         "Reynolds_Number" :               0.15920E+07
@@ -1026,18 +1298,35 @@
                         [
                         {
                         "Section" :                                    1,
+                        "Segment" :                                 1,
                         "Airflow" :                            4366.5,
                         "Buoyancy" :                          0.00000,
                         "Pressure_Change" :                  -3.97807
                         },
                         {
                         "Section" :                                    2,
+                        "Segment" :                                 2,
+                        "Airflow" :                           -4366.5,
+                        "Buoyancy" :                          0.00000,
+                        "Pressure_Change" :                   3.97806
+                        },
+                        {
+                        "Section" :                                    2,
+                        "Segment" :                                 3,
+                        "Airflow" :                           -4366.5,
+                        "Buoyancy" :                          0.00000,
+                        "Pressure_Change" :                   3.97806
+                        },
+                        {
+                        "Section" :                                    2,
+                        "Segment" :                                 4,
                         "Airflow" :                           -4366.5,
                         "Buoyancy" :                          0.00000,
                         "Pressure_Change" :                   3.97806
                         },
                         {
                         "Section" :                                    5,
+                        "Segment" :                                 5,
                         "Airflow" :                            8733.0,
                         "Buoyancy" :                          0.00000,
                         "Pressure_Change" :                   7.29554
@@ -1046,35 +1335,35 @@
          "Segment_Data" : 
                         [
                         {
-                        "Segment_ID" :                       "1 -  1",
+                        "Segment" :                                 1,
                         "Line" :                                 true,
                         "Air_Velocity" :                        249.1,
                         "Reynolds_Number" :               0.11945E+07,
                         "Number_Of_Trains" :                        0
                         },
                         {
-                        "Segment_ID" :                       "2 -  2",
+                        "Segment" :                                 2,
                         "Line" :                                 true,
                         "Air_Velocity" :                       -249.1,
                         "Reynolds_Number" :               0.11945E+07,
                         "Number_Of_Trains" :                        0
                         },
                         {
-                        "Segment_ID" :                       "2 -  3",
+                        "Segment" :                                 3,
                         "Line" :                                 true,
                         "Air_Velocity" :                       -249.1,
                         "Reynolds_Number" :               0.11945E+07,
                         "Number_Of_Trains" :                        0
                         },
                         {
-                        "Segment_ID" :                       "2 -  4",
+                        "Segment" :                                 4,
                         "Line" :                                 true,
                         "Air_Velocity" :                       -249.1,
                         "Reynolds_Number" :               0.11945E+07,
                         "Number_Of_Trains" :                        0
                         },
                         {
-                        "Segment_ID" :                       "5 -  5",
+                        "Segment" :                                 5,
                         "Line" :                                false,
                         "Air_Velocity" :                        313.3,
                         "Reynolds_Number" :               0.15920E+07
@@ -1089,18 +1378,35 @@
                         [
                         {
                         "Section" :                                    1,
+                        "Segment" :                                 1,
                         "Airflow" :                            4366.5,
                         "Buoyancy" :                          0.00000,
                         "Pressure_Change" :                  -3.97807
                         },
                         {
                         "Section" :                                    2,
+                        "Segment" :                                 2,
+                        "Airflow" :                           -4366.5,
+                        "Buoyancy" :                          0.00000,
+                        "Pressure_Change" :                   3.97806
+                        },
+                        {
+                        "Section" :                                    2,
+                        "Segment" :                                 3,
+                        "Airflow" :                           -4366.5,
+                        "Buoyancy" :                          0.00000,
+                        "Pressure_Change" :                   3.97806
+                        },
+                        {
+                        "Section" :                                    2,
+                        "Segment" :                                 4,
                         "Airflow" :                           -4366.5,
                         "Buoyancy" :                          0.00000,
                         "Pressure_Change" :                   3.97806
                         },
                         {
                         "Section" :                                    5,
+                        "Segment" :                                 5,
                         "Airflow" :                            8733.0,
                         "Buoyancy" :                          0.00000,
                         "Pressure_Change" :                   7.29554
@@ -1109,35 +1415,35 @@
          "Segment_Data" : 
                         [
                         {
-                        "Segment_ID" :                       "1 -  1",
+                        "Segment" :                                 1,
                         "Line" :                                 true,
                         "Air_Velocity" :                        249.1,
                         "Reynolds_Number" :               0.11945E+07,
                         "Number_Of_Trains" :                        0
                         },
                         {
-                        "Segment_ID" :                       "2 -  2",
+                        "Segment" :                                 2,
                         "Line" :                                 true,
                         "Air_Velocity" :                       -249.1,
                         "Reynolds_Number" :               0.11945E+07,
                         "Number_Of_Trains" :                        0
                         },
                         {
-                        "Segment_ID" :                       "2 -  3",
+                        "Segment" :                                 3,
                         "Line" :                                 true,
                         "Air_Velocity" :                       -249.1,
                         "Reynolds_Number" :               0.11945E+07,
                         "Number_Of_Trains" :                        0
                         },
                         {
-                        "Segment_ID" :                       "2 -  4",
+                        "Segment" :                                 4,
                         "Line" :                                 true,
                         "Air_Velocity" :                       -249.1,
                         "Reynolds_Number" :               0.11945E+07,
                         "Number_Of_Trains" :                        0
                         },
                         {
-                        "Segment_ID" :                       "5 -  5",
+                        "Segment" :                                 5,
                         "Line" :                                false,
                         "Air_Velocity" :                        313.3,
                         "Reynolds_Number" :               0.15920E+07
@@ -1152,18 +1458,35 @@
                         [
                         {
                         "Section" :                                    1,
+                        "Segment" :                                 1,
                         "Airflow" :                            4366.5,
                         "Buoyancy" :                          0.00000,
                         "Pressure_Change" :                  -3.97807
                         },
                         {
                         "Section" :                                    2,
+                        "Segment" :                                 2,
+                        "Airflow" :                           -4366.5,
+                        "Buoyancy" :                          0.00000,
+                        "Pressure_Change" :                   3.97806
+                        },
+                        {
+                        "Section" :                                    2,
+                        "Segment" :                                 3,
+                        "Airflow" :                           -4366.5,
+                        "Buoyancy" :                          0.00000,
+                        "Pressure_Change" :                   3.97806
+                        },
+                        {
+                        "Section" :                                    2,
+                        "Segment" :                                 4,
                         "Airflow" :                           -4366.5,
                         "Buoyancy" :                          0.00000,
                         "Pressure_Change" :                   3.97806
                         },
                         {
                         "Section" :                                    5,
+                        "Segment" :                                 5,
                         "Airflow" :                            8733.0,
                         "Buoyancy" :                          0.00000,
                         "Pressure_Change" :                   7.29554
@@ -1172,35 +1495,35 @@
          "Segment_Data" : 
                         [
                         {
-                        "Segment_ID" :                       "1 -  1",
+                        "Segment" :                                 1,
                         "Line" :                                 true,
                         "Air_Velocity" :                        249.1,
                         "Reynolds_Number" :               0.11945E+07,
                         "Number_Of_Trains" :                        0
                         },
                         {
-                        "Segment_ID" :                       "2 -  2",
+                        "Segment" :                                 2,
                         "Line" :                                 true,
                         "Air_Velocity" :                       -249.1,
                         "Reynolds_Number" :               0.11945E+07,
                         "Number_Of_Trains" :                        0
                         },
                         {
-                        "Segment_ID" :                       "2 -  3",
+                        "Segment" :                                 3,
                         "Line" :                                 true,
                         "Air_Velocity" :                       -249.1,
                         "Reynolds_Number" :               0.11945E+07,
                         "Number_Of_Trains" :                        0
                         },
                         {
-                        "Segment_ID" :                       "2 -  4",
+                        "Segment" :                                 4,
                         "Line" :                                 true,
                         "Air_Velocity" :                       -249.1,
                         "Reynolds_Number" :               0.11945E+07,
                         "Number_Of_Trains" :                        0
                         },
                         {
-                        "Segment_ID" :                       "5 -  5",
+                        "Segment" :                                 5,
                         "Line" :                                false,
                         "Air_Velocity" :                        313.3,
                         "Reynolds_Number" :               0.15920E+07
@@ -1215,18 +1538,35 @@
                         [
                         {
                         "Section" :                                    1,
+                        "Segment" :                                 1,
                         "Airflow" :                            4366.5,
                         "Buoyancy" :                          0.00000,
                         "Pressure_Change" :                  -3.97807
                         },
                         {
                         "Section" :                                    2,
+                        "Segment" :                                 2,
+                        "Airflow" :                           -4366.5,
+                        "Buoyancy" :                          0.00000,
+                        "Pressure_Change" :                   3.97806
+                        },
+                        {
+                        "Section" :                                    2,
+                        "Segment" :                                 3,
+                        "Airflow" :                           -4366.5,
+                        "Buoyancy" :                          0.00000,
+                        "Pressure_Change" :                   3.97806
+                        },
+                        {
+                        "Section" :                                    2,
+                        "Segment" :                                 4,
                         "Airflow" :                           -4366.5,
                         "Buoyancy" :                          0.00000,
                         "Pressure_Change" :                   3.97806
                         },
                         {
                         "Section" :                                    5,
+                        "Segment" :                                 5,
                         "Airflow" :                            8733.0,
                         "Buoyancy" :                          0.00000,
                         "Pressure_Change" :                   7.29554
@@ -1235,35 +1575,35 @@
          "Segment_Data" : 
                         [
                         {
-                        "Segment_ID" :                       "1 -  1",
+                        "Segment" :                                 1,
                         "Line" :                                 true,
                         "Air_Velocity" :                        249.1,
                         "Reynolds_Number" :               0.11945E+07,
                         "Number_Of_Trains" :                        0
                         },
                         {
-                        "Segment_ID" :                       "2 -  2",
+                        "Segment" :                                 2,
                         "Line" :                                 true,
                         "Air_Velocity" :                       -249.1,
                         "Reynolds_Number" :               0.11945E+07,
                         "Number_Of_Trains" :                        0
                         },
                         {
-                        "Segment_ID" :                       "2 -  3",
+                        "Segment" :                                 3,
                         "Line" :                                 true,
                         "Air_Velocity" :                       -249.1,
                         "Reynolds_Number" :               0.11945E+07,
                         "Number_Of_Trains" :                        0
                         },
                         {
-                        "Segment_ID" :                       "2 -  4",
+                        "Segment" :                                 4,
                         "Line" :                                 true,
                         "Air_Velocity" :                       -249.1,
                         "Reynolds_Number" :               0.11945E+07,
                         "Number_Of_Trains" :                        0
                         },
                         {
-                        "Segment_ID" :                       "5 -  5",
+                        "Segment" :                                 5,
                         "Line" :                                false,
                         "Air_Velocity" :                        313.3,
                         "Reynolds_Number" :               0.15920E+07
@@ -1278,18 +1618,35 @@
                         [
                         {
                         "Section" :                                    1,
+                        "Segment" :                                 1,
                         "Airflow" :                            4366.5,
                         "Buoyancy" :                          0.00000,
                         "Pressure_Change" :                  -3.97807
                         },
                         {
                         "Section" :                                    2,
+                        "Segment" :                                 2,
+                        "Airflow" :                           -4366.5,
+                        "Buoyancy" :                          0.00000,
+                        "Pressure_Change" :                   3.97806
+                        },
+                        {
+                        "Section" :                                    2,
+                        "Segment" :                                 3,
+                        "Airflow" :                           -4366.5,
+                        "Buoyancy" :                          0.00000,
+                        "Pressure_Change" :                   3.97806
+                        },
+                        {
+                        "Section" :                                    2,
+                        "Segment" :                                 4,
                         "Airflow" :                           -4366.5,
                         "Buoyancy" :                          0.00000,
                         "Pressure_Change" :                   3.97806
                         },
                         {
                         "Section" :                                    5,
+                        "Segment" :                                 5,
                         "Airflow" :                            8733.0,
                         "Buoyancy" :                          0.00000,
                         "Pressure_Change" :                   7.29554
@@ -1298,35 +1655,35 @@
          "Segment_Data" : 
                         [
                         {
-                        "Segment_ID" :                       "1 -  1",
+                        "Segment" :                                 1,
                         "Line" :                                 true,
                         "Air_Velocity" :                        249.1,
                         "Reynolds_Number" :               0.11945E+07,
                         "Number_Of_Trains" :                        0
                         },
                         {
-                        "Segment_ID" :                       "2 -  2",
+                        "Segment" :                                 2,
                         "Line" :                                 true,
                         "Air_Velocity" :                       -249.1,
                         "Reynolds_Number" :               0.11945E+07,
                         "Number_Of_Trains" :                        0
                         },
                         {
-                        "Segment_ID" :                       "2 -  3",
+                        "Segment" :                                 3,
                         "Line" :                                 true,
                         "Air_Velocity" :                       -249.1,
                         "Reynolds_Number" :               0.11945E+07,
                         "Number_Of_Trains" :                        0
                         },
                         {
-                        "Segment_ID" :                       "2 -  4",
+                        "Segment" :                                 4,
                         "Line" :                                 true,
                         "Air_Velocity" :                       -249.1,
                         "Reynolds_Number" :               0.11945E+07,
                         "Number_Of_Trains" :                        0
                         },
                         {
-                        "Segment_ID" :                       "5 -  5",
+                        "Segment" :                                 5,
                         "Line" :                                false,
                         "Air_Velocity" :                        313.3,
                         "Reynolds_Number" :               0.15920E+07
@@ -1341,18 +1698,35 @@
                         [
                         {
                         "Section" :                                    1,
+                        "Segment" :                                 1,
                         "Airflow" :                            4366.5,
                         "Buoyancy" :                          0.00000,
                         "Pressure_Change" :                  -3.97807
                         },
                         {
                         "Section" :                                    2,
+                        "Segment" :                                 2,
+                        "Airflow" :                           -4366.5,
+                        "Buoyancy" :                          0.00000,
+                        "Pressure_Change" :                   3.97806
+                        },
+                        {
+                        "Section" :                                    2,
+                        "Segment" :                                 3,
+                        "Airflow" :                           -4366.5,
+                        "Buoyancy" :                          0.00000,
+                        "Pressure_Change" :                   3.97806
+                        },
+                        {
+                        "Section" :                                    2,
+                        "Segment" :                                 4,
                         "Airflow" :                           -4366.5,
                         "Buoyancy" :                          0.00000,
                         "Pressure_Change" :                   3.97806
                         },
                         {
                         "Section" :                                    5,
+                        "Segment" :                                 5,
                         "Airflow" :                            8733.0,
                         "Buoyancy" :                          0.00000,
                         "Pressure_Change" :                   7.29554
@@ -1361,35 +1735,35 @@
          "Segment_Data" : 
                         [
                         {
-                        "Segment_ID" :                       "1 -  1",
+                        "Segment" :                                 1,
                         "Line" :                                 true,
                         "Air_Velocity" :                        249.1,
                         "Reynolds_Number" :               0.11945E+07,
                         "Number_Of_Trains" :                        0
                         },
                         {
-                        "Segment_ID" :                       "2 -  2",
+                        "Segment" :                                 2,
                         "Line" :                                 true,
                         "Air_Velocity" :                       -249.1,
                         "Reynolds_Number" :               0.11945E+07,
                         "Number_Of_Trains" :                        0
                         },
                         {
-                        "Segment_ID" :                       "2 -  3",
+                        "Segment" :                                 3,
                         "Line" :                                 true,
                         "Air_Velocity" :                       -249.1,
                         "Reynolds_Number" :               0.11945E+07,
                         "Number_Of_Trains" :                        0
                         },
                         {
-                        "Segment_ID" :                       "2 -  4",
+                        "Segment" :                                 4,
                         "Line" :                                 true,
                         "Air_Velocity" :                       -249.1,
                         "Reynolds_Number" :               0.11945E+07,
                         "Number_Of_Trains" :                        0
                         },
                         {
-                        "Segment_ID" :                       "5 -  5",
+                        "Segment" :                                 5,
                         "Line" :                                false,
                         "Air_Velocity" :                        313.3,
                         "Reynolds_Number" :               0.15920E+07
@@ -1404,18 +1778,35 @@
                         [
                         {
                         "Section" :                                    1,
+                        "Segment" :                                 1,
                         "Airflow" :                            4366.5,
                         "Buoyancy" :                          0.00000,
                         "Pressure_Change" :                  -3.97807
                         },
                         {
                         "Section" :                                    2,
+                        "Segment" :                                 2,
+                        "Airflow" :                           -4366.5,
+                        "Buoyancy" :                          0.00000,
+                        "Pressure_Change" :                   3.97806
+                        },
+                        {
+                        "Section" :                                    2,
+                        "Segment" :                                 3,
+                        "Airflow" :                           -4366.5,
+                        "Buoyancy" :                          0.00000,
+                        "Pressure_Change" :                   3.97806
+                        },
+                        {
+                        "Section" :                                    2,
+                        "Segment" :                                 4,
                         "Airflow" :                           -4366.5,
                         "Buoyancy" :                          0.00000,
                         "Pressure_Change" :                   3.97806
                         },
                         {
                         "Section" :                                    5,
+                        "Segment" :                                 5,
                         "Airflow" :                            8733.0,
                         "Buoyancy" :                          0.00000,
                         "Pressure_Change" :                   7.29554
@@ -1424,35 +1815,35 @@
          "Segment_Data" : 
                         [
                         {
-                        "Segment_ID" :                       "1 -  1",
+                        "Segment" :                                 1,
                         "Line" :                                 true,
                         "Air_Velocity" :                        249.1,
                         "Reynolds_Number" :               0.11945E+07,
                         "Number_Of_Trains" :                        0
                         },
                         {
-                        "Segment_ID" :                       "2 -  2",
+                        "Segment" :                                 2,
                         "Line" :                                 true,
                         "Air_Velocity" :                       -249.1,
                         "Reynolds_Number" :               0.11945E+07,
                         "Number_Of_Trains" :                        0
                         },
                         {
-                        "Segment_ID" :                       "2 -  3",
+                        "Segment" :                                 3,
                         "Line" :                                 true,
                         "Air_Velocity" :                       -249.1,
                         "Reynolds_Number" :               0.11945E+07,
                         "Number_Of_Trains" :                        0
                         },
                         {
-                        "Segment_ID" :                       "2 -  4",
+                        "Segment" :                                 4,
                         "Line" :                                 true,
                         "Air_Velocity" :                       -249.1,
                         "Reynolds_Number" :               0.11945E+07,
                         "Number_Of_Trains" :                        0
                         },
                         {
-                        "Segment_ID" :                       "5 -  5",
+                        "Segment" :                                 5,
                         "Line" :                                false,
                         "Air_Velocity" :                        313.3,
                         "Reynolds_Number" :               0.15920E+07
@@ -1467,18 +1858,35 @@
                         [
                         {
                         "Section" :                                    1,
+                        "Segment" :                                 1,
                         "Airflow" :                            4366.5,
                         "Buoyancy" :                          0.00000,
                         "Pressure_Change" :                  -3.97807
                         },
                         {
                         "Section" :                                    2,
+                        "Segment" :                                 2,
+                        "Airflow" :                           -4366.5,
+                        "Buoyancy" :                          0.00000,
+                        "Pressure_Change" :                   3.97806
+                        },
+                        {
+                        "Section" :                                    2,
+                        "Segment" :                                 3,
+                        "Airflow" :                           -4366.5,
+                        "Buoyancy" :                          0.00000,
+                        "Pressure_Change" :                   3.97806
+                        },
+                        {
+                        "Section" :                                    2,
+                        "Segment" :                                 4,
                         "Airflow" :                           -4366.5,
                         "Buoyancy" :                          0.00000,
                         "Pressure_Change" :                   3.97806
                         },
                         {
                         "Section" :                                    5,
+                        "Segment" :                                 5,
                         "Airflow" :                            8733.0,
                         "Buoyancy" :                          0.00000,
                         "Pressure_Change" :                   7.29554
@@ -1487,35 +1895,35 @@
          "Segment_Data" : 
                         [
                         {
-                        "Segment_ID" :                       "1 -  1",
+                        "Segment" :                                 1,
                         "Line" :                                 true,
                         "Air_Velocity" :                        249.1,
                         "Reynolds_Number" :               0.11945E+07,
                         "Number_Of_Trains" :                        0
                         },
                         {
-                        "Segment_ID" :                       "2 -  2",
+                        "Segment" :                                 2,
                         "Line" :                                 true,
                         "Air_Velocity" :                       -249.1,
                         "Reynolds_Number" :               0.11945E+07,
                         "Number_Of_Trains" :                        0
                         },
                         {
-                        "Segment_ID" :                       "2 -  3",
+                        "Segment" :                                 3,
                         "Line" :                                 true,
                         "Air_Velocity" :                       -249.1,
                         "Reynolds_Number" :               0.11945E+07,
                         "Number_Of_Trains" :                        0
                         },
                         {
-                        "Segment_ID" :                       "2 -  4",
+                        "Segment" :                                 4,
                         "Line" :                                 true,
                         "Air_Velocity" :                       -249.1,
                         "Reynolds_Number" :               0.11945E+07,
                         "Number_Of_Trains" :                        0
                         },
                         {
-                        "Segment_ID" :                       "5 -  5",
+                        "Segment" :                                 5,
                         "Line" :                                false,
                         "Air_Velocity" :                        313.3,
                         "Reynolds_Number" :               0.15920E+07
@@ -1530,18 +1938,35 @@
                         [
                         {
                         "Section" :                                    1,
+                        "Segment" :                                 1,
                         "Airflow" :                            4366.5,
                         "Buoyancy" :                          0.00000,
                         "Pressure_Change" :                  -3.97807
                         },
                         {
                         "Section" :                                    2,
+                        "Segment" :                                 2,
+                        "Airflow" :                           -4366.5,
+                        "Buoyancy" :                          0.00000,
+                        "Pressure_Change" :                   3.97806
+                        },
+                        {
+                        "Section" :                                    2,
+                        "Segment" :                                 3,
+                        "Airflow" :                           -4366.5,
+                        "Buoyancy" :                          0.00000,
+                        "Pressure_Change" :                   3.97806
+                        },
+                        {
+                        "Section" :                                    2,
+                        "Segment" :                                 4,
                         "Airflow" :                           -4366.5,
                         "Buoyancy" :                          0.00000,
                         "Pressure_Change" :                   3.97806
                         },
                         {
                         "Section" :                                    5,
+                        "Segment" :                                 5,
                         "Airflow" :                            8733.0,
                         "Buoyancy" :                          0.00000,
                         "Pressure_Change" :                   7.29554
@@ -1550,35 +1975,35 @@
          "Segment_Data" : 
                         [
                         {
-                        "Segment_ID" :                       "1 -  1",
+                        "Segment" :                                 1,
                         "Line" :                                 true,
                         "Air_Velocity" :                        249.1,
                         "Reynolds_Number" :               0.11945E+07,
                         "Number_Of_Trains" :                        0
                         },
                         {
-                        "Segment_ID" :                       "2 -  2",
+                        "Segment" :                                 2,
                         "Line" :                                 true,
                         "Air_Velocity" :                       -249.1,
                         "Reynolds_Number" :               0.11945E+07,
                         "Number_Of_Trains" :                        0
                         },
                         {
-                        "Segment_ID" :                       "2 -  3",
+                        "Segment" :                                 3,
                         "Line" :                                 true,
                         "Air_Velocity" :                       -249.1,
                         "Reynolds_Number" :               0.11945E+07,
                         "Number_Of_Trains" :                        0
                         },
                         {
-                        "Segment_ID" :                       "2 -  4",
+                        "Segment" :                                 4,
                         "Line" :                                 true,
                         "Air_Velocity" :                       -249.1,
                         "Reynolds_Number" :               0.11945E+07,
                         "Number_Of_Trains" :                        0
                         },
                         {
-                        "Segment_ID" :                       "5 -  5",
+                        "Segment" :                                 5,
                         "Line" :                                false,
                         "Air_Velocity" :                        313.3,
                         "Reynolds_Number" :               0.15920E+07

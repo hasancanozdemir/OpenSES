@@ -847,7 +847,7 @@ C*****COMPUTE AMBIENT AIR MASS DENSITY
                   ENDIF
 C*****COMPUTE KINEMATIC VISCOSITY OF AMBIENT AIR                        
                   IF (INPUT_UNITS .EQ. UNIT_SI) THEN
-                        NUAIR=1.5E-5
+                        NUAIR=AIR_SI(TDBAMB,1)
                   ELSE
                         NUAIR=VISAIR/RHOMAS
                   ENDIF

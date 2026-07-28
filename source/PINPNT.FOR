@@ -503,8 +503,14 @@ C---- COMPUTE HEAT TRANSFER COEFFICIENT
       IF( FIROP2 .LE. 0  .OR.  TYPLS(ILS) .GE. 0 )  GO TO 486           
       THCONB = AIR( TDBSS(ISS), 2 ) / 3600.                             
       THCONR = THCONB / THCON                                           
-      VISCOS = AIR( TDBSS(ISS), 1 )                                     
-      REA = REA * TSSTAB(ISS) / VISCOS  * ( VISAIR / RHOMAS )           
+      IF (INPUT_UNITS .EQ. UNIT_SI) THEN
+            VISCOS = AIR_SI(TDBSS(ISS),1)
+            REA = REA*TSSTAB(ISS)*NUAIR/VISCOS
+      ELSE
+            VISCOS = AIR(TDBSS(ISS),1)
+            REA = REA*TSSTAB(ISS)/VISCOS
+     1           *(VISAIR/RHOMAS)
+      ENDIF
   486 IF( REA - 2000.0 ) 490,490,520                                    
 C --  LAMINAR FLOW                                                      
   490 IF( REA - 1.0 ) 500,510,510                                       

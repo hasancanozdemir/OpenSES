@@ -40,14 +40,22 @@ C**** FIND THE LOW AND HIGH SUBSEGMENT IN THIS LINE SEGMENT
       IHISS  = TABL4(ILS)                                               
 C**** COMPUTE 'STANDARD' REYNOLDS NUMBER AND MULTIPLY BY THE TERM       
 C**** ( VISAIR/RHOMAS )                                                 
-      RESTD = RNFLS(ILS) * ABSQ * (VISAIR/RHOMAS)                       
+      IF (INPUT_UNITS .EQ. UNIT_SI) THEN
+            RESTD = RNFLS(ILS) * ABSQ * NUAIR
+      ELSE
+            RESTD = RNFLS(ILS) * ABSQ * (VISAIR/RHOMAS)
+      ENDIF
 C**** COMPUTE THE VISCOUS LOSSES IN EACH LINE SEGMENT BY LOOPING OVER   
 C**** THE SUBSEGMENTS.                                                  
       SUBSUM = 0.0                                                      
       DO 80 ISS = ILOWSS,IHISS                                          
 C**** COMPUTE THE 'ACTUAL' REYNOLDS NUMBER                              
       TSS = TDBSS(ISS)                                                  
-      VISCOS = AIR (TSS,1)                                              
+      IF (INPUT_UNITS .EQ. UNIT_SI) THEN
+            VISCOS = AIR_SI(TSS,1)
+      ELSE
+            VISCOS = AIR(TSS,1)
+      ENDIF
       REACT = RESTD * TSSTAB(ISS)/ VISCOS                               
       RELSS(ISS) = REACT                                                
 C**** CHECK FOR TURBULENT OR LAMINAR FLOW REGIME                        

@@ -37,8 +37,14 @@ C
                         ABSOFF = ABSOLUTE_OFFSET_F
                   ENDIF
                   TAVGVS = TADJST*ABSAMB - ABSOFF
-      VISCOS = AIR(TAVGVS,1)                                            
-      REVS(IVS) = ABSQ*RNFVS(IVS)*(VISAIR/RHOMAS)/VISCOS                
+                  IF (INPUT_UNITS .EQ. UNIT_SI) THEN
+                        VISCOS = AIR_SI(TAVGVS,1)
+                        REVS(IVS) = ABSQ*RNFVS(IVS)*NUAIR/VISCOS
+                  ELSE
+                        VISCOS = AIR(TAVGVS,1)
+                        REVS(IVS) = ABSQ*RNFVS(IVS)*(VISAIR/RHOMAS)
+     1                       /VISCOS
+                  ENDIF
       SUM1 = -Q*(CEPS(ISCT)*(Q+ABSQ)-CENS(ISCT)*(Q-ABSQ))/TADJST        
       GO TO 9                                                           
 C                                                                       

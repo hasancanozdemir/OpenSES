@@ -67,7 +67,8 @@ function Invoke-Checked {
 
 $srcF95 = @(
     'getver.f95',
-    'ancill.f95'
+    'ancill.f95',
+    'AIR_SI.f95'
 )
 
 $srcFor = @(

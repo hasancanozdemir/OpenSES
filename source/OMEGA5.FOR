@@ -253,13 +253,23 @@ C---- NOT FIRST REGION IN LINE SEGMENT
 C*****COMPUTE REYNOLDS NUMBER IN REGION                                 
 400   RERG=ABVNRG*DRG/NUAIR                                             
 C --  ADJUST REYNOLDS NO. FOR HIGH TEMP                                 
-      RERG = RERG * (VISAIR /(RHOMAS*AIR(TDBSS(ISS),1)))* TSSTAB(ISS)   
+      IF (INPUT_UNITS .EQ. UNIT_SI) THEN
+            VISCOS = AIR_SI(TDBSS(ISS),1)
+            RERG = RERG * (NUAIR/VISCOS)*TSSTAB(ISS)
+      ELSE
+            RERG = RERG * (VISAIR/(RHOMAS*AIR(TDBSS(ISS),1)))
+     1           *TSSTAB(ISS)
+      ENDIF
 C*****CHECK FOR LAMINAR OR TURBULENT FLOW IN REGION                     
       IF (RERG-2000.0) 410,420,420                                      
 C*****REGION VISCOUS HEAD CHANGE FOR LAMINAR FLOW IN REGION AT LINE     
 C*****SEGMENT WALL                                                      
-410   SUM4=-8.0*PERMLS(ILS)*LRG*AIR(TDBSS(ISS),1)*VNETRG/(ANETRG*DRG)   
-     1  * TSSTAB(ISS)                                                   
+410   IF (INPUT_UNITS .EQ. UNIT_SI) THEN
+            VISCOS = AIR_SI(TDBSS(ISS),1)
+      ELSE
+            VISCOS = AIR(TDBSS(ISS),1)
+      ENDIF
+      SUM4=-8.0*PERMLS(ILS)*LRG*VISCOS*VNETRG/(ANETRG*DRG)*TSSTAB(ISS)
       GO TO 430                                                         
 C*****TURBULENT FLOW DARCY-WEISBACH FRICTION FACTOR BY KENNEDY CURVE FIT
 420   FRG=0.0055*(1.0+((19000.0+16000.0*((EPSLS(ILS)/(0.05*DRG))**1.5))*

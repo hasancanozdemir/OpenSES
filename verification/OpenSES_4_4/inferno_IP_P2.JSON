@@ -1,8 +1,8 @@
     [
          {
          "info" :       {
-                        "input_file" : ".\samples\inferno_IP_P2.inp",
-                        "timestamp" :          "28 JUL 2026 14:34:24",
+                        "input_file" : "./samples/inferno_IP_P2.inp",
+                        "timestamp" :          "28 JUL 2026 14:45:16",
                         "units" :                                "IP",
                         "ambient_dry_bulb_temperature" :        85.00,
                         "ambient_wet_bulb_temperature" :        74.00,

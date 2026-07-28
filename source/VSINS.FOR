@@ -20,14 +20,23 @@ C
    57 FORMAT(/,'NUMBER OF SUBSEGMENTS IN RESULTING EQUIVALENT VENT SHAFT
      1', T79,I14 )                                                  
    58 FORMAT(/,'GRATE FREE AREA',T79,F14.1,T96,'SQ FT')              
+  581 FORMAT(/,'GRATE FREE AREA',T79,F14.1,T96,'M2')
    59 FORMAT(/,'DESIGN MAXIMUM OUTFLOW AIR VELOCITY AT GRATE',       
      1  T79,F14.0,T96,'FPM'   )                                         
+  591 FORMAT(/,'DESIGN MAXIMUM OUTFLOW AIR VELOCITY AT GRATE',
+     1  T79,F14.2,T96,'M/S'   )
    61 FORMAT(/,'WALL SURFACE TEMPERATURE', T79,F14.1,T96,'DEG F' )   
+  611 FORMAT(/,'WALL SURFACE TEMPERATURE', T79,F14.1,T96,'DEG C' )
    62 FORMAT(/,'INITIAL AIR DRY-BULB TEMPERATURE',T79,F14.1,         
      1  T96,'DEG F' )                                                   
+  621 FORMAT(/,'INITIAL AIR DRY-BULB TEMPERATURE',T79,F14.1,
+     1  T96,'DEG C' )
    63 FORMAT(/,'INITIAL AIR WET-BULB TEMPERATURE',T79,F14.1,         
      2  T96,'DEG F' )                                                   
+  631 FORMAT(/,'INITIAL AIR WET-BULB TEMPERATURE',T79,F14.1,
+     2  T96,'DEG C' )
    64 FORMAT(/,'STACK HEIGHT',T79,F14.1,T96,'FT' )                   
+  641 FORMAT(/,'STACK HEIGHT',T79,F14.1,T96,'M' )
    65 FORMAT(/,'FAN TYPE',T79,I14,T112,'FORM 5C')                    
    66 FORMAT(/,'FAN TYPE',T79,I14,T96,'(NO FAN)',T112,'FORM 5C')     
    67 FORMAT(/'A VALUE OF ZERO HAS BEEN ENTERED FOR THE DIRECTION ',
@@ -49,12 +58,23 @@ C
      3  T76,'FORWARD',T90,'BACKWARD',T101,'BACKWARD' /                  
      4  T18,'(FT)',T32,'(SQ FT)',T49,'(FT)',T65,'POSITIVE',             
      5  T76,'NEGATIVE',T90,'POSITIVE',T101,'NEGATIVE' /)                
+  751 FORMAT(/,'SEGMENT CHARACTERISTICS',T112,'FORM 5D'/
+     1  T69,'SEGMENT TOTAL HEAD LOSS COEFFICIENTS' //
+     2  T17,'LENGTH',T33,'AREA',T46,'PERIMETER',T65,'FORWARD',
+     3  T76,'FORWARD',T90,'BACKWARD',T101,'BACKWARD' /
+     4  T18,'(M)',T32,'(M2)',T49,'(M)',T65,'POSITIVE',
+     5  T76,'NEGATIVE',T90,'POSITIVE',T101,'NEGATIVE' /)
    77 FORMAT( T6,I4,F12.1,F16.1,F15.1,F18.2,F11.2,F14.2,F11.2 )         
    80 FORMAT(/,'EQUIVALENT VENTILATION SHAFT PROPERTIES' /           
      1  /,T6,'LENGTH',T24,F11.1,3X,'FT',                              
      2  T66,'TOTAL HEAD CHANGE COEFFICIENTS' /                          
      3  /,T6,'AREA',T24,F11.1,3X,'SQ FT',T59,'POSITIVE FLOW',F15.2/   
      4  /,T6,'PERIMETER',T24,F11.1,3X,'FT',T59,'NEGATIVE FLOW',F15.2) 
+  801 FORMAT(/,'EQUIVALENT VENTILATION SHAFT PROPERTIES' /
+     1  /,T6,'LENGTH',T24,F11.1,3X,'M',
+     2  T66,'TOTAL HEAD CHANGE COEFFICIENTS' /
+     3  /,T6,'AREA',T24,F11.1,3X,'M2',T59,'POSITIVE FLOW',F15.2/
+     4  /,T6,'PERIMETER',T24,F11.1,3X,'M',T59,'NEGATIVE FLOW',F15.2)
 C                                                                       
 C     INPUT FORM 5A                                                     
 C                                                                       
@@ -111,18 +131,62 @@ C---- ASSIGN SUBSEGMENT LOCATIONS
   114 TABL7(ISS) = -IVS                                                 
       CALL CHECKI( TNSS, 1, LMSS, 43 )                                  
       IF (NEW .EQ. 1)GOTO 990                                             
-  120 WRITE(OUT,58) AGVS(IVS)                                           
-      CALL CHECKR( AGVS(IVS), 3.0, 3000.0, 38 )                         
-      WRITE(OUT,59) VOMXVS(IVS)                                         
-      CALL CHECKR( VOMXVS(IVS), 0.0, 6000.0, 169 )                      
-      VOMXVS(IVS) = VOMXVS(IVS) / 60.0                                  
-      WRITE(OUT,61) DUMY3                                               
-      CALL CHECKR(DUMY3,0.0,130.0,23)                                   
-      WRITE(OUT,62) DUMY4                                               
-      CALL CHECKR( DUMY4, 0.0, 130.0, 24 )                              
-      WRITE(OUT,63) DUMY5                                               
-      CALL CHECKR( DUMY5, 0.0, DUMY4, 25 )                              
-      WRITE(OUT,64) STAKVS(IVS)                                         
+      IF (INPUT_UNITS .EQ. UNIT_SI) THEN
+  120   WRITE(OUT,581) AGVS(IVS)
+      ELSE
+        WRITE(OUT,58) AGVS(IVS)
+      ENDIF
+      IF (INPUT_UNITS .EQ. UNIT_SI) THEN
+        CALL CHECKR( AGVS(IVS), 0.3, 278.7, 38 )
+      ELSE
+        CALL CHECKR( AGVS(IVS), 3.0, 3000.0, 38 )
+      ENDIF
+      IF (INPUT_UNITS .EQ. UNIT_SI) THEN
+        WRITE(OUT,591) VOMXVS(IVS)
+      ELSE
+        WRITE(OUT,59) VOMXVS(IVS)
+      ENDIF
+      IF (INPUT_UNITS .EQ. UNIT_SI) THEN
+        CALL CHECKR( VOMXVS(IVS), 0.0, 30.48, 169 )
+      ELSE
+        CALL CHECKR( VOMXVS(IVS), 0.0, 6000.0, 169 )
+        VOMXVS(IVS) = VOMXVS(IVS) / 60.0
+      ENDIF
+      IF (INPUT_UNITS .EQ. UNIT_SI) THEN
+        WRITE(OUT,611) DUMY3
+      ELSE
+        WRITE(OUT,61) DUMY3
+      ENDIF
+      IF (INPUT_UNITS .EQ. UNIT_SI) THEN
+        CALL CHECKR(DUMY3,-17.8,54.4,23)
+      ELSE
+        CALL CHECKR(DUMY3,0.0,130.0,23)
+      ENDIF
+      IF (INPUT_UNITS .EQ. UNIT_SI) THEN
+        WRITE(OUT,621) DUMY4
+      ELSE
+        WRITE(OUT,62) DUMY4
+      ENDIF
+      IF (INPUT_UNITS .EQ. UNIT_SI) THEN
+        CALL CHECKR( DUMY4, -17.8, 54.4, 24 )
+      ELSE
+        CALL CHECKR( DUMY4, 0.0, 130.0, 24 )
+      ENDIF
+      IF (INPUT_UNITS .EQ. UNIT_SI) THEN
+        WRITE(OUT,631) DUMY5
+      ELSE
+        WRITE(OUT,63) DUMY5
+      ENDIF
+      IF (INPUT_UNITS .EQ. UNIT_SI) THEN
+        CALL CHECKR( DUMY5, -17.8, DUMY4, 25 )
+      ELSE
+        CALL CHECKR( DUMY5, 0.0, DUMY4, 25 )
+      ENDIF
+      IF (INPUT_UNITS .EQ. UNIT_SI) THEN
+        WRITE(OUT,641) STAKVS(IVS)
+      ELSE
+        WRITE(OUT,64) STAKVS(IVS)
+      ENDIF
       CALL CHECKR( STAKVS(IVS),-1000.0, 1000.0, 37 )                    
       CALL LATENT( DUMY4, DUMY5, DUMY6 )                                
 C---- LOOP OVER SUBSEGMENTS IN VENT SHAFT                               
@@ -194,7 +258,11 @@ C --  BACKWARD END IS CONNECTED TO ATMOSPHERE - REVERSE DIRECTION SIGN
   168 FDIRVS(IVS) = - FDIRVS(IVS)                                       
 C                                                                       
 C---- SEGMENT CHARACTERISITCS - COMPUTE EQUIVALENT VENT SHAFT   FORM 5D 
-  170 WRITE(OUT,75)                                                     
+      IF (INPUT_UNITS .EQ. UNIT_SI) THEN
+  170   WRITE(OUT,751)
+      ELSE
+        WRITE(OUT,75)
+      ENDIF
       CEPS(ISCT) = 0.0                                                  
       CENS(ISCT) = 0.0                                                  
       X3 = 0.0                                                          
@@ -206,11 +274,23 @@ C---- READ SEGMENT PROPERTIES AND COMPUTE SUMMATIONS
       READ(IN,20) DUMY1,DUMY2, DUMY3, DUMY4, DUMY5, DUMY6, DUMY7        
       WRITE(OUT,77) ISEG,DUMY1,DUMY2,DUMY3,DUMY4,DUMY5,DUMY6,DUMY7      
 C --  LENGTH                                                            
-      CALL CHECKR( DUMY1, 0.0, 2000.0, 40 )                             
+      IF (INPUT_UNITS .EQ. UNIT_SI) THEN
+        CALL CHECKR( DUMY1, 0.0, 609.6, 40 )
+      ELSE
+        CALL CHECKR( DUMY1, 0.0, 2000.0, 40 )
+      ENDIF
 C --  AREA                                                              
-      CALL CHECKR( DUMY2, 3.0, 3000.0, 38 )                             
+      IF (INPUT_UNITS .EQ. UNIT_SI) THEN
+        CALL CHECKR( DUMY2, 0.3, 278.7, 38 )
+      ELSE
+        CALL CHECKR( DUMY2, 3.0, 3000.0, 38 )
+      ENDIF
 C --  PERIMETER                                                         
-      CALL CHECKR( DUMY3, 5.0, 500.0, 39 )                              
+      IF (INPUT_UNITS .EQ. UNIT_SI) THEN
+        CALL CHECKR( DUMY3, 1.5, 152.4, 39 )
+      ELSE
+        CALL CHECKR( DUMY3, 5.0, 500.0, 39 )
+      ENDIF
 C --  FORWARD POSITIVE                                                  
       CALL CHECKR( DUMY4, 0.0, 1000.0, 28 )                              
 C --  FORWARD NEGATIVE                                                  
@@ -242,17 +322,29 @@ C*****SUM OF LENGTHS
       BS(ISCT) = X3                                                     
       BCS(ISCT)=BS(ISCT)                                                
       PERIM = X4 / LVS(IVS)                                             
-      RNFVS(IVS)=4.0*RHOMAS/(PERIM*VISAIR)                              
+      RNFVS(IVS)=4.0/(PERIM*NUAIR)
       DUMY1=4.0*AVS(IVS)*AVS(IVS)*CEPS(ISCT)                            
       DUMY2=4.0*AVS(IVS)*AVS(IVS)*CENS(ISCT)                            
-      WRITE(OUT,80) LVS(IVS),AVS(IVS),DUMY1,PERIM,DUMY2                 
+      IF (INPUT_UNITS .EQ. UNIT_SI) THEN
+        WRITE(OUT,801) LVS(IVS),AVS(IVS),DUMY1,PERIM,DUMY2
+      ELSE
+        WRITE(OUT,80) LVS(IVS),AVS(IVS),DUMY1,PERIM,DUMY2
+      ENDIF
       VOLVSS(IVS) = X5 / FLOAT( NSS )                                   
       SURVSS(IVS) = X4 / FLOAT( NSS )                                   
 C---- CHECK IF STACK HEIGHT EXCEEDS SUM OF INDIVIDUAL LENGTHS           
       IF( ABS(STAKVS(IVS)) - X6 ) 255,255,250                           
   250 CALL EERROR( 173 )                                                 
-  255 STAKVS(IVS)=STAKVS(IVS)*GRACC                                     
+  255 IF (INPUT_UNITS .EQ. UNIT_SI) THEN
+        STAKVS(IVS)=STAKVS(IVS)*9.80665
+      ELSE
+        STAKVS(IVS)=STAKVS(IVS)*GRACC
+      ENDIF
       LVSS(IVS)=LVS(IVS)/NSS                                            
-      CALL CHECKR(X6,10.0,2000.0,190)                                   
+      IF (INPUT_UNITS .EQ. UNIT_SI) THEN
+        CALL CHECKR(X6,3.05,609.6,190)
+      ELSE
+        CALL CHECKR(X6,10.0,2000.0,190)
+      ENDIF
   990 RETURN                                                            
       END                                                               

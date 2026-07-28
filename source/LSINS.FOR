@@ -33,16 +33,24 @@ C
 70    FORMAT (/,'LINE SEGMENT TYPE',T79,I14,T96,'(SPECIAL TUNNEL)')  
 71    FORMAT (/,T49,15('X'),T79, I14,T96,'(SPECIAL ''FIRE'' SEGMENT)')
 80    FORMAT (/,'LENGTH',T79,F14.2,T96,'FT')                         
+81    FORMAT (/,'LENGTH',T79,F14.2,T96,'M')
 90    FORMAT (/,'CROSS SECTION AREA',T79,F14.1,T96,'SQ FT')          
+93    FORMAT (/,'CROSS SECTION AREA',T79,F14.1,T96,'M2')
 91    FORMAT (/, T3,'GRADE OF LINE SEGMENT',T79,F14.3,T96,'PERCENT')  
 92    FORMAT (/,'STACK HEIGHT', T79,F14.1,T96,'FT')                  
+97    FORMAT (/,'STACK HEIGHT', T79,F14.1,T96,'M')
 94    FORMAT (F8.1)
 96    FORMAT (F8.4)
 100   FORMAT (/,'SEGMENT',T112,'FORM 3B',/,T2,'PERIMETERS',5X,A64,T84
      1         ,'TOTAL PERIMETER',F12.1,2X,'FT')                                 
+101   FORMAT (/,'SEGMENT PERIMETERS',5X,A64,T84,'TOTAL PERIMETER',
+     1F12.1,2X,'M')
 110   FORMAT (/,'ROUGHNESS ',T84,'WEIGHTED AVERAGE',/,T2,'LENGTHS'8X,
      1           A64,T84,'ROUGHNESS LENGTH',F11.4, 2X,'FT')
+111   FORMAT (/,'ROUGHNESS LENGTHS',8X,A64,T84,'ROUGHNESS LENGTH',
+     1F11.4,2X,'M')
 120   FORMAT (/,T4,'HYDRAULIC DIAMETER',T79,F14.1,T96,'FT')          
+121   FORMAT (/,T4,'HYDRAULIC DIAMETER',T79,F14.1,T96,'M')
 130   FORMAT (/,'SEGMENT TOTAL HEAD LOSS COEFFICIENTS',T54,'POSITIVE'
      1,T75,'NEGATIVE',T112,'FORM 3C'/T56,'FLOW',T77,'FLOW')             
 140   FORMAT (/,T4,'AT FORWARD LIMIT',T50,F10.2,T71,F10.2)            
@@ -64,13 +72,18 @@ C
      1,T16,'SUBSEGMENT',T31,'WALL SURFACE',T49,'INITIAL AIR TEMPERATURE'
      2/2X,'NUMBER',T18,'NUMBER',T31,'TEMPERATURE',T49,'DRY-BULB',T64,
      3'WET-BULB'/T33,'(DEG F)',T49,'(DEG F)',T64,'(DEG F)'/)            
+231   FORMAT (/,'FORM 3E (SI): TEMPERATURES IN DEG C')
 240   FORMAT (I6,5X,'THRU',I6,T29,F10.1,6X,F10.1,5X,F10.1)          
 250   FORMAT (/,'TUNNEL WALL THICKNESS',T79,F14.1,T96,'FT',T112,'FORM 3F
      1')                                                             
+251   FORMAT (/,'TUNNEL WALL THICKNESS',T79,F14.1,T96,'M')
 260   FORMAT ('DISTANCE BETWEEN THE INSIDE WALL SURFACES OF ADJACENT TUN
      1NELS',T79,F14.1,T96,'FT')                                    
+261   FORMAT ('DISTANCE BETWEEN ADJ. TUNNEL WALLS',T79,F14.1,T96,'M')
 270   FORMAT ('DISTANCE BETWEEN THE INSIDE WALL SURFACES OF ADJACENT TUN
      1NELS',T79,F14.1,T96,'FT   ( NO ADJ. TUNNEL )')                
+271   FORMAT ('DISTANCE BETWEEN ADJ. TUNNEL WALLS',T79,F14.1,
+     1T96,'M (NO ADJ. TUNNEL)')
 280   FORMAT ('TUNNEL WALL THERMAL CONDUCTIVITY',T79,F14.3,T96,'BTU/FT-H
      1R-DEG F')                                                    
 290   FORMAT ('TUNNEL WALL THERMAL DIFFUSIVITY',T79,F14.3,T96,'FT SQUARE
@@ -80,6 +93,7 @@ C
 310   FORMAT ('SURROUNDING SOIL THERMAL DIFFUSIVITY',T79,F14.3,T96,
      1'FT SQUARED/HR')                                                  
 320   FORMAT ('DEEP SINK TEMPERATURE',T79,F14.1,T96,'DEG F')       
+321   FORMAT ('DEEP SINK TEMPERATURE',T79,F14.1,T96,'DEG C')
 C                                                                       
 C**** INITIALIZE VARIABLE DISPSTR
       WRITE(DISPSTR,5)                                                                       
@@ -125,16 +139,36 @@ C --  CHECK FOR DUPLICATE SEGMENT I.D. NUMBERS
 430   CONTINUE                                                          
       READ (IN,20) DUMY1,ALS(ILS),STAKLS(ILS),DUMY2                     
       LLS(ILS)=DUMY1                                                    
-      WRITE (OUT,80) LLS(ILS)                                           
-      CALL CHECKR (LLS(ILS),10.0,100000.0,19)                           
-      WRITE (OUT,90) ALS(ILS)                                           
-      CALL CHECKR (ALS(ILS),75.0,10000.0,20)                            
+                  IF (INPUT_UNITS .EQ. UNIT_SI) THEN
+                        WRITE (OUT,81) LLS(ILS)
+                  ELSE
+                        WRITE (OUT,80) LLS(ILS)
+                  ENDIF
+                  IF (INPUT_UNITS .EQ. UNIT_SI) THEN
+                        CALL CHECKR (LLS(ILS),3.05,30480.0,19)
+                  ELSE
+                        CALL CHECKR (LLS(ILS),10.0,100000.0,19)
+                  ENDIF
+                  IF (INPUT_UNITS .EQ. UNIT_SI) THEN
+                        WRITE (OUT,93) ALS(ILS)
+                  ELSE
+                        WRITE (OUT,90) ALS(ILS)
+                  ENDIF
+                  IF (INPUT_UNITS .EQ. UNIT_SI) THEN
+                        CALL CHECKR (ALS(ILS),7.0,929.0,20)
+                  ELSE
+                        CALL CHECKR (ALS(ILS),75.0,10000.0,20)
+                  ENDIF
       NUMY1=0                                                           
       PERMLS(ILS)=0.0                                                   
 C**** CONVERT THE STACK HEIGHT TO A GRADE(PERCENT), PRINT OUT FOR INPUT 
 C     VERIFICATION.  THE AVERAGE STACK HEIGHT PER SUBSEGMENT IS TO BE   
 C     STORED AFTER READING INPUT FORM 3C.                               
-      WRITE (OUT, 92)  STAKLS(ILS)                                      
+                  IF (INPUT_UNITS .EQ. UNIT_SI) THEN
+                        WRITE (OUT,97) STAKLS(ILS)
+                  ELSE
+                        WRITE (OUT,92) STAKLS(ILS)
+                  ENDIF
       GRADLS = STAKLS(ILS) /DUMY1 * 100.0                               
       WRITE (OUT,91) GRADLS                                             
       ABSTAK = ABS(STAKLS(ILS))                                         
@@ -156,7 +190,7 @@ C
 440   NUMY1=NUMY1+1                                                     
       PERMLS(ILS)=PERMLS(ILS)+DUMMY1(J)                                 
 450   CONTINUE                                                          
-      RNFLS(ILS)=4.0*RHOMAS/(PERMLS(ILS)*VISAIR)                        
+      RNFLS(ILS)=4.0/(PERMLS(ILS)*NUAIR)
       C1LS(ILS)=PERMLS(ILS)*LLS(ILS)/(8.0*ALS(ILS)**3)
 C**** STORE SEGMENT PERIMETERS IN VARIABLE DISPSTR FOR LATER PRINTING
 	DO 455 J=1,NUMY1
@@ -164,8 +198,16 @@ C**** STORE SEGMENT PERIMETERS IN VARIABLE DISPSTR FOR LATER PRINTING
 	  KK=JJ+7
 	  WRITE(DISPSTR(JJ:KK),94)DUMMY1(J)
 455   CONTINUE
-      WRITE (OUT,100) DISPSTR, PERMLS(ILS)
-      CALL CHECKR (PERMLS(ILS),30.0,1000.0,21)                          
+                  IF (INPUT_UNITS .EQ. UNIT_SI) THEN
+                        WRITE (OUT,101) DISPSTR, PERMLS(ILS)
+                  ELSE
+                        WRITE (OUT,100) DISPSTR, PERMLS(ILS)
+                  ENDIF
+                  IF (INPUT_UNITS .EQ. UNIT_SI) THEN
+                        CALL CHECKR (PERMLS(ILS),9.1,304.8,21)
+                  ELSE
+                        CALL CHECKR (PERMLS(ILS),30.0,1000.0,21)
+                  ENDIF
       DUMY1=(4.0*PI*ALS(ILS))**0.5                                      
       IF (PERMLS(ILS)-DUMY1) 460,470,470                                
 460   CALL EERROR (70)                                                   
@@ -181,9 +223,17 @@ C**** PRINTING
 	  KK=JJ+7
 	  WRITE(DISPSTR(JJ:KK),96)DUMMY2(J)
 485   CONTINUE
-      WRITE (OUT,110) DISPSTR, EPSLS(ILS)                  
+                  IF (INPUT_UNITS .EQ. UNIT_SI) THEN
+                        WRITE (OUT,111) DISPSTR, EPSLS(ILS)
+                  ELSE
+                        WRITE (OUT,110) DISPSTR, EPSLS(ILS)
+                  ENDIF
       CALL CHECKR (EPSLS(ILS),0.0,2.0,22)                               
-      WRITE (OUT,120) DUMY1                                             
+                  IF (INPUT_UNITS .EQ. UNIT_SI) THEN
+                        WRITE (OUT,121) DUMY1
+                  ELSE
+                        WRITE (OUT,120) DUMY1
+                  ENDIF
       DUMY5=EPSLS(ILS)/DUMY1                                            
       WRITE (OUT,170) DUMY5                                             
       FFFLS(ILS)=(19000.0+16000.0*((EPSLS(ILS)/(0.05*DUMY1))**1.5))*EPSL
@@ -229,7 +279,11 @@ C     USER HAS ENTERED.
       CALL CHECKI (TNLSS,1,LMLSS,30)                                    
       IF (NEW .EQ. 1) GOTO 730                                            
 C**** STORE THE AVERAGE STACK HEIGHT PER SUBSEGMENT                     
-      STAKLS(ILS) = STAKLS(ILS)/FLOAT(NSS)*GRACC                        
+                  IF (INPUT_UNITS .EQ. UNIT_SI) THEN
+                        STAKLS(ILS) = STAKLS(ILS)/FLOAT(NSS)*9.80665
+                  ELSE
+                        STAKLS(ILS) = STAKLS(ILS)/FLOAT(NSS)*GRACC
+                  ENDIF
       NUMY1 = DUMY3                                                     
       WRITE (OUT,200) NUMY1                                             
 C---- INITIALIZE SUBSEGMENT PARAMETERS                                  
@@ -286,7 +340,11 @@ C
 C     INPUT FORM 3E                                                     
 C                                                                       
 C     WALL SURFACE TEMPERATURE AND INITIAL AIR TEMPERATURE              
-610   WRITE (OUT,230)                                                   
+                  IF (INPUT_UNITS .EQ. UNIT_SI) THEN
+                        WRITE (OUT,231)
+                  ELSE
+610                     WRITE (OUT,230)
+                  ENDIF
       NUMY3=0                                                           
 620   READ (IN,20) DUMY1,DUMY2,DUMY3,DUMY4,DUMY5                        
       NUMY1=DUMY1                                                       
@@ -300,9 +358,15 @@ C     WALL SURFACE TEMPERATURE AND INITIAL AIR TEMPERATURE
       NUMY3=NUMY2                                                       
       NUMY1=NUMY1-1+ILSL                                                
       NUMY2=NUMY2-1+ILSL                                                
-      CALL CHECKR (DUMY3,0.0,130.0,23)                                  
-      CALL CHECKR (DUMY4,0.0,130.0,24)                                  
-      CALL CHECKR (DUMY5,0.0,DUMY4,25)                                  
+                  IF (INPUT_UNITS .EQ. UNIT_SI) THEN
+                        CALL CHECKR (DUMY3,-17.8,54.4,23)
+                        CALL CHECKR (DUMY4,-17.8,54.4,24)
+                        CALL CHECKR (DUMY5,-17.8,DUMY4,25)
+                  ELSE
+                        CALL CHECKR (DUMY3,0.0,130.0,23)
+                        CALL CHECKR (DUMY4,0.0,130.0,24)
+                        CALL CHECKR (DUMY5,0.0,DUMY4,25)
+                  ENDIF
       CALL LATENT (DUMY4,DUMY5,DUMY6)                                   
       DO 660 ISS=NUMY1,NUMY2                                            
       TSFSS(ISS)=DUMY3                                                  
@@ -321,13 +385,25 @@ C---- HEAT SINK DATA
 670   IF (HCOPT) 720,720,680                                            
 680   READ (IN,20) RPRMLS(ILS),DBTLS(ILS),THCNLS(1,ILS),THDFLS(1,ILS),TH
      1CNLS(2,ILS),THDFLS(2,ILS),TSNKLS(ILS)                             
-      WRITE (OUT,250) RPRMLS(ILS)                                       
+                  IF (INPUT_UNITS .EQ. UNIT_SI) THEN
+                        WRITE (OUT,251) RPRMLS(ILS)
+                  ELSE
+                        WRITE (OUT,250) RPRMLS(ILS)
+                  ENDIF
       CALL CHECKR (RPRMLS(ILS),0.0,30.0,63)                             
       IF (DBTLS(ILS)-0.01) 700,700,690                                  
-690   WRITE (OUT,260) DBTLS(ILS)                                        
+                  IF (INPUT_UNITS .EQ. UNIT_SI) THEN
+690                     WRITE (OUT,261) DBTLS(ILS)
+                  ELSE
+                        WRITE (OUT,260) DBTLS(ILS)
+                  ENDIF
       CALL CHECKR (DBTLS(ILS),0.0, 100.0,131)                           
       GO TO 710                                                         
-700   WRITE (OUT,270) DBTLS(ILS)                                        
+                  IF (INPUT_UNITS .EQ. UNIT_SI) THEN
+700                     WRITE (OUT,271) DBTLS(ILS)
+                  ELSE
+                        WRITE (OUT,270) DBTLS(ILS)
+                  ENDIF
       CALL CHECKR (DBTLS(ILS),0.0, 100.0,131)                           
       DBTLS(ILS)=0.0                                                    
 710   WRITE (OUT,280) THCNLS(1,ILS)                                     
@@ -338,7 +414,11 @@ C---- HEAT SINK DATA
       CALL CHECKR (THCNLS(2,ILS),0.005,2.0,34)                          
       WRITE (OUT,310) THDFLS(2,ILS)                                     
       CALL CHECKR (THDFLS(2,ILS),0.005,1.0,35)                          
-      WRITE (OUT,320) TSNKLS(ILS)                                       
+                  IF (INPUT_UNITS .EQ. UNIT_SI) THEN
+                        WRITE (OUT,321) TSNKLS(ILS)
+                  ELSE
+                        WRITE (OUT,320) TSNKLS(ILS)
+                  ENDIF
       CALL CHECKR (TSNKLS(ILS),0.0,100.0,159)                           
 C                                                                       
 C---- INITIALIZATION                                                    
@@ -349,7 +429,7 @@ C---- INITIALIZATION
       SURLSS(ILS)=PERMLS(ILS)*LLS(ILS)/FLOAT(NSS)                       
       LLSS(ILS)=LLS(ILS)/FLOAT(NSS)                                     
       VOLLSS(ILS)=LLSS(ILS)*ALS(ILS)                                    
-      RELS(ILS) = ABS(QS(ISCT))*4.0*RHOMAS/(VISAIR*PERMLS(ILS))         
+      RELS(ILS) = ABS(QS(ISCT))*4.0/(NUAIR*PERMLS(ILS))
       DO  727  ISS = ILSL, TNLSS                                        
 727   RELSS(ISS) = RELS(ILS)                                            
 730   RETURN                                                            

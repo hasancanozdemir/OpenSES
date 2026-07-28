@@ -25,12 +25,15 @@ C
 30    FORMAT ('BI-DIRECTIONAL FAN PERFORMANCE CHARACTERISTICS')    
 40    FORMAT (/,8X,'AIR DENSITY AT WHICH THE FAN PERFORMANCE CURVE WAS M
      1EASURED',T79,F14.5,T96,'LBS/CUFT')                              
+41    FORMAT (/,8X,'FAN CURVE AIR DENSITY',T79,F14.5,T96,'KG/M3')
 50    FORMAT (/,8X,'TIME REQUIRED FOR FAN TO REACH FULL OPERATING SPEED' 
      1,T79,F14.3,T96,'SECONDS')                                       
 60    FORMAT (/,8X,'FAN LOWER FLOW LIMIT (POINT OF MOTOR BREAKDOWN TORQU
      1E OR STOPPING)',T79,I14,T96,'CFM')                              
+61    FORMAT (/,8X,'FAN LOWER FLOW LIMIT',T79,I14,T96,'M3/S')
 70    FORMAT (/,8X,'FAN UPPER FLOW LIMIT (POINT OF WINDMILLING)',     
      1T79,I14,T96,'CFM',/)                                              
+71    FORMAT (/,8X,'FAN UPPER FLOW LIMIT',T79,I14,T96,'M3/S',/)
 80    FORMAT (8F10.0)                                                   
 90    FORMAT (16X,'BI-DIRECTIONAL (OUTFLOW(EXHAUST) AND INFLOW(SUPPLY)) 
      1FAN PERFORMANCE CURVE INFORMATION',T112,'FORM 7B')            
@@ -41,9 +44,13 @@ C
 120   FORMAT ('FAN PERFORMANCE CURVE DATA POINTS',/)               
 130   FORMAT ('FITTED FAN PERFORMANCE CURVE',//)                   
 140   FORMAT (8X,'FAN TOTAL PRESSURE ',4F14.2,12X,'IN. WG',/,13X,'VS')                 
+141   FORMAT (8X,'FAN TOTAL PRESSURE ',4F14.2,12X,'PA',/,13X,'VS')
 150   FORMAT (8X,'VOLUME FLOWRATE',4X,4I14,13X,'CFM'/)                       
+151   FORMAT (8X,'VOLUME FLOWRATE',4X,4I14,13X,'M3/S'/)
 160   FORMAT (8X,'FAN TOTAL PRESSURE ',7F9.2,5X,'IN. WG',/,13X,'VS')                 
+161   FORMAT (8X,'FAN TOTAL PRESSURE ',7F9.2,5X,'PA',/,13X,'VS')
 170   FORMAT (8X,'VOLUME FLOWRATE',4X,7I9,6X,'CFM'/)                       
+171   FORMAT (8X,'VOLUME FLOWRATE',4X,7I9,6X,'M3/S'/)
 200   FORMAT (T46,'FAN PERFORMANCE CURVE FIT COEFFICIENTS'/T46,38('-'),
      1///T5,'THE COEFFICIENTS C1, C2, C3, C4 FIT THE FAN PERFORMANCE CUR
      2VE OF THE FOLLOWING EQUATION -'//T11,'C1 * (Q**3) + C2 * (Q**2) +
@@ -67,9 +74,17 @@ C*****OPERATIONAL CFM LIMITS
       READ (IN,10) TITLE,ROWTFT,TIMFT(IFT),CFMLFT(IFT),CFMHFT(IFT)     
       WRITE (OUT,20) IFT,TITLE                                         
       WRITE (OUT,30)                                                    
-      WRITE (OUT,40) ROWTFT                                             
-      CALL CHECKR (ROWTFT,0.040,0.085,187)                              
-      ROWTFT = ROWTFT / GRACC                                           
+                  IF (INPUT_UNITS .EQ. UNIT_SI) THEN
+                        WRITE (OUT,41) ROWTFT
+                  ELSE
+                        WRITE (OUT,40) ROWTFT
+                  ENDIF
+                  IF (INPUT_UNITS .EQ. UNIT_SI) THEN
+                        CALL CHECKR (ROWTFT,0.64,1.36,187)
+                  ELSE
+                        CALL CHECKR (ROWTFT,0.040,0.085,187)
+                        ROWTFT = ROWTFT / GRACC
+                  ENDIF
       DUMY1=TIMFT(IFT)                                                  
       WRITE (OUT,50) DUMY1                                              
       CALL CHECKR (DUMY1,0.0,300.0,176)                                 
@@ -81,20 +96,44 @@ C*****REACHES 0.9999 OPERATING PRESSURE AT THE END OF RUNUP TIME
       GO TO 245                                                         
 240   TIMFT(IFT)=-9.21034037/((DUMY1*100.0)**2)                         
 245   NUMMY1(1)=CFMLFT(IFT)                                             
-      WRITE (OUT,60) NUMMY1(1)                                          
-      CALL CHECKI (NUMMY1(1),-100000,0,193)                             
-      CFMLFT(IFT)=CFMLFT(IFT)/60.0                                      
+                  IF (INPUT_UNITS .EQ. UNIT_SI) THEN
+                        WRITE (OUT,61) NUMMY1(1)
+                  ELSE
+                        WRITE (OUT,60) NUMMY1(1)
+                  ENDIF
+      IF (INPUT_UNITS .EQ. UNIT_SI) THEN
+        CALL CHECKR (CFMLFT(IFT),-47.2,0.0,193)
+      ELSE
+        CALL CHECKI (NUMMY1(1),-100000,0,193)
+        CFMLFT(IFT)=CFMLFT(IFT)/60.0
+      ENDIF
       NUMMY1(2)=CFMHFT(IFT)                                             
-      WRITE (OUT,70) NUMMY1(2)                                          
-      CALL CHECKI (NUMMY1(2),1000,2000000,194)                          
-      CFMHFT(IFT)=CFMHFT(IFT)/60.0                                      
+                  IF (INPUT_UNITS .EQ. UNIT_SI) THEN
+                        WRITE (OUT,71) NUMMY1(2)
+                  ELSE
+                        WRITE (OUT,70) NUMMY1(2)
+                  ENDIF
+      IF (INPUT_UNITS .EQ. UNIT_SI) THEN
+        CALL CHECKR (CFMHFT(IFT),0.472,943.9,194)
+      ELSE
+        CALL CHECKI (NUMMY1(2),1000,2000000,194)
+        CFMHFT(IFT)=CFMHFT(IFT)/60.0
+      ENDIF
 C*****COMPUTE INTERVAL IN CFM BETWEEN POINTS OF FITTED FAN              
 C*****CURVE VERIFICATION                                                
-      IINT=5000                                                          
-      IF (NUMMY1(2)-NUMMY1(1)-250000) 270,270,250                       
-250   IINT=10000                                                         
-      IF (NUMMY1(2)-NUMMY1(1)-1000000) 270,270,260                      
-260   IINT=50000                                                         
+      IF (INPUT_UNITS .EQ. UNIT_SI) THEN
+        IINT=2
+        IF (CFMHFT(IFT)-CFMLFT(IFT)-120.0) 270,270,250
+250     IINT=5
+        IF (CFMHFT(IFT)-CFMLFT(IFT)-470.0) 270,270,260
+260     IINT=20
+      ELSE
+        IINT=5000
+        IF (NUMMY1(2)-NUMMY1(1)-250000) 270,270,251
+251     IINT=10000
+        IF (NUMMY1(2)-NUMMY1(1)-1000000) 270,270,252
+252     IINT=50000
+      ENDIF
 270   NLOW=(NUMMY1(1)-IINT)/IINT                                          
       NHIGH=NLOW+500                                                    
 C*****READ IN PRESSURE VS VOLUME CURVE FOR FAN                          
@@ -130,20 +169,39 @@ C*****COPY OUTFLOW DATA POINTS INTO INFLOW DATA POINTS
 C*****BEGIN OUTFLOW FAN PERFORMANCE CURVE FIT                           
 380   WRITE (OUT,120)                                                   
 C*****PRINTOUT TOTAL PRESSURE RISES                                     
-      WRITE (OUT,140) (DUMMY1(J),J=1,4)                                 
+                  IF (INPUT_UNITS .EQ. UNIT_SI) THEN
+                        WRITE (OUT,141) (DUMMY1(J),J=1,4)
+                  ELSE
+                        WRITE (OUT,140) (DUMMY1(J),J=1,4)
+                  ENDIF
 C*****CHECK TOTAL PRESSURE RISES AND CONVERT THEM TO PROGRAM INTERNAL   
 C*****UNITS                                                             
       DO 390 J=1,4                                                      
-      CALL CHECKR (DUMMY1(J),-15.0,50.0,68)                             
-390   DUMMY4(J)=WGCONS*DUMMY1(J)/ROWTFT                                 
+                  IF (INPUT_UNITS .EQ. UNIT_SI) THEN
+                        CALL CHECKR (DUMMY1(J),-3736.0,12454.0,68)
+                        DUMMY4(J)=DUMMY1(J)/ROWTFT
+                  ELSE
+                        CALL CHECKR (DUMMY1(J),-15.0,50.0,68)
+                        DUMMY4(J)=WGCONS*DUMMY1(J)/ROWTFT
+                  ENDIF
+390   CONTINUE
 C*****PRINTOUT VOLUME FLOWRATES                                         
       DO 400 J=1,4                                                      
 400   NUMMY1(J)=DUMMY2(J)                                               
-      WRITE (OUT,150) (NUMMY1(J),J=1,4)                                 
+                  IF (INPUT_UNITS .EQ. UNIT_SI) THEN
+                        WRITE (OUT,151) (NUMMY1(J),J=1,4)
+                  ELSE
+                        WRITE (OUT,150) (NUMMY1(J),J=1,4)
+                  ENDIF
 C*****CHECK VOLUME FLOWRATES AND CONVERT THEM TO PROGRAM INTERNAL UNITS 
       DO 410 J=1,4                                                      
-      CALL CHECKR (DUMMY2(J),0.0,2000000.0,69)                          
-410   DUMMY2(J)=DUMMY2(J)/60.0                                          
+                  IF (INPUT_UNITS .EQ. UNIT_SI) THEN
+                        CALL CHECKR (DUMMY2(J),0.0,943.9,69)
+                  ELSE
+                        CALL CHECKR (DUMMY2(J),0.0,2000000.0,69)
+                        DUMMY2(J)=DUMMY2(J)/60.0
+                  ENDIF
+410   CONTINUE
       WRITE (OUT,130)                                                   
 C*****COMPUTE MATRIX COEFFICIENTS - VOLUME FLOWRATES RAISED TO POWERS   
 C*****ZERO THROUGH THREE                                                
@@ -172,12 +230,23 @@ C*****PRINTOUT FITTED FAN CURVE WITH AIR DENSITY ADJUSTMENT
 450   DO 460 J=1,7                                                      
       NUMMY1(J)=IINT*K                                                   
       K=K+1                                                             
-      DUMY1=FLOAT(NUMMY1(J))/60.0                                       
+                  DUMY1=FLOAT(NUMMY1(J))
+                  IF (INPUT_UNITS .NE. UNIT_SI) DUMY1=DUMY1/60.0
       DUMMY3(J)=DUMY1*(DUMY1*(DUMY1*FN1OFT(IFT)+FN2OFT(IFT))+FN3OFT(IFT)
      1)+FN4OFT(IFT)                                                     
-460   DUMMY3(J)=RHOMAS*DUMMY3(J)/WGCONS
-      WRITE (OUT,160) (DUMMY3(J),J=1,7)                                 
-      WRITE (OUT,170) (NUMMY1(J),J=1,7)                                 
+                  IF (INPUT_UNITS .EQ. UNIT_SI) THEN
+                        DUMMY3(J)=RHOMAS*DUMMY3(J)
+                  ELSE
+                        DUMMY3(J)=RHOMAS*DUMMY3(J)/WGCONS
+                  ENDIF
+460   CONTINUE
+                  IF (INPUT_UNITS .EQ. UNIT_SI) THEN
+                        WRITE (OUT,161) (DUMMY3(J),J=1,7)
+                        WRITE (OUT,171) (NUMMY1(J),J=1,7)
+                  ELSE
+                        WRITE (OUT,160) (DUMMY3(J),J=1,7)
+                        WRITE (OUT,170) (NUMMY1(J),J=1,7)
+                  ENDIF
 C*****CHECK FOR PRINTOUT OF MORE THAN 500 POINTS ON FITTED FAN CURVE    
       IF (NHIGH-K) 470,480,480                                          
 470   CALL EERROR (85)                                                   
@@ -194,20 +263,39 @@ C*****         OPERATING RANGE
 C*****BEGIN INFLOW FAN PERFORMANCE CURVE FIT                            
       WRITE (OUT,120)                                                   
 C*****PRINTOUT TOTAL PRESSURE RISES                                     
-      WRITE (OUT,140) (DUMMY1(J),J=5,8)                                 
+                  IF (INPUT_UNITS .EQ. UNIT_SI) THEN
+                        WRITE (OUT,141) (DUMMY1(J),J=5,8)
+                  ELSE
+                        WRITE (OUT,140) (DUMMY1(J),J=5,8)
+                  ENDIF
 C*****CHECK TOTAL PRESSURE RISES AND CONVERT THEM TO PROGRAM INTERNAL   
 C*****UNITS                                                             
       DO 520 J=5,8                                                      
-      CALL CHECKR (DUMMY1(J),-15.0,50.0,68)                             
-520   DUMMY4(J-4)=WGCONS*DUMMY1(J)/ROWTFT                               
+                  IF (INPUT_UNITS .EQ. UNIT_SI) THEN
+                        CALL CHECKR (DUMMY1(J),-3736.0,12454.0,68)
+                        DUMMY4(J-4)=DUMMY1(J)/ROWTFT
+                  ELSE
+                        CALL CHECKR (DUMMY1(J),-15.0,50.0,68)
+                        DUMMY4(J-4)=WGCONS*DUMMY1(J)/ROWTFT
+                  ENDIF
+520   CONTINUE
 C*****PRINTOUT VOLUME FLOWRATES                                         
       DO 530 J=5,8                                                      
 530   NUMMY1(J)=DUMMY2(J)                                               
-      WRITE (OUT,150) (NUMMY1(J),J=5,8)                                 
+                  IF (INPUT_UNITS .EQ. UNIT_SI) THEN
+                        WRITE (OUT,151) (NUMMY1(J),J=5,8)
+                  ELSE
+                        WRITE (OUT,150) (NUMMY1(J),J=5,8)
+                  ENDIF
 C*****CHECK VOLUME FLOWRATES AND CONVERT THEM TO PROGRAM INTERNAL UNITS 
       DO 540 J=5,8                                                      
-      CALL CHECKR (DUMMY2(J),0.0,2000000.0,69)                          
-540   DUMMY2(J)=DUMMY2(J)/60.0                                          
+                  IF (INPUT_UNITS .EQ. UNIT_SI) THEN
+                        CALL CHECKR (DUMMY2(J),0.0,943.9,69)
+                  ELSE
+                        CALL CHECKR (DUMMY2(J),0.0,2000000.0,69)
+                        DUMMY2(J)=DUMMY2(J)/60.0
+                  ENDIF
+540   CONTINUE
       WRITE (OUT,130)                                                   
 C*****COMPUTE MATRIX COEFFICIENTS - VOLUME FLOWRATES RAISED TO POWERS   
 C*****ZERO THROUGH THREE                                                
@@ -235,12 +323,23 @@ C*****PRINTOUT FITTED FAN CURVE WITH AIR DENSITY ADJUSTMENT
 580   DO 590 J=1,7                                                      
       NUMMY1(J)=IINT*K                                                   
       K=K+1                                                             
-      DUMY1=-FLOAT(NUMMY1(J))/60.0                                      
+                  DUMY1=-FLOAT(NUMMY1(J))
+                  IF (INPUT_UNITS .NE. UNIT_SI) DUMY1=DUMY1/60.0
       DUMMY3(J)=DUMY1*(DUMY1*(DUMY1*FN1IFT(IFT)+FN2IFT(IFT))+FN3IFT(IFT)
      1)+FN4IFT(IFT)                                                     
-590   DUMMY3(J)=-RHOMAS*DUMMY3(J)/WGCONS                                
-      WRITE (OUT,160) (DUMMY3(J),J=1,7)                                 
-      WRITE (OUT,170) (NUMMY1(J),J=1,7)                                 
+                  IF (INPUT_UNITS .EQ. UNIT_SI) THEN
+                        DUMMY3(J)=-RHOMAS*DUMMY3(J)
+                  ELSE
+                        DUMMY3(J)=-RHOMAS*DUMMY3(J)/WGCONS
+                  ENDIF
+590   CONTINUE
+                  IF (INPUT_UNITS .EQ. UNIT_SI) THEN
+                        WRITE (OUT,161) (DUMMY3(J),J=1,7)
+                        WRITE (OUT,171) (NUMMY1(J),J=1,7)
+                  ELSE
+                        WRITE (OUT,160) (DUMMY3(J),J=1,7)
+                        WRITE (OUT,170) (NUMMY1(J),J=1,7)
+                  ENDIF
 C*****CHECK FOR PRINTOUT OF MORE THAN 500 POINTS ON FITTED FAN CURVE    
       IF (NHIGH-K) 600,610,610                                          
 600   CALL EERROR (85)                                                   

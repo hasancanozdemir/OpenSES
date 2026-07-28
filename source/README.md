@@ -54,6 +54,16 @@ By default, build.ps1 uses BuildEngine Auto:
 - uses make if available
 - otherwise uses direct gfortran compilation
 
+Authoritative migrated sources
+-----------------------------
+The following source files are now authoritative in .f95 form and
+replace their former .FOR counterparts:
+- INPUT.f95
+- PRINT.f95
+- JSONPIT.f95
+
+These files are compiled from the .f95 versions by the build scripts.
+
 The following changes were made to the source code files.
 
 DSHARE

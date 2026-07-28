@@ -57,7 +57,7 @@ C****
 C****
       INCLUDE 'DSHARE'
 
-	INTEGER*2 ARGC, FLAG1, II
+      INTEGER*2 ARGC, FLAG1, II, JJ
       INTEGER*2 I1,I2
       CHARACTER*256 ARGV
 
@@ -78,6 +78,10 @@ C**** GET NAME OF INPUT FILE FROM COMMAND LINE
 C     LOOP OVER THE COMMAND LINE ARGUMENTS            
       DO II= 1, ARGC
           CALL GETARG(II,ARGV)          
+              DO JJ = 1, LEN_TRIM(ARGV)
+                    IF (ICHAR(ARGV(JJ:JJ)) .EQ. 92) ARGV(JJ:JJ) = '/'
+                    IF (ICHAR(ARGV(JJ:JJ)) .EQ. 165) ARGV(JJ:JJ) = '/'
+              END DO
 C         IF (ARGV(1:1) .EQ. '/') THEN !A SWITCH WAS FOUND
 C             IF ((ARGV .EQ. '/IVONLY') .OR.
 C    1            (ARGV .EQ. '/ivonly')) THEN

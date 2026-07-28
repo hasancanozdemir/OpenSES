@@ -1,11 +1,11 @@
-░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░                            
-░░█████╗░██████╗░███████╗███╗░░██╗░██████╗███████╗░██████╗░ Subway Environment Simulation           
-░██╔══██╗██╔══██╗██╔════╝████╗░██║██╔════╝██╔════╝██╔════╝░                            
-░██║░░██║██████╔╝█████╗░░██╔██╗██║╚█████╗░█████╗░░╚█████╗░░                                           
-░██║░░██║██╔═══╝░██╔══╝░░██║╚████║░╚═══██╗██╔══╝░░░╚═══██╗░                               
-░╚█████╔╝██║░░░░░███████╗██║░╚███║██████╔╝███████╗██████╔╝░                                                     
-░░╚════╝░╚═╝░░░░░╚══════╝╚═╝░░╚══╝╚═════╝░╚══════╝╚═════╝░░                         
-░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░                                              
+?????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????                            
+????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????? Subway Environment Simulation           
+?????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????                            
+?????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????                                           
+?????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????                               
+?????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????                                                     
+?????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????                         
+?????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????                                              
 OpenSES, 5.0ALPHA, XXXXXXXXXXXX
 
 Copyright (c) 2021, Engineers of the OpenSES Agreement. All rights reserved. 
@@ -29,9 +29,9 @@ SPECIAL, EXEMPLARY, OR CONSEQUENTIAL  DAMAGES (INCLUDING, BUT NOT LIMITED TO, PR
 LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER  CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN
 CONTRACT, STRICT LIABILITY,  OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE  OF THIS
 SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
-██████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████
+??????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????
 
-Simulation started at:  28 JUL 2026 15:25:30
+Simulation started at:  28 JUL 2026 17:19:43
 
 
 SAMPLE SES INPUT FILE FOR EMERGENCY SIMULATION (FIRE MODEL)                     
@@ -195,11 +195,11 @@ STACK HEIGHT                                                                    
 
 SEGMENT PERIMETERS         16.2                                                    TOTAL PERIMETER        16.2  M
 
-ROUGHNESS LENGTHS          0.0366                                                  ROUGHNESS LENGTH     0.0000  MM
+ROUGHNESS LENGTHS         36.5800                                                  ROUGHNESS LENGTH     0.0366  MM
 
    HYDRAULIC DIAMETER                                                                    4.3   M
-   RELATIVE ROUGHNESS   ( E/D )                                                      0.00001
-   FULLY TURBULENT FRICTION FACTOR (FROM AVERAGE ROUGHNESS)                           0.0085
+   RELATIVE ROUGHNESS   ( E/D )                                                      0.00847
+   FULLY TURBULENT FRICTION FACTOR (FROM AVERAGE ROUGHNESS)                           0.0360
 
 SEGMENT TOTAL HEAD LOSS COEFFICIENTS                 POSITIVE             NEGATIVE                             FORM 3C
                                                        FLOW                 FLOW
@@ -236,11 +236,11 @@ STACK HEIGHT                                                                    
 
 SEGMENT PERIMETERS         16.2                                                    TOTAL PERIMETER        16.2  M
 
-ROUGHNESS LENGTHS          0.0366                                                  ROUGHNESS LENGTH     0.0000  MM
+ROUGHNESS LENGTHS         36.5800                                                  ROUGHNESS LENGTH     0.0366  MM
 
    HYDRAULIC DIAMETER                                                                    4.3   M
-   RELATIVE ROUGHNESS   ( E/D )                                                      0.00001
-   FULLY TURBULENT FRICTION FACTOR (FROM AVERAGE ROUGHNESS)                           0.0085
+   RELATIVE ROUGHNESS   ( E/D )                                                      0.00847
+   FULLY TURBULENT FRICTION FACTOR (FROM AVERAGE ROUGHNESS)                           0.0360
 
 SEGMENT TOTAL HEAD LOSS COEFFICIENTS                 POSITIVE             NEGATIVE                             FORM 3C
                                                        FLOW                 FLOW
@@ -277,11 +277,11 @@ STACK HEIGHT                                                                    
 
 SEGMENT PERIMETERS         16.2                                                    TOTAL PERIMETER        16.2  M
 
-ROUGHNESS LENGTHS          0.0366                                                  ROUGHNESS LENGTH     0.0000  MM
+ROUGHNESS LENGTHS         36.5800                                                  ROUGHNESS LENGTH     0.0366  MM
 
    HYDRAULIC DIAMETER                                                                    4.3   M
-   RELATIVE ROUGHNESS   ( E/D )                                                      0.00001
-   FULLY TURBULENT FRICTION FACTOR (FROM AVERAGE ROUGHNESS)                           0.0085
+   RELATIVE ROUGHNESS   ( E/D )                                                      0.00847
+   FULLY TURBULENT FRICTION FACTOR (FROM AVERAGE ROUGHNESS)                           0.0360
 
 SEGMENT TOTAL HEAD LOSS COEFFICIENTS                 POSITIVE             NEGATIVE                             FORM 3C
                                                        FLOW                 FLOW
@@ -318,11 +318,11 @@ STACK HEIGHT                                                                    
 
 SEGMENT PERIMETERS         16.2                                                    TOTAL PERIMETER        16.2  M
 
-ROUGHNESS LENGTHS          0.0366                                                  ROUGHNESS LENGTH     0.0000  MM
+ROUGHNESS LENGTHS         36.5800                                                  ROUGHNESS LENGTH     0.0366  MM
 
    HYDRAULIC DIAMETER                                                                    4.3   M
-   RELATIVE ROUGHNESS   ( E/D )                                                      0.00001
-   FULLY TURBULENT FRICTION FACTOR (FROM AVERAGE ROUGHNESS)                           0.0085
+   RELATIVE ROUGHNESS   ( E/D )                                                      0.00847
+   FULLY TURBULENT FRICTION FACTOR (FROM AVERAGE ROUGHNESS)                           0.0360
 
 SEGMENT TOTAL HEAD LOSS COEFFICIENTS                 POSITIVE             NEGATIVE                             FORM 3C
                                                        FLOW                 FLOW
@@ -548,11 +548,11 @@ TIME      0.00 SECONDS                           0 TRAIN(S) ARE OPERATIONAL
 PARTITIONING        FLOW     VEL.
                     (M^3/S)    (M/SEC)
 
-    1 -  1            0.0      0.0
-    2 -  2            0.0      0.0
-    2 -  3            0.0      0.0
-    2 -  4            0.0      0.0
-    5 -  5            0.0      0.0
+    1 -  1          0.000      0.00
+    2 -  2          0.000      0.00
+    2 -  3          0.000      0.00
+    2 -  4          0.000      0.00
+    5 -  5          0.000      0.00
 
 
 
@@ -572,11 +572,11 @@ TIME     10.00 SECONDS                           0 TRAIN(S) ARE OPERATIONAL
 PARTITIONING        FLOW     VEL.
                     (M^3/S)    (M/SEC)
 
-    1 -  1           66.3      3.8
-    2 -  2          -66.3     -3.8
-    2 -  3          -66.3     -3.8
-    2 -  4          -66.3     -3.8
-    5 -  5          132.7      4.8
+    1 -  1         65.594      3.74
+    2 -  2        -65.594     -3.74
+    2 -  3        -65.594     -3.74
+    2 -  4        -65.594     -3.74
+    5 -  5        131.187      4.71
 
 
 
@@ -587,11 +587,11 @@ TIME     20.00 SECONDS                           0 TRAIN(S) ARE OPERATIONAL
 PARTITIONING        FLOW     VEL.
                     (M^3/S)    (M/SEC)
 
-    1 -  1           72.8      4.2
-    2 -  2          -72.8     -4.2
-    2 -  3          -72.8     -4.2
-    2 -  4          -72.8     -4.2
-    5 -  5          145.5      5.2
+    1 -  1         71.986      4.11
+    2 -  2        -71.986     -4.11
+    2 -  3        -71.986     -4.11
+    2 -  4        -71.986     -4.11
+    5 -  5        143.972      5.17
 
 
 
@@ -602,11 +602,11 @@ TIME     30.00 SECONDS                           0 TRAIN(S) ARE OPERATIONAL
 PARTITIONING        FLOW     VEL.
                     (M^3/S)    (M/SEC)
 
-    1 -  1           72.8      4.2
-    2 -  2          -72.8     -4.2
-    2 -  3          -72.8     -4.2
-    2 -  4          -72.8     -4.2
-    5 -  5          145.5      5.2
+    1 -  1         71.993      4.11
+    2 -  2        -71.993     -4.11
+    2 -  3        -71.993     -4.11
+    2 -  4        -71.993     -4.11
+    5 -  5        143.987      5.17
 
 
 
@@ -617,11 +617,11 @@ TIME     40.00 SECONDS                           0 TRAIN(S) ARE OPERATIONAL
 PARTITIONING        FLOW     VEL.
                     (M^3/S)    (M/SEC)
 
-    1 -  1           72.8      4.2
-    2 -  2          -72.8     -4.2
-    2 -  3          -72.8     -4.2
-    2 -  4          -72.8     -4.2
-    5 -  5          145.5      5.2
+    1 -  1         71.993      4.11
+    2 -  2        -71.993     -4.11
+    2 -  3        -71.993     -4.11
+    2 -  4        -71.993     -4.11
+    5 -  5        143.987      5.17
 
 
 
@@ -632,11 +632,11 @@ TIME     50.00 SECONDS                           0 TRAIN(S) ARE OPERATIONAL
 PARTITIONING        FLOW     VEL.
                     (M^3/S)    (M/SEC)
 
-    1 -  1           72.8      4.2
-    2 -  2          -72.8     -4.2
-    2 -  3          -72.8     -4.2
-    2 -  4          -72.8     -4.2
-    5 -  5          145.5      5.2
+    1 -  1         71.993      4.11
+    2 -  2        -71.993     -4.11
+    2 -  3        -71.993     -4.11
+    2 -  4        -71.993     -4.11
+    5 -  5        143.987      5.17
 
 
 
@@ -647,11 +647,11 @@ TIME     60.00 SECONDS                           0 TRAIN(S) ARE OPERATIONAL
 PARTITIONING        FLOW     VEL.
                     (M^3/S)    (M/SEC)
 
-    1 -  1           72.8      4.2
-    2 -  2          -72.8     -4.2
-    2 -  3          -72.8     -4.2
-    2 -  4          -72.8     -4.2
-    5 -  5          145.5      5.2
+    1 -  1         71.993      4.11
+    2 -  2        -71.993     -4.11
+    2 -  3        -71.993     -4.11
+    2 -  4        -71.993     -4.11
+    5 -  5        143.987      5.17
 
 
 
@@ -662,11 +662,11 @@ TIME     70.00 SECONDS                           0 TRAIN(S) ARE OPERATIONAL
 PARTITIONING        FLOW     VEL.
                     (M^3/S)    (M/SEC)
 
-    1 -  1           72.8      4.2
-    2 -  2          -72.8     -4.2
-    2 -  3          -72.8     -4.2
-    2 -  4          -72.8     -4.2
-    5 -  5          145.5      5.2
+    1 -  1         71.993      4.11
+    2 -  2        -71.993     -4.11
+    2 -  3        -71.993     -4.11
+    2 -  4        -71.993     -4.11
+    5 -  5        143.987      5.17
 
 
 
@@ -677,11 +677,11 @@ TIME     80.00 SECONDS                           0 TRAIN(S) ARE OPERATIONAL
 PARTITIONING        FLOW     VEL.
                     (M^3/S)    (M/SEC)
 
-    1 -  1           72.8      4.2
-    2 -  2          -72.8     -4.2
-    2 -  3          -72.8     -4.2
-    2 -  4          -72.8     -4.2
-    5 -  5          145.5      5.2
+    1 -  1         71.993      4.11
+    2 -  2        -71.993     -4.11
+    2 -  3        -71.993     -4.11
+    2 -  4        -71.993     -4.11
+    5 -  5        143.987      5.17
 
 
 
@@ -692,11 +692,11 @@ TIME     90.00 SECONDS                           0 TRAIN(S) ARE OPERATIONAL
 PARTITIONING        FLOW     VEL.
                     (M^3/S)    (M/SEC)
 
-    1 -  1           72.8      4.2
-    2 -  2          -72.8     -4.2
-    2 -  3          -72.8     -4.2
-    2 -  4          -72.8     -4.2
-    5 -  5          145.5      5.2
+    1 -  1         71.993      4.11
+    2 -  2        -71.993     -4.11
+    2 -  3        -71.993     -4.11
+    2 -  4        -71.993     -4.11
+    5 -  5        143.987      5.17
 
 
 
@@ -707,11 +707,11 @@ TIME    100.00 SECONDS                           0 TRAIN(S) ARE OPERATIONAL
 PARTITIONING        FLOW     VEL.
                     (M^3/S)    (M/SEC)
 
-    1 -  1           72.8      4.2
-    2 -  2          -72.8     -4.2
-    2 -  3          -72.8     -4.2
-    2 -  4          -72.8     -4.2
-    5 -  5          145.5      5.2
+    1 -  1         71.993      4.11
+    2 -  2        -71.993     -4.11
+    2 -  3        -71.993     -4.11
+    2 -  4        -71.993     -4.11
+    5 -  5        143.987      5.17
 
 INTEGRATION STEP SIZE
      AERODYNAMIC    RATIO = 1     INTEGRATION INCREMENT ( TWO CYCLES ) = 0.40 SEC
@@ -725,11 +725,11 @@ TIME    120.00 SECONDS                           0 TRAIN(S) ARE OPERATIONAL
 PARTITIONING        FLOW     VEL.
                     (M^3/S)    (M/SEC)
 
-    1 -  1           72.8      4.2
-    2 -  2          -72.8     -4.2
-    2 -  3          -72.8     -4.2
-    2 -  4          -72.8     -4.2
-    5 -  5          145.5      5.2
+    1 -  1         71.993      4.11
+    2 -  2        -71.993     -4.11
+    2 -  3        -71.993     -4.11
+    2 -  4        -71.993     -4.11
+    5 -  5        143.987      5.17
 
 
 
@@ -740,11 +740,11 @@ TIME    140.00 SECONDS                           0 TRAIN(S) ARE OPERATIONAL
 PARTITIONING        FLOW     VEL.
                     (M^3/S)    (M/SEC)
 
-    1 -  1           72.8      4.2
-    2 -  2          -72.8     -4.2
-    2 -  3          -72.8     -4.2
-    2 -  4          -72.8     -4.2
-    5 -  5          145.5      5.2
+    1 -  1         71.993      4.11
+    2 -  2        -71.993     -4.11
+    2 -  3        -71.993     -4.11
+    2 -  4        -71.993     -4.11
+    5 -  5        143.987      5.17
 
 
 
@@ -755,11 +755,11 @@ TIME    160.00 SECONDS                           0 TRAIN(S) ARE OPERATIONAL
 PARTITIONING        FLOW     VEL.
                     (M^3/S)    (M/SEC)
 
-    1 -  1           72.8      4.2
-    2 -  2          -72.8     -4.2
-    2 -  3          -72.8     -4.2
-    2 -  4          -72.8     -4.2
-    5 -  5          145.5      5.2
+    1 -  1         71.993      4.11
+    2 -  2        -71.993     -4.11
+    2 -  3        -71.993     -4.11
+    2 -  4        -71.993     -4.11
+    5 -  5        143.987      5.17
 
 
 
@@ -770,11 +770,11 @@ TIME    180.00 SECONDS                           0 TRAIN(S) ARE OPERATIONAL
 PARTITIONING        FLOW     VEL.
                     (M^3/S)    (M/SEC)
 
-    1 -  1           72.8      4.2
-    2 -  2          -72.8     -4.2
-    2 -  3          -72.8     -4.2
-    2 -  4          -72.8     -4.2
-    5 -  5          145.5      5.2
+    1 -  1         71.993      4.11
+    2 -  2        -71.993     -4.11
+    2 -  3        -71.993     -4.11
+    2 -  4        -71.993     -4.11
+    5 -  5        143.987      5.17
 
 
 
@@ -785,11 +785,11 @@ TIME    200.00 SECONDS                           0 TRAIN(S) ARE OPERATIONAL
 PARTITIONING        FLOW     VEL.
                     (M^3/S)    (M/SEC)
 
-    1 -  1           72.8      4.2
-    2 -  2          -72.8     -4.2
-    2 -  3          -72.8     -4.2
-    2 -  4          -72.8     -4.2
-    5 -  5          145.5      5.2
+    1 -  1         71.993      4.11
+    2 -  2        -71.993     -4.11
+    2 -  3        -71.993     -4.11
+    2 -  4        -71.993     -4.11
+    5 -  5        143.987      5.17
 
 
 
@@ -800,11 +800,11 @@ TIME    220.00 SECONDS                           0 TRAIN(S) ARE OPERATIONAL
 PARTITIONING        FLOW     VEL.
                     (M^3/S)    (M/SEC)
 
-    1 -  1           72.8      4.2
-    2 -  2          -72.8     -4.2
-    2 -  3          -72.8     -4.2
-    2 -  4          -72.8     -4.2
-    5 -  5          145.5      5.2
+    1 -  1         71.993      4.11
+    2 -  2        -71.993     -4.11
+    2 -  3        -71.993     -4.11
+    2 -  4        -71.993     -4.11
+    5 -  5        143.987      5.17
 
 
 
@@ -815,11 +815,11 @@ TIME    240.00 SECONDS                           0 TRAIN(S) ARE OPERATIONAL
 PARTITIONING        FLOW     VEL.
                     (M^3/S)    (M/SEC)
 
-    1 -  1           72.8      4.2
-    2 -  2          -72.8     -4.2
-    2 -  3          -72.8     -4.2
-    2 -  4          -72.8     -4.2
-    5 -  5          145.5      5.2
+    1 -  1         71.993      4.11
+    2 -  2        -71.993     -4.11
+    2 -  3        -71.993     -4.11
+    2 -  4        -71.993     -4.11
+    5 -  5        143.987      5.17
 
 
 
@@ -830,11 +830,11 @@ TIME    260.00 SECONDS                           0 TRAIN(S) ARE OPERATIONAL
 PARTITIONING        FLOW     VEL.
                     (M^3/S)    (M/SEC)
 
-    1 -  1           72.8      4.2
-    2 -  2          -72.8     -4.2
-    2 -  3          -72.8     -4.2
-    2 -  4          -72.8     -4.2
-    5 -  5          145.5      5.2
+    1 -  1         71.993      4.11
+    2 -  2        -71.993     -4.11
+    2 -  3        -71.993     -4.11
+    2 -  4        -71.993     -4.11
+    5 -  5        143.987      5.17
 
 
 
@@ -845,11 +845,11 @@ TIME    280.00 SECONDS                           0 TRAIN(S) ARE OPERATIONAL
 PARTITIONING        FLOW     VEL.
                     (M^3/S)    (M/SEC)
 
-    1 -  1           72.8      4.2
-    2 -  2          -72.8     -4.2
-    2 -  3          -72.8     -4.2
-    2 -  4          -72.8     -4.2
-    5 -  5          145.5      5.2
+    1 -  1         71.993      4.11
+    2 -  2        -71.993     -4.11
+    2 -  3        -71.993     -4.11
+    2 -  4        -71.993     -4.11
+    5 -  5        143.987      5.17
 
 
 
@@ -860,11 +860,11 @@ TIME    300.00 SECONDS                           0 TRAIN(S) ARE OPERATIONAL
 PARTITIONING        FLOW     VEL.
                     (M^3/S)    (M/SEC)
 
-    1 -  1           72.8      4.2
-    2 -  2          -72.8     -4.2
-    2 -  3          -72.8     -4.2
-    2 -  4          -72.8     -4.2
-    5 -  5          145.5      5.2
+    1 -  1         71.993      4.11
+    2 -  2        -71.993     -4.11
+    2 -  3        -71.993     -4.11
+    2 -  4        -71.993     -4.11
+    5 -  5        143.987      5.17
 
 INTEGRATION STEP SIZE
      AERODYNAMIC    RATIO = 1     INTEGRATION INCREMENT ( TWO CYCLES ) = 0.40 SEC
@@ -878,11 +878,11 @@ TIME    350.00 SECONDS                           0 TRAIN(S) ARE OPERATIONAL
 PARTITIONING        FLOW     VEL.
                     (M^3/S)    (M/SEC)
 
-    1 -  1           72.8      4.2
-    2 -  2          -72.8     -4.2
-    2 -  3          -72.8     -4.2
-    2 -  4          -72.8     -4.2
-    5 -  5          145.5      5.2
+    1 -  1         71.993      4.11
+    2 -  2        -71.993     -4.11
+    2 -  3        -71.993     -4.11
+    2 -  4        -71.993     -4.11
+    5 -  5        143.987      5.17
 
 
 
@@ -893,11 +893,11 @@ TIME    400.00 SECONDS                           0 TRAIN(S) ARE OPERATIONAL
 PARTITIONING        FLOW     VEL.
                     (M^3/S)    (M/SEC)
 
-    1 -  1           72.8      4.2
-    2 -  2          -72.8     -4.2
-    2 -  3          -72.8     -4.2
-    2 -  4          -72.8     -4.2
-    5 -  5          145.5      5.2
+    1 -  1         71.993      4.11
+    2 -  2        -71.993     -4.11
+    2 -  3        -71.993     -4.11
+    2 -  4        -71.993     -4.11
+    5 -  5        143.987      5.17
 
 
 
@@ -908,11 +908,11 @@ TIME    450.00 SECONDS                           0 TRAIN(S) ARE OPERATIONAL
 PARTITIONING        FLOW     VEL.
                     (M^3/S)    (M/SEC)
 
-    1 -  1           72.8      4.2
-    2 -  2          -72.8     -4.2
-    2 -  3          -72.8     -4.2
-    2 -  4          -72.8     -4.2
-    5 -  5          145.5      5.2
+    1 -  1         71.993      4.11
+    2 -  2        -71.993     -4.11
+    2 -  3        -71.993     -4.11
+    2 -  4        -71.993     -4.11
+    5 -  5        143.987      5.17
 
 
 
@@ -923,11 +923,11 @@ TIME    500.00 SECONDS                           0 TRAIN(S) ARE OPERATIONAL
 PARTITIONING        FLOW     VEL.
                     (M^3/S)    (M/SEC)
 
-    1 -  1           72.8      4.2
-    2 -  2          -72.8     -4.2
-    2 -  3          -72.8     -4.2
-    2 -  4          -72.8     -4.2
-    5 -  5          145.5      5.2
+    1 -  1         71.993      4.11
+    2 -  2        -71.993     -4.11
+    2 -  3        -71.993     -4.11
+    2 -  4        -71.993     -4.11
+    5 -  5        143.987      5.17
 
 
 

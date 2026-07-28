@@ -1,0 +1,2014 @@
+    [
+         {
+         "info" :       {
+                        "input_file" : "./samples/inferno_SI_P2.inp",
+                        "timestamp" :          "28 JUL 2026 14:08:20",
+                        "units" :                                "SI",
+                        "ambient_dry_bulb_temperature" :        29.44,
+                        "ambient_wet_bulb_temperature" :        23.33,
+                        "ambient_pressure" :                101.32100,
+                        "ambient_density" :                  11.43898,
+                        "ambient_humidity_ratio" :           -0.00059
+                        }
+         },
+         {
+         "Pit" :                                                 0.00,
+         "Train_Data" : [],
+         "Section_Data" : 
+                        [
+                        {
+                        "Section" :                                    1,
+                        "Segment" :                                 1,
+                        "Airflow" :                               0.0,
+                        "Buoyancy" :                          0.00000,
+                        "Pressure_Change" :                   0.00000
+                        },
+                        {
+                        "Section" :                                    2,
+                        "Segment" :                                 2,
+                        "Airflow" :                               0.0,
+                        "Buoyancy" :                          0.00000,
+                        "Pressure_Change" :                   0.00000
+                        },
+                        {
+                        "Section" :                                    2,
+                        "Segment" :                                 3,
+                        "Airflow" :                               0.0,
+                        "Buoyancy" :                          0.00000,
+                        "Pressure_Change" :                   0.00000
+                        },
+                        {
+                        "Section" :                                    2,
+                        "Segment" :                                 4,
+                        "Airflow" :                               0.0,
+                        "Buoyancy" :                          0.00000,
+                        "Pressure_Change" :                   0.00000
+                        },
+                        {
+                        "Section" :                                    5,
+                        "Segment" :                                 5,
+                        "Airflow" :                               0.0,
+                        "Buoyancy" :                          0.00000,
+                        "Pressure_Change" :                   0.00000
+                        }
+                        ],
+         "Segment_Data" : 
+                        [
+                        {
+                        "Segment" :                                 1,
+                        "Line" :                                 true,
+                        "Air_Velocity" :                          0.0,
+                        "Reynolds_Number" :               0.00000E+00,
+                        "Number_Of_Trains" :                        0
+                        },
+                        {
+                        "Segment" :                                 2,
+                        "Line" :                                 true,
+                        "Air_Velocity" :                          0.0,
+                        "Reynolds_Number" :               0.00000E+00,
+                        "Number_Of_Trains" :                        0
+                        },
+                        {
+                        "Segment" :                                 3,
+                        "Line" :                                 true,
+                        "Air_Velocity" :                          0.0,
+                        "Reynolds_Number" :               0.00000E+00,
+                        "Number_Of_Trains" :                        0
+                        },
+                        {
+                        "Segment" :                                 4,
+                        "Line" :                                 true,
+                        "Air_Velocity" :                          0.0,
+                        "Reynolds_Number" :               0.00000E+00,
+                        "Number_Of_Trains" :                        0
+                        },
+                        {
+                        "Segment" :                                 5,
+                        "Line" :                                false,
+                        "Air_Velocity" :                          0.0,
+                        "Reynolds_Number" :               0.00000E+00
+                        }
+                        ],
+         "Subsegment_Data" : []
+         },
+         {
+         "Pit" :                                                10.00,
+         "Train_Data" : [],
+         "Section_Data" : 
+                        [
+                        {
+                        "Section" :                                    1,
+                        "Segment" :                                 1,
+                        "Airflow" :                              66.3,
+                        "Buoyancy" :                          0.00000,
+                        "Pressure_Change" :                 -34.38685
+                        },
+                        {
+                        "Section" :                                    2,
+                        "Segment" :                                 2,
+                        "Airflow" :                             -66.3,
+                        "Buoyancy" :                          0.00000,
+                        "Pressure_Change" :                  34.38686
+                        },
+                        {
+                        "Section" :                                    2,
+                        "Segment" :                                 3,
+                        "Airflow" :                             -66.3,
+                        "Buoyancy" :                          0.00000,
+                        "Pressure_Change" :                  34.38686
+                        },
+                        {
+                        "Section" :                                    2,
+                        "Segment" :                                 4,
+                        "Airflow" :                             -66.3,
+                        "Buoyancy" :                          0.00000,
+                        "Pressure_Change" :                  34.38686
+                        },
+                        {
+                        "Section" :                                    5,
+                        "Segment" :                                 5,
+                        "Airflow" :                             132.7,
+                        "Buoyancy" :                          0.00000,
+                        "Pressure_Change" :                  37.14400
+                        }
+                        ],
+         "Segment_Data" : 
+                        [
+                        {
+                        "Segment" :                                 1,
+                        "Line" :                                 true,
+                        "Air_Velocity" :                          3.8,
+                        "Reynolds_Number" :               0.10890E+07,
+                        "Number_Of_Trains" :                        0
+                        },
+                        {
+                        "Segment" :                                 2,
+                        "Line" :                                 true,
+                        "Air_Velocity" :                         -3.8,
+                        "Reynolds_Number" :               0.10890E+07,
+                        "Number_Of_Trains" :                        0
+                        },
+                        {
+                        "Segment" :                                 3,
+                        "Line" :                                 true,
+                        "Air_Velocity" :                         -3.8,
+                        "Reynolds_Number" :               0.10890E+07,
+                        "Number_Of_Trains" :                        0
+                        },
+                        {
+                        "Segment" :                                 4,
+                        "Line" :                                 true,
+                        "Air_Velocity" :                         -3.8,
+                        "Reynolds_Number" :               0.10890E+07,
+                        "Number_Of_Trains" :                        0
+                        },
+                        {
+                        "Segment" :                                 5,
+                        "Line" :                                false,
+                        "Air_Velocity" :                          4.8,
+                        "Reynolds_Number" :               0.14513E+07
+                        }
+                        ],
+         "Subsegment_Data" : []
+         },
+         {
+         "Pit" :                                                20.00,
+         "Train_Data" : [],
+         "Section_Data" : 
+                        [
+                        {
+                        "Section" :                                    1,
+                        "Segment" :                                 1,
+                        "Airflow" :                              72.8,
+                        "Buoyancy" :                          0.00000,
+                        "Pressure_Change" :                  -4.02234
+                        },
+                        {
+                        "Section" :                                    2,
+                        "Segment" :                                 2,
+                        "Airflow" :                             -72.8,
+                        "Buoyancy" :                          0.00000,
+                        "Pressure_Change" :                   4.02234
+                        },
+                        {
+                        "Section" :                                    2,
+                        "Segment" :                                 3,
+                        "Airflow" :                             -72.8,
+                        "Buoyancy" :                          0.00000,
+                        "Pressure_Change" :                   4.02234
+                        },
+                        {
+                        "Section" :                                    2,
+                        "Segment" :                                 4,
+                        "Airflow" :                             -72.8,
+                        "Buoyancy" :                          0.00000,
+                        "Pressure_Change" :                   4.02234
+                        },
+                        {
+                        "Section" :                                    5,
+                        "Segment" :                                 5,
+                        "Airflow" :                             145.5,
+                        "Buoyancy" :                          0.00000,
+                        "Pressure_Change" :                   7.33916
+                        }
+                        ],
+         "Segment_Data" : 
+                        [
+                        {
+                        "Segment" :                                 1,
+                        "Line" :                                 true,
+                        "Air_Velocity" :                          4.2,
+                        "Reynolds_Number" :               0.11944E+07,
+                        "Number_Of_Trains" :                        0
+                        },
+                        {
+                        "Segment" :                                 2,
+                        "Line" :                                 true,
+                        "Air_Velocity" :                         -4.2,
+                        "Reynolds_Number" :               0.11944E+07,
+                        "Number_Of_Trains" :                        0
+                        },
+                        {
+                        "Segment" :                                 3,
+                        "Line" :                                 true,
+                        "Air_Velocity" :                         -4.2,
+                        "Reynolds_Number" :               0.11944E+07,
+                        "Number_Of_Trains" :                        0
+                        },
+                        {
+                        "Segment" :                                 4,
+                        "Line" :                                 true,
+                        "Air_Velocity" :                         -4.2,
+                        "Reynolds_Number" :               0.11944E+07,
+                        "Number_Of_Trains" :                        0
+                        },
+                        {
+                        "Segment" :                                 5,
+                        "Line" :                                false,
+                        "Air_Velocity" :                          5.2,
+                        "Reynolds_Number" :               0.15918E+07
+                        }
+                        ],
+         "Subsegment_Data" : []
+         },
+         {
+         "Pit" :                                                30.00,
+         "Train_Data" : [],
+         "Section_Data" : 
+                        [
+                        {
+                        "Section" :                                    1,
+                        "Segment" :                                 1,
+                        "Airflow" :                              72.8,
+                        "Buoyancy" :                          0.00000,
+                        "Pressure_Change" :                  -3.97807
+                        },
+                        {
+                        "Section" :                                    2,
+                        "Segment" :                                 2,
+                        "Airflow" :                             -72.8,
+                        "Buoyancy" :                          0.00000,
+                        "Pressure_Change" :                   3.97807
+                        },
+                        {
+                        "Section" :                                    2,
+                        "Segment" :                                 3,
+                        "Airflow" :                             -72.8,
+                        "Buoyancy" :                          0.00000,
+                        "Pressure_Change" :                   3.97807
+                        },
+                        {
+                        "Section" :                                    2,
+                        "Segment" :                                 4,
+                        "Airflow" :                             -72.8,
+                        "Buoyancy" :                          0.00000,
+                        "Pressure_Change" :                   3.97807
+                        },
+                        {
+                        "Section" :                                    5,
+                        "Segment" :                                 5,
+                        "Airflow" :                             145.5,
+                        "Buoyancy" :                          0.00000,
+                        "Pressure_Change" :                   7.29554
+                        }
+                        ],
+         "Segment_Data" : 
+                        [
+                        {
+                        "Segment" :                                 1,
+                        "Line" :                                 true,
+                        "Air_Velocity" :                          4.2,
+                        "Reynolds_Number" :               0.11945E+07,
+                        "Number_Of_Trains" :                        0
+                        },
+                        {
+                        "Segment" :                                 2,
+                        "Line" :                                 true,
+                        "Air_Velocity" :                         -4.2,
+                        "Reynolds_Number" :               0.11945E+07,
+                        "Number_Of_Trains" :                        0
+                        },
+                        {
+                        "Segment" :                                 3,
+                        "Line" :                                 true,
+                        "Air_Velocity" :                         -4.2,
+                        "Reynolds_Number" :               0.11945E+07,
+                        "Number_Of_Trains" :                        0
+                        },
+                        {
+                        "Segment" :                                 4,
+                        "Line" :                                 true,
+                        "Air_Velocity" :                         -4.2,
+                        "Reynolds_Number" :               0.11945E+07,
+                        "Number_Of_Trains" :                        0
+                        },
+                        {
+                        "Segment" :                                 5,
+                        "Line" :                                false,
+                        "Air_Velocity" :                          5.2,
+                        "Reynolds_Number" :               0.15920E+07
+                        }
+                        ],
+         "Subsegment_Data" : []
+         },
+         {
+         "Pit" :                                                40.00,
+         "Train_Data" : [],
+         "Section_Data" : 
+                        [
+                        {
+                        "Section" :                                    1,
+                        "Segment" :                                 1,
+                        "Airflow" :                              72.8,
+                        "Buoyancy" :                          0.00000,
+                        "Pressure_Change" :                  -3.97807
+                        },
+                        {
+                        "Section" :                                    2,
+                        "Segment" :                                 2,
+                        "Airflow" :                             -72.8,
+                        "Buoyancy" :                          0.00000,
+                        "Pressure_Change" :                   3.97807
+                        },
+                        {
+                        "Section" :                                    2,
+                        "Segment" :                                 3,
+                        "Airflow" :                             -72.8,
+                        "Buoyancy" :                          0.00000,
+                        "Pressure_Change" :                   3.97807
+                        },
+                        {
+                        "Section" :                                    2,
+                        "Segment" :                                 4,
+                        "Airflow" :                             -72.8,
+                        "Buoyancy" :                          0.00000,
+                        "Pressure_Change" :                   3.97807
+                        },
+                        {
+                        "Section" :                                    5,
+                        "Segment" :                                 5,
+                        "Airflow" :                             145.5,
+                        "Buoyancy" :                          0.00000,
+                        "Pressure_Change" :                   7.29554
+                        }
+                        ],
+         "Segment_Data" : 
+                        [
+                        {
+                        "Segment" :                                 1,
+                        "Line" :                                 true,
+                        "Air_Velocity" :                          4.2,
+                        "Reynolds_Number" :               0.11945E+07,
+                        "Number_Of_Trains" :                        0
+                        },
+                        {
+                        "Segment" :                                 2,
+                        "Line" :                                 true,
+                        "Air_Velocity" :                         -4.2,
+                        "Reynolds_Number" :               0.11945E+07,
+                        "Number_Of_Trains" :                        0
+                        },
+                        {
+                        "Segment" :                                 3,
+                        "Line" :                                 true,
+                        "Air_Velocity" :                         -4.2,
+                        "Reynolds_Number" :               0.11945E+07,
+                        "Number_Of_Trains" :                        0
+                        },
+                        {
+                        "Segment" :                                 4,
+                        "Line" :                                 true,
+                        "Air_Velocity" :                         -4.2,
+                        "Reynolds_Number" :               0.11945E+07,
+                        "Number_Of_Trains" :                        0
+                        },
+                        {
+                        "Segment" :                                 5,
+                        "Line" :                                false,
+                        "Air_Velocity" :                          5.2,
+                        "Reynolds_Number" :               0.15920E+07
+                        }
+                        ],
+         "Subsegment_Data" : []
+         },
+         {
+         "Pit" :                                                50.00,
+         "Train_Data" : [],
+         "Section_Data" : 
+                        [
+                        {
+                        "Section" :                                    1,
+                        "Segment" :                                 1,
+                        "Airflow" :                              72.8,
+                        "Buoyancy" :                          0.00000,
+                        "Pressure_Change" :                  -3.97807
+                        },
+                        {
+                        "Section" :                                    2,
+                        "Segment" :                                 2,
+                        "Airflow" :                             -72.8,
+                        "Buoyancy" :                          0.00000,
+                        "Pressure_Change" :                   3.97806
+                        },
+                        {
+                        "Section" :                                    2,
+                        "Segment" :                                 3,
+                        "Airflow" :                             -72.8,
+                        "Buoyancy" :                          0.00000,
+                        "Pressure_Change" :                   3.97806
+                        },
+                        {
+                        "Section" :                                    2,
+                        "Segment" :                                 4,
+                        "Airflow" :                             -72.8,
+                        "Buoyancy" :                          0.00000,
+                        "Pressure_Change" :                   3.97806
+                        },
+                        {
+                        "Section" :                                    5,
+                        "Segment" :                                 5,
+                        "Airflow" :                             145.5,
+                        "Buoyancy" :                          0.00000,
+                        "Pressure_Change" :                   7.29554
+                        }
+                        ],
+         "Segment_Data" : 
+                        [
+                        {
+                        "Segment" :                                 1,
+                        "Line" :                                 true,
+                        "Air_Velocity" :                          4.2,
+                        "Reynolds_Number" :               0.11945E+07,
+                        "Number_Of_Trains" :                        0
+                        },
+                        {
+                        "Segment" :                                 2,
+                        "Line" :                                 true,
+                        "Air_Velocity" :                         -4.2,
+                        "Reynolds_Number" :               0.11945E+07,
+                        "Number_Of_Trains" :                        0
+                        },
+                        {
+                        "Segment" :                                 3,
+                        "Line" :                                 true,
+                        "Air_Velocity" :                         -4.2,
+                        "Reynolds_Number" :               0.11945E+07,
+                        "Number_Of_Trains" :                        0
+                        },
+                        {
+                        "Segment" :                                 4,
+                        "Line" :                                 true,
+                        "Air_Velocity" :                         -4.2,
+                        "Reynolds_Number" :               0.11945E+07,
+                        "Number_Of_Trains" :                        0
+                        },
+                        {
+                        "Segment" :                                 5,
+                        "Line" :                                false,
+                        "Air_Velocity" :                          5.2,
+                        "Reynolds_Number" :               0.15920E+07
+                        }
+                        ],
+         "Subsegment_Data" : []
+         },
+         {
+         "Pit" :                                                60.00,
+         "Train_Data" : [],
+         "Section_Data" : 
+                        [
+                        {
+                        "Section" :                                    1,
+                        "Segment" :                                 1,
+                        "Airflow" :                              72.8,
+                        "Buoyancy" :                          0.00000,
+                        "Pressure_Change" :                  -3.97807
+                        },
+                        {
+                        "Section" :                                    2,
+                        "Segment" :                                 2,
+                        "Airflow" :                             -72.8,
+                        "Buoyancy" :                          0.00000,
+                        "Pressure_Change" :                   3.97806
+                        },
+                        {
+                        "Section" :                                    2,
+                        "Segment" :                                 3,
+                        "Airflow" :                             -72.8,
+                        "Buoyancy" :                          0.00000,
+                        "Pressure_Change" :                   3.97806
+                        },
+                        {
+                        "Section" :                                    2,
+                        "Segment" :                                 4,
+                        "Airflow" :                             -72.8,
+                        "Buoyancy" :                          0.00000,
+                        "Pressure_Change" :                   3.97806
+                        },
+                        {
+                        "Section" :                                    5,
+                        "Segment" :                                 5,
+                        "Airflow" :                             145.5,
+                        "Buoyancy" :                          0.00000,
+                        "Pressure_Change" :                   7.29554
+                        }
+                        ],
+         "Segment_Data" : 
+                        [
+                        {
+                        "Segment" :                                 1,
+                        "Line" :                                 true,
+                        "Air_Velocity" :                          4.2,
+                        "Reynolds_Number" :               0.11945E+07,
+                        "Number_Of_Trains" :                        0
+                        },
+                        {
+                        "Segment" :                                 2,
+                        "Line" :                                 true,
+                        "Air_Velocity" :                         -4.2,
+                        "Reynolds_Number" :               0.11945E+07,
+                        "Number_Of_Trains" :                        0
+                        },
+                        {
+                        "Segment" :                                 3,
+                        "Line" :                                 true,
+                        "Air_Velocity" :                         -4.2,
+                        "Reynolds_Number" :               0.11945E+07,
+                        "Number_Of_Trains" :                        0
+                        },
+                        {
+                        "Segment" :                                 4,
+                        "Line" :                                 true,
+                        "Air_Velocity" :                         -4.2,
+                        "Reynolds_Number" :               0.11945E+07,
+                        "Number_Of_Trains" :                        0
+                        },
+                        {
+                        "Segment" :                                 5,
+                        "Line" :                                false,
+                        "Air_Velocity" :                          5.2,
+                        "Reynolds_Number" :               0.15920E+07
+                        }
+                        ],
+         "Subsegment_Data" : []
+         },
+         {
+         "Pit" :                                                70.00,
+         "Train_Data" : [],
+         "Section_Data" : 
+                        [
+                        {
+                        "Section" :                                    1,
+                        "Segment" :                                 1,
+                        "Airflow" :                              72.8,
+                        "Buoyancy" :                          0.00000,
+                        "Pressure_Change" :                  -3.97807
+                        },
+                        {
+                        "Section" :                                    2,
+                        "Segment" :                                 2,
+                        "Airflow" :                             -72.8,
+                        "Buoyancy" :                          0.00000,
+                        "Pressure_Change" :                   3.97806
+                        },
+                        {
+                        "Section" :                                    2,
+                        "Segment" :                                 3,
+                        "Airflow" :                             -72.8,
+                        "Buoyancy" :                          0.00000,
+                        "Pressure_Change" :                   3.97806
+                        },
+                        {
+                        "Section" :                                    2,
+                        "Segment" :                                 4,
+                        "Airflow" :                             -72.8,
+                        "Buoyancy" :                          0.00000,
+                        "Pressure_Change" :                   3.97806
+                        },
+                        {
+                        "Section" :                                    5,
+                        "Segment" :                                 5,
+                        "Airflow" :                             145.5,
+                        "Buoyancy" :                          0.00000,
+                        "Pressure_Change" :                   7.29554
+                        }
+                        ],
+         "Segment_Data" : 
+                        [
+                        {
+                        "Segment" :                                 1,
+                        "Line" :                                 true,
+                        "Air_Velocity" :                          4.2,
+                        "Reynolds_Number" :               0.11945E+07,
+                        "Number_Of_Trains" :                        0
+                        },
+                        {
+                        "Segment" :                                 2,
+                        "Line" :                                 true,
+                        "Air_Velocity" :                         -4.2,
+                        "Reynolds_Number" :               0.11945E+07,
+                        "Number_Of_Trains" :                        0
+                        },
+                        {
+                        "Segment" :                                 3,
+                        "Line" :                                 true,
+                        "Air_Velocity" :                         -4.2,
+                        "Reynolds_Number" :               0.11945E+07,
+                        "Number_Of_Trains" :                        0
+                        },
+                        {
+                        "Segment" :                                 4,
+                        "Line" :                                 true,
+                        "Air_Velocity" :                         -4.2,
+                        "Reynolds_Number" :               0.11945E+07,
+                        "Number_Of_Trains" :                        0
+                        },
+                        {
+                        "Segment" :                                 5,
+                        "Line" :                                false,
+                        "Air_Velocity" :                          5.2,
+                        "Reynolds_Number" :               0.15920E+07
+                        }
+                        ],
+         "Subsegment_Data" : []
+         },
+         {
+         "Pit" :                                                80.00,
+         "Train_Data" : [],
+         "Section_Data" : 
+                        [
+                        {
+                        "Section" :                                    1,
+                        "Segment" :                                 1,
+                        "Airflow" :                              72.8,
+                        "Buoyancy" :                          0.00000,
+                        "Pressure_Change" :                  -3.97807
+                        },
+                        {
+                        "Section" :                                    2,
+                        "Segment" :                                 2,
+                        "Airflow" :                             -72.8,
+                        "Buoyancy" :                          0.00000,
+                        "Pressure_Change" :                   3.97806
+                        },
+                        {
+                        "Section" :                                    2,
+                        "Segment" :                                 3,
+                        "Airflow" :                             -72.8,
+                        "Buoyancy" :                          0.00000,
+                        "Pressure_Change" :                   3.97806
+                        },
+                        {
+                        "Section" :                                    2,
+                        "Segment" :                                 4,
+                        "Airflow" :                             -72.8,
+                        "Buoyancy" :                          0.00000,
+                        "Pressure_Change" :                   3.97806
+                        },
+                        {
+                        "Section" :                                    5,
+                        "Segment" :                                 5,
+                        "Airflow" :                             145.5,
+                        "Buoyancy" :                          0.00000,
+                        "Pressure_Change" :                   7.29554
+                        }
+                        ],
+         "Segment_Data" : 
+                        [
+                        {
+                        "Segment" :                                 1,
+                        "Line" :                                 true,
+                        "Air_Velocity" :                          4.2,
+                        "Reynolds_Number" :               0.11945E+07,
+                        "Number_Of_Trains" :                        0
+                        },
+                        {
+                        "Segment" :                                 2,
+                        "Line" :                                 true,
+                        "Air_Velocity" :                         -4.2,
+                        "Reynolds_Number" :               0.11945E+07,
+                        "Number_Of_Trains" :                        0
+                        },
+                        {
+                        "Segment" :                                 3,
+                        "Line" :                                 true,
+                        "Air_Velocity" :                         -4.2,
+                        "Reynolds_Number" :               0.11945E+07,
+                        "Number_Of_Trains" :                        0
+                        },
+                        {
+                        "Segment" :                                 4,
+                        "Line" :                                 true,
+                        "Air_Velocity" :                         -4.2,
+                        "Reynolds_Number" :               0.11945E+07,
+                        "Number_Of_Trains" :                        0
+                        },
+                        {
+                        "Segment" :                                 5,
+                        "Line" :                                false,
+                        "Air_Velocity" :                          5.2,
+                        "Reynolds_Number" :               0.15920E+07
+                        }
+                        ],
+         "Subsegment_Data" : []
+         },
+         {
+         "Pit" :                                                90.00,
+         "Train_Data" : [],
+         "Section_Data" : 
+                        [
+                        {
+                        "Section" :                                    1,
+                        "Segment" :                                 1,
+                        "Airflow" :                              72.8,
+                        "Buoyancy" :                          0.00000,
+                        "Pressure_Change" :                  -3.97807
+                        },
+                        {
+                        "Section" :                                    2,
+                        "Segment" :                                 2,
+                        "Airflow" :                             -72.8,
+                        "Buoyancy" :                          0.00000,
+                        "Pressure_Change" :                   3.97806
+                        },
+                        {
+                        "Section" :                                    2,
+                        "Segment" :                                 3,
+                        "Airflow" :                             -72.8,
+                        "Buoyancy" :                          0.00000,
+                        "Pressure_Change" :                   3.97806
+                        },
+                        {
+                        "Section" :                                    2,
+                        "Segment" :                                 4,
+                        "Airflow" :                             -72.8,
+                        "Buoyancy" :                          0.00000,
+                        "Pressure_Change" :                   3.97806
+                        },
+                        {
+                        "Section" :                                    5,
+                        "Segment" :                                 5,
+                        "Airflow" :                             145.5,
+                        "Buoyancy" :                          0.00000,
+                        "Pressure_Change" :                   7.29554
+                        }
+                        ],
+         "Segment_Data" : 
+                        [
+                        {
+                        "Segment" :                                 1,
+                        "Line" :                                 true,
+                        "Air_Velocity" :                          4.2,
+                        "Reynolds_Number" :               0.11945E+07,
+                        "Number_Of_Trains" :                        0
+                        },
+                        {
+                        "Segment" :                                 2,
+                        "Line" :                                 true,
+                        "Air_Velocity" :                         -4.2,
+                        "Reynolds_Number" :               0.11945E+07,
+                        "Number_Of_Trains" :                        0
+                        },
+                        {
+                        "Segment" :                                 3,
+                        "Line" :                                 true,
+                        "Air_Velocity" :                         -4.2,
+                        "Reynolds_Number" :               0.11945E+07,
+                        "Number_Of_Trains" :                        0
+                        },
+                        {
+                        "Segment" :                                 4,
+                        "Line" :                                 true,
+                        "Air_Velocity" :                         -4.2,
+                        "Reynolds_Number" :               0.11945E+07,
+                        "Number_Of_Trains" :                        0
+                        },
+                        {
+                        "Segment" :                                 5,
+                        "Line" :                                false,
+                        "Air_Velocity" :                          5.2,
+                        "Reynolds_Number" :               0.15920E+07
+                        }
+                        ],
+         "Subsegment_Data" : []
+         },
+         {
+         "Pit" :                                               100.00,
+         "Train_Data" : [],
+         "Section_Data" : 
+                        [
+                        {
+                        "Section" :                                    1,
+                        "Segment" :                                 1,
+                        "Airflow" :                              72.8,
+                        "Buoyancy" :                          0.00000,
+                        "Pressure_Change" :                  -3.97807
+                        },
+                        {
+                        "Section" :                                    2,
+                        "Segment" :                                 2,
+                        "Airflow" :                             -72.8,
+                        "Buoyancy" :                          0.00000,
+                        "Pressure_Change" :                   3.97806
+                        },
+                        {
+                        "Section" :                                    2,
+                        "Segment" :                                 3,
+                        "Airflow" :                             -72.8,
+                        "Buoyancy" :                          0.00000,
+                        "Pressure_Change" :                   3.97806
+                        },
+                        {
+                        "Section" :                                    2,
+                        "Segment" :                                 4,
+                        "Airflow" :                             -72.8,
+                        "Buoyancy" :                          0.00000,
+                        "Pressure_Change" :                   3.97806
+                        },
+                        {
+                        "Section" :                                    5,
+                        "Segment" :                                 5,
+                        "Airflow" :                             145.5,
+                        "Buoyancy" :                          0.00000,
+                        "Pressure_Change" :                   7.29554
+                        }
+                        ],
+         "Segment_Data" : 
+                        [
+                        {
+                        "Segment" :                                 1,
+                        "Line" :                                 true,
+                        "Air_Velocity" :                          4.2,
+                        "Reynolds_Number" :               0.11945E+07,
+                        "Number_Of_Trains" :                        0
+                        },
+                        {
+                        "Segment" :                                 2,
+                        "Line" :                                 true,
+                        "Air_Velocity" :                         -4.2,
+                        "Reynolds_Number" :               0.11945E+07,
+                        "Number_Of_Trains" :                        0
+                        },
+                        {
+                        "Segment" :                                 3,
+                        "Line" :                                 true,
+                        "Air_Velocity" :                         -4.2,
+                        "Reynolds_Number" :               0.11945E+07,
+                        "Number_Of_Trains" :                        0
+                        },
+                        {
+                        "Segment" :                                 4,
+                        "Line" :                                 true,
+                        "Air_Velocity" :                         -4.2,
+                        "Reynolds_Number" :               0.11945E+07,
+                        "Number_Of_Trains" :                        0
+                        },
+                        {
+                        "Segment" :                                 5,
+                        "Line" :                                false,
+                        "Air_Velocity" :                          5.2,
+                        "Reynolds_Number" :               0.15920E+07
+                        }
+                        ],
+         "Subsegment_Data" : []
+         },
+         {
+         "Pit" :                                               120.00,
+         "Train_Data" : [],
+         "Section_Data" : 
+                        [
+                        {
+                        "Section" :                                    1,
+                        "Segment" :                                 1,
+                        "Airflow" :                              72.8,
+                        "Buoyancy" :                          0.00000,
+                        "Pressure_Change" :                  -3.97807
+                        },
+                        {
+                        "Section" :                                    2,
+                        "Segment" :                                 2,
+                        "Airflow" :                             -72.8,
+                        "Buoyancy" :                          0.00000,
+                        "Pressure_Change" :                   3.97806
+                        },
+                        {
+                        "Section" :                                    2,
+                        "Segment" :                                 3,
+                        "Airflow" :                             -72.8,
+                        "Buoyancy" :                          0.00000,
+                        "Pressure_Change" :                   3.97806
+                        },
+                        {
+                        "Section" :                                    2,
+                        "Segment" :                                 4,
+                        "Airflow" :                             -72.8,
+                        "Buoyancy" :                          0.00000,
+                        "Pressure_Change" :                   3.97806
+                        },
+                        {
+                        "Section" :                                    5,
+                        "Segment" :                                 5,
+                        "Airflow" :                             145.5,
+                        "Buoyancy" :                          0.00000,
+                        "Pressure_Change" :                   7.29554
+                        }
+                        ],
+         "Segment_Data" : 
+                        [
+                        {
+                        "Segment" :                                 1,
+                        "Line" :                                 true,
+                        "Air_Velocity" :                          4.2,
+                        "Reynolds_Number" :               0.11945E+07,
+                        "Number_Of_Trains" :                        0
+                        },
+                        {
+                        "Segment" :                                 2,
+                        "Line" :                                 true,
+                        "Air_Velocity" :                         -4.2,
+                        "Reynolds_Number" :               0.11945E+07,
+                        "Number_Of_Trains" :                        0
+                        },
+                        {
+                        "Segment" :                                 3,
+                        "Line" :                                 true,
+                        "Air_Velocity" :                         -4.2,
+                        "Reynolds_Number" :               0.11945E+07,
+                        "Number_Of_Trains" :                        0
+                        },
+                        {
+                        "Segment" :                                 4,
+                        "Line" :                                 true,
+                        "Air_Velocity" :                         -4.2,
+                        "Reynolds_Number" :               0.11945E+07,
+                        "Number_Of_Trains" :                        0
+                        },
+                        {
+                        "Segment" :                                 5,
+                        "Line" :                                false,
+                        "Air_Velocity" :                          5.2,
+                        "Reynolds_Number" :               0.15920E+07
+                        }
+                        ],
+         "Subsegment_Data" : []
+         },
+         {
+         "Pit" :                                               140.00,
+         "Train_Data" : [],
+         "Section_Data" : 
+                        [
+                        {
+                        "Section" :                                    1,
+                        "Segment" :                                 1,
+                        "Airflow" :                              72.8,
+                        "Buoyancy" :                          0.00000,
+                        "Pressure_Change" :                  -3.97807
+                        },
+                        {
+                        "Section" :                                    2,
+                        "Segment" :                                 2,
+                        "Airflow" :                             -72.8,
+                        "Buoyancy" :                          0.00000,
+                        "Pressure_Change" :                   3.97806
+                        },
+                        {
+                        "Section" :                                    2,
+                        "Segment" :                                 3,
+                        "Airflow" :                             -72.8,
+                        "Buoyancy" :                          0.00000,
+                        "Pressure_Change" :                   3.97806
+                        },
+                        {
+                        "Section" :                                    2,
+                        "Segment" :                                 4,
+                        "Airflow" :                             -72.8,
+                        "Buoyancy" :                          0.00000,
+                        "Pressure_Change" :                   3.97806
+                        },
+                        {
+                        "Section" :                                    5,
+                        "Segment" :                                 5,
+                        "Airflow" :                             145.5,
+                        "Buoyancy" :                          0.00000,
+                        "Pressure_Change" :                   7.29554
+                        }
+                        ],
+         "Segment_Data" : 
+                        [
+                        {
+                        "Segment" :                                 1,
+                        "Line" :                                 true,
+                        "Air_Velocity" :                          4.2,
+                        "Reynolds_Number" :               0.11945E+07,
+                        "Number_Of_Trains" :                        0
+                        },
+                        {
+                        "Segment" :                                 2,
+                        "Line" :                                 true,
+                        "Air_Velocity" :                         -4.2,
+                        "Reynolds_Number" :               0.11945E+07,
+                        "Number_Of_Trains" :                        0
+                        },
+                        {
+                        "Segment" :                                 3,
+                        "Line" :                                 true,
+                        "Air_Velocity" :                         -4.2,
+                        "Reynolds_Number" :               0.11945E+07,
+                        "Number_Of_Trains" :                        0
+                        },
+                        {
+                        "Segment" :                                 4,
+                        "Line" :                                 true,
+                        "Air_Velocity" :                         -4.2,
+                        "Reynolds_Number" :               0.11945E+07,
+                        "Number_Of_Trains" :                        0
+                        },
+                        {
+                        "Segment" :                                 5,
+                        "Line" :                                false,
+                        "Air_Velocity" :                          5.2,
+                        "Reynolds_Number" :               0.15920E+07
+                        }
+                        ],
+         "Subsegment_Data" : []
+         },
+         {
+         "Pit" :                                               160.00,
+         "Train_Data" : [],
+         "Section_Data" : 
+                        [
+                        {
+                        "Section" :                                    1,
+                        "Segment" :                                 1,
+                        "Airflow" :                              72.8,
+                        "Buoyancy" :                          0.00000,
+                        "Pressure_Change" :                  -3.97807
+                        },
+                        {
+                        "Section" :                                    2,
+                        "Segment" :                                 2,
+                        "Airflow" :                             -72.8,
+                        "Buoyancy" :                          0.00000,
+                        "Pressure_Change" :                   3.97806
+                        },
+                        {
+                        "Section" :                                    2,
+                        "Segment" :                                 3,
+                        "Airflow" :                             -72.8,
+                        "Buoyancy" :                          0.00000,
+                        "Pressure_Change" :                   3.97806
+                        },
+                        {
+                        "Section" :                                    2,
+                        "Segment" :                                 4,
+                        "Airflow" :                             -72.8,
+                        "Buoyancy" :                          0.00000,
+                        "Pressure_Change" :                   3.97806
+                        },
+                        {
+                        "Section" :                                    5,
+                        "Segment" :                                 5,
+                        "Airflow" :                             145.5,
+                        "Buoyancy" :                          0.00000,
+                        "Pressure_Change" :                   7.29554
+                        }
+                        ],
+         "Segment_Data" : 
+                        [
+                        {
+                        "Segment" :                                 1,
+                        "Line" :                                 true,
+                        "Air_Velocity" :                          4.2,
+                        "Reynolds_Number" :               0.11945E+07,
+                        "Number_Of_Trains" :                        0
+                        },
+                        {
+                        "Segment" :                                 2,
+                        "Line" :                                 true,
+                        "Air_Velocity" :                         -4.2,
+                        "Reynolds_Number" :               0.11945E+07,
+                        "Number_Of_Trains" :                        0
+                        },
+                        {
+                        "Segment" :                                 3,
+                        "Line" :                                 true,
+                        "Air_Velocity" :                         -4.2,
+                        "Reynolds_Number" :               0.11945E+07,
+                        "Number_Of_Trains" :                        0
+                        },
+                        {
+                        "Segment" :                                 4,
+                        "Line" :                                 true,
+                        "Air_Velocity" :                         -4.2,
+                        "Reynolds_Number" :               0.11945E+07,
+                        "Number_Of_Trains" :                        0
+                        },
+                        {
+                        "Segment" :                                 5,
+                        "Line" :                                false,
+                        "Air_Velocity" :                          5.2,
+                        "Reynolds_Number" :               0.15920E+07
+                        }
+                        ],
+         "Subsegment_Data" : []
+         },
+         {
+         "Pit" :                                               180.00,
+         "Train_Data" : [],
+         "Section_Data" : 
+                        [
+                        {
+                        "Section" :                                    1,
+                        "Segment" :                                 1,
+                        "Airflow" :                              72.8,
+                        "Buoyancy" :                          0.00000,
+                        "Pressure_Change" :                  -3.97807
+                        },
+                        {
+                        "Section" :                                    2,
+                        "Segment" :                                 2,
+                        "Airflow" :                             -72.8,
+                        "Buoyancy" :                          0.00000,
+                        "Pressure_Change" :                   3.97806
+                        },
+                        {
+                        "Section" :                                    2,
+                        "Segment" :                                 3,
+                        "Airflow" :                             -72.8,
+                        "Buoyancy" :                          0.00000,
+                        "Pressure_Change" :                   3.97806
+                        },
+                        {
+                        "Section" :                                    2,
+                        "Segment" :                                 4,
+                        "Airflow" :                             -72.8,
+                        "Buoyancy" :                          0.00000,
+                        "Pressure_Change" :                   3.97806
+                        },
+                        {
+                        "Section" :                                    5,
+                        "Segment" :                                 5,
+                        "Airflow" :                             145.5,
+                        "Buoyancy" :                          0.00000,
+                        "Pressure_Change" :                   7.29554
+                        }
+                        ],
+         "Segment_Data" : 
+                        [
+                        {
+                        "Segment" :                                 1,
+                        "Line" :                                 true,
+                        "Air_Velocity" :                          4.2,
+                        "Reynolds_Number" :               0.11945E+07,
+                        "Number_Of_Trains" :                        0
+                        },
+                        {
+                        "Segment" :                                 2,
+                        "Line" :                                 true,
+                        "Air_Velocity" :                         -4.2,
+                        "Reynolds_Number" :               0.11945E+07,
+                        "Number_Of_Trains" :                        0
+                        },
+                        {
+                        "Segment" :                                 3,
+                        "Line" :                                 true,
+                        "Air_Velocity" :                         -4.2,
+                        "Reynolds_Number" :               0.11945E+07,
+                        "Number_Of_Trains" :                        0
+                        },
+                        {
+                        "Segment" :                                 4,
+                        "Line" :                                 true,
+                        "Air_Velocity" :                         -4.2,
+                        "Reynolds_Number" :               0.11945E+07,
+                        "Number_Of_Trains" :                        0
+                        },
+                        {
+                        "Segment" :                                 5,
+                        "Line" :                                false,
+                        "Air_Velocity" :                          5.2,
+                        "Reynolds_Number" :               0.15920E+07
+                        }
+                        ],
+         "Subsegment_Data" : []
+         },
+         {
+         "Pit" :                                               200.00,
+         "Train_Data" : [],
+         "Section_Data" : 
+                        [
+                        {
+                        "Section" :                                    1,
+                        "Segment" :                                 1,
+                        "Airflow" :                              72.8,
+                        "Buoyancy" :                          0.00000,
+                        "Pressure_Change" :                  -3.97807
+                        },
+                        {
+                        "Section" :                                    2,
+                        "Segment" :                                 2,
+                        "Airflow" :                             -72.8,
+                        "Buoyancy" :                          0.00000,
+                        "Pressure_Change" :                   3.97806
+                        },
+                        {
+                        "Section" :                                    2,
+                        "Segment" :                                 3,
+                        "Airflow" :                             -72.8,
+                        "Buoyancy" :                          0.00000,
+                        "Pressure_Change" :                   3.97806
+                        },
+                        {
+                        "Section" :                                    2,
+                        "Segment" :                                 4,
+                        "Airflow" :                             -72.8,
+                        "Buoyancy" :                          0.00000,
+                        "Pressure_Change" :                   3.97806
+                        },
+                        {
+                        "Section" :                                    5,
+                        "Segment" :                                 5,
+                        "Airflow" :                             145.5,
+                        "Buoyancy" :                          0.00000,
+                        "Pressure_Change" :                   7.29554
+                        }
+                        ],
+         "Segment_Data" : 
+                        [
+                        {
+                        "Segment" :                                 1,
+                        "Line" :                                 true,
+                        "Air_Velocity" :                          4.2,
+                        "Reynolds_Number" :               0.11945E+07,
+                        "Number_Of_Trains" :                        0
+                        },
+                        {
+                        "Segment" :                                 2,
+                        "Line" :                                 true,
+                        "Air_Velocity" :                         -4.2,
+                        "Reynolds_Number" :               0.11945E+07,
+                        "Number_Of_Trains" :                        0
+                        },
+                        {
+                        "Segment" :                                 3,
+                        "Line" :                                 true,
+                        "Air_Velocity" :                         -4.2,
+                        "Reynolds_Number" :               0.11945E+07,
+                        "Number_Of_Trains" :                        0
+                        },
+                        {
+                        "Segment" :                                 4,
+                        "Line" :                                 true,
+                        "Air_Velocity" :                         -4.2,
+                        "Reynolds_Number" :               0.11945E+07,
+                        "Number_Of_Trains" :                        0
+                        },
+                        {
+                        "Segment" :                                 5,
+                        "Line" :                                false,
+                        "Air_Velocity" :                          5.2,
+                        "Reynolds_Number" :               0.15920E+07
+                        }
+                        ],
+         "Subsegment_Data" : []
+         },
+         {
+         "Pit" :                                               220.00,
+         "Train_Data" : [],
+         "Section_Data" : 
+                        [
+                        {
+                        "Section" :                                    1,
+                        "Segment" :                                 1,
+                        "Airflow" :                              72.8,
+                        "Buoyancy" :                          0.00000,
+                        "Pressure_Change" :                  -3.97807
+                        },
+                        {
+                        "Section" :                                    2,
+                        "Segment" :                                 2,
+                        "Airflow" :                             -72.8,
+                        "Buoyancy" :                          0.00000,
+                        "Pressure_Change" :                   3.97806
+                        },
+                        {
+                        "Section" :                                    2,
+                        "Segment" :                                 3,
+                        "Airflow" :                             -72.8,
+                        "Buoyancy" :                          0.00000,
+                        "Pressure_Change" :                   3.97806
+                        },
+                        {
+                        "Section" :                                    2,
+                        "Segment" :                                 4,
+                        "Airflow" :                             -72.8,
+                        "Buoyancy" :                          0.00000,
+                        "Pressure_Change" :                   3.97806
+                        },
+                        {
+                        "Section" :                                    5,
+                        "Segment" :                                 5,
+                        "Airflow" :                             145.5,
+                        "Buoyancy" :                          0.00000,
+                        "Pressure_Change" :                   7.29554
+                        }
+                        ],
+         "Segment_Data" : 
+                        [
+                        {
+                        "Segment" :                                 1,
+                        "Line" :                                 true,
+                        "Air_Velocity" :                          4.2,
+                        "Reynolds_Number" :               0.11945E+07,
+                        "Number_Of_Trains" :                        0
+                        },
+                        {
+                        "Segment" :                                 2,
+                        "Line" :                                 true,
+                        "Air_Velocity" :                         -4.2,
+                        "Reynolds_Number" :               0.11945E+07,
+                        "Number_Of_Trains" :                        0
+                        },
+                        {
+                        "Segment" :                                 3,
+                        "Line" :                                 true,
+                        "Air_Velocity" :                         -4.2,
+                        "Reynolds_Number" :               0.11945E+07,
+                        "Number_Of_Trains" :                        0
+                        },
+                        {
+                        "Segment" :                                 4,
+                        "Line" :                                 true,
+                        "Air_Velocity" :                         -4.2,
+                        "Reynolds_Number" :               0.11945E+07,
+                        "Number_Of_Trains" :                        0
+                        },
+                        {
+                        "Segment" :                                 5,
+                        "Line" :                                false,
+                        "Air_Velocity" :                          5.2,
+                        "Reynolds_Number" :               0.15920E+07
+                        }
+                        ],
+         "Subsegment_Data" : []
+         },
+         {
+         "Pit" :                                               240.00,
+         "Train_Data" : [],
+         "Section_Data" : 
+                        [
+                        {
+                        "Section" :                                    1,
+                        "Segment" :                                 1,
+                        "Airflow" :                              72.8,
+                        "Buoyancy" :                          0.00000,
+                        "Pressure_Change" :                  -3.97807
+                        },
+                        {
+                        "Section" :                                    2,
+                        "Segment" :                                 2,
+                        "Airflow" :                             -72.8,
+                        "Buoyancy" :                          0.00000,
+                        "Pressure_Change" :                   3.97806
+                        },
+                        {
+                        "Section" :                                    2,
+                        "Segment" :                                 3,
+                        "Airflow" :                             -72.8,
+                        "Buoyancy" :                          0.00000,
+                        "Pressure_Change" :                   3.97806
+                        },
+                        {
+                        "Section" :                                    2,
+                        "Segment" :                                 4,
+                        "Airflow" :                             -72.8,
+                        "Buoyancy" :                          0.00000,
+                        "Pressure_Change" :                   3.97806
+                        },
+                        {
+                        "Section" :                                    5,
+                        "Segment" :                                 5,
+                        "Airflow" :                             145.5,
+                        "Buoyancy" :                          0.00000,
+                        "Pressure_Change" :                   7.29554
+                        }
+                        ],
+         "Segment_Data" : 
+                        [
+                        {
+                        "Segment" :                                 1,
+                        "Line" :                                 true,
+                        "Air_Velocity" :                          4.2,
+                        "Reynolds_Number" :               0.11945E+07,
+                        "Number_Of_Trains" :                        0
+                        },
+                        {
+                        "Segment" :                                 2,
+                        "Line" :                                 true,
+                        "Air_Velocity" :                         -4.2,
+                        "Reynolds_Number" :               0.11945E+07,
+                        "Number_Of_Trains" :                        0
+                        },
+                        {
+                        "Segment" :                                 3,
+                        "Line" :                                 true,
+                        "Air_Velocity" :                         -4.2,
+                        "Reynolds_Number" :               0.11945E+07,
+                        "Number_Of_Trains" :                        0
+                        },
+                        {
+                        "Segment" :                                 4,
+                        "Line" :                                 true,
+                        "Air_Velocity" :                         -4.2,
+                        "Reynolds_Number" :               0.11945E+07,
+                        "Number_Of_Trains" :                        0
+                        },
+                        {
+                        "Segment" :                                 5,
+                        "Line" :                                false,
+                        "Air_Velocity" :                          5.2,
+                        "Reynolds_Number" :               0.15920E+07
+                        }
+                        ],
+         "Subsegment_Data" : []
+         },
+         {
+         "Pit" :                                               260.00,
+         "Train_Data" : [],
+         "Section_Data" : 
+                        [
+                        {
+                        "Section" :                                    1,
+                        "Segment" :                                 1,
+                        "Airflow" :                              72.8,
+                        "Buoyancy" :                          0.00000,
+                        "Pressure_Change" :                  -3.97807
+                        },
+                        {
+                        "Section" :                                    2,
+                        "Segment" :                                 2,
+                        "Airflow" :                             -72.8,
+                        "Buoyancy" :                          0.00000,
+                        "Pressure_Change" :                   3.97806
+                        },
+                        {
+                        "Section" :                                    2,
+                        "Segment" :                                 3,
+                        "Airflow" :                             -72.8,
+                        "Buoyancy" :                          0.00000,
+                        "Pressure_Change" :                   3.97806
+                        },
+                        {
+                        "Section" :                                    2,
+                        "Segment" :                                 4,
+                        "Airflow" :                             -72.8,
+                        "Buoyancy" :                          0.00000,
+                        "Pressure_Change" :                   3.97806
+                        },
+                        {
+                        "Section" :                                    5,
+                        "Segment" :                                 5,
+                        "Airflow" :                             145.5,
+                        "Buoyancy" :                          0.00000,
+                        "Pressure_Change" :                   7.29554
+                        }
+                        ],
+         "Segment_Data" : 
+                        [
+                        {
+                        "Segment" :                                 1,
+                        "Line" :                                 true,
+                        "Air_Velocity" :                          4.2,
+                        "Reynolds_Number" :               0.11945E+07,
+                        "Number_Of_Trains" :                        0
+                        },
+                        {
+                        "Segment" :                                 2,
+                        "Line" :                                 true,
+                        "Air_Velocity" :                         -4.2,
+                        "Reynolds_Number" :               0.11945E+07,
+                        "Number_Of_Trains" :                        0
+                        },
+                        {
+                        "Segment" :                                 3,
+                        "Line" :                                 true,
+                        "Air_Velocity" :                         -4.2,
+                        "Reynolds_Number" :               0.11945E+07,
+                        "Number_Of_Trains" :                        0
+                        },
+                        {
+                        "Segment" :                                 4,
+                        "Line" :                                 true,
+                        "Air_Velocity" :                         -4.2,
+                        "Reynolds_Number" :               0.11945E+07,
+                        "Number_Of_Trains" :                        0
+                        },
+                        {
+                        "Segment" :                                 5,
+                        "Line" :                                false,
+                        "Air_Velocity" :                          5.2,
+                        "Reynolds_Number" :               0.15920E+07
+                        }
+                        ],
+         "Subsegment_Data" : []
+         },
+         {
+         "Pit" :                                               280.00,
+         "Train_Data" : [],
+         "Section_Data" : 
+                        [
+                        {
+                        "Section" :                                    1,
+                        "Segment" :                                 1,
+                        "Airflow" :                              72.8,
+                        "Buoyancy" :                          0.00000,
+                        "Pressure_Change" :                  -3.97807
+                        },
+                        {
+                        "Section" :                                    2,
+                        "Segment" :                                 2,
+                        "Airflow" :                             -72.8,
+                        "Buoyancy" :                          0.00000,
+                        "Pressure_Change" :                   3.97806
+                        },
+                        {
+                        "Section" :                                    2,
+                        "Segment" :                                 3,
+                        "Airflow" :                             -72.8,
+                        "Buoyancy" :                          0.00000,
+                        "Pressure_Change" :                   3.97806
+                        },
+                        {
+                        "Section" :                                    2,
+                        "Segment" :                                 4,
+                        "Airflow" :                             -72.8,
+                        "Buoyancy" :                          0.00000,
+                        "Pressure_Change" :                   3.97806
+                        },
+                        {
+                        "Section" :                                    5,
+                        "Segment" :                                 5,
+                        "Airflow" :                             145.5,
+                        "Buoyancy" :                          0.00000,
+                        "Pressure_Change" :                   7.29554
+                        }
+                        ],
+         "Segment_Data" : 
+                        [
+                        {
+                        "Segment" :                                 1,
+                        "Line" :                                 true,
+                        "Air_Velocity" :                          4.2,
+                        "Reynolds_Number" :               0.11945E+07,
+                        "Number_Of_Trains" :                        0
+                        },
+                        {
+                        "Segment" :                                 2,
+                        "Line" :                                 true,
+                        "Air_Velocity" :                         -4.2,
+                        "Reynolds_Number" :               0.11945E+07,
+                        "Number_Of_Trains" :                        0
+                        },
+                        {
+                        "Segment" :                                 3,
+                        "Line" :                                 true,
+                        "Air_Velocity" :                         -4.2,
+                        "Reynolds_Number" :               0.11945E+07,
+                        "Number_Of_Trains" :                        0
+                        },
+                        {
+                        "Segment" :                                 4,
+                        "Line" :                                 true,
+                        "Air_Velocity" :                         -4.2,
+                        "Reynolds_Number" :               0.11945E+07,
+                        "Number_Of_Trains" :                        0
+                        },
+                        {
+                        "Segment" :                                 5,
+                        "Line" :                                false,
+                        "Air_Velocity" :                          5.2,
+                        "Reynolds_Number" :               0.15920E+07
+                        }
+                        ],
+         "Subsegment_Data" : []
+         },
+         {
+         "Pit" :                                               300.00,
+         "Train_Data" : [],
+         "Section_Data" : 
+                        [
+                        {
+                        "Section" :                                    1,
+                        "Segment" :                                 1,
+                        "Airflow" :                              72.8,
+                        "Buoyancy" :                          0.00000,
+                        "Pressure_Change" :                  -3.97807
+                        },
+                        {
+                        "Section" :                                    2,
+                        "Segment" :                                 2,
+                        "Airflow" :                             -72.8,
+                        "Buoyancy" :                          0.00000,
+                        "Pressure_Change" :                   3.97806
+                        },
+                        {
+                        "Section" :                                    2,
+                        "Segment" :                                 3,
+                        "Airflow" :                             -72.8,
+                        "Buoyancy" :                          0.00000,
+                        "Pressure_Change" :                   3.97806
+                        },
+                        {
+                        "Section" :                                    2,
+                        "Segment" :                                 4,
+                        "Airflow" :                             -72.8,
+                        "Buoyancy" :                          0.00000,
+                        "Pressure_Change" :                   3.97806
+                        },
+                        {
+                        "Section" :                                    5,
+                        "Segment" :                                 5,
+                        "Airflow" :                             145.5,
+                        "Buoyancy" :                          0.00000,
+                        "Pressure_Change" :                   7.29554
+                        }
+                        ],
+         "Segment_Data" : 
+                        [
+                        {
+                        "Segment" :                                 1,
+                        "Line" :                                 true,
+                        "Air_Velocity" :                          4.2,
+                        "Reynolds_Number" :               0.11945E+07,
+                        "Number_Of_Trains" :                        0
+                        },
+                        {
+                        "Segment" :                                 2,
+                        "Line" :                                 true,
+                        "Air_Velocity" :                         -4.2,
+                        "Reynolds_Number" :               0.11945E+07,
+                        "Number_Of_Trains" :                        0
+                        },
+                        {
+                        "Segment" :                                 3,
+                        "Line" :                                 true,
+                        "Air_Velocity" :                         -4.2,
+                        "Reynolds_Number" :               0.11945E+07,
+                        "Number_Of_Trains" :                        0
+                        },
+                        {
+                        "Segment" :                                 4,
+                        "Line" :                                 true,
+                        "Air_Velocity" :                         -4.2,
+                        "Reynolds_Number" :               0.11945E+07,
+                        "Number_Of_Trains" :                        0
+                        },
+                        {
+                        "Segment" :                                 5,
+                        "Line" :                                false,
+                        "Air_Velocity" :                          5.2,
+                        "Reynolds_Number" :               0.15920E+07
+                        }
+                        ],
+         "Subsegment_Data" : []
+         },
+         {
+         "Pit" :                                               350.00,
+         "Train_Data" : [],
+         "Section_Data" : 
+                        [
+                        {
+                        "Section" :                                    1,
+                        "Segment" :                                 1,
+                        "Airflow" :                              72.8,
+                        "Buoyancy" :                          0.00000,
+                        "Pressure_Change" :                  -3.97807
+                        },
+                        {
+                        "Section" :                                    2,
+                        "Segment" :                                 2,
+                        "Airflow" :                             -72.8,
+                        "Buoyancy" :                          0.00000,
+                        "Pressure_Change" :                   3.97806
+                        },
+                        {
+                        "Section" :                                    2,
+                        "Segment" :                                 3,
+                        "Airflow" :                             -72.8,
+                        "Buoyancy" :                          0.00000,
+                        "Pressure_Change" :                   3.97806
+                        },
+                        {
+                        "Section" :                                    2,
+                        "Segment" :                                 4,
+                        "Airflow" :                             -72.8,
+                        "Buoyancy" :                          0.00000,
+                        "Pressure_Change" :                   3.97806
+                        },
+                        {
+                        "Section" :                                    5,
+                        "Segment" :                                 5,
+                        "Airflow" :                             145.5,
+                        "Buoyancy" :                          0.00000,
+                        "Pressure_Change" :                   7.29554
+                        }
+                        ],
+         "Segment_Data" : 
+                        [
+                        {
+                        "Segment" :                                 1,
+                        "Line" :                                 true,
+                        "Air_Velocity" :                          4.2,
+                        "Reynolds_Number" :               0.11945E+07,
+                        "Number_Of_Trains" :                        0
+                        },
+                        {
+                        "Segment" :                                 2,
+                        "Line" :                                 true,
+                        "Air_Velocity" :                         -4.2,
+                        "Reynolds_Number" :               0.11945E+07,
+                        "Number_Of_Trains" :                        0
+                        },
+                        {
+                        "Segment" :                                 3,
+                        "Line" :                                 true,
+                        "Air_Velocity" :                         -4.2,
+                        "Reynolds_Number" :               0.11945E+07,
+                        "Number_Of_Trains" :                        0
+                        },
+                        {
+                        "Segment" :                                 4,
+                        "Line" :                                 true,
+                        "Air_Velocity" :                         -4.2,
+                        "Reynolds_Number" :               0.11945E+07,
+                        "Number_Of_Trains" :                        0
+                        },
+                        {
+                        "Segment" :                                 5,
+                        "Line" :                                false,
+                        "Air_Velocity" :                          5.2,
+                        "Reynolds_Number" :               0.15920E+07
+                        }
+                        ],
+         "Subsegment_Data" : []
+         },
+         {
+         "Pit" :                                               400.00,
+         "Train_Data" : [],
+         "Section_Data" : 
+                        [
+                        {
+                        "Section" :                                    1,
+                        "Segment" :                                 1,
+                        "Airflow" :                              72.8,
+                        "Buoyancy" :                          0.00000,
+                        "Pressure_Change" :                  -3.97807
+                        },
+                        {
+                        "Section" :                                    2,
+                        "Segment" :                                 2,
+                        "Airflow" :                             -72.8,
+                        "Buoyancy" :                          0.00000,
+                        "Pressure_Change" :                   3.97806
+                        },
+                        {
+                        "Section" :                                    2,
+                        "Segment" :                                 3,
+                        "Airflow" :                             -72.8,
+                        "Buoyancy" :                          0.00000,
+                        "Pressure_Change" :                   3.97806
+                        },
+                        {
+                        "Section" :                                    2,
+                        "Segment" :                                 4,
+                        "Airflow" :                             -72.8,
+                        "Buoyancy" :                          0.00000,
+                        "Pressure_Change" :                   3.97806
+                        },
+                        {
+                        "Section" :                                    5,
+                        "Segment" :                                 5,
+                        "Airflow" :                             145.5,
+                        "Buoyancy" :                          0.00000,
+                        "Pressure_Change" :                   7.29554
+                        }
+                        ],
+         "Segment_Data" : 
+                        [
+                        {
+                        "Segment" :                                 1,
+                        "Line" :                                 true,
+                        "Air_Velocity" :                          4.2,
+                        "Reynolds_Number" :               0.11945E+07,
+                        "Number_Of_Trains" :                        0
+                        },
+                        {
+                        "Segment" :                                 2,
+                        "Line" :                                 true,
+                        "Air_Velocity" :                         -4.2,
+                        "Reynolds_Number" :               0.11945E+07,
+                        "Number_Of_Trains" :                        0
+                        },
+                        {
+                        "Segment" :                                 3,
+                        "Line" :                                 true,
+                        "Air_Velocity" :                         -4.2,
+                        "Reynolds_Number" :               0.11945E+07,
+                        "Number_Of_Trains" :                        0
+                        },
+                        {
+                        "Segment" :                                 4,
+                        "Line" :                                 true,
+                        "Air_Velocity" :                         -4.2,
+                        "Reynolds_Number" :               0.11945E+07,
+                        "Number_Of_Trains" :                        0
+                        },
+                        {
+                        "Segment" :                                 5,
+                        "Line" :                                false,
+                        "Air_Velocity" :                          5.2,
+                        "Reynolds_Number" :               0.15920E+07
+                        }
+                        ],
+         "Subsegment_Data" : []
+         },
+         {
+         "Pit" :                                               450.00,
+         "Train_Data" : [],
+         "Section_Data" : 
+                        [
+                        {
+                        "Section" :                                    1,
+                        "Segment" :                                 1,
+                        "Airflow" :                              72.8,
+                        "Buoyancy" :                          0.00000,
+                        "Pressure_Change" :                  -3.97807
+                        },
+                        {
+                        "Section" :                                    2,
+                        "Segment" :                                 2,
+                        "Airflow" :                             -72.8,
+                        "Buoyancy" :                          0.00000,
+                        "Pressure_Change" :                   3.97806
+                        },
+                        {
+                        "Section" :                                    2,
+                        "Segment" :                                 3,
+                        "Airflow" :                             -72.8,
+                        "Buoyancy" :                          0.00000,
+                        "Pressure_Change" :                   3.97806
+                        },
+                        {
+                        "Section" :                                    2,
+                        "Segment" :                                 4,
+                        "Airflow" :                             -72.8,
+                        "Buoyancy" :                          0.00000,
+                        "Pressure_Change" :                   3.97806
+                        },
+                        {
+                        "Section" :                                    5,
+                        "Segment" :                                 5,
+                        "Airflow" :                             145.5,
+                        "Buoyancy" :                          0.00000,
+                        "Pressure_Change" :                   7.29554
+                        }
+                        ],
+         "Segment_Data" : 
+                        [
+                        {
+                        "Segment" :                                 1,
+                        "Line" :                                 true,
+                        "Air_Velocity" :                          4.2,
+                        "Reynolds_Number" :               0.11945E+07,
+                        "Number_Of_Trains" :                        0
+                        },
+                        {
+                        "Segment" :                                 2,
+                        "Line" :                                 true,
+                        "Air_Velocity" :                         -4.2,
+                        "Reynolds_Number" :               0.11945E+07,
+                        "Number_Of_Trains" :                        0
+                        },
+                        {
+                        "Segment" :                                 3,
+                        "Line" :                                 true,
+                        "Air_Velocity" :                         -4.2,
+                        "Reynolds_Number" :               0.11945E+07,
+                        "Number_Of_Trains" :                        0
+                        },
+                        {
+                        "Segment" :                                 4,
+                        "Line" :                                 true,
+                        "Air_Velocity" :                         -4.2,
+                        "Reynolds_Number" :               0.11945E+07,
+                        "Number_Of_Trains" :                        0
+                        },
+                        {
+                        "Segment" :                                 5,
+                        "Line" :                                false,
+                        "Air_Velocity" :                          5.2,
+                        "Reynolds_Number" :               0.15920E+07
+                        }
+                        ],
+         "Subsegment_Data" : []
+         },
+         {
+         "Pit" :                                               500.00,
+         "Train_Data" : [],
+         "Section_Data" : 
+                        [
+                        {
+                        "Section" :                                    1,
+                        "Segment" :                                 1,
+                        "Airflow" :                              72.8,
+                        "Buoyancy" :                          0.00000,
+                        "Pressure_Change" :                  -3.97807
+                        },
+                        {
+                        "Section" :                                    2,
+                        "Segment" :                                 2,
+                        "Airflow" :                             -72.8,
+                        "Buoyancy" :                          0.00000,
+                        "Pressure_Change" :                   3.97806
+                        },
+                        {
+                        "Section" :                                    2,
+                        "Segment" :                                 3,
+                        "Airflow" :                             -72.8,
+                        "Buoyancy" :                          0.00000,
+                        "Pressure_Change" :                   3.97806
+                        },
+                        {
+                        "Section" :                                    2,
+                        "Segment" :                                 4,
+                        "Airflow" :                             -72.8,
+                        "Buoyancy" :                          0.00000,
+                        "Pressure_Change" :                   3.97806
+                        },
+                        {
+                        "Section" :                                    5,
+                        "Segment" :                                 5,
+                        "Airflow" :                             145.5,
+                        "Buoyancy" :                          0.00000,
+                        "Pressure_Change" :                   7.29554
+                        }
+                        ],
+         "Segment_Data" : 
+                        [
+                        {
+                        "Segment" :                                 1,
+                        "Line" :                                 true,
+                        "Air_Velocity" :                          4.2,
+                        "Reynolds_Number" :               0.11945E+07,
+                        "Number_Of_Trains" :                        0
+                        },
+                        {
+                        "Segment" :                                 2,
+                        "Line" :                                 true,
+                        "Air_Velocity" :                         -4.2,
+                        "Reynolds_Number" :               0.11945E+07,
+                        "Number_Of_Trains" :                        0
+                        },
+                        {
+                        "Segment" :                                 3,
+                        "Line" :                                 true,
+                        "Air_Velocity" :                         -4.2,
+                        "Reynolds_Number" :               0.11945E+07,
+                        "Number_Of_Trains" :                        0
+                        },
+                        {
+                        "Segment" :                                 4,
+                        "Line" :                                 true,
+                        "Air_Velocity" :                         -4.2,
+                        "Reynolds_Number" :               0.11945E+07,
+                        "Number_Of_Trains" :                        0
+                        },
+                        {
+                        "Segment" :                                 5,
+                        "Line" :                                false,
+                        "Air_Velocity" :                          5.2,
+                        "Reynolds_Number" :               0.15920E+07
+                        }
+                        ],
+         "Subsegment_Data" : []
+         }
+    ]

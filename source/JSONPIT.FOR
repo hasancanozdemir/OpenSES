@@ -18,6 +18,7 @@ C     CONSTANTS
       INTEGER*4 NPASSENGERS
       INTEGER*4 ZERO
       INTEGER*4 NSEGMENTS
+      INTEGER*4 LASTPIT
       REAL REALZERO
 C
 C     BEGIN JSON OUTPUT LIST
@@ -31,91 +32,89 @@ C     BEGIN AND END OF PIT OBJECT
 1400  FORMAT ( T10, '[')
 1420  FORMAT ( T10, ']')
 1440  FORMAT ( T10, '],')
-1500  FORMAT ( T10, '"pit" : ', T60, F10.2, ',')
+1500  FORMAT ( T10, '"Pit" : ', T60, F10.2, ',')
 1600  FORMAT ( T25, '{')      
 1700  FORMAT ( T25, '}')      
 1720  FORMAT ( T25, '},')
 1800  FORMAT ( T25, '[')
 1900  FORMAT ( T25, ']')
 1920  FORMAT ( T25, '],')
-2000  FORMAT ( T10, '"train_data" : ')
-2020  FORMAT ( T10, '"train_data" : [],')
-2100  FORMAT ( T10, '"section_data" : ')
-2110  FORMAT ( T10, '"section_data" : [],')
-2200  FORMAT ( T10, '"segment_data" : ')
-2210  FORMAT ( T10, '"segment_data" : [],')
-2300  FORMAT ( T10, '"subsegment_data" : ')
-2310  FORMAT ( T10, '"subsegment_data" : []')
+2000  FORMAT ( T10, '"Train_Data" : ')
+2020  FORMAT ( T10, '"Train_Data" : [],')
+2100  FORMAT ( T10, '"Section_Data" : ')
+2110  FORMAT ( T10, '"Section_Data" : [],')
+2200  FORMAT ( T10, '"Segment_Data" : ')
+2210  FORMAT ( T10, '"Segment_Data" : [],')
+2300  FORMAT ( T10, '"Subsegment_Data" : ')
+2310  FORMAT ( T10, '"Subsegment_Data" : []')
 C     TRAIN ITEMS
-2400  FORMAT ( T25, '"train_id" : ', T60, I10, ',')
-2402  FORMAT ( T25, '"train_short_id" : ', T66,'"', A2,'"', ',')
-2405  FORMAT ( T25, '"type" : ', T60, I10, ',')
-2410  FORMAT ( T25, '"route" : ', T60, I10, ',')
-2415  FORMAT ( T25, '"position" : ', T60, F10.2, ',')
-2420  FORMAT ( T25, '"velocity" : ', T60, F10.2, ',')
-2425  FORMAT ( T25, '"acceleration" : ', T60, F10.2, ',')
-2430  FORMAT ( T25, '"mode" : ', T60, I10, ',')
-2435  FORMAT ( T25, '"total_drag" : ', T60, F10.2, ',')
-2440  FORMAT ( T25, '"air_drag" : ', T60, F10.2, ',')
-2445  FORMAT ( T25, '"tractive_effort" : ', T60, F10.2, ',')
-2450  FORMAT ( T25, '"drag_coefficient" : ', T60, F10.2, ',')
-2455  FORMAT ( T25, '"motor_current" : ', T60, F10.2, ',')
-2460  FORMAT ( T25, '"line_current" : ', T60, F10.2, ',')
-2465  FORMAT ( T25, '"flywheel_speed" : ', T60, F10.3, ',')
-2466  FORMAT ( T25, '"heat_generated" : ', T60, F10.3, ',')
-2467  FORMAT ( T25, '"heat_rejected" : ', T60, F10.3, ',')
-2470  FORMAT ( T25, '"accel_grid_temperature" : ', T60, F10.2, ',')
-2472  FORMAT ( T25, '"decel_grid_temperature" : ', T60, F10.2, ',')
-2474  FORMAT ( T25, '"aux_power" : ', T60, F10.2, ',')
-2476  FORMAT ( T25, '"propulsion_power" : ', T60, F10.2, ',')
-2478  FORMAT ( T25, '"regeneration_power" : ', T60, F10.2, ',')
-2480  FORMAT ( T25, '"flywheel_power" : ', T60, F10.2, ',')
-2482  FORMAT ( T25, '"accel_grid_heat_in" : ', T60, F10.3, ',')
-2484  FORMAT ( T25, '"decel_grid_heat_in" : ', T60, F10.3, ',')
-2486  FORMAT ( T25, '"rolling_resistance_heat" : ', T60, F10.3, ',')
-2488  FORMAT ( T25, '"propulsion_heat_released" : ', T60, F10.3, ',')
-2490  FORMAT ( T25, '"aux_heat_released_sensible" : ', T60, F10.3, ',')
-2492  FORMAT ( T25, '"aux_heat_released_latent" : ', T60, F10.4, ',')
-2494  FORMAT ( T25, '"passengers" : ', T60, I10)
+2400  FORMAT ( T25, '"Train_Number" : ', T60, I10, ',')
+2402  FORMAT ( T25, '"Train_Short_ID" : ', T66,'"', A2,'"', ',')
+2405  FORMAT ( T25, '"Train_Type_Number" : ', T60, I10, ',')
+2410  FORMAT ( T25, '"Route_Number" : ', T60, I10, ',')
+2415  FORMAT ( T25, '"Location" : ', T60, F10.2, ',')
+2420  FORMAT ( T25, '"Speed" : ', T60, F10.2, ',')
+2425  FORMAT ( T25, '"Accel" : ', T60, F10.2, ',')
+2430  FORMAT ( T25, '"Mode" : ', T60, I10, ',')
+2435  FORMAT ( T25, '"Total_Drag" : ', T60, F10.2, ',')
+2440  FORMAT ( T25, '"Air_Drag" : ', T60, F10.2, ',')
+2445  FORMAT ( T25, '"Tractive_Effort" : ', T60, F10.2, ',')
+2450  FORMAT ( T25, '"Air_Drag_Coeff" : ', T60, F10.2, ',')
+2455  FORMAT ( T25, '"Motor_Current" : ', T60, F10.2, ',')
+2460  FORMAT ( T25, '"Line_Current" : ', T60, F10.2, ',')
+2465  FORMAT ( T25, '"Fly_Wheel" : ', T60, F10.3, ',')
+2466  FORMAT ( T25, '"Heat_Gen" : ', T60, F10.3, ',')
+2467  FORMAT ( T25, '"Heat_Reject" : ', T60, F10.3, ',')
+2470  FORMAT ( T25, '"Grid_Temp_Accel" : ', T60, F10.2, ',')
+2472  FORMAT ( T25, '"Grid_Temp_Decel" : ', T60, F10.2, ',')
+2474  FORMAT ( T25, '"Aux_Power" : ', T60, F10.2, ',')
+2476  FORMAT ( T25, '"Propulsion_Power" : ', T60, F10.2, ',')
+2478  FORMAT ( T25, '"Regeneration_Power" : ', T60, F10.2, ',')
+2480  FORMAT ( T25, '"Flywheel_Power" : ', T60, F10.2, ',')
+2482  FORMAT ( T25, '"Accel_Grid_Heat_In" : ', T60, F10.3, ',')
+2484  FORMAT ( T25, '"Decel_Grid_Heat_In" : ', T60, F10.3, ',')
+2486  FORMAT ( T25, '"Rolling_Resistance_Heat" : ', T60, F10.3, ',')
+2488  FORMAT ( T25, '"Propulsion_Heat_Released" : ', T60, F10.3, ',')
+2490  FORMAT ( T25, '"Aux_Heat_Released_Sensible" : ', T60, F10.3, ',')
+2492  FORMAT ( T25, '"Aux_Heat_Released_Latent" : ', T60, F10.4, ',')
+2494  FORMAT ( T25, '"Passengers" : ', T60, I10)
 c     SECTION DATA
-2500  FORMAT ( T25, '"section_id" : ',T67 , I3, ',')
-2505  FORMAT ( T25, '"airflow_rate" : ', T60, F10.1, ',')
-2510  FORMAT ( T25, '"buoyancy" : ', T60, F10.5, ',')
-2515  FORMAT ( T25, '"pressure_change" : ', T60, F10.5)
+2500  FORMAT ( T25, '"Section" : ',T70 , I3, ',')
+2505  FORMAT ( T25, '"Airflow" : ', T60, F10.1, ',')
+2510  FORMAT ( T25, '"Buoyancy" : ', T60, F10.5, ',')
+2515  FORMAT ( T25, '"Pressure_Change" : ', T60, F10.5)
 c     SEGMENT DATA
-2600  FORMAT ( T25, '"segment_id" :                       "', I1, ' -',
-     1 I3, '",')
-2601  FORMAT ( T25, '"segment_id" :                      "', I2, ' -',
-     1 I3, '",')
-2602  FORMAT ( T25, '"segment_id" :                     "', I3, ' -',
-     1 I3, '",')
-2605  FORMAT ( T25, '"air_velocity" : ', T60, F10.1, ',')
-2610  FORMAT ( T25, '"reynolds_number" : ', T56, E14.5, ',')
-2612  FORMAT ( T25, '"reynolds_number" : ', T56, E14.5)
-2615  FORMAT ( T25, '"number_of_trains" : ', T60, I10)
-2620  FORMAT ( T25, '"line" :', T66,'true,')
-2625  FORMAT ( T25, '"line" :', T65,'false,')
+2600  FORMAT ( T25, '"Segment" : ', T60, I10, ',')
+2601  FORMAT ( T25, '"Segment" : ', T60, I10, ',')
+2602  FORMAT ( T25, '"Segment" : ', T60, I10, ',')
+2605  FORMAT ( T25, '"Air_Velocity" : ', T60, F10.1, ',')
+2610  FORMAT ( T25, '"Reynolds_Number" : ', T56, E14.5, ',')
+2612  FORMAT ( T25, '"Reynolds_Number" : ', T56, E14.5)
+2615  FORMAT ( T25, '"Number_Of_Trains" : ', T60, I10)
+2620  FORMAT ( T25, '"Line" :', T66,'true,')
+2625  FORMAT ( T25, '"Line" :', T65,'false,')
 C     SUBSEGMENT DATA
-2700  FORMAT ( T25, '"subsegment_id" :               "', I1, ' -',
+2700  FORMAT ( T25, '"Subsegment_ID" :               "', I1, ' -',
      1 I3, ' -', I3, '",')
-2701  FORMAT ( T25, '"subsegment_id" :              "', I2, ' -', I3,
+2701  FORMAT ( T25, '"Subsegment_ID" :              "', I2, ' -', I3,
      1 ' -', I3, '",')
-2702  FORMAT ( T25, '"subsegment_id" :             "', I3, ' -', I3,
+2702  FORMAT ( T25, '"Subsegment_ID" :             "', I3, ' -', I3,
      1 ' -', I3, '",')
-2705  FORMAT ( T25, '"air_temperature" : ', T60, F10.2, ',')
-2710  FORMAT ( T25, '"wall_temperature" : ', T60, F10.2, ',')
-2715  FORMAT ( T25, '"humidity_ratio" : ', T58, F12.5, ',')
-2720  FORMAT ( T25, '"heat_transfer_coeff" : ', T57, F13.7, ',')
-2725  FORMAT ( T25, '"sensible_heat_load" : ', T58, F12.3, ',')
-2730  FORMAT ( T25, '"latent_heat_load" : ', T58, F12.3, ',')
-2735  FORMAT ( T25, '"qwalss" : ', T60, F10.2, ',')
-2740  FORMAT ( T25, '"qradss" : ', T60, F10.2, ',')
-2745  FORMAT ( T25, '"sensible_ac" : ', T60, F10.2, ',')
-2750  FORMAT ( T25, '"latent_ac" : ', T60, F10.2)
+2705  FORMAT ( T25, '"Air_Temp" : ', T60, F10.2, ',')
+2710  FORMAT ( T25, '"Wall_Temp" : ', T60, F10.2, ',')
+2715  FORMAT ( T25, '"Humidity" : ', T58, F12.5, ',')
+2720  FORMAT ( T25, '"Heat_Transfer_Coeff" : ', T57, F13.7, ',')
+2725  FORMAT ( T25, '"Sensible" : ', T58, F12.3, ',')
+2730  FORMAT ( T25, '"Latent" : ', T58, F12.3, ',')
+2735  FORMAT ( T25, '"Qwalss" : ', T60, F10.2, ',')
+2740  FORMAT ( T25, '"Qradss" : ', T60, F10.2, ',')
+2745  FORMAT ( T25, '"Sensible_Ac" : ', T60, F10.2, ',')
+2750  FORMAT ( T25, '"Latent_Ac" : ', T60, F10.2)
 C
 C
       ZERO=0
       REALZERO=0.0
+      LASTPIT=0
 C     WRITE OUT THE PIT HEADER DATA
 C     THE SIMULATION TIME
       WRITE (JSON, 1300)
@@ -202,34 +201,61 @@ C     LOOP OVER SECTIONS
 C  
 C     BEGIN SECTION DATA JSON KEY
 C
+C     CALCULATE NUMBER OF SEGMENTS (LINE AND VENT)
+C     THIS COUNT IS USED FOR SECTION_DATA AND SEGMENT_DATA LIST CLOSURE
+      NSEGMENTS = NLS + NVSEC
       WRITE (JSON, 2100)
       WRITE (JSON, 1800)
 C
-C     CREATE A COUNTER (NUMY1) OF SECTIONS PROCESSED (NUMY1)
+C     CREATE A COUNTER (NUMY1) OF SECTION_DATA OBJECTS PROCESSED
       NUMY1=0
       ALTER=RHOMAS/WGCONS
       DO  250  ISCTX = 1,LMSCTX
 C---- CHECK IF SECTION I.D. NUMBER HAS BEEN USED
       IF( TABL14(ISCTX) ) 250,250,247
 247   ISCT = TABL14(ISCTX)
-C     SECTION PROCESSED, ADD ONE TO COUNTER
-      NUMY1 = NUMY1 + 1
+C     GET SECTION-TO-SEGMENT MAP FOR SECTION DATA OUTPUT
+      ISEGL = TABL9(ISCT)
+      ISEGH = TABL10(ISCT)
 C     DUMY1 IS THE TOTAL PRESSURE CHANGE IN THE SECTION
       DUMY1=ALTER*(OMEGS(ISCT)-BS(ISCT)*DQDTS(ISCT))
-      Q = QSAVES(ISCT) * 60
-C     WRITE SECTION DATA
-C     BEGIN CURLY BRACE
-      WRITE (JSON, 1600)
-      WRITE (JSON, 2500) ISCTX
-      WRITE (JSON, 2505) Q
-      WRITE (JSON, 2510) BUOYS(ISCT) * ALTER
-      WRITE (JSON, 2515) DUMY1
-C     IF THE COUNTER REACHES THE NUMBER OF SECTIONS (NSEC),
-C     THIS INDICATES LAST ITEM, CLOSE CURLY BRACE PROPERLY
-      IF (NUMY1 .LT. NSEC) THEN
-          WRITE (JSON, 1720) 
-      ELSE 
-          WRITE (JSON, 1700)
+        IF (INPUT_UNITS .EQ. UNIT_SI) THEN
+              Q = QSAVES(ISCT)
+        ELSE
+              Q = QSAVES(ISCT) * 60
+        ENDIF
+C     WRITE SECTION DATA FOR EACH SEGMENT IN THIS SECTION
+      IF (ISEGL .LT. 0) THEN
+C       VENTILATION SECTION: ONE SEGMENT PER SECTION
+          IVS = IABS(ISEGL)
+          NUMY1 = NUMY1 + 1
+          WRITE (JSON, 1600)
+          WRITE (JSON, 2500) ISCTX
+                              WRITE (JSON, 2600) NUMVS(IVS)
+          WRITE (JSON, 2505) Q
+          WRITE (JSON, 2510) BUOYS(ISCT) * ALTER
+          WRITE (JSON, 2515) DUMY1
+          IF (NUMY1 .LT. NSEGMENTS) THEN
+              WRITE (JSON, 1720)
+          ELSE
+              WRITE (JSON, 1700)
+          ENDIF
+      ELSE IF (ISEGL .GT. 0) THEN
+C       LINE SECTION: REPEAT SECTION DATA FOR EACH LINE SEGMENT
+          DO 248 ILS = ISEGL, ISEGH
+              NUMY1 = NUMY1 + 1
+              WRITE (JSON, 1600)
+              WRITE (JSON, 2500) ISCTX
+                                          WRITE (JSON, 2600) NUMLS(ILS)
+              WRITE (JSON, 2505) Q
+              WRITE (JSON, 2510) BUOYS(ISCT) * ALTER
+              WRITE (JSON, 2515) DUMY1
+              IF (NUMY1 .LT. NSEGMENTS) THEN
+                  WRITE (JSON, 1720)
+              ELSE
+                  WRITE (JSON, 1700)
+              ENDIF
+ 248      CONTINUE
       ENDIF
 C     
   250 CONTINUE            
@@ -241,9 +267,6 @@ C
 C     BEGIN SEGMENT DATA
 
 C     CREATE A COUNTER OF SEGMENTS PROCESSED (NUMY1)
-C     CALCULATE NUMBER OF SEGMENTS (LINE AND VENT)
-C     SES ONLY ALLOWS 1 SEGMENT PER VENT SECTION
-      NSEGMENTS = NLS + NVSEC
       NUMY1 = 0
 C     SEGMENT DATA
       WRITE (JSON, 2200)
@@ -256,7 +279,11 @@ C
 260   ISCT = TABL14(ISCTX)
       ISEGL = TABL9(ISCT)                                               
       ISEGH = TABL10(ISCT)                                              
-      Q = QSAVES(ISCT) * 60
+        IF (INPUT_UNITS .EQ. UNIT_SI) THEN
+              Q = QSAVES(ISCT)
+        ELSE
+              Q = QSAVES(ISCT) * 60
+        ENDIF
 C     BRANCH ON VENT OR LINE SEGMENT
       IF( ISEGL ) 280,300,270
 C     LINE SECTION
@@ -271,13 +298,7 @@ C
 C     CREATE SEGEMENT ID.  TO AVOID LEADING SPACES IN JSON KEY, THREE 
 C     DIFFRENT FORMAT STATEMENTS ARE NEEDED (SINGLE DIGITS, DOUBLE
 C     DIGITS, AND TRIPLE DIGIT SECTION NUMBERS.)      
-      IF ( ISCTX .LE. 9 ) THEN
-        WRITE (JSON, 2600) ISCTX, NUMLS(ILS)
-      ELSE IF ( ISCTX .LE. 99 ) THEN
-        WRITE (JSON, 2601) ISCTX, NUMLS(ILS)
-      ELSE
-        WRITE (JSON, 2602) ISCTX, NUMLS(ILS)
-      END IF 
+                  WRITE (JSON, 2600) NUMLS(ILS)
 C     
       WRITE (JSON, 2620)
       WRITE (JSON, 2605) V
@@ -307,13 +328,7 @@ C
 C     CREATE SEGEMENT ID.  TO AVOID LEADING SPACES IN JSON KEY, THREE 
 C     DIFFRENT FORMAT STATEMENTS ARE NEEDED (SINGLE DIGITS, DOUBLE
 C     DIGITS, AND TRIPLE DIGIT SECTION NUMBERS.)      
-      IF ( ISCTX .LE. 9 ) THEN
-        WRITE (JSON, 2600) ISCTX, NUMVS(IVS)
-      ELSE IF ( ISCTX .LE. 99 ) THEN
-        WRITE (JSON, 2601) ISCTX, NUMVS(IVS)
-      ELSE
-        WRITE (JSON, 2602) ISCTX, NUMVS(IVS)
-      END IF 
+                  WRITE (JSON, 2600) NUMVS(IVS)
 C
       WRITE (JSON, 2625) 
       WRITE (JSON, 2605) V
@@ -453,7 +468,9 @@ C     OUTPUT FOR FIRE SEGMENTS)  [TO BE DONE IF NECESSARY TPO]
 C
 C     CLOSE OUT PIT IN JSON FILE AND CLOSE CURLY BRACKETS/PARENTHESES
 C     CHECK IF LAST PIT
-999   IF (NEW .EQ. 2) THEN
+999   IF (NEW .EQ. 2) LASTPIT=1
+      IF (NTIME .GE. MAXTIM) LASTPIT=1
+      IF (LASTPIT .EQ. 1) THEN
 C     LAST PRINT...CLOSE LIST OUT
         WRITE (JSON, 1320)
         WRITE (JSON, 1220)

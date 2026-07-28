@@ -50,7 +50,7 @@ C
       MONTHS(12) = 'DECEMBER '
 C
 C**** SET SES VERSION
-      SESVER='4.3ALPHA'
+      SESVER='5.0ALPHA'
 C**** PROGRAM EQUIVALENT OF INFINITY - REAL VARIABLES
       ZAP=1.0E20
 C**** PROGRAM EQUIVALENT OF INFINITY - INTEGER VARIABLES
@@ -85,6 +85,9 @@ C*****CERTAIN PHYSICAL CONSTANTS - DEFINED
 C                                                                       
 C*****ABSOLUTE TEMPERATURE CONVERSION CONSTANT  DEG F TO DEG R          
       ABTEMP=459.67                                                     
+C*****ABSOLUTE OFFSETS FOR UNIT-AWARE TEMPERATURE RATIO CALCULATIONS
+      ABSOLUTE_OFFSET_F=ABTEMP
+      ABSOLUTE_OFFSET_C=273.16
 C*****CONVERSION FROM BTU TO FT-LBS - (FT-LB)/BTU                       
       BTUFLB=778.0                                                      
 C*****SPECIFIC HEAT OF AIR  BTU/(SLUG-DEG F)                            

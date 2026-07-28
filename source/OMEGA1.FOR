@@ -31,7 +31,12 @@ C
       TADJST = TSSTAB(ISSLVS)                                           
       Q = Q*TADJST                                                      
       ABSQ = ABS(Q)                                                     
-      TAVGVS = TADJST*ABSAMB - ABTEMP                                   
+                  IF (INPUT_UNITS .EQ. UNIT_SI) THEN
+                        ABSOFF = ABSOLUTE_OFFSET_C
+                  ELSE
+                        ABSOFF = ABSOLUTE_OFFSET_F
+                  ENDIF
+                  TAVGVS = TADJST*ABSAMB - ABSOFF
       VISCOS = AIR(TAVGVS,1)                                            
       REVS(IVS) = ABSQ*RNFVS(IVS)*(VISAIR/RHOMAS)/VISCOS                
       SUM1 = -Q*(CEPS(ISCT)*(Q+ABSQ)-CENS(ISCT)*(Q-ABSQ))/TADJST        

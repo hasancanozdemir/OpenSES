@@ -24,16 +24,21 @@ C---- EITHER END OF THIS SEGMENT (SIMILAR CODE IN PINPNT)
       ILSSH = TABL4(NHIGHS)                                             
       ILOWSS = TABL3(ILS)                                               
       IHISS = TABL4(ILS)                                                
+      IF (INPUT_UNITS .EQ. UNIT_SI) THEN
+                        ABSOFF = ABSOLUTE_OFFSET_C
+      ELSE
+                        ABSOFF = ABSOLUTE_OFFSET_F
+      ENDIF
 C --  CHECK BACK (LOW) END                                              
       IF( ILOWSS .NE. ILSSB ) GO TO 30                                  
       NODBB = TABL20(ISCT) / 64                                         
-      TADJB = ( TDBTN(NODBB) + ABTEMP ) / ABSAMB                        
+      TADJB = ( TDBTN(NODBB) + ABSOFF ) / ABSAMB
       GO TO 50                                                          
 30    TADJB = TSSTAB(ILOWSS - 1 )                                       
 C --  CHECK FORWARD (HIGH) END                                          
 50    IF( IHISS .NE. ILSSH ) GO TO 60                                   
       NODFF = TABL21(ISCT) / 64                                         
-      TADJF = ( TDBTN(NODFF) + ABTEMP ) / ABSAMB                        
+      TADJF = ( TDBTN(NODFF) + ABSOFF ) / ABSAMB
       GO TO 70                                                          
 60    TADJF = TSSTAB( IHISS + 1 )                                       
 70    CONTINUE                                                          

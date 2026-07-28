@@ -67,6 +67,9 @@
 ! ******************** New variables for OpenSES *********************
 !
       integer :: inpver                    ! Version number of the input file.
+      integer, parameter :: unit_si = 0    ! Form 1B unit mode: SI (default).
+      integer, parameter :: unit_ip = 1    ! Form 1B unit mode: explicit IP.
+      integer :: input_units               ! Unit mode chosen from Form 1B.
 !
 !
 ! ************************ INTEGER VARIABLES *************************
@@ -130,7 +133,6 @@
 !  OPERATIONAL TRAIN VARIABLES  (LMTRAN)
       INTEGER   DPV(LMTRAN), IINDEX(LMTRAN), IROTEV(LMTRAN)
       INTEGER   ITYPV(LMTRAN), MODEV(LMTRAN), NTSV(LMTRAN)
-      INTEGER   NTSV2(LMTRAN), TLPSV(LMTRAN), TRAINID(LMTRAN)
       INTEGER   NTSV2(LMTRAN), TLPSV(LMTRAN), TRAINID(LMTRAN)
       INTEGER   TSTRTV(LMTRAN)
 !  IMPULSE FAN VARIABLES
@@ -203,6 +205,7 @@
       real    twbamb, twambe, twambm, wntsum, zap
 !  Physical constants
       real    abtemp, btuflb, cp, flbbtu, flbhp, fpsmph, ftin, gracc
+      real    absolute_offset_f, absolute_offset_c
       real    hvh2o, pi, pr, rdryar, rhocp, rhomas
       real    rhowht, sainhg, sapsi, stefan, thcon, tonlb, visair
       real    wgcons, wtbtus, absamb
@@ -370,6 +373,7 @@
       COMMON   TWBAMB, TWAMBE, TWAMBM, WNTSUM, ZAP
 !  PHYSICAL CONSTANTS
       COMMON   ABTEMP, BTUFLB, CP, FLBBTU, FLBHP, FPSMPH, FTIN, GRACC
+      COMMON   ABSOLUTE_OFFSET_F, ABSOLUTE_OFFSET_C
       COMMON   HVH2O, MPHFPS, NUAIR, PI, PR, RDRYAR, RHOCP, RHOMAS
       COMMON   RHOWHT, SAINHG, SAPSI, STEFAN, THCON, TONLB, VISAIR
       COMMON   WGCONS, WTBTUS, ABSAMB
@@ -528,7 +532,7 @@
 !  PRINT GROUP VARIABLES  ( LMPRGP )
       COMMON   GINTPR, GRABBP, GRATAE, GRATTH, GRSUM, NPRGR
 
-      common   inpver
+      common   inpver, input_units
 
 
 ! When adding new variables to the common block, place them above this

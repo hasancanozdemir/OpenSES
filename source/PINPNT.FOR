@@ -135,8 +135,13 @@ C**** STORE THE AVERAGE TEMPERATURE RATIO IN THE ARRAY LOCATION
 C**** CORRESPONDING TO THE LOWEST SUBSEGMENT WITHIN THE VENT SECTION    
 C**** FOR USE IN SUBROUTINE OMEGA1                                      
 C                                                                       
-      IF( FIROP2 .GT. 0 )                                               
-     1TSSTAB(ISSL) = (TSUM/FLOAT(ISSH-ISSL+1)+ABTEMP)/ABSAMB            
+                  IF (INPUT_UNITS .EQ. UNIT_SI) THEN
+                        ABSOFF = ABSOLUTE_OFFSET_C
+                  ELSE
+                        ABSOFF = ABSOLUTE_OFFSET_F
+                  ENDIF
+      IF( FIROP2 .GT. 0 ) TSSTAB(ISSL) =
+     1 (TSUM/FLOAT(ISSH-ISSL+1)+ABSOFF)/ABSAMB
 C                                                                       
 C**** CHECK IF BUOYANCY IS TO BE COMPUTED                               
 C                                                                       
@@ -162,10 +167,10 @@ C **  COMPUTE AVERAGE TEMPERATURE IN SHAFT
       DO 194 ISS = ISSL,ISSH                                            
   194 TTB = TTB+TDBSS(ISS)                                              
       TTB = TTB/FLOAT(ISSH-ISSL+1)                                      
-      TEMP = 0.5*(TTA+TTB)+ABTEMP                                       
+      TEMP = 0.5*(TTA+TTB)+ABSOFF
 C**** COMPUTE BUOYANCY GAIN, NOTING THAT STAKVS(IVS) IS THE STACK       
 C**** HEIGHT OF THE VENTILATION SHAFT TIMES GRACC                       
-      BUOYS(ISCT) = STAKVS(IVS)*(1.0-(TDBAMB+ABTEMP)/TEMP)
+      BUOYS(ISCT) = STAKVS(IVS)*(1.0-(TDBAMB+ABSOFF)/TEMP)
       BUOYS(ISCT) = (INT(BUOYS(ISCT)*1000000.))/1000000              
       GO TO 699                                                         
 C                                                                       
@@ -254,7 +259,7 @@ C---- USE FORCED CONVECTION OR FREE CONVECTION, WHICHEVER IS GREATER
 C --  COMPUTE AND STORE THE RATIO OF THE ABSOLUTE SUBSEGMENT AIR        
 C --  TEMPERATURE AND ABSOLUTE AMBIENT TEMPERATURE FOR USE IN THIS      
 C --  SUBROUTINE, OMEGA1 AND OMEGA4                                     
-240   TSSTAB(ISS) = ( TDBSS(ISS) + ABTEMP) / ABSAMB                     
+240   TSSTAB(ISS) = ( TDBSS(ISS) + ABSOFF) / ABSAMB
       GO TO 698                                                         
 C                                                                       
 C**** CALCULATIONS FOR A FIRE SEGMENT ( NO TRAINS ARE PRESENT )         
@@ -264,7 +269,7 @@ C---- LOOP OVER EACH SUBSEGMENT IN LINE SEGMENT
 C --  COMPUTE AND STORE THE RATIO OF THE ABSOLUTE SUBSEGMENT AIR        
 C --  TEMPERATURE AND ABSOLUTE AMBIENT TEMPERATURE FOR USE IN THIS      
 C --  SUBROUTINE, OMEGA1 AND OMEGA4                                     
-      TSSTAB(ISS) = ( TDBSS(ISS) + ABTEMP) / ABSAMB                     
+      TSSTAB(ISS) = ( TDBSS(ISS) + ABSOFF) / ABSAMB
       IF( RELSS(ISS) .GT. 2000.0 ) GO TO 243                            
 C---- LAMINAR FLOW                                                      
       IF( RELSS(ISS) .GE. 1.0 ) GO TO 242                               
@@ -415,8 +420,8 @@ C---- SUBSEGMENT INITIALIZATION
 C --  COMPUTE AND STORE THE RATIO OF THE ABSOLUTE SUBSEGMENT AIR        
 C --  TEMPERATURE AND ABSOLUTE AMBIENT TEMPERATURE FOR USE IN THIS      
 C --  SUBROUTINE, OMEGA1 AND OMEGA4                                     
-      IF( FIROP2 .GT. 0 )                                               
-     1TSSTAB(ISS) = ( TDBSS(ISS) + ABTEMP) / ABSAMB                     
+      IF( FIROP2 .GT. 0 ) TSSTAB(ISS) =
+     1 ( TDBSS(ISS) + ABSOFF) / ABSAMB
 C---- SEARCH LIST FOR LOWEST ENTRY ( FIND END OF REGION )               
   385 ILOC = 1                                                          
       DMIN = DLIST(1)                                                   
@@ -712,8 +717,8 @@ C --  CHECK IF AIR IS ENTERING SUBSEGMENT FROM FORWARD END
   736 IF( ISS .NE. ILSSF ) GO TO 738                                    
 C --  AIR IS FLOWING INTO SS FROM NODE                                  
       NODFF = TABL21(ISCT) / 64                                         
-      TNODFF = TDBTN(NODFF) + ABTEMP                                    
-      THROT1 = ((  TDBSS(ISS) + ABTEMP ) / TNODFF - 1.0 ) *             
+      TNODFF = TDBTN(NODFF) + ABSOFF
+      THROT1 = ((  TDBSS(ISS) + ABSOFF ) / TNODFF - 1.0 ) *
      1  ( FFSS(ISS) / AMIN ) **2                                        
       GO TO 740                                                         
 C --  AIR IS FLOWING INTO SS I FROM I+1                                 
@@ -725,8 +730,8 @@ C --  CHECK IF AIR IS ENTERING SUBSEGMENT FROM BACKWARD END
   741 IF( ISS .NE. ILSSB ) GO TO 743                                    
 C --  AIR IS FLOWING INTO SS FROM NODE                                  
       NODBB = TABL20(ISCT) / 64                                         
-      TNODBB = TDBTN(NODBB) + ABTEMP                                    
-      THROT2 = ((  TDBSS(ISS) + ABTEMP ) / TNODBB - 1.0 ) *             
+      TNODBB = TDBTN(NODBB) + ABSOFF
+      THROT2 = ((  TDBSS(ISS) + ABSOFF ) / TNODBB - 1.0 ) *
      1  ( FBSS(ISS) / AMIN ) **2                                        
       GO TO 744                                                         
 C --  AIR IS FLOWING INTO SS I FROM I-1                                 

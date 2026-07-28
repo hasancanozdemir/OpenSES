@@ -13,7 +13,7 @@ subroutine GetVersion(str_1B)
 !
 ! If there is something in the slice (31:40), we check if it is a number.
 ! We limit the read to the slice (31:40) in case a future version of
-! OpenSES wants to put more stuff on the line, such as a number to
+! OpenSES wants to put more stuff on the line, such as a token to
 ! switch between US customary units and SI units for the input file.
 !
 ! If it finds a number in the slice, it checks the number's value.  If
@@ -43,8 +43,10 @@ subroutine GetVersion(str_1B)
       ! Make a character variable to hold the SES version with spaces in
       ! place of everything except the numbers and decimal points.
       character(len = len(sesver)) :: version
+        character(len = 40) :: unit_field, unit_text, unit_token, unit_tail
 
       integer :: int_maxver   ! 1000 * max_version as an integer
+        integer :: split_pos
       ! Turn SESVER into a floating-point number then into an integer
       ! one thousand times higher.  Doing this might seem a bit weird
       ! but it means we can handle major versions (4.1, 4.2, 4.3 etc.)
@@ -169,12 +171,70 @@ subroutine GetVersion(str_1B)
                  "which has the following additional capabilities:",/,       &
                  " * it writes output in JSON format as well as text")
           write (out, 143)
+                                else if (inpver .eq. 5000) then
+144       format("This file will be processed as an OpenSES 5.0 file,",/,    &
+                                                                 "which adds Form 1B input-units token support (IP or SI).")
+                                        write (out, 144)
         else
 199       format("This version number has not been assigned a description", &
                      /, "in GetVersion, so it must be a development run.")
           write (out, 199)
         end if
       end if
+
+                        ! Read optional input-units token from characters 41-80 of Form 1B.
+                        ! Rules:
+                        !  * Blank token => default SI
+                        !  * Explicit "SI" => SI
+                        !  * Explicit "IP" => IP
+                        !  * Anything else (including extra trailing text) => error
+                        input_units = unit_si
+                        unit_field = adjustl(str_1B(41:80))
+
+                        if (trim(unit_field) .eq. '') then
+151     format("No Form 1B input-units token was found; defaulting to SI.")
+                                write(screen, 151)
+                                write(out, 151)
+                        else
+                                call ToLower(unit_field, unit_text)
+                                split_pos = index(unit_text, ' ')
+                                if (split_pos .gt. 0) then
+                                        unit_token = trim(unit_text(1:split_pos-1))
+                                        unit_tail = adjustl(unit_text(split_pos+1:))
+                                else
+                                        unit_token = trim(unit_text)
+                                        unit_tail = ''
+                                end if
+
+                                if (trim(unit_tail) .ne. '') then
+                                        goto 152
+                                else if (unit_token .eq. 'si') then
+                                        input_units = unit_si
+153       format("Input units token is SI.")
+                                        write(screen, 153)
+                                        write(out, 153)
+                                else if (unit_token .eq. 'ip') then
+                                        input_units = unit_ip
+154       format("Input units token is IP.")
+                                        write(screen, 154)
+                                        write(out, 154)
+                                else
+                                        goto 152
+                                end if
+                        end if
+
+                        goto 155
+
+1005  format(/, '*ERROR* TYPE ', I0, 20X, 30('*'), /, &
+                         'Found an invalid Form 1B input-units token after the version.',/,&
+                         'Use either "SI" or "IP" as the fifth token in Form 1B. ',/,      &
+                         'Only an explicit "IP" selects IP mode; blank defaults to SI.')
+152   write(screen, 1005) 1005
+                        write( out,   1005) 1005
+                        call LineComplaint(str_1B, .True.)
+                        call exit (1005)
+
+155   continue
       return
 
 end subroutine GetVersion

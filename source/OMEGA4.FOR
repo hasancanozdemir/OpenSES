@@ -67,16 +67,21 @@ C---- EITHER END OF THIS SEGMENT (SIMILAR CODE IN PINPNT)
       ISEGH = TABL10(ISCT)                                              
       ILSSB = TABL3(ISEGL)                                              
       ILSSF = TABL4(ISEGH)                                              
+      IF (INPUT_UNITS .EQ. UNIT_SI) THEN
+                        ABSOFF = ABSOLUTE_OFFSET_C
+      ELSE
+                        ABSOFF = ABSOLUTE_OFFSET_F
+      ENDIF
 C --  CHECK BACK (LOW) END                                              
       IF( ILOWSS .NE. ILSSB ) GO TO 122                                 
       NODBB = TABL20(ISCT) / 64                                         
-      TADJB = ( TDBTN(NODBB) + ABTEMP ) / ABSAMB                        
+      TADJB = ( TDBTN(NODBB) + ABSOFF ) / ABSAMB
       GO TO 124                                                         
 122   TADJB = TSSTAB(ILOWSS - 1 )                                       
 C --  CHECK FORWARD (HIGH) END                                          
 124   IF( IHISS .NE. ILSSF ) GO TO 126                                  
       NODFF = TABL21(ISCT) / 64                                         
-      TADJF = ( TDBTN(NODFF) + ABTEMP ) / ABSAMB                        
+      TADJF = ( TDBTN(NODFF) + ABSOFF ) / ABSAMB
       GO TO 128                                                         
 126   TADJF = TSSTAB( IHISS + 1 )                                       
 C**** COMPUTE THE TEMPERATURE-CORRECTED HEAD CHANGE AT THE SEGMENT ENDS 

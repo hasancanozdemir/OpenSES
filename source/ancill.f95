@@ -72,23 +72,18 @@ subroutine GetFileStem(filestring, start, end)
       character(len = *), intent(in) :: filestring
       integer, intent(out) :: start, end
 
-      integer ::  start1, start2
+      integer :: i, cc
 
-      ! Get the locations of the last instances of '/' and '\'.
-      start1 = index(filestring, '/', .TRUE.)
-      start2 = index(filestring, '\', .TRUE.)
-      if (start1 .gt. start2) then
-        ! We have a forward slash (macOS and linux).  Use it as the boundary.
-        start = start1 + 1
-      else if (start2 .ne. 0) then
-        ! There was a '\' in the string, we're probably on Windows with
-        ! a full path name.
-        start = start2 + 1
-      else
-        ! Both start1 and start2 were zero, so neither were in the
-        ! string.  Use 1, the first character.
-        start = 1
-      end if
+      ! Find the final directory separator in a way that is robust to
+      ! Windows console/code-page path characters.
+      start = 1
+      do i = len_trim(filestring), 1, -1
+        cc = ichar(filestring(i:i))
+        if ((cc .eq. 47) .or. (cc .eq. 92) .or. (cc .eq. 165)) then
+          start = i + 1
+          exit
+        end if
+      end do
 
       ! Check the last part of the filestring for full stops.  We don't
       ! check the whole thing in case there are full stops earlier in

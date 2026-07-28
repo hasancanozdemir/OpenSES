@@ -31,7 +31,7 @@ CONTRACT, STRICT LIABILITY,  OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING
 SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 ██████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████
 
-Simulation started at:  27 JUL 2026 21:56:43
+Simulation started at:  28 JUL 2026 10:47:46
 
 
 SAMPLE SES INPUT FILE FOR EMERGENCY SIMULATION (FIRE MODEL)                     
@@ -187,7 +187,7 @@ LINE SEGMENT TYPE                                                               
 
 LENGTH                                                                                609.60   M
 
-CROSS SECTION AREA                                                                      17.5   M2
+CROSS SECTION AREA                                                                      17.5   M^2
 
 STACK HEIGHT                                                                            18.3   M
 
@@ -195,11 +195,11 @@ STACK HEIGHT                                                                    
 
 SEGMENT PERIMETERS         16.2                                                    TOTAL PERIMETER        16.2  M
 
-ROUGHNESS LENGTHS          0.0366                                                  ROUGHNESS LENGTH     0.0366  M
+ROUGHNESS LENGTHS          0.0366                                                  ROUGHNESS LENGTH     0.0000  MM
 
    HYDRAULIC DIAMETER                                                                    4.3   M
-   RELATIVE ROUGHNESS   ( E/D )                                                      0.00847
-   FULLY TURBULENT FRICTION FACTOR (FROM AVERAGE ROUGHNESS)                           0.0360
+   RELATIVE ROUGHNESS   ( E/D )                                                      0.00001
+   FULLY TURBULENT FRICTION FACTOR (FROM AVERAGE ROUGHNESS)                           0.0085
 
 SEGMENT TOTAL HEAD LOSS COEFFICIENTS                 POSITIVE             NEGATIVE                             FORM 3C
                                                        FLOW                 FLOW
@@ -226,7 +226,7 @@ LINE SEGMENT TYPE                                                               
 
 LENGTH                                                                                152.40   M
 
-CROSS SECTION AREA                                                                      17.5   M2
+CROSS SECTION AREA                                                                      17.5   M^2
 
 STACK HEIGHT                                                                             4.6   M
 
@@ -236,11 +236,11 @@ STACK HEIGHT                                                                    
 
 SEGMENT PERIMETERS         16.2                                                    TOTAL PERIMETER        16.2  M
 
-ROUGHNESS LENGTHS          0.0366                                                  ROUGHNESS LENGTH     0.0366  M
+ROUGHNESS LENGTHS          0.0366                                                  ROUGHNESS LENGTH     0.0000  MM
 
    HYDRAULIC DIAMETER                                                                    4.3   M
-   RELATIVE ROUGHNESS   ( E/D )                                                      0.00847
-   FULLY TURBULENT FRICTION FACTOR (FROM AVERAGE ROUGHNESS)                           0.0360
+   RELATIVE ROUGHNESS   ( E/D )                                                      0.00001
+   FULLY TURBULENT FRICTION FACTOR (FROM AVERAGE ROUGHNESS)                           0.0085
 
 SEGMENT TOTAL HEAD LOSS COEFFICIENTS                 POSITIVE             NEGATIVE                             FORM 3C
                                                        FLOW                 FLOW
@@ -267,7 +267,7 @@ LINE SEGMENT TYPE                                                               
 
 LENGTH                                                                                304.80   M
 
-CROSS SECTION AREA                                                                      17.5   M2
+CROSS SECTION AREA                                                                      17.5   M^2
 
 STACK HEIGHT                                                                             9.1   M
 
@@ -277,11 +277,11 @@ STACK HEIGHT                                                                    
 
 SEGMENT PERIMETERS         16.2                                                    TOTAL PERIMETER        16.2  M
 
-ROUGHNESS LENGTHS          0.0366                                                  ROUGHNESS LENGTH     0.0366  M
+ROUGHNESS LENGTHS          0.0366                                                  ROUGHNESS LENGTH     0.0000  MM
 
    HYDRAULIC DIAMETER                                                                    4.3   M
-   RELATIVE ROUGHNESS   ( E/D )                                                      0.00847
-   FULLY TURBULENT FRICTION FACTOR (FROM AVERAGE ROUGHNESS)                           0.0360
+   RELATIVE ROUGHNESS   ( E/D )                                                      0.00001
+   FULLY TURBULENT FRICTION FACTOR (FROM AVERAGE ROUGHNESS)                           0.0085
 
 SEGMENT TOTAL HEAD LOSS COEFFICIENTS                 POSITIVE             NEGATIVE                             FORM 3C
                                                        FLOW                 FLOW
@@ -308,7 +308,7 @@ LINE SEGMENT TYPE                                                               
 
 LENGTH                                                                                152.40   M
 
-CROSS SECTION AREA                                                                      17.5   M2
+CROSS SECTION AREA                                                                      17.5   M^2
 
 STACK HEIGHT                                                                             4.6   M
 
@@ -318,11 +318,11 @@ STACK HEIGHT                                                                    
 
 SEGMENT PERIMETERS         16.2                                                    TOTAL PERIMETER        16.2  M
 
-ROUGHNESS LENGTHS          0.0366                                                  ROUGHNESS LENGTH     0.0366  M
+ROUGHNESS LENGTHS          0.0366                                                  ROUGHNESS LENGTH     0.0000  MM
 
    HYDRAULIC DIAMETER                                                                    4.3   M
-   RELATIVE ROUGHNESS   ( E/D )                                                      0.00847
-   FULLY TURBULENT FRICTION FACTOR (FROM AVERAGE ROUGHNESS)                           0.0360
+   RELATIVE ROUGHNESS   ( E/D )                                                      0.00001
+   FULLY TURBULENT FRICTION FACTOR (FROM AVERAGE ROUGHNESS)                           0.0085
 
 SEGMENT TOTAL HEAD LOSS COEFFICIENTS                 POSITIVE             NEGATIVE                             FORM 3C
                                                        FLOW                 FLOW
@@ -351,7 +351,7 @@ NUMBER OF SEGMENTS IN THIS VENT SHAFT                                           
 
 NUMBER OF SUBSEGMENTS IN RESULTING EQUIVALENT VENT SHAFT                                   2
 
-GRATE FREE AREA                                                                         46.5   M2
+GRATE FREE AREA                                                                         46.5   M^2
 
 DESIGN MAXIMUM OUTFLOW AIR VELOCITY AT GRATE                                            7.62   M/S
 
@@ -375,7 +375,7 @@ SEGMENT CHARACTERISTICS                                                         
                                                                     SEGMENT TOTAL HEAD LOSS COEFFICIENTS
 
                 LENGTH          AREA         PERIMETER          FORWARD    FORWARD       BACKWARD   BACKWARD
-                 (M)           (M2)             (M)             POSITIVE   NEGATIVE      POSITIVE   NEGATIVE
+                 (M)           (M^2)            (M)             POSITIVE   NEGATIVE      POSITIVE   NEGATIVE
 
         1        24.4            27.9           24.4             48.12      48.12          0.00       0.00
 
@@ -383,7 +383,7 @@ EQUIVALENT VENTILATION SHAFT PROPERTIES
 
      LENGTH                   24.4   M                           TOTAL HEAD CHANGE COEFFICIENTS
 
-     AREA                     27.9   M2                   POSITIVE FLOW          48.12
+     AREA                     27.9   M^2                  POSITIVE FLOW          48.12
 
      PERIMETER                24.4   M                    NEGATIVE FLOW          48.12
 
@@ -459,47 +459,47 @@ BI-DIRECTIONAL FAN PERFORMANCE CHARACTERISTICS
 
         TIME REQUIRED FOR FAN TO REACH FULL OPERATING SPEED                           20.000   SECONDS
 
-        FAN LOWER FLOW LIMIT                                                             -23   M3/S
+        FAN LOWER FLOW LIMIT                                                             -23   M^3/S
 
-        FAN UPPER FLOW LIMIT                                                             188   M3/S
+        FAN UPPER FLOW LIMIT                                                             188   M^3/S
 
                 BI-DIRECTIONAL (OUTFLOW(EXHAUST) AND INFLOW(SUPPLY)) FAN PERFORMANCE CURVE INFORMATION         FORM 7B
 FAN PERFORMANCE CURVE DATA POINTS
 
         FAN TOTAL PRESSURE        1250.00       1146.00        871.80          0.00            PA
              VS
-        VOLUME FLOWRATE                 0            70           141           188             M3/S
+        VOLUME FLOWRATE                 0            70           141           188             M^3/S
 
 FITTED FAN PERFORMANCE CURVE
 
 
         FAN TOTAL PRESSURE   1429.32  1373.78  1324.89  1282.25  1245.44  1214.04  1187.66     PA
              VS
-        VOLUME FLOWRATE          -25      -20      -15      -10       -5        0        5      M3/S
+        VOLUME FLOWRATE          -25      -20      -15      -10       -5        0        5      M^3/S
 
         FAN TOTAL PRESSURE   1165.86  1148.26  1134.42  1123.95  1116.42  1111.43  1108.56     PA
              VS
-        VOLUME FLOWRATE           10       15       20       25       30       35       40      M3/S
+        VOLUME FLOWRATE           10       15       20       25       30       35       40      M^3/S
 
         FAN TOTAL PRESSURE   1107.41  1107.55  1108.59  1110.10  1111.67  1112.90  1113.37     PA
              VS
-        VOLUME FLOWRATE           45       50       55       60       65       70       75      M3/S
+        VOLUME FLOWRATE           45       50       55       60       65       70       75      M^3/S
 
         FAN TOTAL PRESSURE   1112.66  1110.38  1106.09  1099.40  1089.90  1077.16  1060.78     PA
              VS
-        VOLUME FLOWRATE           80       85       90       95      100      105      110      M3/S
+        VOLUME FLOWRATE           80       85       90       95      100      105      110      M^3/S
 
         FAN TOTAL PRESSURE   1040.34  1015.44   985.66   950.58   909.81   862.92   809.50     PA
              VS
-        VOLUME FLOWRATE          115      120      125      130      135      140      145      M3/S
+        VOLUME FLOWRATE          115      120      125      130      135      140      145      M^3/S
 
         FAN TOTAL PRESSURE    749.15   681.45   605.98   522.34   430.12   328.89   218.26     PA
              VS
-        VOLUME FLOWRATE          150      155      160      165      170      175      180      M3/S
+        VOLUME FLOWRATE          150      155      160      165      170      175      180      M^3/S
 
         FAN TOTAL PRESSURE     97.81   -32.88  -174.22  -326.61  -490.47  -666.21  -854.24     PA
              VS
-        VOLUME FLOWRATE          185      190      195      200      205      210      215      M3/S
+        VOLUME FLOWRATE          185      190      195      200      205      210      215      M^3/S
 
 
 
@@ -572,11 +572,11 @@ TIME     10.00 SECONDS                           0 TRAIN(S) ARE OPERATIONAL
 PARTITIONING        FLOW     VEL.
                     (CFM)    (FPM)
 
-    1 -  1         3935.6    224.5
-    2 -  2        -3935.6   -224.5
-    2 -  3        -3935.6   -224.5
-    2 -  4        -3935.6   -224.5
-    5 -  5         7871.2    282.4
+    1 -  1         3980.7    227.1
+    2 -  2        -3980.7   -227.1
+    2 -  3        -3980.7   -227.1
+    2 -  4        -3980.7   -227.1
+    5 -  5         7961.3    285.6
 
 
 
@@ -587,11 +587,11 @@ TIME     20.00 SECONDS                           0 TRAIN(S) ARE OPERATIONAL
 PARTITIONING        FLOW     VEL.
                     (CFM)    (FPM)
 
-    1 -  1         4319.2    246.4
-    2 -  2        -4319.2   -246.4
-    2 -  3        -4319.2   -246.4
-    2 -  4        -4319.2   -246.4
-    5 -  5         8638.3    309.9
+    1 -  1         4366.0    249.0
+    2 -  2        -4366.0   -249.0
+    2 -  3        -4366.0   -249.0
+    2 -  4        -4366.0   -249.0
+    5 -  5         8732.1    313.3
 
 
 
@@ -602,11 +602,11 @@ TIME     30.00 SECONDS                           0 TRAIN(S) ARE OPERATIONAL
 PARTITIONING        FLOW     VEL.
                     (CFM)    (FPM)
 
-    1 -  1         4319.6    246.4
-    2 -  2        -4319.6   -246.4
-    2 -  3        -4319.6   -246.4
-    2 -  4        -4319.6   -246.4
-    5 -  5         8639.2    310.0
+    1 -  1         4366.5    249.1
+    2 -  2        -4366.5   -249.1
+    2 -  3        -4366.5   -249.1
+    2 -  4        -4366.5   -249.1
+    5 -  5         8733.0    313.3
 
 
 
@@ -617,11 +617,11 @@ TIME     40.00 SECONDS                           0 TRAIN(S) ARE OPERATIONAL
 PARTITIONING        FLOW     VEL.
                     (CFM)    (FPM)
 
-    1 -  1         4319.6    246.4
-    2 -  2        -4319.6   -246.4
-    2 -  3        -4319.6   -246.4
-    2 -  4        -4319.6   -246.4
-    5 -  5         8639.2    310.0
+    1 -  1         4366.5    249.1
+    2 -  2        -4366.5   -249.1
+    2 -  3        -4366.5   -249.1
+    2 -  4        -4366.5   -249.1
+    5 -  5         8733.0    313.3
 
 
 
@@ -632,11 +632,11 @@ TIME     50.00 SECONDS                           0 TRAIN(S) ARE OPERATIONAL
 PARTITIONING        FLOW     VEL.
                     (CFM)    (FPM)
 
-    1 -  1         4319.6    246.4
-    2 -  2        -4319.6   -246.4
-    2 -  3        -4319.6   -246.4
-    2 -  4        -4319.6   -246.4
-    5 -  5         8639.2    310.0
+    1 -  1         4366.5    249.1
+    2 -  2        -4366.5   -249.1
+    2 -  3        -4366.5   -249.1
+    2 -  4        -4366.5   -249.1
+    5 -  5         8733.0    313.3
 
 
 
@@ -647,11 +647,11 @@ TIME     60.00 SECONDS                           0 TRAIN(S) ARE OPERATIONAL
 PARTITIONING        FLOW     VEL.
                     (CFM)    (FPM)
 
-    1 -  1         4319.6    246.4
-    2 -  2        -4319.6   -246.4
-    2 -  3        -4319.6   -246.4
-    2 -  4        -4319.6   -246.4
-    5 -  5         8639.2    310.0
+    1 -  1         4366.5    249.1
+    2 -  2        -4366.5   -249.1
+    2 -  3        -4366.5   -249.1
+    2 -  4        -4366.5   -249.1
+    5 -  5         8733.0    313.3
 
 
 
@@ -662,11 +662,11 @@ TIME     70.00 SECONDS                           0 TRAIN(S) ARE OPERATIONAL
 PARTITIONING        FLOW     VEL.
                     (CFM)    (FPM)
 
-    1 -  1         4319.6    246.4
-    2 -  2        -4319.6   -246.4
-    2 -  3        -4319.6   -246.4
-    2 -  4        -4319.6   -246.4
-    5 -  5         8639.2    310.0
+    1 -  1         4366.5    249.1
+    2 -  2        -4366.5   -249.1
+    2 -  3        -4366.5   -249.1
+    2 -  4        -4366.5   -249.1
+    5 -  5         8733.0    313.3
 
 
 
@@ -677,11 +677,11 @@ TIME     80.00 SECONDS                           0 TRAIN(S) ARE OPERATIONAL
 PARTITIONING        FLOW     VEL.
                     (CFM)    (FPM)
 
-    1 -  1         4319.6    246.4
-    2 -  2        -4319.6   -246.4
-    2 -  3        -4319.6   -246.4
-    2 -  4        -4319.6   -246.4
-    5 -  5         8639.2    310.0
+    1 -  1         4366.5    249.1
+    2 -  2        -4366.5   -249.1
+    2 -  3        -4366.5   -249.1
+    2 -  4        -4366.5   -249.1
+    5 -  5         8733.0    313.3
 
 
 
@@ -692,11 +692,11 @@ TIME     90.00 SECONDS                           0 TRAIN(S) ARE OPERATIONAL
 PARTITIONING        FLOW     VEL.
                     (CFM)    (FPM)
 
-    1 -  1         4319.6    246.4
-    2 -  2        -4319.6   -246.4
-    2 -  3        -4319.6   -246.4
-    2 -  4        -4319.6   -246.4
-    5 -  5         8639.2    310.0
+    1 -  1         4366.5    249.1
+    2 -  2        -4366.5   -249.1
+    2 -  3        -4366.5   -249.1
+    2 -  4        -4366.5   -249.1
+    5 -  5         8733.0    313.3
 
 
 
@@ -707,11 +707,11 @@ TIME    100.00 SECONDS                           0 TRAIN(S) ARE OPERATIONAL
 PARTITIONING        FLOW     VEL.
                     (CFM)    (FPM)
 
-    1 -  1         4319.6    246.4
-    2 -  2        -4319.6   -246.4
-    2 -  3        -4319.6   -246.4
-    2 -  4        -4319.6   -246.4
-    5 -  5         8639.2    310.0
+    1 -  1         4366.5    249.1
+    2 -  2        -4366.5   -249.1
+    2 -  3        -4366.5   -249.1
+    2 -  4        -4366.5   -249.1
+    5 -  5         8733.0    313.3
 
 INTEGRATION STEP SIZE
      AERODYNAMIC    RATIO = 1     INTEGRATION INCREMENT ( TWO CYCLES ) = 0.40 SEC
@@ -725,11 +725,11 @@ TIME    120.00 SECONDS                           0 TRAIN(S) ARE OPERATIONAL
 PARTITIONING        FLOW     VEL.
                     (CFM)    (FPM)
 
-    1 -  1         4319.6    246.4
-    2 -  2        -4319.6   -246.4
-    2 -  3        -4319.6   -246.4
-    2 -  4        -4319.6   -246.4
-    5 -  5         8639.2    310.0
+    1 -  1         4366.5    249.1
+    2 -  2        -4366.5   -249.1
+    2 -  3        -4366.5   -249.1
+    2 -  4        -4366.5   -249.1
+    5 -  5         8733.0    313.3
 
 
 
@@ -740,11 +740,11 @@ TIME    140.00 SECONDS                           0 TRAIN(S) ARE OPERATIONAL
 PARTITIONING        FLOW     VEL.
                     (CFM)    (FPM)
 
-    1 -  1         4319.6    246.4
-    2 -  2        -4319.6   -246.4
-    2 -  3        -4319.6   -246.4
-    2 -  4        -4319.6   -246.4
-    5 -  5         8639.2    310.0
+    1 -  1         4366.5    249.1
+    2 -  2        -4366.5   -249.1
+    2 -  3        -4366.5   -249.1
+    2 -  4        -4366.5   -249.1
+    5 -  5         8733.0    313.3
 
 
 
@@ -755,11 +755,11 @@ TIME    160.00 SECONDS                           0 TRAIN(S) ARE OPERATIONAL
 PARTITIONING        FLOW     VEL.
                     (CFM)    (FPM)
 
-    1 -  1         4319.6    246.4
-    2 -  2        -4319.6   -246.4
-    2 -  3        -4319.6   -246.4
-    2 -  4        -4319.6   -246.4
-    5 -  5         8639.2    310.0
+    1 -  1         4366.5    249.1
+    2 -  2        -4366.5   -249.1
+    2 -  3        -4366.5   -249.1
+    2 -  4        -4366.5   -249.1
+    5 -  5         8733.0    313.3
 
 
 
@@ -770,11 +770,11 @@ TIME    180.00 SECONDS                           0 TRAIN(S) ARE OPERATIONAL
 PARTITIONING        FLOW     VEL.
                     (CFM)    (FPM)
 
-    1 -  1         4319.6    246.4
-    2 -  2        -4319.6   -246.4
-    2 -  3        -4319.6   -246.4
-    2 -  4        -4319.6   -246.4
-    5 -  5         8639.2    310.0
+    1 -  1         4366.5    249.1
+    2 -  2        -4366.5   -249.1
+    2 -  3        -4366.5   -249.1
+    2 -  4        -4366.5   -249.1
+    5 -  5         8733.0    313.3
 
 
 
@@ -785,11 +785,11 @@ TIME    200.00 SECONDS                           0 TRAIN(S) ARE OPERATIONAL
 PARTITIONING        FLOW     VEL.
                     (CFM)    (FPM)
 
-    1 -  1         4319.6    246.4
-    2 -  2        -4319.6   -246.4
-    2 -  3        -4319.6   -246.4
-    2 -  4        -4319.6   -246.4
-    5 -  5         8639.2    310.0
+    1 -  1         4366.5    249.1
+    2 -  2        -4366.5   -249.1
+    2 -  3        -4366.5   -249.1
+    2 -  4        -4366.5   -249.1
+    5 -  5         8733.0    313.3
 
 
 
@@ -800,11 +800,11 @@ TIME    220.00 SECONDS                           0 TRAIN(S) ARE OPERATIONAL
 PARTITIONING        FLOW     VEL.
                     (CFM)    (FPM)
 
-    1 -  1         4319.6    246.4
-    2 -  2        -4319.6   -246.4
-    2 -  3        -4319.6   -246.4
-    2 -  4        -4319.6   -246.4
-    5 -  5         8639.2    310.0
+    1 -  1         4366.5    249.1
+    2 -  2        -4366.5   -249.1
+    2 -  3        -4366.5   -249.1
+    2 -  4        -4366.5   -249.1
+    5 -  5         8733.0    313.3
 
 
 
@@ -815,11 +815,11 @@ TIME    240.00 SECONDS                           0 TRAIN(S) ARE OPERATIONAL
 PARTITIONING        FLOW     VEL.
                     (CFM)    (FPM)
 
-    1 -  1         4319.6    246.4
-    2 -  2        -4319.6   -246.4
-    2 -  3        -4319.6   -246.4
-    2 -  4        -4319.6   -246.4
-    5 -  5         8639.2    310.0
+    1 -  1         4366.5    249.1
+    2 -  2        -4366.5   -249.1
+    2 -  3        -4366.5   -249.1
+    2 -  4        -4366.5   -249.1
+    5 -  5         8733.0    313.3
 
 
 
@@ -830,11 +830,11 @@ TIME    260.00 SECONDS                           0 TRAIN(S) ARE OPERATIONAL
 PARTITIONING        FLOW     VEL.
                     (CFM)    (FPM)
 
-    1 -  1         4319.6    246.4
-    2 -  2        -4319.6   -246.4
-    2 -  3        -4319.6   -246.4
-    2 -  4        -4319.6   -246.4
-    5 -  5         8639.2    310.0
+    1 -  1         4366.5    249.1
+    2 -  2        -4366.5   -249.1
+    2 -  3        -4366.5   -249.1
+    2 -  4        -4366.5   -249.1
+    5 -  5         8733.0    313.3
 
 
 
@@ -845,11 +845,11 @@ TIME    280.00 SECONDS                           0 TRAIN(S) ARE OPERATIONAL
 PARTITIONING        FLOW     VEL.
                     (CFM)    (FPM)
 
-    1 -  1         4319.6    246.4
-    2 -  2        -4319.6   -246.4
-    2 -  3        -4319.6   -246.4
-    2 -  4        -4319.6   -246.4
-    5 -  5         8639.2    310.0
+    1 -  1         4366.5    249.1
+    2 -  2        -4366.5   -249.1
+    2 -  3        -4366.5   -249.1
+    2 -  4        -4366.5   -249.1
+    5 -  5         8733.0    313.3
 
 
 
@@ -860,11 +860,11 @@ TIME    300.00 SECONDS                           0 TRAIN(S) ARE OPERATIONAL
 PARTITIONING        FLOW     VEL.
                     (CFM)    (FPM)
 
-    1 -  1         4319.6    246.4
-    2 -  2        -4319.6   -246.4
-    2 -  3        -4319.6   -246.4
-    2 -  4        -4319.6   -246.4
-    5 -  5         8639.2    310.0
+    1 -  1         4366.5    249.1
+    2 -  2        -4366.5   -249.1
+    2 -  3        -4366.5   -249.1
+    2 -  4        -4366.5   -249.1
+    5 -  5         8733.0    313.3
 
 INTEGRATION STEP SIZE
      AERODYNAMIC    RATIO = 1     INTEGRATION INCREMENT ( TWO CYCLES ) = 0.40 SEC
@@ -878,11 +878,11 @@ TIME    350.00 SECONDS                           0 TRAIN(S) ARE OPERATIONAL
 PARTITIONING        FLOW     VEL.
                     (CFM)    (FPM)
 
-    1 -  1         4319.6    246.4
-    2 -  2        -4319.6   -246.4
-    2 -  3        -4319.6   -246.4
-    2 -  4        -4319.6   -246.4
-    5 -  5         8639.2    310.0
+    1 -  1         4366.5    249.1
+    2 -  2        -4366.5   -249.1
+    2 -  3        -4366.5   -249.1
+    2 -  4        -4366.5   -249.1
+    5 -  5         8733.0    313.3
 
 
 
@@ -893,11 +893,11 @@ TIME    400.00 SECONDS                           0 TRAIN(S) ARE OPERATIONAL
 PARTITIONING        FLOW     VEL.
                     (CFM)    (FPM)
 
-    1 -  1         4319.6    246.4
-    2 -  2        -4319.6   -246.4
-    2 -  3        -4319.6   -246.4
-    2 -  4        -4319.6   -246.4
-    5 -  5         8639.2    310.0
+    1 -  1         4366.5    249.1
+    2 -  2        -4366.5   -249.1
+    2 -  3        -4366.5   -249.1
+    2 -  4        -4366.5   -249.1
+    5 -  5         8733.0    313.3
 
 
 
@@ -908,11 +908,11 @@ TIME    450.00 SECONDS                           0 TRAIN(S) ARE OPERATIONAL
 PARTITIONING        FLOW     VEL.
                     (CFM)    (FPM)
 
-    1 -  1         4319.6    246.4
-    2 -  2        -4319.6   -246.4
-    2 -  3        -4319.6   -246.4
-    2 -  4        -4319.6   -246.4
-    5 -  5         8639.2    310.0
+    1 -  1         4366.5    249.1
+    2 -  2        -4366.5   -249.1
+    2 -  3        -4366.5   -249.1
+    2 -  4        -4366.5   -249.1
+    5 -  5         8733.0    313.3
 
 
 
@@ -923,11 +923,11 @@ TIME    500.00 SECONDS                           0 TRAIN(S) ARE OPERATIONAL
 PARTITIONING        FLOW     VEL.
                     (CFM)    (FPM)
 
-    1 -  1         4319.6    246.4
-    2 -  2        -4319.6   -246.4
-    2 -  3        -4319.6   -246.4
-    2 -  4        -4319.6   -246.4
-    5 -  5         8639.2    310.0
+    1 -  1         4366.5    249.1
+    2 -  2        -4366.5   -249.1
+    2 -  3        -4366.5   -249.1
+    2 -  4        -4366.5   -249.1
+    5 -  5         8733.0    313.3
 
 
 

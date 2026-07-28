@@ -18,6 +18,7 @@ C     CONSTANTS
       INTEGER*4 NPASSENGERS
       INTEGER*4 ZERO
       INTEGER*4 NSEGMENTS
+      INTEGER*4 LASTPIT
       REAL REALZERO
 C
 C     BEGIN JSON OUTPUT LIST
@@ -31,91 +32,92 @@ C     BEGIN AND END OF PIT OBJECT
 1400  FORMAT ( T10, '[')
 1420  FORMAT ( T10, ']')
 1440  FORMAT ( T10, '],')
-1500  FORMAT ( T10, '"pit" : ', T60, F10.2, ',')
+1500  FORMAT ( T10, '"Pit" : ', T60, F10.2, ',')
 1600  FORMAT ( T25, '{')      
 1700  FORMAT ( T25, '}')      
 1720  FORMAT ( T25, '},')
 1800  FORMAT ( T25, '[')
 1900  FORMAT ( T25, ']')
 1920  FORMAT ( T25, '],')
-2000  FORMAT ( T10, '"train_data" : ')
-2020  FORMAT ( T10, '"train_data" : [],')
-2100  FORMAT ( T10, '"section_data" : ')
-2110  FORMAT ( T10, '"section_data" : [],')
-2200  FORMAT ( T10, '"segment_data" : ')
-2210  FORMAT ( T10, '"segment_data" : [],')
-2300  FORMAT ( T10, '"subsegment_data" : ')
-2310  FORMAT ( T10, '"subsegment_data" : []')
+2000  FORMAT ( T10, '"Train_Data" : ')
+2020  FORMAT ( T10, '"Train_Data" : [],')
+2100  FORMAT ( T10, '"Section_Data" : ')
+2110  FORMAT ( T10, '"Section_Data" : [],')
+2200  FORMAT ( T10, '"Segment_Data" : ')
+2210  FORMAT ( T10, '"Segment_Data" : [],')
+2300  FORMAT ( T10, '"Subsegment_Data" : ')
+2310  FORMAT ( T10, '"Subsegment_Data" : []')
 C     TRAIN ITEMS
-2400  FORMAT ( T25, '"train_id" : ', T60, I10, ',')
-2402  FORMAT ( T25, '"train_short_id" : ', T66,'"', A2,'"', ',')
-2405  FORMAT ( T25, '"type" : ', T60, I10, ',')
-2410  FORMAT ( T25, '"route" : ', T60, I10, ',')
-2415  FORMAT ( T25, '"position" : ', T60, F10.2, ',')
-2420  FORMAT ( T25, '"velocity" : ', T60, F10.2, ',')
-2425  FORMAT ( T25, '"acceleration" : ', T60, F10.2, ',')
-2430  FORMAT ( T25, '"mode" : ', T60, I10, ',')
-2435  FORMAT ( T25, '"total_drag" : ', T60, F10.2, ',')
-2440  FORMAT ( T25, '"air_drag" : ', T60, F10.2, ',')
-2445  FORMAT ( T25, '"tractive_effort" : ', T60, F10.2, ',')
-2450  FORMAT ( T25, '"drag_coefficient" : ', T60, F10.2, ',')
-2455  FORMAT ( T25, '"motor_current" : ', T60, F10.2, ',')
-2460  FORMAT ( T25, '"line_current" : ', T60, F10.2, ',')
-2465  FORMAT ( T25, '"flywheel_speed" : ', T60, F10.3, ',')
-2466  FORMAT ( T25, '"heat_generated" : ', T60, F10.3, ',')
-2467  FORMAT ( T25, '"heat_rejected" : ', T60, F10.3, ',')
-2470  FORMAT ( T25, '"accel_grid_temperature" : ', T60, F10.2, ',')
-2472  FORMAT ( T25, '"decel_grid_temperature" : ', T60, F10.2, ',')
-2474  FORMAT ( T25, '"aux_power" : ', T60, F10.2, ',')
-2476  FORMAT ( T25, '"propulsion_power" : ', T60, F10.2, ',')
-2478  FORMAT ( T25, '"regeneration_power" : ', T60, F10.2, ',')
-2480  FORMAT ( T25, '"flywheel_power" : ', T60, F10.2, ',')
-2482  FORMAT ( T25, '"accel_grid_heat_in" : ', T60, F10.3, ',')
-2484  FORMAT ( T25, '"decel_grid_heat_in" : ', T60, F10.3, ',')
-2486  FORMAT ( T25, '"rolling_resistance_heat" : ', T60, F10.3, ',')
-2488  FORMAT ( T25, '"propulsion_heat_released" : ', T60, F10.3, ',')
-2490  FORMAT ( T25, '"aux_heat_released_sensible" : ', T60, F10.3, ',')
-2492  FORMAT ( T25, '"aux_heat_released_latent" : ', T60, F10.4, ',')
-2494  FORMAT ( T25, '"passengers" : ', T60, I10)
+2400  FORMAT ( T25, '"Train_Number" : ', T60, I10, ',')
+2402  FORMAT ( T25, '"Train_Short_ID" : ', T66,'"', A2,'"', ',')
+2405  FORMAT ( T25, '"Train_Type_Number" : ', T60, I10, ',')
+2410  FORMAT ( T25, '"Route_Number" : ', T60, I10, ',')
+2415  FORMAT ( T25, '"Location" : ', T60, F10.2, ',')
+2420  FORMAT ( T25, '"Speed" : ', T60, F10.2, ',')
+2425  FORMAT ( T25, '"Accel" : ', T60, F10.2, ',')
+2430  FORMAT ( T25, '"Mode" : ', T60, I10, ',')
+2435  FORMAT ( T25, '"Total_Drag" : ', T60, F10.2, ',')
+2440  FORMAT ( T25, '"Air_Drag" : ', T60, F10.2, ',')
+2445  FORMAT ( T25, '"Tractive_Effort" : ', T60, F10.2, ',')
+2450  FORMAT ( T25, '"Air_Drag_Coeff" : ', T60, F10.2, ',')
+2455  FORMAT ( T25, '"Motor_Current" : ', T60, F10.2, ',')
+2460  FORMAT ( T25, '"Line_Current" : ', T60, F10.2, ',')
+2465  FORMAT ( T25, '"Fly_Wheel" : ', T60, F10.3, ',')
+2466  FORMAT ( T25, '"Heat_Gen" : ', T60, F10.3, ',')
+2467  FORMAT ( T25, '"Heat_Reject" : ', T60, F10.3, ',')
+2470  FORMAT ( T25, '"Grid_Temp_Accel" : ', T60, F10.2, ',')
+2472  FORMAT ( T25, '"Grid_Temp_Decel" : ', T60, F10.2, ',')
+2474  FORMAT ( T25, '"Aux_Power" : ', T60, F10.2, ',')
+2476  FORMAT ( T25, '"Propulsion_Power" : ', T60, F10.2, ',')
+2478  FORMAT ( T25, '"Regeneration_Power" : ', T60, F10.2, ',')
+2480  FORMAT ( T25, '"Flywheel_Power" : ', T60, F10.2, ',')
+2482  FORMAT ( T25, '"Accel_Grid_Heat_In" : ', T60, F10.3, ',')
+2484  FORMAT ( T25, '"Decel_Grid_Heat_In" : ', T60, F10.3, ',')
+2486  FORMAT ( T25, '"Rolling_Resistance_Heat" : ', T60, F10.3, ',')
+2488  FORMAT ( T25, '"Propulsion_Heat_Released" : ', T60, F10.3, ',')
+2490  FORMAT ( T25, '"Aux_Heat_Released_Sensible" : ', T60, F10.3, ',')
+2492  FORMAT ( T25, '"Aux_Heat_Released_Latent" : ', T60, F10.4, ',')
+2494  FORMAT ( T25, '"Passengers" : ', T60, I10)
 c     SECTION DATA
-2500  FORMAT ( T25, '"section_id" : ',T67 , I3, ',')
-2505  FORMAT ( T25, '"airflow_rate" : ', T60, F10.1, ',')
-2510  FORMAT ( T25, '"buoyancy" : ', T60, F10.5, ',')
-2515  FORMAT ( T25, '"pressure_change" : ', T60, F10.5)
+2500  FORMAT ( T25, '"Section" : ',T70 , I3, ',')
+2505  FORMAT ( T25, '"Airflow" : ', T60, F10.1, ',')
+2510  FORMAT ( T25, '"Buoyancy" : ', T60, F10.5, ',')
+2515  FORMAT ( T25, '"Pressure_Change" : ', T60, F10.5)
 c     SEGMENT DATA
-2600  FORMAT ( T25, '"segment_id" :                       "', I1, ' -',
+2600  FORMAT ( T25, '"Segment_ID" :                       "', I1, ' -',
      1 I3, '",')
-2601  FORMAT ( T25, '"segment_id" :                      "', I2, ' -',
+2601  FORMAT ( T25, '"Segment_ID" :                      "', I2, ' -',
      1 I3, '",')
-2602  FORMAT ( T25, '"segment_id" :                     "', I3, ' -',
+2602  FORMAT ( T25, '"Segment_ID" :                     "', I3, ' -',
      1 I3, '",')
-2605  FORMAT ( T25, '"air_velocity" : ', T60, F10.1, ',')
-2610  FORMAT ( T25, '"reynolds_number" : ', T56, E14.5, ',')
-2612  FORMAT ( T25, '"reynolds_number" : ', T56, E14.5)
-2615  FORMAT ( T25, '"number_of_trains" : ', T60, I10)
-2620  FORMAT ( T25, '"line" :', T66,'true,')
-2625  FORMAT ( T25, '"line" :', T65,'false,')
+2605  FORMAT ( T25, '"Air_Velocity" : ', T60, F10.1, ',')
+2610  FORMAT ( T25, '"Reynolds_Number" : ', T56, E14.5, ',')
+2612  FORMAT ( T25, '"Reynolds_Number" : ', T56, E14.5)
+2615  FORMAT ( T25, '"Number_Of_Trains" : ', T60, I10)
+2620  FORMAT ( T25, '"Line" :', T66,'true,')
+2625  FORMAT ( T25, '"Line" :', T65,'false,')
 C     SUBSEGMENT DATA
-2700  FORMAT ( T25, '"subsegment_id" :               "', I1, ' -',
+2700  FORMAT ( T25, '"Subsegment_ID" :               "', I1, ' -',
      1 I3, ' -', I3, '",')
-2701  FORMAT ( T25, '"subsegment_id" :              "', I2, ' -', I3,
+2701  FORMAT ( T25, '"Subsegment_ID" :              "', I2, ' -', I3,
      1 ' -', I3, '",')
-2702  FORMAT ( T25, '"subsegment_id" :             "', I3, ' -', I3,
+2702  FORMAT ( T25, '"Subsegment_ID" :             "', I3, ' -', I3,
      1 ' -', I3, '",')
-2705  FORMAT ( T25, '"air_temperature" : ', T60, F10.2, ',')
-2710  FORMAT ( T25, '"wall_temperature" : ', T60, F10.2, ',')
-2715  FORMAT ( T25, '"humidity_ratio" : ', T58, F12.5, ',')
-2720  FORMAT ( T25, '"heat_transfer_coeff" : ', T57, F13.7, ',')
-2725  FORMAT ( T25, '"sensible_heat_load" : ', T58, F12.3, ',')
-2730  FORMAT ( T25, '"latent_heat_load" : ', T58, F12.3, ',')
-2735  FORMAT ( T25, '"qwalss" : ', T60, F10.2, ',')
-2740  FORMAT ( T25, '"qradss" : ', T60, F10.2, ',')
-2745  FORMAT ( T25, '"sensible_ac" : ', T60, F10.2, ',')
-2750  FORMAT ( T25, '"latent_ac" : ', T60, F10.2)
+2705  FORMAT ( T25, '"Air_Temp" : ', T60, F10.2, ',')
+2710  FORMAT ( T25, '"Wall_Temp" : ', T60, F10.2, ',')
+2715  FORMAT ( T25, '"Humidity" : ', T58, F12.5, ',')
+2720  FORMAT ( T25, '"Heat_Transfer_Coeff" : ', T57, F13.7, ',')
+2725  FORMAT ( T25, '"Sensible" : ', T58, F12.3, ',')
+2730  FORMAT ( T25, '"Latent" : ', T58, F12.3, ',')
+2735  FORMAT ( T25, '"Qwalss" : ', T60, F10.2, ',')
+2740  FORMAT ( T25, '"Qradss" : ', T60, F10.2, ',')
+2745  FORMAT ( T25, '"Sensible_Ac" : ', T60, F10.2, ',')
+2750  FORMAT ( T25, '"Latent_Ac" : ', T60, F10.2)
 C
 C
       ZERO=0
       REALZERO=0.0
+      LASTPIT=0
 C     WRITE OUT THE PIT HEADER DATA
 C     THE SIMULATION TIME
       WRITE (JSON, 1300)
@@ -453,7 +455,9 @@ C     OUTPUT FOR FIRE SEGMENTS)  [TO BE DONE IF NECESSARY TPO]
 C
 C     CLOSE OUT PIT IN JSON FILE AND CLOSE CURLY BRACKETS/PARENTHESES
 C     CHECK IF LAST PIT
-999   IF (NEW .EQ. 2) THEN
+999   IF (NEW .EQ. 2) LASTPIT=1
+      IF (NTIME .GE. MAXTIM) LASTPIT=1
+      IF (LASTPIT .EQ. 1) THEN
 C     LAST PRINT...CLOSE LIST OUT
         WRITE (JSON, 1320)
         WRITE (JSON, 1220)

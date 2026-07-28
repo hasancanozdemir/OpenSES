@@ -1,15 +1,6 @@
     [
          {
-         "info" :       {
-                        "input_file" : "inferno_IP_P2.inp",
-                        "timestamp" :          "27 JUL 2026 21:40:59",
-                        "units" :                                "IP",
-                        "ambient_dry_bulb_temperature" :        85.00,
-                        "ambient_wet_bulb_temperature" :        74.00,
-                        "ambient_pressure" :                 29.92009,
-                        "ambient_density" :                   0.07284,
-                        "ambient_humidity_ratio" :            0.01551
-                        }
+         "info" : {}
          },
          {
          "pit" :                                                 0.00,

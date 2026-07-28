@@ -31,7 +31,7 @@ CONTRACT, STRICT LIABILITY,  OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING
 SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 ██████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████
 
-Simulation started at:  27 JUL 2026 21:40:59
+Simulation started at:  27 JUL 2026 21:56:43
 
 
 SAMPLE SES INPUT FILE FOR EMERGENCY SIMULATION (FIRE MODEL)                     
@@ -58,10 +58,9 @@ DESIGN TIME 1700 HRS   JULY       1984
  
  
  
-This OpenSES input file is a version 4.3 input file.
-This file will be processed as an OpenSES 4.3 file,
-which has the following additional capabilities:
- * it writes output in JSON format as well as text
+This OpenSES input file is a version 5.0 input file.
+This file will be processed as an OpenSES 5.0 file,
+which adds Form 1B input-units token support (IP or SI).
 Input units token is SI.
 
 

@@ -108,16 +108,23 @@ C---- FLOW IS FROM SUBSEGMENT ISS+1
 C                                                                       
 C---- COMPUTE DERIVATIVE                                                
 C                                                                       
+      IF (INPUT_UNITS .EQ. UNIT_SI) THEN
+      DUMY4 = 1055.056
+      ELSE
+      DUMY4 = 1.0
+      END IF
+
 190   IF (KFIROP .GE. 0)  GO TO 191                                     
 C*****FIRE SIMULATION
       DERTSS(ISS) = ((FFLOW * RHOCP - HTRNSS(ISS) * SURSS *             
-     1 (TTMPSS(ISS) - TSFSS(ISS))+ SHLTSS(ISS) - QRADSS(ISS))/          
+     1 (TTMPSS(ISS)-TSFSS(ISS))+DUMY4*(SHLTSS(ISS)-QRADSS(ISS)))/      
      2 (RHOCP*VOLSS(ISS)))*TSSTAB(ISS)                                  
-      DERHSS(ISS)= ((HFLOW+LHLTSS(ISS)/RHOCON)/VOLSS(ISS))*TSSTAB(ISS)  
+      DERHSS(ISS)=((HFLOW+DUMY4*LHLTSS(ISS)/RHOCON)/VOLSS(ISS))*
+     1 TSSTAB(ISS)
       GO TO 200                                                         
 191   DERTSS(ISS) = ( FFLOW * RHOCP - HTRNSS(ISS) * SURSS *             
-     1    (TTMPSS(ISS)-TSFSS(ISS)) + SHLTSS(ISS)) / (RHOCP*VOLSS(ISS))  
-      DERHSS(ISS)=  (HFLOW+LHLTSS(ISS)/RHOCON)/VOLSS(ISS)               
+     1 (TTMPSS(ISS)-TSFSS(ISS)) + DUMY4*SHLTSS(ISS))/(RHOCP*VOLSS(ISS))
+      DERHSS(ISS)= (HFLOW+DUMY4*LHLTSS(ISS)/RHOCON)/VOLSS(ISS)
 200   CONTINUE                                                          
 C---- CHECK IF MORE SEGMENTS IN SECTION                                 
       IF( ISEG - ISEGH ) 210,250,250                                    

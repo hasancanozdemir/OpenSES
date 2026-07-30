@@ -1339,6 +1339,10 @@ C---- FIND INTERNAL SEGMENT NUMBER
       READ(IN,30) DUMY1,DUMY2,DUMY3,DUMY4,TFLMUL(IUL),AFIRUL(IUL)       
       WRITE (OUT,850) DUMY1                                             
       WRITE (OUT,860) DUMY2                                             
+                  IF (INPUT_UNITS .EQ. UNIT_SI) THEN
+                        DUMY1=DUMY1*3.4121416
+                        DUMY2=DUMY2*3.4121416
+                  END IF
       HLSUL(IUL)=DUMY1/3600.0                                           
       HLLUL(IUL)=DUMY2/3600.0                                           
       WRITE (OUT,870) DUMY3                                             
@@ -1351,11 +1355,16 @@ C---- FIND INTERNAL SEGMENT NUMBER
 C**** IF A FIRE IS BEING SIMULATED, WRITE OUT AND CHECK THE INPUT DATA  
       IF( FIROPT .LE. 0  .OR.  TYPLS(ISEG) .GT. 0 ) GO TO 3060          
       WRITE(OUT,881)  TFLMUL(IUL),TRIM(Temperature_Unit)
-      CALL CHECKR (TFLMUL(IUL),500.0,2000.0,249)                        
-C**** STORE TEMPERATURE IN DEGREES RANKINE                              
-      TFLMUL(IUL) = TFLMUL(IUL) + Absolute_Temp_Offset_IP               
+      IF (INPUT_UNITS .EQ. UNIT_SI) THEN
+        CALL CHECKR (TFLMUL(IUL),260.0,1100.0,249)
+        TFLMUL(IUL)=(TFLMUL(IUL)+Absolute_Temp_Offset_SI)*9.0/5.0
+      ELSE
+        CALL CHECKR (TFLMUL(IUL),500.0,2000.0,249)
+        TFLMUL(IUL)=TFLMUL(IUL)+Absolute_Temp_Offset_IP
+      END IF
       WRITE(OUT,882)  AFIRUL(IUL)                                       
       CALL CHECKR (AFIRUL(IUL),0.0,SURLSS(ISEG),250)                    
+      IF (INPUT_UNITS .EQ. UNIT_SI) AFIRUL(IUL)=AFIRUL(IUL)*10.7639104
       AFIRUL(IUL) = AFIRUL(IUL)*STEFAN/3600.0                           
       ATXX4 = AFIRUL(IUL) * TFLMUL(IUL) ** 4                            
       IF( ATXX4 .GE. HLSUL(IUL) )  CALL EERROR(262)                      

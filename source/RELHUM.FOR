@@ -15,9 +15,16 @@ C
 C                                                                       
       DATA A,B,C,D,PC,TC / 3.2437814, 5.86826E-03, 1.1702379E-08,       
      1      2.1878462E-03, 218.167, 647.27 /                            
-      PATMOS=PAMB/SAINHG                                                
+      IF (INPUT_UNITS .EQ. UNIT_SI) THEN
+      TDB_F = TDB*9.0/5.0 + 32.0
+      PAMB_INHG = PAMB*0.2952998751
+      ELSE
+      TDB_F = TDB
+      PAMB_INHG = PAMB
+      END IF
+      PATMOS=PAMB_INHG/SAINHG                                           
       PV = W*PATMOS/(.622+W)                                            
-      T = (TDB - 32. )*5./9. +273.16                                    
+      T = (TDB_F - 32. )*5./9. +273.16                                  
       X = TC - T                                                        
       ARG = (X/T)*(A+B*X+C*X**3) / (1.0 + D*X)                          
       PVSAT = PC*10.**(-ARG)                                            

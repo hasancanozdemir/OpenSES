@@ -44,7 +44,11 @@ C****
         THERM(ICRPT,ISS) = 0.0
  16   CONTINUE
       QRTOLD(ISS) = QWALSS(ISS)                                         
-      TZERO(ISS) = TSFSS(ISS)                                           
+      IF (INPUT_UNITS .EQ. UNIT_SI) THEN
+      TZERO(ISS) = TSFSS(ISS)*9.0/5.0 + 32.0
+      ELSE
+      TZERO(ISS) = TSFSS(ISS)
+      END IF
  10   CONTINUE
 
 C                                                                       
@@ -123,8 +127,13 @@ C**** SECOND COMPONENT
       THRMQ = SQRT( THRMQ )                                           
       PLUS = PLUS + THRMQ * S(ISS) * (-1.0)                            
       QOLD(2,ISS) = QNEW                                                
-C**** COMPUTE WALL TEMPERATURE                                          
-100   TSFSS(ISS) = TZERO(ISS) + PLUS * PROPTY                           
+C**** COMPUTE WALL TEMPERATURE
+100   DUMY2 = TZERO(ISS) + PLUS * PROPTY
+      IF (INPUT_UNITS .EQ. UNIT_SI) THEN
+      TSFSS(ISS) = (DUMY2 - 32.0)*5.0/9.0
+      ELSE
+      TSFSS(ISS) = DUMY2
+      END IF
       QRTOLD(ISS)= QWALSS(ISS)                                          
 C**** END OF SUBSEGMENT DO LOOP                                         
 110   CONTINUE                                                          
@@ -224,8 +233,13 @@ C
 	  SSIGN=-SSIGN
 220   CONTINUE
 C                                                                       
-C**** COMPUTE WALL SURFACE TEMPERATURE                                  
-400   TSFSS(ISS) = TZERO(ISS) + PLUS * PROPTY                           
+C**** COMPUTE WALL SURFACE TEMPERATURE
+400   DUMY2 = TZERO(ISS) + PLUS * PROPTY
+      IF (INPUT_UNITS .EQ. UNIT_SI) THEN
+      TSFSS(ISS) = (DUMY2 - 32.0)*5.0/9.0
+      ELSE
+      TSFSS(ISS) = DUMY2
+      END IF
 C                                                                       
       QRTOLD(ISS) = QWALSS(ISS)                                         
 C                                                                       

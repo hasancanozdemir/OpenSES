@@ -651,13 +651,20 @@ C
       GO TO 1006                                                        
 C                                                                       
 C --  COMPUTE RADIATION HEAT TRANSFER TO WALL                           
+1003  IF (INPUT_UNITS .EQ. UNIT_SI) THEN
+      DUMY9 = TDBSS(ISS)*9.0/5.0 + 32.0
+      DUMY10 = TSFSS(ISS)*9.0/5.0 + 32.0
+      ELSE
+      DUMY9 = TDBSS(ISS)
+      DUMY10 = TSFSS(ISS)
+      END IF
 1004  DUMY6 = (SURLSS(ILS) * STEFAN / 3600.0) * EECPG
-      DUMY7 = (TDBSS(ISS)+Absolute_Temp_Offset_IP)**4
-      DUMY8 = (TSFSS(ISS)+Absolute_Temp_Offset_IP)**4
+      DUMY7 = (DUMY9 + Absolute_Temp_Offset_IP)**4
+      DUMY8 = (DUMY10 + Absolute_Temp_Offset_IP)**4
       QRADSS(ISS) = DUMY6 * (DUMY7 - DUMY8)
 C                                                                       
-1006  QWALSS(ISS) = QRADSS(ISS)/SURLSS(ILS) + HTRNSS(ISS) * (TDBSS(ISS) 
-     1 - TSFSS(ISS) )                                                   
+1006  QWALSS(ISS) = QRADSS(ISS)/SURLSS(ILS) + HTRNSS(ISS) *
+     1 (DUMY9 - DUMY10)
 1010  CONTINUE                                                          
 1015  CONTINUE                                                          
 1020  CONTINUE                                                          
@@ -673,13 +680,18 @@ C --  CHECK IF UNSTEADY HEAT LOAD IS IN A FIRE SEGMENT
       IF( TYPLS(ILS) .GT. 0 ) GO TO 1040                                
 C**** IS THE HEAT SOURCE ACTIVE                                         
       IF(NTIME .LE. LTONUL(IUL) .OR. NTIME .GT. LTOFUL(IUL)) GO TO 1040 
-C**** HEAT SOURCE (FIRE) IS ACTIVE                                      
+C**** HEAT SOURCE (FIRE) IS ACTIVE
+      IF (INPUT_UNITS .EQ. UNIT_SI) THEN
+      DUMY10 = TSFSS(ISSUL)*9.0/5.0 + 32.0
+      ELSE
+      DUMY10 = TSFSS(ISSUL)
+      END IF
       DUMY8 = TFLMUL(IUL)-Absolute_Temp_Offset_IP
-      IF( DUMY8 .GT. TSFSS(ISSUL) ) GO TO 1025
+      IF( DUMY8 .GT. DUMY10 ) GO TO 1025
       GLOW = 0.0                                                        
       GO TO 1030                                                        
  1025 GLOW = AFIRUL(IUL)*(TFLMUL(IUL)**4 -                              
-     1        (TSFSS(ISSUL)+Absolute_Temp_Offset_IP)**4 )               
+     1        (DUMY10+Absolute_Temp_Offset_IP)**4 )                    
 1030  QRADSS(ISSUL) = QRADSS(ISSUL) + GLOW                              
       ILSUL = TABL7(ISSUL)                                              
       QWALSS(ISSUL) = QWALSS(ISSUL) + GLOW / SURLSS(ILSUL)              

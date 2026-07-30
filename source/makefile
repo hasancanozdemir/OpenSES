@@ -97,7 +97,7 @@ $(DBGDIR)/%.o: %.FOR
 	$(FCOMP) $(DBGFFLAGS2) -c $< -o $@
 
 $(DBGDIR)/INPUT.o: INPUT.f95
-	$(FCOMP) $(DBGFFLAGS2) -ffixed-form -c $< -o $@
+	$(FCOMP) $(DBGFFLAGS2) -ffixed-form -ffixed-line-length-none -c $< -o $@
 
 release: $(RELEXE)
 
@@ -112,7 +112,7 @@ $(RELDIR)/%.o: %.FOR
 	$(FCOMP) $(RELFFLAGS2) -c $< -o $@
 
 $(RELDIR)/INPUT.o: INPUT.f95
-	$(FCOMP) $(RELFFLAGS2) -ffixed-form -c $< -o $@
+	$(FCOMP) $(RELFFLAGS2) -ffixed-form -ffixed-line-length-none -c $< -o $@
 
  
 

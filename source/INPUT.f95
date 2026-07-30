@@ -38,34 +38,34 @@ C     MAXTIT: MAXIMUM NUMBER OF TITLE LINES
 45    FORMAT (116(' '))                                            
 46    FORMAT (122(' '))
 50    FORMAT (
-     159('???'),'                            ',/,
-     1'????????????????????????????????????????????????????????????',
-     1'????????????????????????????????????????????????????????????',
-     1'????????????????????????????????????????????????????????? ',
+     159('░'),'                            ',/,
+     1'░░█████╗░██████╗░███',
+     1'████╗███╗░░██╗░█████',
+     1'█╗███████╗░██████╗░ ',
      2'Subway Environment Simulation',
      2'           ',/,
-     2'????????????????????????????????????????????????????????????',
-     2'????????????????????????????????????????????????????????????',
-     2'????????????????????????????????????????????????????????? ',
+     2'░██╔══██╗██╔══██╗██╔',
+     2'════╝████╗░██║██╔═══',
+     2'═╝██╔════╝██╔════╝░ ',
      2'                           ',/,
-     2'????????????????????????????????????????????????????????????',
-     2'????????????????????????????????????????????????????????????',
-     2'????????????????????????????????????????????????????????? ',
+     2'░██║░░██║██████╔╝███',
+     2'██╗░░██╔██╗██║╚█████',
+     2'╗░█████╗░░╚█████╗░░ ',
      2'                                          ',/,
-     2'????????????????????????????????????????????????????????????',
-     2'????????????????????????????????????????????????????????????',
-     2'????????????????????????????????????????????????????????? ',     
+     2'░██║░░██║██╔═══╝░██╔',
+     2'══╝░░██║╚████║░╚═══█',
+     2'█╗██╔══╝░░░╚═══██╗░ ',
      2'                              ',/,
-     2'????????????????????????????????????????????????????????????',
-     2'????????????????????????????????????????????????????????????',
-     2'????????????????????????????????????????????????????????? ',     
+     2'░╚█████╔╝██║░░░░░███',
+     2'████╗██║░╚███║██████',
+     2'╔╝███████╗██████╔╝░ ',
      2'                                              ',
      2'      ',/,
-     2'????????????????????????????????????????????????????????????',
-     2'????????????????????????????????????????????????????????????',
-     2'????????????????????????????????????????????????????????? ',
+     2'░░╚════╝░╚═╝░░░░░╚══',
+     2'════╝╚═╝░░╚══╝╚═════',
+     2'╝░╚══════╝╚═════╝░░ ',
      2'                        ',/,
-     259('???'),'                                              ',/,
+     259('░'),'                                              ',/,
      1'OpenSES, ',A8,', XXXXXXXXXXXX',//,
      2'Copyright (c) 2021, Engineers of the OpenSES Agreement. All ',
      2'rights reserved. ',//,
@@ -96,7 +96,7 @@ C     MAXTIT: MAXIMUM NUMBER OF TITLE LINES
      3'CONTRACT, STRICT LIABILITY,  OR TORT (INCLUDING NEGLIGENCE OR O',
      3'THERWISE) ARISING IN ANY WAY OUT OF THE USE  OF THIS',/,
      3'SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.',/,
-     4122('???'),//,
+     4122('█'),//,
      5'Simulation started at:  ',A20,//,A1)
 51    FORMAT('Reading Initialization File...')
 60    FORMAT (A80)
@@ -167,38 +167,38 @@ C     MAXTIT: MAXIMUM NUMBER OF TITLE LINES
 480   FORMAT (// T50,'DESIGN HOUR WEATHER DATA')                      
 490   FORMAT (/ T50,'DAILY WEATHER DATA')                             
 500   FORMAT (/ 'MORNING AMBIENT AIR DRY-BULB TEMPERATURE',T79,F14.1,
-     1T96,'DEG F')                                                      
+     1T96,A)
 505   FORMAT (/ 'MORNING AMBIENT DRY-BULB TEMPERATURE',T79,F14.1,
-     1T96,'DEG C')
+     1T96,A)
 510   FORMAT (/ 'EVENING OR OFF HOUR AMBIENT AIR DRY-BULB TEMPERATURE',
-     1T79,F14.1,T96,'DEG F')                                          
+     1T79,F14.1,T96,A)
 515   FORMAT (/ 'EVENING/OFF HOUR AMBIENT DRY-BULB TEMPERATURE',
-     1T79,F14.1,T96,'DEG C')
+     1T79,F14.1,T96,A)
 520   FORMAT (/ T50,'ANNUAL WEATHER DATA')                            
 530   FORMAT (/ 'AMPLITUDE OF ANNUAL TEMPERATURE FLUCTUATION',T79,
-     1F14.1,T96,'DEG F'/)                                                  
+     1F14.1,T96,A,/)
 535   FORMAT (/ 'ANNUAL TEMPERATURE FLUCTUATION AMPLITUDE',T79,
-     1F14.1,T96,'DEG C'/)
+     1F14.1,T96,A,/)
 540   FORMAT (/ 'MORNING AMBIENT AIR WET-BULB TEMPERATURE',T79,F14.1,
-     1T96,'DEG F',/ )                                                  
+     1T96,A,/ )
 545   FORMAT (/ 'MORNING AMBIENT WET-BULB TEMPERATURE',T79,F14.1,
-     1T96,'DEG C',/ )
+     1T96,A,/ )
 550   FORMAT (/ 'EVENING OR OFF HOUR AMBIENT AIR WET-BULB TEMPERATURE',
-     1T79,F14.1,T96,'DEG F',/ )                                       
+     1T79,F14.1,T96,A,/ )
 555   FORMAT (/ 'EVENING/OFF HOUR AMBIENT WET-BULB TEMPERATURE',
-     1T79,F14.1,T96,'DEG C',/ )
-560   FORMAT (/ 'AMBIENT BAROMETRIC PRESSURE',T79,F14.2,T96,'IN. HG')
-565   FORMAT (/ 'AMBIENT BAROMETRIC PRESSURE',T79,F14.2,T96,'KPA')
-570   FORMAT (/ 'AMBIENT AIR DRY-BULB TEMPERATURE',T79,F14.1,T96, 
-     1 'DEG F',T112,'FORM 1F')                                               
+     1T79,F14.1,T96,A,/ )
+560   FORMAT (/ 'AMBIENT BAROMETRIC PRESSURE',T79,F14.2,T96,A)
+565   FORMAT (/ 'AMBIENT BAROMETRIC PRESSURE',T79,F14.2,T96,A)
+570   FORMAT (/ 'AMBIENT AIR DRY-BULB TEMPERATURE',T79,F14.1,T96,
+     1A,T112,'FORM 1F')
 575   FORMAT (/ 'AMBIENT AIR DRY-BULB TEMPERATURE',T79,F14.1,T96,
-     1'DEG C',T112,'FORM 1F')
+     1A,T112,'FORM 1F')
 580   FORMAT (/ 'AMBIENT AIR WET-BULB TEMPERATURE',T79,F14.1,T96,
-     1'DEG F')                                                              
+     1A)
 585   FORMAT (/ 'AMBIENT AIR WET-BULB TEMPERATURE',T79,F14.1,T96,
-     1'DEG C')
-590   FORMAT (/ T3,'AMBIENT AIR DENSITY',T79,F14.5,T96,'LB/CU FT')    
-595   FORMAT (/ T3,'AMBIENT AIR DENSITY',T79,F14.5,T96,'KG/M3')
+     1A)
+590   FORMAT (/ T3,'AMBIENT AIR DENSITY',T79,F14.5,T96,A)
+595   FORMAT (/ T3,'AMBIENT AIR DENSITY',T79,F14.5,T96,A)
 600   FORMAT (T3,'AMBIENT HUMIDITY RATIO',T79,F14.5,T96,
      1 'LB/LB OF DRY AIR')                                                           
 610   FORMAT (T3,'AMBIENT RELATIVE HUMIDITY',T79,F14.0,T96,'PERCENT')
@@ -265,8 +265,8 @@ C     MAXTIT: MAXIMUM NUMBER OF TITLE LINES
      1,F14.0,T96,'SECONDS')                                           
 880   FORMAT (/ 'SIMULATION TIME AFTER WHICH SOURCE BECOMES INACTIVE',
      1T79,F14.0,T96,'SECONDS')                                         
-881   FORMAT (/ 'FIRE SOURCE EFFECTIVE FLAME TEMPERATURE',T79,F14.1, 
-     1T96,'DEG F')                                                      
+881   FORMAT (/ 'FIRE SOURCE EFFECTIVE FLAME TEMPERATURE',T79,F14.1,
+     1T96,A)
 882   FORMAT (/ 'FIRE SOURCE EFFECTIVE AREA FOR RADIATION',T79,F14.1,
      1T96,'SQ FT')                                                      
 883   FORMAT (/ T26,'** FIRE/UNSTEADY STATE HEAT SOURCE NUMBERS=',I4,I8)   
@@ -298,34 +298,32 @@ C     MAXTIT: MAXIMUM NUMBER OF TITLE LINES
      1)                                                             
 1050  FORMAT (/ 'NODE THERMODYNAMIC TYPE',T79,I14,T96,'(TEMP/HUMID B.C.)
      1')                                                             
-1060  FORMAT (/ 'DRY-BULB TEMPERATURE AT BOUNDARY',T79,F14.1,T96,'DEG F'
-     1,T112,'FORM 6B')                                               
-1065  FORMAT (/ 'DRY-BULB TEMPERATURE AT BOUNDARY',T79,F14.1,T96,
-     1'DEG C',T112,'FORM 6B')
-1070  FORMAT (/ 'WET-BULB TEMPERATURE AT BOUNDARY',T79,F14.1,T96,'DEG F'
-     1)                                                              
-1075  FORMAT (/ 'WET-BULB TEMPERATURE AT BOUNDARY',T79,F14.1,T96,
-     1'DEG C')
+1060  FORMAT (/ 'DRY-BULB TEMPERATURE AT BOUNDARY',T79,F14.1,T96,A,
+     1T112,'FORM 6B')
+1065  FORMAT (/ 'DRY-BULB TEMPERATURE AT BOUNDARY',T79,F14.1,T96,A,
+     1T112,'FORM 6B')
+1070  FORMAT (/ 'WET-BULB TEMPERATURE AT BOUNDARY',T79,F14.1,T96,A)
+1075  FORMAT (/ 'WET-BULB TEMPERATURE AT BOUNDARY',T79,F14.1,T96,A)
 1080  FORMAT (/ T5,'HUMIDITY RATIO AT BOUNDARY',T79,F14.5,T96,'LB/LB OF 
      1DRY AIR')                                                       
 1090  FORMAT (/ 'MORNING DRY-BULB BOUNDARY CONDITION TEMPERATURE',T79,
-     1F14.1,T96,'DEG F')                                               
+     1F14.1,T96,A)
 1095  FORMAT (/ 'MORNING DRY-BULB BOUNDARY CONDITION TEMPERATURE',T79,
-     1F14.1,T96,'DEG C')
+     1F14.1,T96,A)
 1100  FORMAT (/ 'MORNING WET-BULB BOUNDARY CONDITION TEMPERATURE',T79,
-     1F14.1,T96,'DEG F')                                               
+     1F14.1,T96,A)
 1105  FORMAT (/ 'MORNING WET-BULB BOUNDARY CONDITION TEMPERATURE',T79,
-     1F14.1,T96,'DEG C')
+     1F14.1,T96,A)
 1110  FORMAT (/ T3,'BOUNDARY CONDITION HUMIDITY RATIO',T79,F14.5,T96,
      1'LB/LB OF DRY AIR')                                                
 1120  FORMAT (/ 'EVENING OR OFF HOUR DRY-BULB BOUNDARY CONDITION TEMPERA
-     1TURE',T79,F14.1,T96,'DEG F')                                   
+     1TURE',T79,F14.1,T96,A)
 1125  FORMAT (/ 'EVENING/OFF HOUR DRY-BULB B.C. TEMPERATURE',T79,
-     1F14.1,T96,'DEG C')
+     1F14.1,T96,A)
 1130  FORMAT (/ 'EVENING OR OFF HOUR WET-BULB BOUNDARY CONDITION TEMPERA
-     1TURE',T79,F14.1,T96,'DEG F')                                   
+     1TURE',T79,F14.1,T96,A)
 1135  FORMAT (/ 'EVENING/OFF HOUR WET-BULB B.C. TEMPERATURE',T79,
-     1F14.1,T96,'DEG C')
+     1F14.1,T96,A)
 1140  FORMAT (/ 'SECTIONS CONNECTED TO THERMAL SUBNODE ''A''',T112,'FORM
      1 6C',T72,3I7)                                                  
 1150  FORMAT (/ 'SECTIONS CONNECTED TO THERMAL SUBNODE ''B''',T72,I7)
@@ -380,7 +378,7 @@ C     MAXTIT: MAXIMUM NUMBER OF TITLE LINES
      2,'GRID',T91,'GRID',T107,'DWELL'/'NUMBER',T15,'ON ROUTE',T31,'SPEED
      3',T45,'NUMBER',T61,'TYPE',T72,'TEMPERATURE',T87,'TEMPERATURE',T107
      4, 'TIME',T118,'COASTING'/                                      
-     5           T16,'(FEET)',T31,'(MPH)',T74,'(DEG F)',T89,'(DEG F)',T1
+     5           T16,'(FEET)',T31,'(MPH)',T74,'(',A,')',T89,'(',A,')',T1
      605,'(SECONDS)',//)                                                
 1351  FORMAT (/,'A NEGATIVE VALUE FOR THE REMAINING DWELL TIME INDICATES
      1',' THAT THE TRAIN IS TO REMAIN IN THE INITIALIZED LOCATION',/,
@@ -398,13 +396,13 @@ C     MAXTIT: MAXIMUM NUMBER OF TITLE LINES
 1420  FORMAT (/ 'NUMBER OF LINE SEGMENTS AND VENTILATION SHAFTS IN ZONE'
      1,T79,I14)                                                      
 1430  FORMAT (/ 'MORNING RUSH HOUR DESIGN CONDITIONS',T41,'DRY-BULB TEMP
-     1ERATURE',T79,F14.1,T96,'DEG F')                                
-1440  FORMAT (/ T41,'WET-BULB TEMPERATURE',T79,F14.1,T96,'DEG F'/T41,'HU
+     1ERATURE',T79,F14.1,T96,A)
+1440  FORMAT (/ T41,'WET-BULB TEMPERATURE',T79,F14.1,T96,A/T41,'HU
      1MIDITY RATIO',6X,T79,F14.5,T96,'LB/LB OF DRY AIR'/,T41,
      2'RELATIVE HUMIDITY',T79,F14.1,T96,'PERCENT')                  
 1450  FORMAT (/ 'EVENING RUSH OR OFF HOUR DESIGN ',T41,'DRY-BULB TEMPERA
-     1TURE',T79,F14.1,T96,'DEG F'/'CONDITIONS')                    
-1460  FORMAT (T41,'WET-BULB TEMPERATURE',T79,F14.1,T96,'DEG F'/T41,
+     1TURE',T79,F14.1,T96,A/'CONDITIONS')
+1460  FORMAT (T41,'WET-BULB TEMPERATURE',T79,F14.1,T96,A/T41,
      1'HUMIDITY RATIO',6X,T79,F14.5,T96,'LB/LB OF DRY AIR'/ ,T41,
      2'RELATIVE HUMIDITY',T79,F14.1,T96,'PERCENT')                  
 1470  FORMAT (/ 'LINE SEGMENTS AND VENTILATION SHAFTS IN ZONE   ( SECTIO
@@ -418,7 +416,7 @@ C     MAXTIT: MAXIMUM NUMBER OF TITLE LINES
 1510  FORMAT (// T35,'INPUT VERIFICATION OF CONTROL GROUP INFORMATION'
      1,T112,'FORM 12')                                                  
 1520  FORMAT (// 'TEMPERATURE TABULATION INCREMENT',T79,F14.1,T96,
-     1'DEG F')
+     1A)
 1530  FORMAT (/ 'NUMBER OF CONTROL GROUPS',T79,I14)                  
 1540  FORMAT (// T3,'GROUP',T13,'NUMBER OF',T25,'INTERVAL',T37,'NUMBER O
      1F',T55,'SUMMARY OPTION',T90,'NUMBER OF',T105,'NUMBER OF',T122,'TIM
@@ -589,13 +587,29 @@ C
 !**** If no version number is present, it sets "inpver" to 4200.
       call GetVersion(titlines(maxtit+1))
 
-C**** SET SHARED ABSOLUTE-TEMPERATURE OFFSET ONCE FROM UNIT MODE.
+C**** SET SHARED UNIT LABELS AND PHYSICAL CONSTANTS ONCE FROM UNIT MODE.
       IF (INPUT_UNITS .EQ. UNIT_SI) THEN
             Absolute_Temp_Offset = Absolute_Temp_Offset_SI
             Gravity_Acceleration = Gravity_Acceleration_SI
+            Temperature_Unit = 'DEG C'
+            Length_Unit = 'M'
+            Area_Unit = 'M^2'
+            Flow_Unit = 'M^3/S'
+            Velocity_Unit = 'M/SEC'
+            Pressure_Unit = 'KPA'
+            Density_Unit = 'KG/M3'
+            Heat_Rate_Unit = 'BTU/HR'
       ELSE
             Absolute_Temp_Offset = Absolute_Temp_Offset_IP
             Gravity_Acceleration = Gravity_Acceleration_IP
+            Temperature_Unit = 'DEG F'
+            Length_Unit = 'FT'
+            Area_Unit = 'SQ FT'
+            Flow_Unit = 'CFM'
+            Velocity_Unit = 'FPM'
+            Pressure_Unit = 'IN. HG'
+            Density_Unit = 'LB/CU FT'
+            Heat_Rate_Unit = 'BTU/HR'
       ENDIF
 
 C---- FORM 1C                                                           
@@ -804,9 +818,9 @@ C
       WRITE (OUT,480)                                                   
       READ (IN,30) TDBAMB,TWBAMB,PAMB,TAMBA,TWAMBM,TAMBM,TWAMBE,ANNAMP  
                   IF (INPUT_UNITS .EQ. UNIT_SI) THEN
-                        WRITE (OUT,575) TDBAMB
+                        WRITE (OUT,575) TDBAMB, TRIM(Temperature_Unit)
                   ELSE
-                        WRITE (OUT,570) TDBAMB
+                        WRITE (OUT,570) TDBAMB, TRIM(Temperature_Unit)
                   ENDIF
                   IF (INPUT_UNITS .EQ. UNIT_SI) THEN
                         CALL CHECKR (TDBAMB,-45.6,60.0,7)
@@ -814,9 +828,9 @@ C
                         CALL CHECKR (TDBAMB,-50.0,140.0,7)
                   ENDIF
                   IF (INPUT_UNITS .EQ. UNIT_SI) THEN
-                        WRITE (OUT,585) TWBAMB
+                        WRITE (OUT,585) TWBAMB, TRIM(Temperature_Unit)
                   ELSE
-                        WRITE (OUT,580) TWBAMB
+                        WRITE (OUT,580) TWBAMB, TRIM(Temperature_Unit)
                   ENDIF
                   IF (INPUT_UNITS .EQ. UNIT_SI) THEN
                         CALL CHECKR (TWBAMB,-45.6,TDBAMB,8)
@@ -824,9 +838,9 @@ C
                         CALL CHECKR (TWBAMB,-50.0,TDBAMB,8)
                   ENDIF
                   IF (INPUT_UNITS .EQ. UNIT_SI) THEN
-                        WRITE (OUT,565) PAMB
+                        WRITE (OUT,565) PAMB, TRIM(Pressure_Unit)
                   ELSE
-                        WRITE (OUT,560) PAMB
+                        WRITE (OUT,560) PAMB, TRIM(Pressure_Unit)
                   ENDIF
                   IF (INPUT_UNITS .EQ. UNIT_SI) THEN
                         CALL CHECKR (PAMB,67.7,108.4,5)
@@ -838,26 +852,30 @@ C*****COMPUTE AMBIENT DRY BULB TEMPERATURE IN DEGREES RANKINE
                   IF (INPUT_UNITS .EQ. UNIT_SI) THEN
 C***** SI: PAMB in kPa -> Pa, RHOMAS in kg/m**3, RHOWHT in N/m**3
                         RHOMAS = (PAMB*1000.0)/(287.05*ABSAMB)
-                        RHOWHT = RHOMAS*Gravity_Acceleration
-C*****COMPUTE KINEMATIC VISCOSITY OF AMBIENT AIR
-                        NUAIR = AIR_SI(TDBAMB,1)
-C*****COMPUTE VOLUMETRIC SPECIFIC HEAT OF AMBIENT AIR
-                        RHOCP = RHOMAS*1006.0
+                        RHOWHT = RHOMAS*Gravity_Acceleration_SI
                   ELSE
 C*****COMPUTE AMBIENT AIR WEIGHT DENSITY                                
                             DUMY8=SAINHG*RDRYAR*ABSAMB
                             RHOWHT=(PAMB*SAPSI*FTIN*FTIN)/DUMY8
 C*****COMPUTE AMBIENT AIR MASS DENSITY                                  
-                        RHOMAS=RHOWHT/Gravity_Acceleration
-C*****COMPUTE KINEMATIC VISCOSITY OF AMBIENT AIR
-                        NUAIR=VISAIR/RHOMAS
-C*****COMPUTE VOLUMETRIC SPECIFIC HEAT OF AMBIENT AIR
-                        RHOCP=RHOMAS*CP
+                        RHOMAS=RHOWHT/Gravity_Acceleration_IP
                   ENDIF
                   IF (INPUT_UNITS .EQ. UNIT_SI) THEN
-                        WRITE (OUT,595) RHOMAS
+                        WRITE (OUT,595) RHOMAS, TRIM(Density_Unit)
                   ELSE
-                        WRITE (OUT,590) RHOWHT
+                        WRITE (OUT,590) RHOWHT, TRIM(Density_Unit)
+                  ENDIF
+C*****COMPUTE KINEMATIC VISCOSITY OF AMBIENT AIR                        
+                  IF (INPUT_UNITS .EQ. UNIT_SI) THEN
+                        NUAIR=AIR_SI(TDBAMB,1)
+                  ELSE
+                        NUAIR=VISAIR/RHOMAS
+                  ENDIF
+C*****COMPUTE VOLUMETRIC SPECIFIC HEAT OF AMBIENT AIR                   
+                  IF (INPUT_UNITS .EQ. UNIT_SI) THEN
+                        RHOCP=RHOMAS*1006.0
+                  ELSE
+                        RHOCP=RHOMAS*CP
                   ENDIF
 C*****COMPUTE AMBIENT AIR SPECIFIC HUMIDITY                             
       CALL LATENT (TDBAMB,TWBAMB,HUMAMB)                                
@@ -866,9 +884,9 @@ C*****COMPUTE AMBIENT AIR SPECIFIC HUMIDITY
       WRITE (OUT,610) RHAMB                                             
       WRITE (OUT,490)                                                   
                   IF (INPUT_UNITS .EQ. UNIT_SI) THEN
-                        WRITE (OUT,505) TAMBA
+                        WRITE (OUT,505) TAMBA, TRIM(Temperature_Unit)
                   ELSE
-                        WRITE (OUT,500) TAMBA
+                        WRITE (OUT,500) TAMBA, TRIM(Temperature_Unit)
                   ENDIF
                   IF (INPUT_UNITS .EQ. UNIT_SI) THEN
                         CALL CHECKR (TAMBA,-45.6,60.0,7)
@@ -876,9 +894,9 @@ C*****COMPUTE AMBIENT AIR SPECIFIC HUMIDITY
                         CALL CHECKR (TAMBA,-50.0,140.0,7)
                   ENDIF
                   IF (INPUT_UNITS .EQ. UNIT_SI) THEN
-                        WRITE (OUT,545) TWAMBM
+                        WRITE (OUT,545) TWAMBM, TRIM(Temperature_Unit)
                   ELSE
-                        WRITE (OUT,540) TWAMBM
+                        WRITE (OUT,540) TWAMBM, TRIM(Temperature_Unit)
                   ENDIF
                   IF (INPUT_UNITS .EQ. UNIT_SI) THEN
                         CALL CHECKR (TWAMBM,-45.6,TAMBA,8)
@@ -890,9 +908,9 @@ C*****COMPUTE AMBIENT AIR SPECIFIC HUMIDITY
       CALL  RELHUM (TAMBA,HMAMBM,DUMY1)                                 
       WRITE (OUT,610) DUMY1                                             
                   IF (INPUT_UNITS .EQ. UNIT_SI) THEN
-                        WRITE (OUT,515) TAMBM
+                        WRITE (OUT,515) TAMBM, TRIM(Temperature_Unit)
                   ELSE
-                        WRITE (OUT,510) TAMBM
+                        WRITE (OUT,510) TAMBM, TRIM(Temperature_Unit)
                   ENDIF
                   IF (INPUT_UNITS .EQ. UNIT_SI) THEN
                         CALL CHECKR (TAMBM,-45.6,60.0,7)
@@ -900,9 +918,9 @@ C*****COMPUTE AMBIENT AIR SPECIFIC HUMIDITY
                         CALL CHECKR (TAMBM,-50.0,140.0,7)
                   ENDIF
                   IF (INPUT_UNITS .EQ. UNIT_SI) THEN
-                        WRITE (OUT,555) TWAMBE
+                        WRITE (OUT,555) TWAMBE, TRIM(Temperature_Unit)
                   ELSE
-                        WRITE (OUT,550) TWAMBE
+                        WRITE (OUT,550) TWAMBE, TRIM(Temperature_Unit)
                   ENDIF
                   IF (INPUT_UNITS .EQ. UNIT_SI) THEN
                         CALL CHECKR (TWAMBE,-45.6,TAMBM,8)
@@ -915,9 +933,9 @@ C*****COMPUTE AMBIENT AIR SPECIFIC HUMIDITY
       WRITE (OUT,610) DUMY2                                             
       WRITE (OUT,520)                                                   
                   IF (INPUT_UNITS .EQ. UNIT_SI) THEN
-                        WRITE (OUT,535) ANNAMP
+                        WRITE (OUT,535) ANNAMP, TRIM(Temperature_Unit)
                   ELSE
-                        WRITE (OUT,530) ANNAMP
+                        WRITE (OUT,530) ANNAMP, TRIM(Temperature_Unit)
                   ENDIF
       CALL CHECKR (ANNAMP,0.0,50.0,192)                                 
 C                                                                       
@@ -1332,9 +1350,9 @@ C---- FIND INTERNAL SEGMENT NUMBER
       LTOFUL(IUL)=DUMY4*100.0                                           
 C**** IF A FIRE IS BEING SIMULATED, WRITE OUT AND CHECK THE INPUT DATA  
       IF( FIROPT .LE. 0  .OR.  TYPLS(ISEG) .GT. 0 ) GO TO 3060          
-      WRITE(OUT,881)  TFLMUL(IUL)                                       
+      WRITE(OUT,881)  TFLMUL(IUL),TRIM(Temperature_Unit)
       CALL CHECKR (TFLMUL(IUL),500.0,2000.0,249)                        
-C**** STORE TEMPERATURE IN ABSOLUTE IP UNITS (DEGREES RANKINE)         
+C**** STORE TEMPERATURE IN DEGREES RANKINE                              
       TFLMUL(IUL) = TFLMUL(IUL) + Absolute_Temp_Offset_IP               
       WRITE(OUT,882)  AFIRUL(IUL)                                       
       CALL CHECKR (AFIRUL(IUL),0.0,SURLSS(ISEG),250)                    
@@ -1561,11 +1579,11 @@ C---- AMBIENT CONDITIONS
 3560  TDBTN(NTNODE)=TDBAMB                                              
       HUMTN(NTNODE)=HUMAMB                                              
                   IF (INPUT_UNITS .EQ. UNIT_SI) THEN
-                        WRITE (OUT,1065) TDBTN(NTNODE)
-                        WRITE (OUT,1075) TWBAMB
+                        WRITE (OUT,1065) TDBTN(NTNODE), TRIM(Temperature_Unit)
+                        WRITE (OUT,1075) TWBAMB, TRIM(Temperature_Unit)
                   ELSE
-                        WRITE (OUT,1060) TDBTN(NTNODE)
-                        WRITE (OUT,1070) TWBAMB
+                        WRITE (OUT,1060) TDBTN(NTNODE), TRIM(Temperature_Unit)
+                        WRITE (OUT,1070) TWBAMB, TRIM(Temperature_Unit)
                   ENDIF
       WRITE (OUT,1080) HUMTN(NTNODE)                                    
       TYPTND(INODE)=5                                                   
@@ -1573,9 +1591,9 @@ C---- AMBIENT CONDITIONS
 C---- USER-SUPPLIED CONDITIONS                                          
 3570  TDBTN(NTNODE)=DUMY1                                               
                   IF (INPUT_UNITS .EQ. UNIT_SI) THEN
-                        WRITE (OUT,1065) TDBTN(NTNODE)
+                        WRITE (OUT,1065) TDBTN(NTNODE), TRIM(Temperature_Unit)
                   ELSE
-                        WRITE (OUT,1060) TDBTN(NTNODE)
+                        WRITE (OUT,1060) TDBTN(NTNODE), TRIM(Temperature_Unit)
                   ENDIF
                   IF (INPUT_UNITS .EQ. UNIT_SI) THEN
                         CALL CHECKR (DUMY1,-45.6,60.0,7)
@@ -1583,9 +1601,9 @@ C---- USER-SUPPLIED CONDITIONS
                         CALL CHECKR (DUMY1,-50.0,140.0,7)
                   ENDIF
                   IF (INPUT_UNITS .EQ. UNIT_SI) THEN
-                        WRITE (OUT,1075) DUMY2
+                        WRITE (OUT,1075) DUMY2, TRIM(Temperature_Unit)
                   ELSE
-                        WRITE (OUT,1070) DUMY2
+                        WRITE (OUT,1070) DUMY2, TRIM(Temperature_Unit)
                   ENDIF
                   IF (INPUT_UNITS .EQ. UNIT_SI) THEN
                         CALL CHECKR (DUMY2,-45.6,DUMY1,8)
@@ -1619,9 +1637,9 @@ C---- USER SUPPLIED CONDITIONS
 3630  EMTBTN(NTNODE,5)=TDBTN(NTNODE)                                    
       EMHBTN(NTNODE,5)=HUMTN(NTNODE)                                    
                   IF (INPUT_UNITS .EQ. UNIT_SI) THEN
-                        WRITE (OUT,1095) EMTBTN(NTNODE,3)
+                        WRITE (OUT,1095) EMTBTN(NTNODE,3), TRIM(Temperature_Unit)
                   ELSE
-                        WRITE (OUT,1090) EMTBTN(NTNODE,3)
+                        WRITE (OUT,1090) EMTBTN(NTNODE,3), TRIM(Temperature_Unit)
                   ENDIF
                   IF (INPUT_UNITS .EQ. UNIT_SI) THEN
                         CALL CHECKR (EMTBTN(NTNODE,3),-45.6,60.0,7)
@@ -1629,9 +1647,9 @@ C---- USER SUPPLIED CONDITIONS
                         CALL CHECKR (EMTBTN(NTNODE,3),-50.0,140.0,7)
                   ENDIF
                   IF (INPUT_UNITS .EQ. UNIT_SI) THEN
-                        WRITE (OUT,1105) DUMY4
+                        WRITE (OUT,1105) DUMY4, TRIM(Temperature_Unit)
                   ELSE
-                        WRITE (OUT,1100) DUMY4
+                        WRITE (OUT,1100) DUMY4, TRIM(Temperature_Unit)
                   ENDIF
                   IF (INPUT_UNITS .EQ. UNIT_SI) THEN
                         CALL CHECKR (DUMY4,-45.6,EMTBTN(NTNODE,3),8)
@@ -1640,9 +1658,9 @@ C---- USER SUPPLIED CONDITIONS
                   ENDIF
       WRITE (OUT,1110) EMHBTN(NTNODE,3)                                 
                   IF (INPUT_UNITS .EQ. UNIT_SI) THEN
-                        WRITE (OUT,1125) EMTBTN(NTNODE,4)
+                        WRITE (OUT,1125) EMTBTN(NTNODE,4), TRIM(Temperature_Unit)
                   ELSE
-                        WRITE (OUT,1120) EMTBTN(NTNODE,4)
+                        WRITE (OUT,1120) EMTBTN(NTNODE,4), TRIM(Temperature_Unit)
                   ENDIF
                   IF (INPUT_UNITS .EQ. UNIT_SI) THEN
                         CALL CHECKR (EMTBTN(NTNODE,4),-45.6,60.0,7)
@@ -1650,9 +1668,9 @@ C---- USER SUPPLIED CONDITIONS
                         CALL CHECKR (EMTBTN(NTNODE,4),-50.0,140.0,7)
                   ENDIF
                   IF (INPUT_UNITS .EQ. UNIT_SI) THEN
-                        WRITE (OUT,1135) DUMY6
+                        WRITE (OUT,1135) DUMY6, TRIM(Temperature_Unit)
                   ELSE
-                        WRITE (OUT,1130) DUMY6
+                        WRITE (OUT,1130) DUMY6, TRIM(Temperature_Unit)
                   ENDIF
                   IF (INPUT_UNITS .EQ. UNIT_SI) THEN
                         CALL CHECKR (DUMY6,-45.6,EMTBTN(NTNODE,4),8)
@@ -1964,7 +1982,7 @@ C --  INITIALIZE THE NUMBER OF THE LAST TRAIN DISPATCHED INTO THE SYSTEM
 C                                                                       
 C---- READ LOCATION, SPEED, ROUTE AND TYPE OF TRAINS IN OPERATION       
 C---- AT BEGINING OF SIMULATION                                         
-      WRITE (OUT,1350)                                                  
+      WRITE (OUT,1350) TRIM(Temperature_Unit),TRIM(Temperature_Unit)
       DO 4630 ITRAN=1,NTRAN                                             
       NUMV=IINDEX(ITRAN)                                                 
       READ (IN,30) XV(NUMV),UV(NUMV),DUMY1,DUMY2,TGACCV(NUMV),TGDECV(NUM
@@ -2142,8 +2160,7 @@ C---- SET THE FLYWHEEL ROTATIONAL SPEED EQUAL TO THE MAXIMUM VALUE
 C---- SET THE FLYWHEEL ROTATIONAL SPEED EQUAL TO THE MINIMUM VALUE      
 4623  RPS(NUMV) = RPSMNV(ITYP)                                          
 C---- CALCULATE THE CORRESPONDING KINETIC ENERGY STORED IN THE FLYWHEEL 
-      DUMY8 = (2.0*PI*RPS(NUMV))**2*FLYJV(ITYP)
-4624  FKENEW(NUMV) = DUMY8/(Gravity_Acceleration_IP*2.0)
+4624  FKENEW(NUMV) = (2.0*PI*RPS(NUMV))**2*FLYJV(ITYP)/(Gravity_Acceleration_IP*2.0)
       POW1(NUMV) = 0.0                                                  
 4629  PPROPV(NUMV) = 0.0                                                
       PREGNV(NUMV) = 0.0                                                
@@ -2195,17 +2212,17 @@ C---- LOOP OVER ZONES
       CALL CHECKI (JSEG,1,NLS+NVSEC,204)                                
       NEQDTC=0                                                          
       IF (TYPCL(IZONE)-2) 4760,4770,4770                                
-4760  WRITE (OUT,1430) DUMY3                                            
+4760  WRITE (OUT,1430) DUMY3, TRIM(Temperature_Unit)
       CALL CHECKR (DUMY3,40.0,100.0,26)                                 
       CALL LATENT (DUMY3,DUMY4,DUMY7)                                   
       CALL  RELHUM (DUMY3,DUMY7,DUMY8)                                  
-      WRITE (OUT,1440) DUMY4,DUMY7,DUMY8                                
+      WRITE (OUT,1440) DUMY4,TRIM(Temperature_Unit),DUMY7,DUMY8
       CALL CHECKR (DUMY4,40.0,DUMY3,27)                                 
-      WRITE (OUT,1450) DUMY5                                            
+      WRITE (OUT,1450) DUMY5, TRIM(Temperature_Unit)
       CALL CHECKR (DUMY5,40.0,100.0,26)                                 
       CALL LATENT (DUMY5,DUMY6,DUMY9)                                   
       CALL  RELHUM (DUMY5,DUMY9,DUMY10)                                 
-      WRITE (OUT,1460) DUMY6,DUMY9,DUMY10                               
+      WRITE (OUT,1460) DUMY6,TRIM(Temperature_Unit),DUMY9,DUMY10
       CALL CHECKR (DUMY6,40.0,DUMY5,27)                                 
       GO TO 4780                                                        
 4770  DUMY3=0.0                                                         
@@ -2449,7 +2466,7 @@ C
       WRITE (OUT,10) CHAR(12)
       WRITE (OUT,1510)                                                  
       READ (IN,30) WNTSUM,DUMY2                                         
-      WRITE (OUT,1520) WNTSUM                                           
+      WRITE (OUT,1520) WNTSUM, TRIM(Temperature_Unit)
       CALL CHECKR (WNTSUM,-10.0,10.0,130)                                
       NPGRP=DUMY2                                                       
       WRITE (OUT,1530) NPGRP                                            

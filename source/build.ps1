@@ -115,7 +115,7 @@ function Build-Target {
 
     foreach ($src in $srcLegacyF95) {
         $obj = Join-Path $outDir ([IO.Path]::GetFileNameWithoutExtension($src) + '.o')
-        Invoke-Checked -Exe $Compiler -CommandArgs ($flagsFor + @('-ffixed-form', '-c', $src, '-o', $obj))
+        Invoke-Checked -Exe $Compiler -CommandArgs ($flagsFor + @('-ffixed-form', '-ffixed-line-length-none', '-c', $src, '-o', $obj))
         $objects += $obj
     }
 

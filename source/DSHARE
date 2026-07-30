@@ -176,6 +176,11 @@
 !  FILE INPUT/OUTPUT VARIABLES
       CHARACTER (len=20) DATETIME
       CHARACTER (len=8) SESVER
+      CHARACTER (len=5) Temperature_Unit
+      CHARACTER (len=12) Length_Unit, Area_Unit
+      CHARACTER (len=12) Flow_Unit, Velocity_Unit
+      CHARACTER (len=12) Pressure_Unit, Density_Unit
+      CHARACTER (len=12) Heat_Rate_Unit
       CHARACTER (len=80) TITLE
       CHARACTER(len=9), dimension(12) :: MONTHS
       CHARACTER (len=116) :: HEADER
@@ -551,7 +556,9 @@
 ! raise warnings about non-aligned common blocks.
 !  FILE INPUT/OUTPUT VARIABLES
       COMMON   FILENAME, INPFILE, RESTART, PRNTCTRL, HEADER, FOOTER
-      COMMON   DATETIME, TITLE, MONTHS, SESVER
+      COMMON   DATETIME, TITLE, MONTHS, SESVER, Temperature_Unit
+      COMMON   Length_Unit, Area_Unit, Flow_Unit, Velocity_Unit
+      COMMON   Pressure_Unit, Density_Unit, Heat_Rate_Unit
       COMMON   TNUMV
       EQUIVALENCE  (ND(1), NDS(2), NDSS(3))
 !

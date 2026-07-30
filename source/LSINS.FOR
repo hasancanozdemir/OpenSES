@@ -233,7 +233,7 @@ C**** CONVERT SI ROUGHNESS LENGTHS FROM MM TO M FOR INTERNAL USE
       DUMY1=4.0*ALS(ILS)/PERMLS(ILS)                                    
       EPSLS(ILS)=EPSLS(ILS)/PERMLS(ILS)                                 
                   IF (INPUT_UNITS .EQ. UNIT_SI) THEN
-                        WRITE (OUT,111) DISPSTR, EPSLS(ILS)
+                        WRITE (OUT,111) DISPSTR, EPSLS(ILS)*1000.0
                   ELSE
                         WRITE (OUT,110) DISPSTR, EPSLS(ILS)
                   ENDIF

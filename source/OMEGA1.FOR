@@ -34,12 +34,10 @@ C
                   TAVGVS = TADJST*ABSAMB - Absolute_Temp_Offset
                   IF (INPUT_UNITS .EQ. UNIT_SI) THEN
                         VISCOS = AIR_SI(TAVGVS,1)
-                        REVS(IVS) = ABSQ*RNFVS(IVS)*NUAIR/VISCOS
                   ELSE
                         VISCOS = AIR(TAVGVS,1)
-                        REVS(IVS) = ABSQ*RNFVS(IVS)*(VISAIR/RHOMAS)
-     1                       /VISCOS
                   ENDIF
+                  REVS(IVS) = ABSQ*RNFVS(IVS)*(NUAIR/VISCOS)
       SUM1 = -Q*(CEPS(ISCT)*(Q+ABSQ)-CENS(ISCT)*(Q-ABSQ))/TADJST        
       GO TO 9                                                           
 C                                                                       

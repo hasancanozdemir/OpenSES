@@ -834,36 +834,30 @@ C
                         CALL CHECKR (PAMB,20.0,32.0,5)
                   ENDIF
 C*****COMPUTE AMBIENT DRY BULB TEMPERATURE IN DEGREES RANKINE           
+                  ABSAMB = TDBAMB + Absolute_Temp_Offset
                   IF (INPUT_UNITS .EQ. UNIT_SI) THEN
-                        ABSAMB = TDBAMB + Absolute_Temp_Offset
 C***** SI: PAMB in kPa -> Pa, RHOMAS in kg/m**3, RHOWHT in N/m**3
                         RHOMAS = (PAMB*1000.0)/(287.05*ABSAMB)
                         RHOWHT = RHOMAS*Gravity_Acceleration
+C*****COMPUTE KINEMATIC VISCOSITY OF AMBIENT AIR
+                        NUAIR = AIR_SI(TDBAMB,1)
+C*****COMPUTE VOLUMETRIC SPECIFIC HEAT OF AMBIENT AIR
+                        RHOCP = RHOMAS*1006.0
                   ELSE
-                        ABSAMB = TDBAMB+Absolute_Temp_Offset
 C*****COMPUTE AMBIENT AIR WEIGHT DENSITY                                
-                            DUMY8=SAINHG*RDRYAR*
-     1                      (TDBAMB+Absolute_Temp_Offset)
+                            DUMY8=SAINHG*RDRYAR*ABSAMB
                             RHOWHT=(PAMB*SAPSI*FTIN*FTIN)/DUMY8
 C*****COMPUTE AMBIENT AIR MASS DENSITY                                  
                         RHOMAS=RHOWHT/Gravity_Acceleration
+C*****COMPUTE KINEMATIC VISCOSITY OF AMBIENT AIR
+                        NUAIR=VISAIR/RHOMAS
+C*****COMPUTE VOLUMETRIC SPECIFIC HEAT OF AMBIENT AIR
+                        RHOCP=RHOMAS*CP
                   ENDIF
                   IF (INPUT_UNITS .EQ. UNIT_SI) THEN
                         WRITE (OUT,595) RHOMAS
                   ELSE
                         WRITE (OUT,590) RHOWHT
-                  ENDIF
-C*****COMPUTE KINEMATIC VISCOSITY OF AMBIENT AIR                        
-                  IF (INPUT_UNITS .EQ. UNIT_SI) THEN
-                        NUAIR=AIR_SI(TDBAMB,1)
-                  ELSE
-                        NUAIR=VISAIR/RHOMAS
-                  ENDIF
-C*****COMPUTE VOLUMETRIC SPECIFIC HEAT OF AMBIENT AIR                   
-                  IF (INPUT_UNITS .EQ. UNIT_SI) THEN
-                        RHOCP=RHOMAS*1006.0
-                  ELSE
-                        RHOCP=RHOMAS*CP
                   ENDIF
 C*****COMPUTE AMBIENT AIR SPECIFIC HUMIDITY                             
       CALL LATENT (TDBAMB,TWBAMB,HUMAMB)                                

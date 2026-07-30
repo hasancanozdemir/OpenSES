@@ -56,7 +56,7 @@ C**** LINE SEGMENT VARIABLE (LMLSS)
       DIMENSION  FLSS(LMLSS),AFSS(LMLSS), ABSS(LMLSS)                      
       DATA  FLSS / 1200 * 0.0 /                                         
 C                                                                       
-      RECON = 4.0 * RHOMAS / VISAIR                                     
+      RECON = 4.0 / NUAIR                                               
       HTCON = 0.022 * PR**0.6 * THCON                                   
       QSSCON=RHOMAS*FLBBTU/8.0                                          
 C*****IF TRAINS MAY BE OPERATING THEN INITIALIZE ITNLSS TO ALPHAMERIC   
@@ -501,12 +501,10 @@ C---- COMPUTE HEAT TRANSFER COEFFICIENT
       THCONR = THCONB / THCON                                           
       IF (INPUT_UNITS .EQ. UNIT_SI) THEN
             VISCOS = AIR_SI(TDBSS(ISS),1)
-            REA = REA*TSSTAB(ISS)*NUAIR/VISCOS
       ELSE
             VISCOS = AIR(TDBSS(ISS),1)
-            REA = REA*TSSTAB(ISS)/VISCOS
-     1           *(VISAIR/RHOMAS)
       ENDIF
+      REA = REA*TSSTAB(ISS)*(NUAIR/VISCOS)
   486 IF( REA - 2000.0 ) 490,490,520                                    
 C --  LAMINAR FLOW                                                      
   490 IF( REA - 1.0 ) 500,510,510                                       

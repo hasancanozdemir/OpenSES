@@ -38,13 +38,8 @@ C     HENCE NO DENSITY ADJUSTMENT)
 C**** FIND THE LOW AND HIGH SUBSEGMENT IN THIS LINE SEGMENT             
 50    ILOWSS = TABL3(ILS)                                               
       IHISS  = TABL4(ILS)                                               
-C**** COMPUTE 'STANDARD' REYNOLDS NUMBER AND MULTIPLY BY THE TERM       
-C**** ( VISAIR/RHOMAS )                                                 
-      IF (INPUT_UNITS .EQ. UNIT_SI) THEN
-            RESTD = RNFLS(ILS) * ABSQ * NUAIR
-      ELSE
-            RESTD = RNFLS(ILS) * ABSQ * (VISAIR/RHOMAS)
-      ENDIF
+C**** COMPUTE 'STANDARD' REYNOLDS NUMBER USING AMBIENT KINEMATIC VISC. 
+      RESTD = RNFLS(ILS) * ABSQ * NUAIR
 C**** COMPUTE THE VISCOUS LOSSES IN EACH LINE SEGMENT BY LOOPING OVER   
 C**** THE SUBSEGMENTS.                                                  
       SUBSUM = 0.0                                                      

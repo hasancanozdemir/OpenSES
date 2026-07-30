@@ -250,20 +250,15 @@ C*****COMPUTE REYNOLDS NUMBER IN REGION
 C --  ADJUST REYNOLDS NO. FOR HIGH TEMP                                 
       IF (INPUT_UNITS .EQ. UNIT_SI) THEN
             VISCOS = AIR_SI(TDBSS(ISS),1)
-            RERG = RERG * (NUAIR/VISCOS)*TSSTAB(ISS)
       ELSE
-            RERG = RERG * (VISAIR/(RHOMAS*AIR(TDBSS(ISS),1)))
-     1           *TSSTAB(ISS)
+            VISCOS = AIR(TDBSS(ISS),1)
       ENDIF
+      RERG = RERG * (NUAIR/VISCOS)*TSSTAB(ISS)
 C*****CHECK FOR LAMINAR OR TURBULENT FLOW IN REGION                     
       IF (RERG-2000.0) 410,420,420                                      
 C*****REGION VISCOUS HEAD CHANGE FOR LAMINAR FLOW IN REGION AT LINE     
 C*****SEGMENT WALL                                                      
-410   IF (INPUT_UNITS .EQ. UNIT_SI) THEN
-            VISCOS = AIR_SI(TDBSS(ISS),1)
-      ELSE
-            VISCOS = AIR(TDBSS(ISS),1)
-      ENDIF
+410   CONTINUE
       SUM4=-8.0*PERMLS(ILS)*LRG*VISCOS*VNETRG/(ANETRG*DRG)*TSSTAB(ISS)
       GO TO 430                                                         
 C*****TURBULENT FLOW DARCY-WEISBACH FRICTION FACTOR BY KENNEDY CURVE FIT

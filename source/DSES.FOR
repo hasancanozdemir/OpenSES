@@ -83,11 +83,12 @@ C
 C
 C*****CERTAIN PHYSICAL CONSTANTS - DEFINED                              
 C                                                                       
-C*****ABSOLUTE TEMPERATURE CONVERSION CONSTANT  DEG F TO DEG R          
-      ABTEMP=459.67                                                     
 C*****ABSOLUTE OFFSETS FOR UNIT-AWARE TEMPERATURE RATIO CALCULATIONS
-      ABSOLUTE_OFFSET_F=ABTEMP
-      ABSOLUTE_OFFSET_C=273.16
+C*****IP: DEGREES F TO DEGREES R.  SI: DEGREES C TO KELVIN.
+      Absolute_Temp_Offset_IP=459.67
+      Absolute_Temp_Offset_SI=273.16
+C*****DEFAULT TO SI UNTIL INPUT PARSING SELECTS THE ACTIVE UNIT MODE.
+      Absolute_Temp_Offset=Absolute_Temp_Offset_SI
 C*****CONVERSION FROM BTU TO FT-LBS - (FT-LB)/BTU                       
       BTUFLB=778.0                                                      
 C*****SPECIFIC HEAT OF AIR  BTU/(SLUG-DEG F)                            
@@ -96,8 +97,11 @@ C*****CONVERSION FROM FT-LBS TO HP - HP/(FT-LB)
       FLBHP=1.0/550.0                                                   
 C*****CONVERSION FROM FEET TO INCHES - INCHES/FT                        
       FTIN=12.0                                                         
-C*****AMCA VALUE OF ACCELERATION CAUSED BY GRAVITY - FT/(SEC**2)        
-      GRACC=32.1740                                                     
+C*****ACCELERATION DUE TO GRAVITY: IP IN FT/SEC**2, SI IN M/SEC**2.
+      Gravity_Acceleration_IP=32.1740
+      Gravity_Acceleration_SI=9.80665
+C*****DEFAULT TO SI UNTIL INPUT PARSING SELECTS THE ACTIVE UNIT MODE.
+      Gravity_Acceleration=Gravity_Acceleration_SI
 C*****HEAT OF VAPORIZATION OF WATER - BTU/(LB OF H2O VAPORIZED)         
       HVH2O=1050.0                                                      
 C*****CONVERSION OF MILES/HOUR TO FEET/SECOND - ((FT-HR)/(MILES-SEC))   

@@ -204,8 +204,15 @@
       real    tiempo
       real    twbamb, twambe, twambm, wntsum, zap
 !  Physical constants
-      real    abtemp, btuflb, cp, flbbtu, flbhp, fpsmph, ftin, gracc
-      real    absolute_offset_f, absolute_offset_c
+      real    btuflb, cp, flbbtu, flbhp, fpsmph, ftin
+!       Absolute_Temp_Offset_IP = deg F to deg R offset (459.67)
+!       Absolute_Temp_Offset_SI = deg C to K offset (273.16)
+      real    Absolute_Temp_Offset_IP, Absolute_Temp_Offset_SI
+      real    Absolute_Temp_Offset
+!       Gravity_Acceleration_IP = ft/s**2 (32.1740)
+!       Gravity_Acceleration_SI = m/s**2  (9.80665)
+      real    Gravity_Acceleration_IP, Gravity_Acceleration_SI
+      real    Gravity_Acceleration
       real    hvh2o, pi, pr, rdryar, rhocp, rhomas
       real    rhowht, sainhg, sapsi, stefan, thcon, tonlb, visair
       real    wgcons, wtbtus, absamb
@@ -372,8 +379,11 @@
       COMMON   THOPT, THTIME, TIEMPO, TNLSS, TNSS, TPOPT, TRTIME, SCREEN
       COMMON   TWBAMB, TWAMBE, TWAMBM, WNTSUM, ZAP
 !  PHYSICAL CONSTANTS
-      COMMON   ABTEMP, BTUFLB, CP, FLBBTU, FLBHP, FPSMPH, FTIN, GRACC
-      COMMON   ABSOLUTE_OFFSET_F, ABSOLUTE_OFFSET_C
+      COMMON   BTUFLB, CP, FLBBTU, FLBHP, FPSMPH, FTIN
+      COMMON   Absolute_Temp_Offset_IP, Absolute_Temp_Offset_SI
+      COMMON   Absolute_Temp_Offset
+      COMMON   Gravity_Acceleration_IP, Gravity_Acceleration_SI
+      COMMON   Gravity_Acceleration
       COMMON   HVH2O, MPHFPS, NUAIR, PI, PR, RDRYAR, RHOCP, RHOMAS
       COMMON   RHOWHT, SAINHG, SAPSI, STEFAN, THCON, TONLB, VISAIR
       COMMON   WGCONS, WTBTUS, ABSAMB

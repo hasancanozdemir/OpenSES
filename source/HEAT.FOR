@@ -46,7 +46,8 @@ C*****COMPUTE HEAT INPUT TO ACCELERATION RESISTOR GRIDS
      1     NPCARV(ITYP))*WTBTUS                                         
       GO TO 680                                                         
 C*****TRAIN IS BRAKING - FIND APPARENT MASS                             
-  400 TMASS = WV(ITYP)*RRACC(ITYP) + WPATV(NUMV)/GRACC                  
+  400 DUMY1 = WPATV(NUMV)/Gravity_Acceleration_IP
+      TMASS = WV(ITYP)*RRACC(ITYP) + DUMY1
 C*****COMPUTE HEAT INPUT TO DECELERATION RESISTOR GRIDS                 
       QDEC = -TMASS * UV(NUMV) * DUDTV(NUMV) * FLBBTU + DELPE           
       IF(QDEC) 420,680,680                                              
@@ -55,7 +56,8 @@ C*****COMPUTE HEAT INPUT TO DECELERATION RESISTOR GRIDS
 C                                                                       
 C*****EXPLICIT TRAIN PERFORMANCE                                        
 C                                                                       
-  600 TMASS = WV(ITYP) * RRACC(ITYP) + WPATV(NUMV) /GRACC               
+  600 DUMY1 = WPATV(NUMV)/Gravity_Acceleration_IP
+      TMASS = WV(ITYP) * RRACC(ITYP) + DUMY1
       QDEC = -TMASS *UV(NUMV) * DUDTV(NUMV) * FLBBTU + DELPE            
       IF( QDEC ) 610,620,620                                            
   610 QDEC = 0.0                                                        

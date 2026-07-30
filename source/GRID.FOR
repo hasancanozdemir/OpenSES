@@ -34,19 +34,20 @@ C     WRITE(OUT,990) TNUMV(NUMV),QDECV(NUMV),QACCV(NUMV),RMHTV(NUMV)
 C 990 FORMAT( 'TRAIN',I3, 3F20.5 )                                     
 C                                                                       
 C---- COMPLETE COMPUTATION OF TRAIN ENVIRONMENT                         
-      IF( RGSUMV(NUMV) ) 60,60,50                                       
-C---- TRAIN IS EITHER PARTIALLY OR ENTIRELY WITHIN SYSTEM               
-   50 FOUT = ( 1.0 - RGSUMV(NUMV) / LV(ITYP) )                          
-      TOUT = TDBAMB * FOUT                                              
-      TAAVG = TAAVGV(NUMV) / LV(ITYP) + TOUT                            
-      TWAVG = TWAVGV(NUMV) / LV(ITYP) + TOUT                            
-      ANV = ANVV(NUMV) / LV(ITYP) + UV(NUMV) * FOUT                     
-      GO TO 70                                                          
-C---- TRAIN IS ENTIRELY OUTSIDE OF SYSTEM                               
-   60 TAAVG = TDBAMB                                                    
-      TWAVG = TDBAMB                                                    
-      ANV = UV(NUMV)                                                    
-   70 TWR4 = ( TWAVG +ABTEMP)**4                                        
+      IF (RGSUMV(NUMV) .GT. 0.0) THEN
+C---- TRAIN IS EITHER PARTIALLY OR ENTIRELY WITHIN SYSTEM              
+        FOUT = ( 1.0 - RGSUMV(NUMV) / LV(ITYP) )
+        TOUT = TDBAMB * FOUT
+        TAAVG = TAAVGV(NUMV) / LV(ITYP) + TOUT
+        TWAVG = TWAVGV(NUMV) / LV(ITYP) + TOUT
+        ANV = ANVV(NUMV) / LV(ITYP) + UV(NUMV) * FOUT
+      ELSE
+C---- TRAIN IS ENTIRELY OUTSIDE OF SYSTEM                              
+        TAAVG = TDBAMB
+        TWAVG = TDBAMB
+        ANV = UV(NUMV)
+      ENDIF
+      TWR4 = ( TWAVG +Absolute_Temp_Offset_IP)**4
 C                                                                       
 C     INTEGRATE TEMPERATURE OF DECELERATION RESISTOR GRIDS              
 C                                                                       
@@ -62,18 +63,23 @@ C
   263 IF( GRASHD - 0.01 ) 265,265,264                                   
   264 IF(.33*REYDG**.6*AIR(TEMP,3)**.3-.53*CALFRE*GRASHD**.25*          
      1AIR(TEMP,3)**.25) 265,270,270                                     
-  265 DERIV = QDECI /RCPD - ((DIDCGV(ITYP)**3*                          
-     1        ABS(TGDECV(NUMV) - TAAVG)*AIR(TEMP,4))**.25 *             
-     2        CALFRE*AIR(TEMP,2)*.53*AIR(TEMP,3)**.25/DIDCGV(ITYP))*    
-     3        ACDECV(ITYP)*(TGDECV(NUMV) - TAAVG)/(RCPD*3600.)          
-     4        - EMISDG(ITYP)*ARDECV(ITYP)*STEFAN*((TGDECV               
-     5        (NUMV)+ABTEMP)**4 - TWR4 )/ (RCPD*3600.)                  
+  265 DUMY6 = ABS(TGDECV(NUMV) - TAAVG)
+      DUMY7 = (DIDCGV(ITYP)**3*DUMY6*AIR(TEMP,4))**.25
+      DERIV = QDECI / RCPD
+      DERIV = DERIV - DUMY7*CALFRE*AIR(TEMP,2)*.53*
+     1 AIR(TEMP,3)**.25*ACDECV(ITYP)*(TGDECV(NUMV)-TAAVG)/
+     2 (DIDCGV(ITYP)*RCPD*3600.)
+      DUMY8 = ((TGDECV(NUMV)+Absolute_Temp_Offset_IP)**4 - TWR4)
+      DERIV = DERIV - EMISDG(ITYP)*ARDECV(ITYP)*STEFAN*DUMY8/
+     1 (RCPD*3600.)
       GO TO 275                                                         
-  270 DERIV = QDECI /RCPD - (AIR(TEMP,2)*.33*                           
-     1        REYDG**.6*AIR(TEMP,3)**.3/DIDCGV(ITYP))*ACDECV(ITYP)*     
-     2        (TGDECV(NUMV) - TAAVG)/(RCPD*3600.)                       
-     3        - EMISDG(ITYP)*ARDECV(ITYP)*STEFAN*((TGDECV(NUMV)         
-     4        +ABTEMP)**4 - TWR4 ) / (RCPD*3600.)                       
+  270 DERIV = QDECI / RCPD
+      DERIV = DERIV - (AIR(TEMP,2)*.33*REYDG**.6*AIR(TEMP,3)**.3/
+     1 DIDCGV(ITYP))*ACDECV(ITYP)*(TGDECV(NUMV)-TAAVG)/
+     2 (RCPD*3600.)
+      DUMY8 = ((TGDECV(NUMV)+Absolute_Temp_Offset_IP)**4 - TWR4)
+      DERIV = DERIV - EMISDG(ITYP)*ARDECV(ITYP)*STEFAN*DUMY8/
+     1 (RCPD*3600.)
   275 TEM = AA(J)*(DERIV - BB(J)*QERDCV(NUMV))                          
 C     WRITE(OUT,276) DERIV,REYDG                                        
 C 276 FORMAT('DERIVDEC=',F10.2,'REYDG=',F10.2)                      
@@ -95,13 +101,15 @@ C 276 FORMAT('DERIVDEC=',F10.2,'REYDG=',F10.2)
      2       AIR(TEMP,4))**.25*AIR(TEMP,2)*.53*CALFRE*AIR(TEMP,3)       
      3       **.25/DIDCGV(ITYP))*ACDECV(ITYP)*(TGAVGD                   
      4       - TAAVG)/3600.                                             
-      QDECR = STEFAN*EMISDG(ITYP)*ARDECV(ITYP)*((TGAVGD+ABTEMP)**4      
+      QDECR = STEFAN*EMISDG(ITYP)*ARDECV(ITYP)*
+     1        ((TGAVGD+Absolute_Temp_Offset_IP)**4                      
      1        - TWR4 ) / 3600.                                          
       QDEC = QDEC + QDECR                                               
       GO TO 300                                                         
   286 QDEC = (AIR(TEMP,2)*.33*REYDG**.6*AIR(TEMP,3)**.3/DIDCGV(ITYP))   
      1       * ACDECV(ITYP) * (TGAVGD - TAAVG) / 3600.                  
-      QDECR = STEFAN*EMISDG(ITYP)*ARDECV(ITYP)*((TGAVGD+ABTEMP)**4      
+      QDECR = STEFAN*EMISDG(ITYP)*ARDECV(ITYP)*
+     1        ((TGAVGD+Absolute_Temp_Offset_IP)**4                      
      1        - TWR4 ) / 3600.                                          
       QDEC = QDEC + QDECR                                               
       GO TO 300                                                         
@@ -125,18 +133,23 @@ C
   161 IF( GRASHA - 0.01 ) 165,165,162                                   
   162 IF(.33*REYAG**.6*AIR(TEMP,3)**.3-.53*CALFRE*GRASHA**.25*          
      1 AIR(TEMP,3)**.25) 165,170,170                                    
-  165 DERIV = QACCI /RCPA - ((DIACGV(ITYP)**3*                          
-     1        ABS(TGACCV(NUMV) - TAAVG)*AIR(TEMP,4))**.25               
-     2        *AIR(TEMP,2)*.53*CALFRE*AIR(TEMP,3)**.25/DIACGV(ITYP))*   
-     3        ACACCV(ITYP)*(TGACCV(NUMV) - TAAVG)/(RCPA*3600.)          
-     4        - EMISAG(ITYP)*ARACCV(ITYP)*STEFAN                        
-     5        *((TGACCV(NUMV)+ABTEMP)**4 - TWR4 ) / (RCPA*3600.)        
+  165 DUMY6 = ABS(TGACCV(NUMV) - TAAVG)
+      DUMY7 = (DIACGV(ITYP)**3*DUMY6*AIR(TEMP,4))**.25
+      DERIV = QACCI / RCPA
+      DERIV = DERIV - DUMY7*AIR(TEMP,2)*.53*CALFRE*
+     1 AIR(TEMP,3)**.25*ACACCV(ITYP)*(TGACCV(NUMV)-TAAVG)/
+     2 (DIACGV(ITYP)*RCPA*3600.)
+      DUMY8 = ((TGACCV(NUMV)+Absolute_Temp_Offset_IP)**4 - TWR4)
+      DERIV = DERIV - EMISAG(ITYP)*ARACCV(ITYP)*STEFAN*DUMY8/
+     1 (RCPA*3600.)
       GO TO 175                                                         
-  170 DERIV = QACCI /RCPA - (AIR(TEMP,2)*.33*REYAG**.6                  
-     1        *AIR(TEMP,3)**.3/DIACGV(ITYP))*ACACCV(ITYP)*              
-     2        (TGACCV(NUMV) - TAAVG)/(RCPA*3600.)                       
-     3        - EMISAG(ITYP)*ARACCV(ITYP)*STEFAN*((TGACCV(NUMV)+        
-     4        ABTEMP)**4 - TWR4 )/( RCPA*3600.)                         
+  170 DERIV = QACCI / RCPA
+      DERIV = DERIV - (AIR(TEMP,2)*.33*REYAG**.6*AIR(TEMP,3)**.3/
+     1 DIACGV(ITYP))*ACACCV(ITYP)*(TGACCV(NUMV)-TAAVG)/
+     2 (RCPA*3600.)
+      DUMY8 = ((TGACCV(NUMV)+Absolute_Temp_Offset_IP)**4 - TWR4)
+      DERIV = DERIV - EMISAG(ITYP)*ARACCV(ITYP)*STEFAN*DUMY8/
+     1 (RCPA*3600.)
   175 TEM = AA(J)*(DERIV - BB(J)*QERACV(NUMV))                          
 C     WRITE(OUT,176) DERIV,REYAG                                        
 C 176 FORMAT('DERIVACC=',F10.2,'REYAG=',F10.2)                      
@@ -158,13 +171,15 @@ C 176 FORMAT('DERIVACC=',F10.2,'REYAG=',F10.2)
      1       AIR(TEMP,4))**.25*AIR(TEMP,2)*.53*CALFRE*AIR(TEMP,3)       
      2       **.25/DIACGV(ITYP))*ACACCV(ITYP)*(TGAVGA                   
      3       -TAAVG)/3600.                                              
-      QACCR = STEFAN*EMISAG(ITYP)*ARACCV(ITYP)*((TGAVGA+ABTEMP)**4      
+      QACCR = STEFAN*EMISAG(ITYP)*ARACCV(ITYP)*
+     1        ((TGAVGA+Absolute_Temp_Offset_IP)**4                      
      1         - TWR4 ) / 3600.                                         
       QACC = QACC + QACCR                                               
       GO TO 200                                                         
   186 QACC = (AIR(TEMP,2)*.33*REYAG**.6*AIR(TEMP,3)**.3/DIACGV(ITYP))   
      1       * ACACCV(ITYP) * (TGAVGA - TAAVG) / 3600.                  
-      QACCR = STEFAN*EMISAG(ITYP)*ARACCV(ITYP)*((TGAVGA+ABTEMP)**4      
+      QACCR = STEFAN*EMISAG(ITYP)*ARACCV(ITYP)*
+     1        ((TGAVGA+Absolute_Temp_Offset_IP)**4                      
      1         - TWR4 ) / 3600.                                         
       QACC = QACC + QACCR                                               
       GO TO 200                                                         

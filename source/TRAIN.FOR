@@ -198,13 +198,13 @@ C*****FIND TRACTIVE EFFORT AVAILABLE
       TEV(NUMV)=TORQUE(0.0,ITYP)                                        
 C*****FIND ACCELERATION TRAIN IS CAPABLE OF                             
       DUDTV(NUMV)=(TEV(NUMV)*MOTORV(ITYP)-RSISTV(NUMV))/(WV(ITYP)*RRACC(
-     1ITYP)+WPATV(NUMV)/GRACC)                                          
+     1ITYP)+WPATV(NUMV)/Gravity_Acceleration_IP)                        
 C*****CHECK IF MAXIMUM ACCELERATION ALLOWED WOULD BE EXCEEDED           
       IF (DUDTV(NUMV)-ACCV(ITYP)) 300,300,290                           
 C*****SET ACCELERATION TO MAXIMUM ALLOWED AND RECOMPUTE TRACTIVE EFFORT 
   290 DUDTV(NUMV)=ACCV(ITYP)                                            
-      TEV(NUMV)=(DUDTV(NUMV)*(WV(ITYP)*RRACC(ITYP)+WPATV(NUMV)/GRACC)+RS
-     1ISTV(NUMV))/MOTORV(ITYP)                                          
+      TEV(NUMV)=(DUDTV(NUMV)*(WV(ITYP)*RRACC(ITYP)+WPATV(NUMV)/
+     1Gravity_Acceleration_IP)+RSISTV(NUMV))/MOTORV(ITYP)              
 C*****COMPUTE MOTOR CURRENT AND LINE CURRENT                            
   300 CALL  AMPERE(TEV(NUMV),TEV(NUMV),0.0,ITYP)                        
       AMPV(NUMV) = IMOTOR                                               
@@ -263,14 +263,15 @@ C*****IT IS GOING TOO SLOW
 C                                                                       
 C*****ACCELERATING MODE - MODE=2                                        
 C                                                                       
-  390 DUDTV(NUMV)=(TE*MOTORV(ITYP)-RSISTV(NUMV))/(WV(ITYP)*RRACC(ITYP)+W
-     1PATV(NUMV)/GRACC)                                                 
+  390 DUMY1 = WV(ITYP)*RRACC(ITYP)
+      DUMY1 = DUMY1 + WPATV(NUMV)/Gravity_Acceleration_IP
+      DUDTV(NUMV)=(TE*MOTORV(ITYP)-RSISTV(NUMV))/DUMY1
 C*****CHECK IF ACCELERATION EXCEEDS MAXIMUM ALLOWABLE                   
       IF (DUDTV(NUMV)-ACCV(ITYP)) 410,410,400                           
 C*****SET ACCELERATION TO MAXIMUM ALLOWED AND RECOMPUTE TRACTIVE EFFORT 
   400 DUDTV(NUMV)=ACCV(ITYP)                                            
-      TEV(NUMV)=(DUDTV(NUMV)*(WV(ITYP)*RRACC(ITYP)+WPATV(NUMV)/GRACC)+RS
-     1ISTV(NUMV))/MOTORV(ITYP)                                          
+      TEV(NUMV)=(DUDTV(NUMV)*(WV(ITYP)*RRACC(ITYP)+WPATV(NUMV)/
+     1Gravity_Acceleration_IP)+RSISTV(NUMV))/MOTORV(ITYP)              
 C*****COMPUTE MOTOR CURRENT AND LINE CURRENT                            
   410 CALL  AMPERE(TE,TEV(NUMV),UAVG,ITYP)                              
       AMPV(NUMV) = IMOTOR                                               
@@ -366,7 +367,9 @@ C
 C*****COASTING MODE - MODE=5                                            
 C                                                                       
 C*****COMPUTE NEW ACCELERATION                                          
-  560 DUDTV(NUMV)=-RSISTV(NUMV)/(WV(ITYP)*RRACC(ITYP)+WPATV(NUMV)/GRACC)
+  560 DUMY1 = WV(ITYP)*RRACC(ITYP)
+      DUMY1 = DUMY1 + WPATV(NUMV)/Gravity_Acceleration_IP
+      DUDTV(NUMV)=-RSISTV(NUMV)/DUMY1
 C*****COMPUTE ANTICIPATED SPEED                                         
       UNEW=UV(NUMV)+DUDTV(NUMV)*DELT                                    
 C*****IF ANTICIPATED SPEED IS LESS THAN UMIN THEN SWITCH TO ANOTHER MODE
@@ -457,7 +460,7 @@ C*****COMPUTE AVAILABLE TRACTIVE EFFORT, LINE CURRENT AND MOTOR CURRENT
 C*****CHECK IF TIME TO DISPATCH NEXT TRAIN ON THIS ROUTE                
 C*****FIND ACCELERATION TRAIN IS CAPABLE OF                             
       DUDTV(NUMV)=(TE*MOTORV(ITYP)-RSISTV(NUMV))/(WV(ITYP)*RRACC(ITYP)+W
-     1PATV(NUMV)/GRACC)                                                 
+     1PATV(NUMV)/Gravity_Acceleration_IP)                               
 C*****FIND NEW TRAIN SPEED                                              
       UNEW=UV(NUMV)+DUDTV(NUMV)*DELT                                    
 C*****IF TRAIN SPEED IS GREATER THAN UMIN, SET SPEED TO UMIN AND        
@@ -672,8 +675,8 @@ C*****IF IS NOT TIME FOR AERO STEP REPLACE AIR DRAG
       RSISTV(NUMV)=DRAGV(NUMV)                                          
  1140 RSISTV(NUMV)=RSISTV(NUMV)+RG+RC+RM                                
 C*****COMPUTE TRACTIVE EFFORT REQUIRED TO PRODUCE DESIRED ACCELERATION  
-      TEV(NUMV)=(DUDTV(NUMV)*(WV(ITYP)*RRACC(ITYP)+WPATV(NUMV)/GRACC)+RS
-     1ISTV(NUMV))/MOTORV(ITYP)                                          
+      TEV(NUMV)=(DUDTV(NUMV)*(WV(ITYP)*RRACC(ITYP)+WPATV(NUMV)/
+     1Gravity_Acceleration_IP)+RSISTV(NUMV))/MOTORV(ITYP)              
       IF (UV(NUMV)-0.01) 1170,1150,1150                                 
  1150 IF (TEV(NUMV)) 1180,1180,1160                                     
  1160 TE = TORQUE(UV(NUMV),ITYP)                                        

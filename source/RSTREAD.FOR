@@ -299,7 +299,8 @@ C --  COMPUTE NUMBER OF PERSONS ABOARD TRAIN
       TSTRTV(NUMV)=0                                                    
       MODE =MODEV(NUMV)                                                 
       RPS(NUMV) = DUMY8/60.0                                            
-      FKENEW(NUMV) = (2.0*PI*RPS(NUMV))**2*FLYJV(ITYP)/(2.0*GRACC)      
+            DUMY8 = (2.0*PI*RPS(NUMV))**2*FLYJV(ITYP)
+            FKENEW(NUMV) = DUMY8/(2.0*Gravity_Acceleration_IP)
       POW1(NUMV) = 0.0                                                  
       IF (MODE) 760,760,752                                             
   752 GO TO ( 762,764,766,766,768,780,782 ),MODE                        

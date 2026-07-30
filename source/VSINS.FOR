@@ -336,9 +336,9 @@ C---- CHECK IF STACK HEIGHT EXCEEDS SUM OF INDIVIDUAL LENGTHS
       IF( ABS(STAKVS(IVS)) - X6 ) 255,255,250                           
   250 CALL EERROR( 173 )                                                 
   255 IF (INPUT_UNITS .EQ. UNIT_SI) THEN
-        STAKVS(IVS)=STAKVS(IVS)*9.80665
+        STAKVS(IVS)=STAKVS(IVS)*Gravity_Acceleration
       ELSE
-        STAKVS(IVS)=STAKVS(IVS)*GRACC
+        STAKVS(IVS)=STAKVS(IVS)*Gravity_Acceleration
       ENDIF
       LVSS(IVS)=LVS(IVS)/NSS                                            
       IF (INPUT_UNITS .EQ. UNIT_SI) THEN

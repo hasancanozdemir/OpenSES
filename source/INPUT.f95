@@ -589,6 +589,15 @@ C
 !**** If no version number is present, it sets "inpver" to 4200.
       call GetVersion(titlines(maxtit+1))
 
+C**** SET SHARED ABSOLUTE-TEMPERATURE OFFSET ONCE FROM UNIT MODE.
+      IF (INPUT_UNITS .EQ. UNIT_SI) THEN
+            Absolute_Temp_Offset = Absolute_Temp_Offset_SI
+            Gravity_Acceleration = Gravity_Acceleration_SI
+      ELSE
+            Absolute_Temp_Offset = Absolute_Temp_Offset_IP
+            Gravity_Acceleration = Gravity_Acceleration_IP
+      ENDIF
+
 C---- FORM 1C                                                           
 C                                                                       
       WRITE (OUT,10) CHAR(12)
@@ -826,19 +835,18 @@ C
                   ENDIF
 C*****COMPUTE AMBIENT DRY BULB TEMPERATURE IN DEGREES RANKINE           
                   IF (INPUT_UNITS .EQ. UNIT_SI) THEN
-                        ABSOFF = ABSOLUTE_OFFSET_C
-                        ABSAMB = TDBAMB + ABSOFF
+                        ABSAMB = TDBAMB + Absolute_Temp_Offset
 C***** SI: PAMB in kPa -> Pa, RHOMAS in kg/m**3, RHOWHT in N/m**3
                         RHOMAS = (PAMB*1000.0)/(287.05*ABSAMB)
-                        RHOWHT = RHOMAS*9.80665
+                        RHOWHT = RHOMAS*Gravity_Acceleration
                   ELSE
-                        ABSOFF = ABSOLUTE_OFFSET_F
-                        ABSAMB = TDBAMB+ABSOFF
+                        ABSAMB = TDBAMB+Absolute_Temp_Offset
 C*****COMPUTE AMBIENT AIR WEIGHT DENSITY                                
-                            DUMY8=SAINHG*RDRYAR*(TDBAMB+ABSOFF)
+                            DUMY8=SAINHG*RDRYAR*
+     1                      (TDBAMB+Absolute_Temp_Offset)
                             RHOWHT=(PAMB*SAPSI*FTIN*FTIN)/DUMY8
 C*****COMPUTE AMBIENT AIR MASS DENSITY                                  
-                        RHOMAS=RHOWHT/GRACC
+                        RHOMAS=RHOWHT/Gravity_Acceleration
                   ENDIF
                   IF (INPUT_UNITS .EQ. UNIT_SI) THEN
                         WRITE (OUT,595) RHOMAS
@@ -1332,8 +1340,8 @@ C**** IF A FIRE IS BEING SIMULATED, WRITE OUT AND CHECK THE INPUT DATA
       IF( FIROPT .LE. 0  .OR.  TYPLS(ISEG) .GT. 0 ) GO TO 3060          
       WRITE(OUT,881)  TFLMUL(IUL)                                       
       CALL CHECKR (TFLMUL(IUL),500.0,2000.0,249)                        
-C**** STORE TEMPERATURE IN DEGREES RANKINE                              
-      TFLMUL(IUL) = TFLMUL(IUL) + ABTEMP                                
+C**** STORE TEMPERATURE IN ABSOLUTE IP UNITS (DEGREES RANKINE)         
+      TFLMUL(IUL) = TFLMUL(IUL) + Absolute_Temp_Offset_IP               
       WRITE(OUT,882)  AFIRUL(IUL)                                       
       CALL CHECKR (AFIRUL(IUL),0.0,SURLSS(ISEG),250)                    
       AFIRUL(IUL) = AFIRUL(IUL)*STEFAN/3600.0                           
@@ -2077,7 +2085,7 @@ C --  COMPUTE NUMBER OF PERSONS ABOARD TRAIN
       AMPV(NUMV) = IMOTOR                                               
       AMPLV(NUMV) = ILINE                                               
       DUDTV(NUMV)=(TEV(NUMV)*MOTORV(ITYP)-RSISTV(NUMV))/(WV(ITYP)*RRACC(
-     1ITYP)+WPATV(NUMV)/GRACC)                                          
+     1ITYP)+WPATV(NUMV)/Gravity_Acceleration_IP)                        
       IF (DUDTV(NUMV)-ACCV(ITYP)) 4570,4570,4560                        
 4560  DUDTV(NUMV)=ACCV(ITYP)                                            
 4570  TLPSV(NUMV)=NDELT                                                 
@@ -2140,7 +2148,8 @@ C---- SET THE FLYWHEEL ROTATIONAL SPEED EQUAL TO THE MAXIMUM VALUE
 C---- SET THE FLYWHEEL ROTATIONAL SPEED EQUAL TO THE MINIMUM VALUE      
 4623  RPS(NUMV) = RPSMNV(ITYP)                                          
 C---- CALCULATE THE CORRESPONDING KINETIC ENERGY STORED IN THE FLYWHEEL 
-4624  FKENEW(NUMV) = (2.0*PI*RPS(NUMV))**2*FLYJV(ITYP)/(GRACC*2.0)      
+      DUMY8 = (2.0*PI*RPS(NUMV))**2*FLYJV(ITYP)
+4624  FKENEW(NUMV) = DUMY8/(Gravity_Acceleration_IP*2.0)
       POW1(NUMV) = 0.0                                                  
 4629  PPROPV(NUMV) = 0.0                                                
       PREGNV(NUMV) = 0.0                                                

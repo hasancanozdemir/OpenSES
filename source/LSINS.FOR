@@ -289,9 +289,11 @@ C     USER HAS ENTERED.
       IF (NEW .EQ. 1) GOTO 730                                            
 C**** STORE THE AVERAGE STACK HEIGHT PER SUBSEGMENT                     
                   IF (INPUT_UNITS .EQ. UNIT_SI) THEN
-                        STAKLS(ILS) = STAKLS(ILS)/FLOAT(NSS)*9.80665
+                        STAKLS(ILS) = STAKLS(ILS)/FLOAT(NSS)*
+     1                  Gravity_Acceleration
                   ELSE
-                        STAKLS(ILS) = STAKLS(ILS)/FLOAT(NSS)*GRACC
+                        STAKLS(ILS) = STAKLS(ILS)/FLOAT(NSS)*
+     1                  Gravity_Acceleration
                   ENDIF
       NUMY1 = DUMY3                                                     
       WRITE (OUT,200) NUMY1                                             

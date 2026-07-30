@@ -83,7 +83,7 @@ C*****OPERATIONAL CFM LIMITS
                         CALL CHECKR (ROWTFT,0.64,1.36,187)
                   ELSE
                         CALL CHECKR (ROWTFT,0.040,0.085,187)
-                        ROWTFT = ROWTFT / GRACC
+                        ROWTFT = ROWTFT / Gravity_Acceleration_IP
                   ENDIF
       DUMY1=TIMFT(IFT)                                                  
       WRITE (OUT,50) DUMY1                                              

@@ -304,7 +304,8 @@ C-----   INPUT FORM 9E
 620   RRACC(I)=RRACC1                                                   
 630   WRITE (OUT,350) RRACC(I)                                          
       CALL CHECKR (RRACC(I),0.1,30.0,77)                                
-      RRACC(I) = ( 91.2 + RRACC(I) ) / ( 91.2 * GRACC )                 
+      RRACC(I) = ( 91.2 + RRACC(I) ) /                                  
+     1 ( 91.2 * Gravity_Acceleration_IP )                               
 C                                                                       
 C**** ASSIGN INITIAL VALUES TO A NUMBER OF TRAIN VARIABLES              
 C                                                                       
@@ -619,7 +620,8 @@ C**** CHANGE THE UNITS OF THE FLYWHEEL ROTATIONAL SPEEDS FROM RPM TO RPS
       RPSMXV(I)=RPSMXV(I)/60.0                                          
       RPSOV(I)=RPSOV(I)/60.0                                            
 C**** CALCULATE THE INITIAL KINETIC ENERGY OF THE FLYWHEEL              
-      SPINV(I) = (2.0*PI*RPSOV(I))**2*FLYJV(I)/(2.0 * GRACC)            
+      SPINV(I) = (2.0*PI*RPSOV(I))**2*FLYJV(I)/
+     1 (2.0 * Gravity_Acceleration_IP)
 C                                                                       
 C----    INPUT FORM 9L                                                  
       READ (IN,121) ETA1V(I),ETA2V(I),ALOSSV(I),BLOSSV(I),CLOSSV(I),    

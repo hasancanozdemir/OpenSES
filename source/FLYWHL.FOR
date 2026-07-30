@@ -22,7 +22,8 @@ C
 C                                                                       
       POWREQ = 0.0                                                      
 C**** CALCULATE THE EFFECTIVE WEIGHT OF THE TRAIN                       
-      WTRN = WV(ITYP) * RRACC(ITYP) + WPATV(NUMV) / GRACC               
+      WTRN = WV(ITYP) * RRACC(ITYP) + WPATV(NUMV) /
+     1 Gravity_Acceleration_IP                                          
 C**** COMPUTE THE INTERNAL LOSSES OF THE FLYWHEEL ASSEMBLY              
       ROT = (ALOSSV(ITYP)*RPS(NUMV)**DLOSSV(ITYP) + BLOSSV(ITYP)*RPS(NUM
      1V)**ELOSSV(ITYP) + CLOSSV(ITYP)) * 1000.0   * WTBTUS * WEELSV(ITYP
@@ -51,7 +52,8 @@ C     FLYWHEEL
 120   FKENEW(NUMV) = FKENEW(NUMV) + 0.5 * DELT * (POW2 + POW1(NUMV))    
 C                                                                       
 C**** CALCULATE THE NEW ROTATIONAL SPEED.                               
-      RPSNEW = SQRT(2.0*GRACC*FKENEW(NUMV)/FLYJV(ITYP))/(2.0*PI)        
+      RPSNEW = SQRT(2.0*Gravity_Acceleration_IP*FKENEW(NUMV)/
+     1 FLYJV(ITYP))/(2.0*PI)                                            
 C**** COMPARE THE NEW ROTATIONAL SPEED WITH THE MINIMUM ALLOWABLE       
 C     ROTATIONAL SPEED.                                                 
       IF( RPSNEW - RPSMNV(ITYP) ) 130,135,135                           
@@ -61,7 +63,8 @@ C     POWER CONVERSION PLUS THE FLYWHEEL WINDAGE AND BEARINGS LOSSES.
 135   QINST = (DEDT * (1.0 - ETA2V(ITYP))/ ETA2V(ITYP) + ROT) * FLBBTU  
       QGRIDS = 0.0                                                      
       RPS(NUMV) = RPSNEW                                                
-      FKENEW(NUMV) = (2.0*PI*RPSNEW)**2*FLYJV(ITYP) / ( 2.0 * GRACC )   
+      FKENEW(NUMV) = (2.0*PI*RPSNEW)**2*FLYJV(ITYP) /
+     1 ( 2.0 * Gravity_Acceleration_IP )                                
       POW1(NUMV) = POW2                                                 
       AMPEQV = AMPLV(NUMV)                                              
       AMPLV(NUMV)= 0.0                                                  
@@ -76,7 +79,8 @@ C     INTERNAL LOSSES, THUS MAINTAINING THE FLYWHEEL AT THE MINIMUM RPM.
 C                                                                       
 140   RPSNEW = RPSMNV(ITYP)                                             
       RPS(NUMV) = RPSNEW                                                
-      FKENEW(NUMV) = (2.0*PI*RPSNEW)**2*FLYJV(ITYP) / ( 2.0 * GRACC )   
+      FKENEW(NUMV) = (2.0*PI*RPSNEW)**2*FLYJV(ITYP) /
+     1 ( 2.0 * Gravity_Acceleration_IP )                                
       POW2= 0.0                                                         
       POW1(NUMV) = 0.0                                                  
       PFLYV(NUMV) = 0.0                                                 
@@ -118,7 +122,8 @@ C     CALCULATE AND STORE THE NEW VALUE OF KINETIC ENERGY OF THE
 C     FLYWHEEL.                                                         
 210   FKENEW(NUMV) = FKENEW(NUMV) + 0.5 * DELT * (POW2 + POW1(NUMV))    
 C**** CALCULATE THE NEW ROTATIONAL SPEED.                               
-      RPSNEW = SQRT(2.0*GRACC*FKENEW(NUMV)/FLYJV(ITYP))/(2.0*PI)        
+      RPSNEW = SQRT(2.0*Gravity_Acceleration_IP*FKENEW(NUMV)/
+     1 FLYJV(ITYP))/(2.0*PI)                                            
 C**** COMPARE THE NEW ROTATIONAL SPEED WITH THE MAXIMUM ALLOWABLE       
 C     ROTATIONAL SPEED.                                                 
       IF( RPSNEW - RPSMXV(ITYP) ) 230,230,220                           
@@ -131,7 +136,8 @@ C     POWER CONVERSION PLUS THE INTERNAL FLYWHEEL LOSSES.
 230   QGRIDS = 0.0                                                      
       QINST = (DEDT * (1.0 - ETA1V(ITYP))+ ROT) * FLBBTU                
       RPS(NUMV) = RPSNEW                                                
-      FKENEW(NUMV) = (2.0*PI*RPSNEW)**2*FLYJV(ITYP) / ( 2.0 * GRACC )   
+      FKENEW(NUMV) = (2.0*PI*RPSNEW)**2*FLYJV(ITYP) /
+     1 ( 2.0 * Gravity_Acceleration_IP )                                
       POW1(NUMV) = POW2                                                 
       AMPV(NUMV) = 0.0                                                  
       AMPLV(NUMV)= 0.0                                                  
@@ -150,7 +156,8 @@ C
       POW1(NUMV) = POW2                                                 
       AMPLV(NUMV)= 0.0                                                  
       AMPV(NUMV) = 0.0                                                  
-      FKENEW(NUMV) = (2.0*PI*RPS(NUMV))**2*FLYJV(ITYP) / ( 2.0*GRACC )  
+      FKENEW(NUMV) = (2.0*PI*RPS(NUMV))**2*FLYJV(ITYP) /
+     1 ( 2.0*Gravity_Acceleration_IP )                                  
       PFLYV(NUMV) = 0.0                                                 
       GO TO 500                                                         
 C                                                                       
@@ -177,7 +184,8 @@ C**** CALCULATE AND STORE THE NEW VALUE OF KINETIC ENERGY OF THE
 C     FLYWHEEL.                                                         
 330   FKENEW(NUMV) = FKENEW(NUMV) + 0.5 * DELT * ( POW2 + POW1(NUMV))   
 C**** CALCULATE THE NEW ROTATIONAL SPEED                                
-      RPSNEW = SQRT(2.0*GRACC*FKENEW(NUMV)/FLYJV(ITYP))/(2.0*PI)        
+      RPSNEW = SQRT(2.0*Gravity_Acceleration_IP*FKENEW(NUMV)/
+     1 FLYJV(ITYP))/(2.0*PI)                                            
 C**** COMPARE THE NEW ROTATIONAL SPEED WITH THE MINIMUM ALLOWABLE       
 C     ROTATIONAL SPEED.                                                 
       IF( RPSNEW - RPSMNV(ITYP) ) 340,350,350                           
@@ -186,7 +194,8 @@ C**** THE FLYWHEEL IS DRAWING POWER FROM THE 3RD RAIL TO OFF-SET THE
 C     INTERNAL LOSSES.                                                  
 340   DRAW = 1.0                                                        
       RPSNEW = RPSMNV(ITYP)                                             
-      FKENEW(NUMV) = (2.0*PI*RPSNEW)**2*FLYJV(ITYP) / ( 2.0 * GRACC )   
+      FKENEW(NUMV) = (2.0*PI*RPSNEW)**2*FLYJV(ITYP) /
+     1 ( 2.0 * Gravity_Acceleration_IP )                                
       POW2 = 0.0                                                        
 C**** CALCULATE THE INSTANTANEOUS HEAT RELEASED                         
 C     NOTE-- THE FACTOR 0.85 IS AN ASSUMED EFFICIENCY FOR THE           

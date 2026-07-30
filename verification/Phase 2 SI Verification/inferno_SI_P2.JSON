@@ -1,8 +1,8 @@
     [
          {
          "info" :       {
-                        "input_file" : "./samples/inferno_SI_P2.inp",
-                        "timestamp" :          "28 JUL 2026 17:19:43",
+                        "input_file" : "./verification/Phase 2 SI Verification/inferno_SI_P2.inp",
+                        "timestamp" :          "30 JUL 2026 15:47:19",
                         "units" :                                "SI",
                         "ambient_dry_bulb_temperature" :        29.44,
                         "ambient_wet_bulb_temperature" :        23.33,

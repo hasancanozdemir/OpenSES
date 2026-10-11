@@ -134,7 +134,7 @@ subroutine GetVersion(str_1B)
           write(screen, 1003) 1003, trim(adjustl(str_1B(31:40)))
           write( out,   1003) 1003, trim(adjustl(str_1B(31:40)))
           call LineComplaint(str_1B, .True.)
-          call SesExit (1002)
+          call SesExit (1003)
         else if ( inpver .gt. int_maxver ) then
 1004      format(/, '*ERROR* TYPE ', I0, 20X, 30('*'), /, &
           'Found an input file version number that was higher than this',/,&
@@ -147,7 +147,7 @@ subroutine GetVersion(str_1B)
           write( out,   1004) 1004, trim(sesver), trim(adjustl(str_1B(31:40))), &
                               trim(version)
           call LineComplaint(str_1B, .True.)
-          call SesExit (1003)
+          call SesExit (1004)
         end if
 
         ! If we get to here we have a valid version of the input file and

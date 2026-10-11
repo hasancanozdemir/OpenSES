@@ -106,13 +106,20 @@ def export_revision(repo: Path, ref: str, dest: Path) -> Path:
     return dest / "source"
 
 
-def read_cases(cases_file: Path) -> list[Path]:
+def read_cases(cases_file: Path) -> list[tuple[Path, int | None]]:
+    """Read `path [exit=N]` lines; exit=N is the exit code the new build must
+    give when it intentionally differs from the reference."""
     root = cases_file.parent.parent
     cases = []
     for line in cases_file.read_text().splitlines():
-        line = line.split("#", 1)[0].strip()
-        if line:
-            cases.append((root / line).resolve())
+        fields = line.split("#", 1)[0].split()
+        if not fields:
+            continue
+        expected = None
+        for f in fields[1:]:
+            if f.startswith("exit="):
+                expected = int(f[5:])
+        cases.append(((root / fields[0]).resolve(), expected))
     return cases
 
 
@@ -134,14 +141,17 @@ def main(argv=None) -> int:
     exe_a = build(ref_src, work / "ref" / "bin", jobs=args.jobs)
     exe_b = build(repo / "source", work / "new" / "bin", jobs=args.jobs)
 
-    runs_a = run_many(exe_a, cases, work / "ref" / "runs", jobs=args.jobs)
-    runs_b = run_many(exe_b, cases, work / "new" / "runs", jobs=args.jobs)
+    inputs = [c for c, _ in cases]
+    runs_a = run_many(exe_a, inputs, work / "ref" / "runs", jobs=args.jobs)
+    runs_b = run_many(exe_b, inputs, work / "new" / "runs", jobs=args.jobs)
 
     failed = 0
-    for ra, rb in zip(runs_a, runs_b):
+    for (_, expected), ra, rb in zip(cases, runs_a, runs_b):
         problems = []
-        if ra.returncode != rb.returncode:
-            problems.append(f"exit code {ra.returncode} -> {rb.returncode}")
+        want = ra.returncode if expected is None else expected
+        if rb.returncode != want:
+            problems.append(f"exit code {rb.returncode}, expected {want}"
+                            f" (reference gave {ra.returncode})")
         problems += compare_text(_read(ra.out), _read(rb.out), "OUT")
         problems += compare_text(_read(ra.rst), _read(rb.rst), "RST")
         problems += compare_json(_read(ra.json), _read(rb.json))

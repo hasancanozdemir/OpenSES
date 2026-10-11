@@ -1,5 +1,6 @@
 # Input files used by the A/B regression test (python -m openses.abtest).
-# Paths are relative to the repository root.
+# Paths are relative to the repository root.  "exit=N" gives the exit code
+# a case must return when it intentionally differs from the reference.
 
 # Sample cases, without and with an input file version number
 samples/inferno.inp
@@ -21,5 +22,5 @@ verification/input-file-version-2023/version-test-04-4200.ses
 verification/input-file-version-2023/version-test-05-4300.ses
 verification/input-file-version-2023/version-test-06-4250.ses
 verification/input-file-version-2023/fault-1002-GetVersion.INP
-verification/input-file-version-2023/fault-1003-GetVersion.ses
-verification/input-file-version-2023/fault-1004-GetVersion.inp
+verification/input-file-version-2023/fault-1003-GetVersion.ses  exit=1003  # 4.3ALPHA exited 1002
+verification/input-file-version-2023/fault-1004-GetVersion.inp  exit=1004  # 4.3ALPHA exited 1003

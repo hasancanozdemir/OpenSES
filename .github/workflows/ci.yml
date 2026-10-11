@@ -1,0 +1,35 @@
+name: ci
+
+on:
+  push:
+  pull_request:
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0   # the A/B test needs the baseline tag
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Install gfortran and Python dependencies
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y gfortran
+          pip install "pandas>=2.0" openpyxl
+
+      - name: Build with make
+        working-directory: source
+        run: make prep release
+
+      - name: Unit tests
+        working-directory: python
+        run: python -m unittest discover -s tests -v
+
+      - name: A/B test against baseline-4.3alpha
+        working-directory: python
+        run: python -m openses.abtest --workdir ${{ runner.temp }}/ab

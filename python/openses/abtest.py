@@ -148,21 +148,21 @@ def main(argv=None) -> int:
     failed = 0
     for (_, expected), ra, rb in zip(cases, runs_a, runs_b):
         problems = []
-        want = ra.returncode if expected is None else expected
-        if rb.returncode != want:
-            problems.append(f"exit code {rb.returncode}, expected {want}"
-                            f" (reference gave {ra.returncode})")
+        want = ra.exit_code if expected is None else expected
+        if rb.exit_code != want:
+            problems.append(f"exit code {rb.exit_code}, expected {want}"
+                            f" (reference gave {ra.exit_code})")
         problems += compare_text(_read(ra.out), _read(rb.out), "OUT")
         problems += compare_text(_read(ra.rst), _read(rb.rst), "RST")
         problems += compare_json(_read(ra.json), _read(rb.json))
         name = rb.workdir.name
         if problems:
             failed += 1
-            print(f"FAIL  {name}  (exit {rb.returncode})")
+            print(f"FAIL  {name}  (exit {rb.exit_code})")
             for p in problems:
                 print("      " + p.replace("\n", "\n      "))
         else:
-            print(f"ok    {name}  (exit {rb.returncode}, {rb.seconds:.2f}s)")
+            print(f"ok    {name}  (exit {rb.exit_code}, {rb.seconds:.2f}s)")
     print(f"\n{len(cases) - failed}/{len(cases)} cases identical to {args.ref}")
     return 1 if failed else 0
 

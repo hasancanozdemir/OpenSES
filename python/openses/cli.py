@@ -50,9 +50,9 @@ def cmd_run(a):
         results = run_many(exe, inputs, out, jobs=a.jobs)
     failed = 0
     for r in results:
-        ok = r.returncode in (99, 100)
+        ok = r.exit_code in (99, 100)
         failed += not ok
-        print(f"{'ok  ' if ok else 'FAIL'}  {r.input.name:30} exit {r.returncode:4}  "
+        print(f"{'ok  ' if ok else 'FAIL'}  {r.input.name:30} exit {r.exit_code:4}  "
               f"{r.seconds:6.2f}s  {r.status}  -> {r.workdir}")
         if a.export and r.json and r.json.stat().st_size:
             for p in export(r.json, a.export, None):

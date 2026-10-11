@@ -96,6 +96,17 @@ class AbTestHelpersTest(unittest.TestCase):
         self.assertTrue(compare_json(ref, changed))
 
 
+class ExitCodeTest(unittest.TestCase):
+    def test_truncated_version_errors_are_restored_on_posix(self):
+        from unittest import mock
+        from openses import runner
+        with mock.patch.object(runner.os, "name", "posix"):
+            self.assertEqual(runner.canonical_exit_code(1003 % 256), 1003)
+            self.assertEqual(runner.canonical_exit_code(100), 100)
+        with mock.patch.object(runner.os, "name", "nt"):
+            self.assertEqual(runner.canonical_exit_code(1003), 1003)
+
+
 class BuildTest(unittest.TestCase):
     def test_makefile_lists_are_read(self):
         f95, fixed = makefile_sources(REPO / "source")

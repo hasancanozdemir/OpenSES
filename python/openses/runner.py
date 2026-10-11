@@ -36,13 +36,30 @@ EXIT_MEANINGS = {
 }
 
 
+def canonical_exit_code(returncode: int) -> int:
+    """Undo the truncation of exit codes 1001-1004 to 8 bits on POSIX.
+
+    OpenSES exits with 1001-1004 for input file version errors, but Linux
+    and macOS keep only the low 8 bits (1002 arrives as 234).  No other
+    OpenSES exit code falls in 233-236, so map those back.
+    """
+    if os.name != "nt" and 1001 % 256 <= returncode <= 1004 % 256:
+        return returncode + 768
+    return returncode
+
+
 @dataclass
 class RunResult:
     input: Path
     workdir: Path
-    returncode: int
+    returncode: int        # as reported by the operating system
     seconds: float
     stdout: str = field(repr=False)
+
+    @property
+    def exit_code(self) -> int:
+        """OpenSES exit code, the same on every operating system."""
+        return canonical_exit_code(self.returncode)
 
     def _output(self, ext: str) -> Path | None:
         stem = self.workdir / self.input.stem
@@ -66,12 +83,12 @@ class RunResult:
 
     @property
     def completed(self) -> bool:
-        return self.returncode == EXIT_COMPLETED
+        return self.exit_code == EXIT_COMPLETED
 
     @property
     def status(self) -> str:
-        return EXIT_MEANINGS.get(self.returncode,
-                                 f"input error (exit code {self.returncode})")
+        return EXIT_MEANINGS.get(self.exit_code,
+                                 f"input error (exit code {self.exit_code})")
 
 
 def run_case(exe: str | Path, input_file: str | Path,

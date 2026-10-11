@@ -158,7 +158,6 @@ version of OpenSES or edit the file to reduce the input file
 version to between 4.2 and 4.3.
 Faulty line of input is:
 > 17.       7         2022      99.9
-<<<<<<< HEAD
 Faulty file is "fault-1004-GetVersion.INP".
 ```
 

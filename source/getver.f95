@@ -76,7 +76,7 @@ subroutine GetVersion(str_1B)
        '"',A,'" before trying and failing to read a number from it.')
 101   write(screen, 1001) 1001, SESVER, version
       write( out,   1001) 1001, SESVER, version
-      call exit (1001)
+      call SesExit (1001)
 
 102   continue
 
@@ -120,7 +120,7 @@ subroutine GetVersion(str_1B)
 121     write(screen, 1002) 1002, trim(version)
         write( out,   1002) 1002, trim(version)
         call LineComplaint(str_1B, .True.)
-        call exit (1002)
+        call SesExit (1002)
 
 122     continue
         ! Check the number.  The lowest allowable is 4.1.  There is no
@@ -134,7 +134,7 @@ subroutine GetVersion(str_1B)
           write(screen, 1003) 1003, trim(adjustl(str_1B(31:40)))
           write( out,   1003) 1003, trim(adjustl(str_1B(31:40)))
           call LineComplaint(str_1B, .True.)
-          call exit (1002)
+          call SesExit (1002)
         else if ( inpver .gt. int_maxver ) then
 1004      format(/, '*ERROR* TYPE ', I0, 20X, 30('*'), /, &
           'Found an input file version number that was higher than this',/,&
@@ -147,7 +147,7 @@ subroutine GetVersion(str_1B)
           write( out,   1004) 1004, trim(sesver), trim(adjustl(str_1B(31:40))), &
                               trim(version)
           call LineComplaint(str_1B, .True.)
-          call exit (1003)
+          call SesExit (1003)
         end if
 
         ! If we get to here we have a valid version of the input file and

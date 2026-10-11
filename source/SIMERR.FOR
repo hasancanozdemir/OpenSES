@@ -96,5 +96,5 @@ C
      1 ALLOWABLE SIMULATION ERRORS',/,9X,                              
      2 'OR AN IRRECOVERABLE ERROR HAS BEEN ENCOUNTERED' //)             
       EXITCODE=16
-	CALL EXIT (EXITCODE)                                                              
+	CALL SESEXIT (EXITCODE)                                                              
       END                                                               

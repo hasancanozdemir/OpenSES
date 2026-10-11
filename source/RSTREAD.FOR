@@ -485,5 +485,5 @@ C
  1740 FORMAT(A256)
  3150 WRITE (OUT,1510) CHAR(12)
       WRITE (OUT,1730)
-      CALL EXIT (EXITCODE)                                                              
+      CALL SESEXIT (EXITCODE)                                                              
       END

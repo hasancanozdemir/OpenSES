@@ -210,6 +210,6 @@ C
   517 CONTINUE
       CLOSE (IN)
 	CLOSE (OUT)
-      CLOSE (JSON)
-      CALL EXIT (EXITCODE)                                                              
+C**** SESEXIT CLOSES THE JSON FILE AND ENDS THE PROGRAM
+      CALL SESEXIT (EXITCODE)
       END                                                               

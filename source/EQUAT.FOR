@@ -108,5 +108,5 @@ C*****IT MAY BE IGNORED.
 180   FORMAT (T16,'IMPOSSIBLE SITUATION - SUBROUTINE EQUAT')        
 190   FORMAT (T16,'NODE INTERNAL NUMBER=',I4,' NODE EXTERNAL NUMBER=',  
      1  I4,/,T16,'TABL2 FOR THIS NODE',/,5(30I5,/))                     
-200   CALL EXIT (EXITCODE)                                                              
+200   CALL SESEXIT (EXITCODE)                                                              
       END                                                               

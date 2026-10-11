@@ -291,5 +291,5 @@ C
   405 WRITE(OUT,415) (DTRM(I,J), J=1,NEQDTC)                            
   510 RETURN                                                            
   500 WRITE(OUT,501)                                                    
-      CALL EXIT (EXITCODE)                                                              
+      CALL SESEXIT (EXITCODE)                                                              
       END                                                               

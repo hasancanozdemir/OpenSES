@@ -292,5 +292,5 @@ C
   501 FORMAT('IMPOSSIBLE SITUATION IN CREATING DTRM')                 
   510 RETURN                                                            
   500 WRITE(OUT,501)                                                    
-      CALL EXIT (EXITCODE)                                                              
+      CALL SESEXIT (EXITCODE)                                                              
       END                                                               

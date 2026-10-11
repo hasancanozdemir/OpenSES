@@ -727,5 +727,5 @@ C*****IMPOSSIBLE SITUATION
 C                                                                       
  1280 WRITE (OUT,1290)CHAR(12)                                                  
  1290 FORMAT (A1,/,'IMPOSSIBLE SITUATION - SUBROUTINE TRAIN')            
-      CALL EXIT (EXITCODE)                                                              
+      CALL SESEXIT (EXITCODE)                                                              
       END                                                               

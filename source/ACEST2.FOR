@@ -423,5 +423,5 @@ C*****END OF ZONE COMPUTATIONS
       RETURN                                                            
 C*****IMPOSSIBLE SITUATION - TERMINATE PROGRAM                          
  1050 WRITE (OUT,200)                                                   
-      CALL EXIT (EXITCODE)                                                              
+      CALL SESEXIT (EXITCODE)                                                              
       END                                                               

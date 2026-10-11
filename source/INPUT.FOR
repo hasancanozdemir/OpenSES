@@ -2510,5 +2510,5 @@ C
       WRITE (OUT,1610)                                                  
 C                                                                       
 C                                                                       
-      CALL EXIT (EXITCODE)                                                              
+      CALL SESEXIT (EXITCODE)                                                              
       END                                                               

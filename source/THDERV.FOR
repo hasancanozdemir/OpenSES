@@ -132,5 +132,5 @@ C---- IMPOSSIBLE SITUATION    ******************************************
 C                                                                       
   999 WRITE(OUT,998)                                                    
   998 FORMAT('IMPOSSIBLE SITUATION - SUBROUTINE DERIV' )               
-      CALL EXIT (EXITCODE)                                                              
+      CALL SESEXIT (EXITCODE)                                                              
       END                                                               

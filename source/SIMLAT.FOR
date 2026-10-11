@@ -265,5 +265,5 @@ C
 C---- IMPOSSIBLE SITUATION                                              
 C                                                                       
   999 WRITE(OUT,998)CHAR(12)                                                    
-      CALL EXIT (EXITCODE)                                                              
+      CALL SESEXIT (EXITCODE)                                                              
       END                                                               

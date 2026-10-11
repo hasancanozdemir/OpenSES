@@ -12,7 +12,7 @@ EXE = OpenSES
 # we can use slightly different compile flags for them.  We set things up so
 # that the .f95 files are compiled first (as they are more likely to have
 # been edited and thus raise compile errors).
-SRCS1 =     getver.f95  ancill.f95
+SRCS1 =     getver.f95  ancill.f95  jsonout.f95
 
 SRCS2 =     ACEST2.FOR  DTHTS2.FOR  FLYWHL.FOR   INPUT.FOR  LSINS.FOR  OMEGA5.FOR PINPNT.FOR   RELHUM.FOR   SIMQ2.FOR    TRINS.FOR   \
             AIR.FOR     EERROR.FOR  FORCE1.FOR   INTEXT.FOR MAXMIN.FOR OMGJ1.FOR  PRINT.FOR    RESIST.FOR   SUMARY.FOR   TRSLOP.FOR  \

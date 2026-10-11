@@ -804,5 +804,5 @@ C     IMPOSSIBLE SITUATION
 C                                                                       
   999 WRITE(OUT,998) CHAR(12)                                                    
   998 FORMAT(A1,'IMPOSSIBLE SITUATION - SUBROUTINE PINPNT' )          
-      CALL EXIT (EXITCODE)                                                              
+      CALL SESEXIT (EXITCODE)                                                              
       END                                                               

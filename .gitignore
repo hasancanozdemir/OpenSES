@@ -31,3 +31,14 @@
 
 # macOS hidden files
 .DS_Store
+
+# Local builds (openses build / make)
+/bin/
+source/release/
+source/debug/
+source/build.log
+
+# Python
+__pycache__/
+*.egg-info/
+openses-runs/

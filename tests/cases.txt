@@ -1,0 +1,25 @@
+# Input files used by the A/B regression test (python -m openses.abtest).
+# Paths are relative to the repository root.
+
+# Sample cases, without and with an input file version number
+samples/inferno.inp
+samples/normal.inp
+samples/inp-version-samples-2023/inferno.inp
+samples/inp-version-samples-2023/normal.inp
+
+# JSON output test cases (2022)
+verification/JSON_Docs_Testing_2022/TestSESCases/inferno.inp
+verification/JSON_Docs_Testing_2022/TestSESCases/inferno_5.inp
+verification/JSON_Docs_Testing_2022/TestSESCases/normal.inp
+verification/JSON_Docs_Testing_2022/TestSESCases/normal_5.inp
+
+# Input file version handling, including the error exits 1002-1004
+verification/input-file-version-2023/version-test-01-version-absent.SES
+verification/input-file-version-2023/version-test-02-out-of-slice.ses
+verification/input-file-version-2023/version-test-03-4100.ses
+verification/input-file-version-2023/version-test-04-4200.ses
+verification/input-file-version-2023/version-test-05-4300.ses
+verification/input-file-version-2023/version-test-06-4250.ses
+verification/input-file-version-2023/fault-1002-GetVersion.INP
+verification/input-file-version-2023/fault-1003-GetVersion.ses
+verification/input-file-version-2023/fault-1004-GetVersion.inp
